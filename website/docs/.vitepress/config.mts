@@ -1,61 +1,38 @@
 import { defineConfig } from "vitepress";
 
-const languageItems = [
-  { text: "English", link: "/" },
-  { text: "Portugues (Brasil)", link: "/pt/" },
-  { text: "Espanol", link: "/es/" },
-  { text: "Francais", link: "/fr/" },
-  { text: "中文", link: "/zh/" }
-];
-
 const enNav = [
   { text: "Home", link: "/" },
   { text: "Install", link: "/get-started/installation" },
   { text: "Workflows", link: "/reference/workflows" },
-  { text: "Examples", link: "/reference/examples" },
-  { text: "Switch to PT-BR", link: "/pt/?lang-switch=1" },
-  { text: "Languages", items: languageItems },
-  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+  { text: "Examples", link: "/reference/examples" }
 ];
 
 const ptNav = [
   { text: "Inicio", link: "/pt/" },
   { text: "Instalacao", link: "/pt/get-started/installation" },
   { text: "Workflows", link: "/pt/reference/workflows" },
-  { text: "Exemplos", link: "/pt/reference/examples" },
-  { text: "Trocar para EN", link: "/?lang-switch=1" },
-  { text: "Idiomas", items: languageItems },
-  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+  { text: "Exemplos", link: "/pt/reference/examples" }
 ];
 
 const esNav = [
   { text: "Inicio", link: "/es/" },
   { text: "Instalacion", link: "/es/get-started/installation" },
   { text: "Workflows", link: "/es/reference/workflows" },
-  { text: "Ejemplos", link: "/es/reference/examples" },
-  { text: "Cambiar a EN", link: "/?lang-switch=1" },
-  { text: "Idiomas", items: languageItems },
-  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+  { text: "Ejemplos", link: "/es/reference/examples" }
 ];
 
 const frNav = [
   { text: "Accueil", link: "/fr/" },
   { text: "Installation", link: "/fr/get-started/installation" },
   { text: "Workflows", link: "/fr/reference/workflows" },
-  { text: "Exemples", link: "/fr/reference/examples" },
-  { text: "Passer en EN", link: "/?lang-switch=1" },
-  { text: "Langues", items: languageItems },
-  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+  { text: "Exemples", link: "/fr/reference/examples" }
 ];
 
 const zhNav = [
   { text: "首页", link: "/zh/" },
   { text: "安装", link: "/zh/get-started/installation" },
   { text: "工作流", link: "/zh/reference/workflows" },
-  { text: "示例", link: "/zh/reference/examples" },
-  { text: "切换到 EN", link: "/?lang-switch=1" },
-  { text: "语言", items: languageItems },
-  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+  { text: "示例", link: "/zh/reference/examples" }
 ];
 
 const enSidebar = [
@@ -206,7 +183,7 @@ export default defineConfig({
   ],
   locales: {
     root: {
-      label: "English",
+      label: "EN",
       lang: "en-US",
       themeConfig: {
         logo: "/logo-mark.svg",
@@ -221,7 +198,7 @@ export default defineConfig({
       }
     },
     pt: {
-      label: "Portugues (Brasil)",
+      label: "PT-BR",
       lang: "pt-BR",
       link: "/pt/",
       themeConfig: {
@@ -237,7 +214,7 @@ export default defineConfig({
       }
     },
     es: {
-      label: "Espanol",
+      label: "ES",
       lang: "es-ES",
       link: "/es/",
       themeConfig: {
@@ -253,7 +230,7 @@ export default defineConfig({
       }
     },
     fr: {
-      label: "Francais",
+      label: "FR",
       lang: "fr-FR",
       link: "/fr/",
       themeConfig: {
@@ -269,7 +246,7 @@ export default defineConfig({
       }
     },
     zh: {
-      label: "中文",
+      label: "ZH",
       lang: "zh-CN",
       link: "/zh/",
       themeConfig: {

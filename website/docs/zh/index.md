@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: 快速上手
       link: /zh/get-started/quickstart
-    - theme: alt
-      text: 切换到 PT-BR
-      link: /pt/?lang-switch=1
 
 features:
   - title: 工作流编排

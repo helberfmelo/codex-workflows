@@ -53,6 +53,13 @@
   box-shadow: 0 10px 30px rgba(11, 33, 45, 0.08);
 }
 
+.dark .VPFeature {
+  border: 1px solid rgba(109, 180, 216, 0.24);
+  background:
+    linear-gradient(165deg, rgba(17, 33, 47, 0.96), rgba(13, 25, 37, 0.94));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.34);
+}
+
 .vp-doc a {
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
@@ -61,19 +68,4 @@
 .vp-doc div[class*="language-"] {
   border: 1px solid rgba(15, 95, 135, 0.24);
   border-radius: 14px;
-}
-
-.VPNavBarMenu .VPNavBarMenuLink[href*="lang-switch=1"] {
-  border: 1px solid rgba(15, 95, 135, 0.4);
-  border-radius: 999px;
-  padding: 0.35rem 0.8rem;
-  margin-left: 0.45rem;
-  background: linear-gradient(130deg, rgba(15, 95, 135, 0.2), rgba(243, 160, 38, 0.22));
-  font-weight: 700;
-}
-
-.VPNavBarMenu .VPNavBarMenuLink[href*="lang-switch=1"]:hover {
-  border-color: rgba(15, 95, 135, 0.6);
-  box-shadow: 0 8px 20px rgba(9, 40, 57, 0.14);
-  transform: translateY(-1px);
 }

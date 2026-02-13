@@ -10,9 +10,6 @@ hero:
       text: Instalar All-in-One
       link: /pt/get-started/installation
     - theme: alt
-      text: Trocar para EN
-      link: /?lang-switch=1
-    - theme: alt
       text: Ver Quickstart
       link: /pt/get-started/quickstart
     - theme: alt

@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: Ver Quickstart
       link: /es/get-started/quickstart
-    - theme: alt
-      text: Cambiar a PT-BR
-      link: /pt/?lang-switch=1
 
 features:
   - title: Orquestacion por Workflow

@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: Voir Quickstart
       link: /fr/get-started/quickstart
-    - theme: alt
-      text: Basculer vers PT-BR
-      link: /pt/?lang-switch=1
 
 features:
   - title: Orchestration Workflow
