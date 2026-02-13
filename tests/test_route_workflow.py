@@ -49,7 +49,40 @@ class RouteWorkflowTests(unittest.TestCase):
             fast = route_workflow_fast.route(q)
             self.assertEqual(base["workflow"], fast["workflow"])
 
+    def test_explicit_activation_in_english_for_all_workflows(self):
+        workflows = sorted(route_workflow.RULES.keys())
+        for wf in workflows:
+            query = f"Use codex-workflows in {wf} and execute this now."
+            base = route_workflow.route(query)
+            fast = route_workflow_fast.route(query)
+            self.assertEqual(base["workflow"], wf)
+            self.assertEqual(fast["workflow"], wf)
+            self.assertTrue(base["explicit_activation"])
+            self.assertTrue(fast["explicit_activation"])
+
+    def test_explicit_activation_in_portuguese_for_all_workflows(self):
+        workflows = sorted(route_workflow.RULES.keys())
+        for wf in workflows:
+            query = f"Use codex-workflows em {wf} e execute este fluxo."
+            base = route_workflow.route(query)
+            fast = route_workflow_fast.route(query)
+            self.assertEqual(base["workflow"], wf)
+            self.assertEqual(fast["workflow"], wf)
+            self.assertTrue(base["explicit_activation"])
+            self.assertTrue(fast["explicit_activation"])
+
+    def test_explicit_activation_with_quoted_workflow(self):
+        query_en = "Use codex-workflows in /'debug' and execute."
+        query_pt = "Use codex-workflows em /\"plan\" e execute."
+        base_en = route_workflow.route(query_en)
+        fast_en = route_workflow_fast.route(query_en)
+        base_pt = route_workflow.route(query_pt)
+        fast_pt = route_workflow_fast.route(query_pt)
+        self.assertEqual(base_en["workflow"], "/debug")
+        self.assertEqual(fast_en["workflow"], "/debug")
+        self.assertEqual(base_pt["workflow"], "/plan")
+        self.assertEqual(fast_pt["workflow"], "/plan")
+
 
 if __name__ == "__main__":
     unittest.main()
-

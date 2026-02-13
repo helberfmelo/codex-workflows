@@ -6,7 +6,14 @@ import argparse
 import json
 from collections import defaultdict
 
-from routing_data import DOMAIN_HINTS, DOMAIN_TO_PACK, RULES, detect_domains, tokenize
+from routing_data import (
+    DOMAIN_HINTS,
+    DOMAIN_TO_PACK,
+    RULES,
+    detect_domains,
+    detect_explicit_workflow,
+    tokenize,
+)
 
 
 def _compile_indexes() -> tuple[dict[str, list[tuple[str, str]]], list[tuple[str, str]]]:
@@ -34,6 +41,20 @@ def route(text: str) -> dict:
     low = text.lower()
     scores = defaultdict(int)
     hits = defaultdict(list)
+    matched_domains = detect_domains(low, DOMAIN_HINTS)
+    packs = recommend_packs(matched_domains)
+
+    explicit_workflow = detect_explicit_workflow(text, set(RULES.keys()))
+    if explicit_workflow:
+        return {
+            "workflow": explicit_workflow,
+            "confidence": "high",
+            "reason": f"Explicit workflow activation detected: {explicit_workflow}",
+            "secondary": [],
+            "domains": sorted(matched_domains),
+            "recommended_packs": packs,
+            "explicit_activation": True,
+        }
 
     for token in tokens:
         for workflow, pattern in SINGLE_KEYWORDS.get(token, []):
@@ -44,9 +65,6 @@ def route(text: str) -> dict:
                 scores[workflow] += 1
                 hits[workflow].append(phrase)
 
-    matched_domains = detect_domains(low, DOMAIN_HINTS)
-    packs = recommend_packs(matched_domains)
-
     if len(matched_domains) >= 2 and "/orchestrate" not in scores:
         return {
             "workflow": "/orchestrate",
@@ -55,6 +73,7 @@ def route(text: str) -> dict:
             "secondary": [],
             "domains": sorted(matched_domains),
             "recommended_packs": packs,
+            "explicit_activation": False,
         }
 
     if not scores:
@@ -65,6 +84,7 @@ def route(text: str) -> dict:
             "secondary": [],
             "domains": sorted(matched_domains),
             "recommended_packs": packs,
+            "explicit_activation": False,
         }
 
     ordered = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
@@ -78,6 +98,7 @@ def route(text: str) -> dict:
         "secondary": secondary,
         "domains": sorted(matched_domains),
         "recommended_packs": packs,
+        "explicit_activation": False,
     }
 
 
@@ -98,6 +119,7 @@ def main() -> None:
     if args.show_domains:
         print(f"domains={','.join(result['domains'])}")
         print(f"recommended_packs={','.join(result['recommended_packs'])}")
+        print(f"explicit_activation={str(result['explicit_activation']).lower()}")
 
 
 if __name__ == "__main__":

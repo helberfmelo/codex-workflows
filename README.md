@@ -136,6 +136,34 @@ python ~/.codex/skills/codex-workflows/scripts/check_compat_drift.py \
 python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 10000
 ```
 
+## Prompting Best Practices
+
+Use explicit skill + workflow phrasing for the most reliable behavior.
+
+1. For complex tasks, start with:
+- `Use codex-workflows in /orchestrate and <your objective>`
+2. For focused tasks, keep the workflow explicit:
+- `Use codex-workflows and run /debug for this error`
+- `Use codex-workflows and run /plan for this feature`
+3. This works for any workflow name in the catalog, not only `/orchestrate`.
+4. Supported explicit trigger formats:
+- `Use codex-workflows in /<workflow>`
+- `Use codex-workflows em /<workflow>`
+5. In a new chat/session, repeat the activation line in the first message.
+6. In the same chat, short continuation prompts are enough:
+- `Continue with codex-workflows /orchestrate from current plan`
+7. Treat `/orchestrate`, `/debug`, `/plan`, etc. as intent labels in prompts, not native CLI slash commands.
+
+Recommended activation template:
+
+```text
+Use codex-workflows in /orchestrate and execute this goal: <goal>.
+Keep phase gates, verify outputs, and return a concise report.
+```
+
+Automation note:
+- Explicit-trigger behavior is covered in `tests/test_route_workflow.py` for both router implementations.
+
 ## Behavior Notes
 
 - Slash-like terms (for example `/orchestrate`) are interpreted as workflow intent in prompts.

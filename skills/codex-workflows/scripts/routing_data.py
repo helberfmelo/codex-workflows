@@ -5,6 +5,10 @@ from __future__ import annotations
 import re
 
 TOKEN_RE = re.compile(r"[a-z0-9]+")
+EXPLICIT_WORKFLOW_PATTERNS = (
+    re.compile(r"use\s+codex-workflows\s+(?:in|em)\s+/[`'\"\[]?([a-z0-9][a-z0-9\-]*)[`'\"\]]?", re.IGNORECASE),
+    re.compile(r"use\s+codex-workflows\s+(?:and\s+run|e\s+execute)\s+/[`'\"\[]?([a-z0-9][a-z0-9\-]*)[`'\"\]]?", re.IGNORECASE),
+)
 
 RULES = {
     "/brainstorm": ["brainstorm", "idea", "option", "alternatives", "compare"],
@@ -52,3 +56,16 @@ def detect_domains(text: str, domain_hints: dict[str, list[str]] | None = None) 
             domains.add(domain)
     return domains
 
+
+def detect_explicit_workflow(
+    text: str, valid_workflows: set[str] | None = None
+) -> str | None:
+    allowed = valid_workflows or set(RULES.keys())
+    for pattern in EXPLICIT_WORKFLOW_PATTERNS:
+        match = pattern.search(text)
+        if not match:
+            continue
+        workflow = "/" + match.group(1).lower().strip()
+        if workflow in allowed:
+            return workflow
+    return None
