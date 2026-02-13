@@ -1,3 +1,5 @@
+# Source: docs/RELEASE.md
+
 # Release Runbook
 
 ## Pre-release checks
@@ -62,11 +64,3 @@ Tag-driven publish is also enabled:
 - Pushing `v*` tags triggers automatic release publication.
 - It uses `docs/releases/<tag>.md` when available.
 - Fallback body is `CHANGELOG.md` if release notes file is missing.
-
-## Docs portal publish
-
-Workflow: `.github/workflows/docs.yml`
-
-- Triggered by changes under `website/**`, `docs/**`, or `README.md`.
-- Builds `website` with VitePress.
-- Deploys static site to GitHub Pages.

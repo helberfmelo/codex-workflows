@@ -72,6 +72,10 @@ examples/
     node-service/
     python-service/
     rust-service/
+website/
+  docs/
+  .vitepress/
+  scripts/sync_reference_docs.py
 ```
 
 ## Installation
@@ -201,6 +205,31 @@ python ~/.codex/skills/codex-node-validation-pack/scripts/validate_node_stack.py
 python ~/.codex/skills/codex-python-validation-pack/scripts/validate_python_stack.py --project .
 python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project .
 ```
+
+## Web Portal (/website)
+
+Portal de documentacao implementado dentro do proprio repositorio, em `website/`.
+
+Rodar localmente:
+
+```bash
+cd website
+npm install
+npm run docs:dev
+```
+
+Build local:
+
+```bash
+cd website
+npm run docs:build
+```
+
+Deploy:
+
+- workflow dedicado: `.github/workflows/docs.yml`
+- publica no GitHub Pages
+- release e CI continuam separados em `.github/workflows/release.yml` e `.github/workflows/ci.yml`
 
 ## Prompting Best Practices
 

@@ -1,3 +1,5 @@
+# Source: docs/ROBUSTNESS-CHECKLIST.md
+
 # Robustness Checklist
 
 Date: 2026-02-13
@@ -39,8 +41,6 @@ Evidence: `docs/OPERATIONS.md`
 Evidence: `docs/RELEASE.md`
 - [x] Workflow contract documented
 Evidence: `docs/WORKFLOW_CONTRACT.md`
-- [x] Web docs portal exists and is deployable
-Evidence: `website/`, `.github/workflows/docs.yml`
 
 ## Quality and CI
 

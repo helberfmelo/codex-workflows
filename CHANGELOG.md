@@ -9,6 +9,10 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 ### Added
 
 - Release workflow now supports auto-publish on `v*` tag push.
+- Web docs portal at `website/` using VitePress.
+- GitHub Pages deployment workflow for portal: `.github/workflows/docs.yml`.
+- CI build gate for portal in `.github/workflows/ci.yml`.
+- Technical docs mirror sync script: `website/scripts/sync_reference_docs.py`.
 
 ## [1.1.0] - 2026-02-13
 

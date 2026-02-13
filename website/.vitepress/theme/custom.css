@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --vp-c-brand-1: #165d7d;
+  --vp-c-brand-2: #0f4a63;
+  --vp-c-brand-3: #0a3b4f;
+  --vp-font-family-base: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --vp-font-family-mono: "IBM Plex Mono", "Consolas", monospace;
+}
+
+.VPNavBarTitle .title {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.VPHero .name,
+.VPHero .text {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+}
+
+.VPHero {
+  position: relative;
+}
+
+.VPHero::before {
+  content: "";
+  position: absolute;
+  inset: -12px -18px auto;
+  height: 220px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(22, 93, 125, 0.22), rgba(22, 93, 125, 0) 42%),
+    radial-gradient(circle at 80% 15%, rgba(249, 168, 38, 0.22), rgba(249, 168, 38, 0) 36%),
+    linear-gradient(120deg, rgba(16, 38, 53, 0.12), rgba(42, 84, 106, 0.04));
+  filter: blur(0.2px);
+  z-index: -1;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+}
+
+.vp-doc a {
+  text-underline-offset: 3px;
+}

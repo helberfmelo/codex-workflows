@@ -1,3 +1,5 @@
+# Source: docs/OPERATIONS.md
+
 # Operations Runbook
 
 Use this runbook to maintain `codex-workflows`.
@@ -11,20 +13,6 @@ Install all packs in one command:
 Preview without changes:
 
 `python scripts/install_all_in_one.py --dry-run`
-
-## Website quickstart
-
-Run the docs portal locally:
-
-`cd website && npm install && npm run docs:dev`
-
-Build production static output:
-
-`cd website && npm run docs:build`
-
-Refresh mirrored technical docs:
-
-`python website/scripts/sync_reference_docs.py`
 
 ## Quick commands
 
@@ -58,7 +46,6 @@ Available commands:
 - `python -m unittest discover -s tests -p "test_*.py"`
 - `python scripts/ci_validate_skill.py --skills-root skills`
 - `python scripts/install_all_in_one.py --dry-run`
-- `cd website && npm run docs:build`
 
 5. Run stack packs when applicable:
 - Node: `python skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .`

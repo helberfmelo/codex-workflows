@@ -36,6 +36,27 @@ jobs:
             --pack skills/codex-workflows/packs/antigravity-compat/.agent \
             --template-full skills/codex-workflows/templates/.agent
 
+  website-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: "website/package-lock.json"
+
+      - name: Install docs dependencies
+        working-directory: website
+        run: npm ci
+
+      - name: Build docs portal
+        working-directory: website
+        run: npm run docs:build
+
   stack-validation-matrix:
     runs-on: ubuntu-latest
     strategy:

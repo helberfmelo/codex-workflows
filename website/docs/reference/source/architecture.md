@@ -1,3 +1,5 @@
+# Source: docs/ARCHITECTURE.md
+
 # Architecture
 
 ## Goal
@@ -76,11 +78,6 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 12. All-in-One Installation
 - `scripts/install_all_in_one.py`
 - One-command installer orchestration for core + domain + stack packs
-
-13. Web Documentation Portal
-- `website/` (VitePress portal)
-- `.github/workflows/docs.yml` for GitHub Pages deployment
-- `website/scripts/sync_reference_docs.py` for mirrored technical references
 
 ## Execution Model
 
