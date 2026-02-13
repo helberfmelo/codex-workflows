@@ -20,6 +20,8 @@ Pattern recommande:
 
 Profil par defaut: `codex-native`.
 
+Compatibilite uniquement opt-in via `--profile antigravity-compat`.
+
 Workflows natifs reecrits:
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`

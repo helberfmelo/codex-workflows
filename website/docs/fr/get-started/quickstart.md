@@ -9,6 +9,8 @@
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
 ```
 
+Ce chemin par defaut est independant du pack de compatibilite.
+
 Compatibilite:
 
 ```bash

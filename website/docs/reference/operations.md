@@ -1,6 +1,20 @@
 # Operations
 
-Unified operations command:
+Unified repository CLI:
+
+```bash
+python scripts/codexwf.py <command>
+```
+
+Main commands:
+
+- `install`
+- `init`
+- `status`
+- `validate`
+- `docs-sync`
+
+Legacy skill-ops command:
 
 ```bash
 python skills/codex-workflows/scripts/codex_workflows_ops.py <command>

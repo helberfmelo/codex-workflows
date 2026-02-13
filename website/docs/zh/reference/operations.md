@@ -1,21 +1,24 @@
 # 运维
 
-统一命令：
+仓库统一 CLI：
 
 ```bash
-python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
+python scripts/codexwf.py <command>
 ```
 
 主要命令：
 
-- `build-manifest`
-- `check-drift`
-- `check-workflows`
-- `check-codex-native`
-- `benchmark`
-- `bootstrap`
-- `sync-pack`
-- `release`
+- `install`
+- `init`
+- `status`
+- `validate`
+- `docs-sync`
+
+技能遗留命令：
+
+```bash
+python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
+```
 
 推荐例行流程：
 

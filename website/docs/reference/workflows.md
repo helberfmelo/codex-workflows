@@ -16,6 +16,8 @@ Supported catalog:
 
 Default bootstrap profile: `codex-native`.
 
+Compatibility is opt-in via `--profile antigravity-compat`.
+
 `codex-native` includes rewritten workflow contracts in:
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`

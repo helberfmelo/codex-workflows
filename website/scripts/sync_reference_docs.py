@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync selected root docs into website/docs/reference/source."""
+"""Sync selected root docs into website/docs/*/reference/source."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -9,6 +9,7 @@ DOC_MAP = {
     "ARCHITECTURE.md": "architecture.md",
     "COMPARISON.md": "comparison.md",
     "WORKFLOW_CONTRACT.md": "workflow-contract.md",
+    "COMMUNITY.md": "community.md",
     "OPERATIONS.md": "operations.md",
     "RELEASE.md": "release.md",
     "ROBUSTNESS-CHECKLIST.md": "robustness-checklist.md",
@@ -23,6 +24,9 @@ def main() -> None:
     target_roots = [
         repo / "website" / "docs" / "reference" / "source",
         repo / "website" / "docs" / "pt" / "reference" / "source",
+        repo / "website" / "docs" / "es" / "reference" / "source",
+        repo / "website" / "docs" / "fr" / "reference" / "source",
+        repo / "website" / "docs" / "zh" / "reference" / "source",
     ]
     for root in target_roots:
         root.mkdir(parents=True, exist_ok=True)

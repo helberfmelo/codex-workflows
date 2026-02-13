@@ -31,6 +31,26 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - Operations CLI command:
   - `python skills/codex-workflows/scripts/codex_workflows_ops.py check-codex-native`
 - Website docs updates (EN/PT/ES/FR/ZH) to reflect codex-native default and quality validation steps.
+- Source docs parity for all website locales (EN/PT/ES/FR/ZH), including:
+  - `architecture`, `comparison`, `workflow-contract`, `community`, `operations`, `release`, `robustness-checklist`, `compatibility`, `performance`.
+- Codex-native profile independence:
+  - `bootstrap_project_agent.py` now sources `templates/codex-native/.agent` directly for default profile.
+  - Added codex-native profile assets:
+    - `skills/codex-workflows/templates/codex-native/.agent/ARCHITECTURE.md`
+    - `skills/codex-workflows/templates/codex-native/.agent/rules/CODEX.md`
+    - `skills/codex-workflows/templates/codex-native/.agent/scripts/auto_preview.py`
+- Unified repository CLI:
+  - `scripts/codexwf.py` with `install`, `init`, `status`, `validate`, and `docs-sync`.
+  - tests: `tests/test_codexwf_cli.py`
+- Public governance templates:
+  - `.github/ISSUE_TEMPLATE/bug_report.yml`
+  - `.github/ISSUE_TEMPLATE/feature_request.yml`
+  - `.github/ISSUE_TEMPLATE/config.yml`
+  - `.github/PULL_REQUEST_TEMPLATE.md`
+  - `.github/CODEOWNERS`
+- Community docs:
+  - `docs/COMMUNITY.md`
+  - `website/docs/reference/community.md` + locale variants (`pt`, `es`, `fr`, `zh`)
 
 ## [1.1.0] - 2026-02-13
 

@@ -14,6 +14,8 @@ Perfil padrao (`codex-native`):
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
 ```
 
+Este caminho padrao e independente do pack de compatibilidade.
+
 Perfil de compatibilidade:
 
 ```bash

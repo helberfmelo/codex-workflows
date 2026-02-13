@@ -20,6 +20,8 @@ Patron recomendado:
 
 Perfil por defecto: `codex-native`.
 
+Compatibilidad solo opt-in via `--profile antigravity-compat`.
+
 Workflows nativos reescritos:
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`

@@ -16,6 +16,8 @@ Catalogo suportado:
 
 Perfil padrao de bootstrap: `codex-native`.
 
+Compatibilidade e opt-in via `--profile antigravity-compat`.
+
 Os workflows nativos reescritos ficam em:
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`

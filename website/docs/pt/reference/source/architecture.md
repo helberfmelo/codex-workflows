@@ -39,7 +39,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `scripts/codex_workflows_ops.py`
 
 5. Project Template
-- `templates/codex-native/.agent/...` (default profile overlay for rewritten workflows)
+- `templates/codex-native/.agent/...` (default independent codex-native profile)
 - `templates/.agent/...` (full template baseline)
 - `templates/minimal/.agent/...` (lightweight starter)
 - Bootstraps local workflow files for projects without `.agent`
@@ -80,6 +80,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 
 12. All-in-One Installation
 - `scripts/install_all_in_one.py`
+- `scripts/codexwf.py` (`install` command)
 - One-command installer orchestration for core + domain + stack packs
 
 13. Web Documentation Portal
@@ -92,6 +93,12 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `composer.json`
 - `scripts/composer_install.php`
 - Optional PHP-native command surface for invoking official Codex installer
+
+15. Community Governance
+- `.github/ISSUE_TEMPLATE/*`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `.github/CODEOWNERS`
+- `docs/COMMUNITY.md`
 
 ## Execution Model
 

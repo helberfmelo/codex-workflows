@@ -1,21 +1,24 @@
 # Operations
 
-Commande unifiee:
+CLI unifiee du depot:
 
 ```bash
-python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
+python scripts/codexwf.py <command>
 ```
 
 Commandes principales:
 
-- `build-manifest`
-- `check-drift`
-- `check-workflows`
-- `check-codex-native`
-- `benchmark`
-- `bootstrap`
-- `sync-pack`
-- `release`
+- `install`
+- `init`
+- `status`
+- `validate`
+- `docs-sync`
+
+Commande legacy du skill:
+
+```bash
+python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
+```
 
 Routine recommandee:
 

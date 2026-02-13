@@ -20,6 +20,8 @@
 
 默认 profile：`codex-native`。
 
+兼容模式仅在显式 `--profile antigravity-compat` 时启用。
+
 原生重写工作流路径：
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`

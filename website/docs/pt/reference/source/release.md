@@ -22,6 +22,10 @@
 6. Router benchmark:
 `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000`
 
+Unified shortcut:
+
+`python scripts/codexwf.py validate --tests --docs`
+
 ## Automated release (recommended)
 
 Dry-run changelog cut:

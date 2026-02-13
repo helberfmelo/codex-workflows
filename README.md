@@ -56,7 +56,7 @@ skills/
       routing/intent-matrix.md
       orchestration/phase-gates.md
       templates/output-templates.md
-    templates/codex-native/.agent/workflows/** (codex-native overrides)
+    templates/codex-native/.agent/** (default codex-native profile)
     templates/.agent/** (full template baseline)
     templates/minimal/.agent/** (lightweight starter)
   codex-backend-pack/
@@ -67,6 +67,7 @@ skills/
   codex-python-validation-pack/
   codex-rust-validation-pack/
 scripts/
+  codexwf.py
   release_automation.py
   install_all_in_one.py
 examples/
@@ -123,6 +124,12 @@ This installs the orchestration core plus all domain and stack packs in one comm
 
 ```bash
 python scripts/install_all_in_one.py
+```
+
+Unified CLI alternative:
+
+```bash
+python scripts/codexwf.py install
 ```
 
 The helper script:
@@ -185,7 +192,13 @@ composer codex:install-all -- --ref=v1.1.0
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
 ```
 
-This default profile is `codex-native` and overlays all 11 workflow files (`/brainstorm` to `/ui-ux-pro-max`) with Codex-specific execution contracts.
+This default profile is `codex-native` and uses an independent codex-native `.agent` template with all 11 rewritten workflow contracts (`/brainstorm` to `/ui-ux-pro-max`).
+
+Equivalent via unified CLI (inside this repository):
+
+```bash
+python scripts/codexwf.py init --project .
+```
 
 Compatibility profile:
 
@@ -247,6 +260,14 @@ python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 
 python ~/.codex/skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .
 python ~/.codex/skills/codex-python-validation-pack/scripts/validate_python_stack.py --project .
 python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project .
+```
+
+10. Unified maintenance commands:
+
+```bash
+python scripts/codexwf.py status
+python scripts/codexwf.py validate --tests
+python scripts/codexwf.py docs-sync --build
 ```
 
 ## Web Portal (/website)
@@ -323,9 +344,9 @@ See `docs/COMPARISON.md` for a detailed comparison and adaptation strategy.
 
 ## Compatibility Scope
 
-This repository includes a full compatibility pack under `skills/codex-workflows/packs/antigravity-compat/.agent` copied from a local Antigravity installation baseline to enable near-equivalent structure and workflows in Codex projects.
+This repository includes a full compatibility pack under `skills/codex-workflows/packs/antigravity-compat/.agent` for optional interoperability with Antigravity-style `.agent` projects.
 
-The default bootstrap path is now `codex-native`, which keeps compatibility as a baseline but applies native workflow rewrites from `skills/codex-workflows/templates/codex-native/.agent/workflows`.
+The default bootstrap path `codex-native` is independent from the compatibility pack and is sourced from `skills/codex-workflows/templates/codex-native/.agent`.
 
 ## Domain Packs
 
@@ -380,6 +401,16 @@ GitHub Actions release workflow:
 ## Contributing
 
 See `CONTRIBUTING.md`.
+
+## Community and Governance
+
+- Issue templates:
+  - `.github/ISSUE_TEMPLATE/bug_report.yml`
+  - `.github/ISSUE_TEMPLATE/feature_request.yml`
+- Pull request template:
+  - `.github/PULL_REQUEST_TEMPLATE.md`
+- Code ownership:
+  - `.github/CODEOWNERS`
 
 ## Changelog
 

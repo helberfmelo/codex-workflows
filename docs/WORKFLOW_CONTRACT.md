@@ -25,7 +25,7 @@ Validation:
 
 ## Codex-native track contract
 
-The default bootstrap profile overlays:
+The default bootstrap profile uses:
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
 

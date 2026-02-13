@@ -16,6 +16,8 @@ Default profile (`codex-native`):
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
 ```
 
+This default path is independent from the compatibility pack.
+
 Compatibility profile:
 
 ```bash

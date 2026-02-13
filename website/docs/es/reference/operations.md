@@ -1,21 +1,24 @@
 # Operaciones
 
-Comando unificado:
+CLI unificada del repositorio:
 
 ```bash
-python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
+python scripts/codexwf.py <command>
 ```
 
 Comandos principales:
 
-- `build-manifest`
-- `check-drift`
-- `check-workflows`
-- `check-codex-native`
-- `benchmark`
-- `bootstrap`
-- `sync-pack`
-- `release`
+- `install`
+- `init`
+- `status`
+- `validate`
+- `docs-sync`
+
+Comando legado del skill:
+
+```bash
+python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
+```
 
 Rutina recomendada:
 

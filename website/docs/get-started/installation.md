@@ -60,6 +60,12 @@ Specific tag/ref:
 python scripts/install_all_in_one.py --ref v1.1.0
 ```
 
+Unified CLI alternative:
+
+```bash
+python scripts/codexwf.py install
+```
+
 ## Minimal installation
 
 Install only the core workflow skill:
@@ -75,6 +81,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 1. Restart VS Code/Codex.
 2. Activate with an explicit prompt:
 `Use codex-workflows in /orchestrate and <objective>`.
+
+Optional local bootstrap via unified CLI:
+
+```bash
+python scripts/codexwf.py init --project .
+```
 
 ## Optional Composer channel (PHP users)
 

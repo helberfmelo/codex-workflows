@@ -4,6 +4,20 @@
 
 Use this runbook to maintain `codex-workflows`.
 
+## Unified CLI
+
+Primary entrypoint in this repository:
+
+`python scripts/codexwf.py <command>`
+
+Main commands:
+
+- `install`
+- `init`
+- `status`
+- `validate`
+- `docs-sync`
+
 ## Distribution quickstart
 
 Install all packs in one command:
@@ -36,7 +50,7 @@ Refresh mirrored technical docs:
 
 `python website/scripts/sync_reference_docs.py`
 
-## Quick commands
+## Legacy skill-ops commands
 
 Unified CLI:
 

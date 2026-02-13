@@ -15,10 +15,7 @@ def profile_sources(skill_root: pathlib.Path, profile: str) -> list[pathlib.Path
     if profile == "antigravity-compat":
         return [skill_root / "packs" / "antigravity-compat" / ".agent"]
     if profile == "codex-native":
-        return [
-            skill_root / "packs" / "antigravity-compat" / ".agent",
-            skill_root / "templates" / "codex-native" / ".agent",
-        ]
+        return [skill_root / "templates" / "codex-native" / ".agent"]
     raise ValueError(f"Unsupported profile: {profile}")
 
 

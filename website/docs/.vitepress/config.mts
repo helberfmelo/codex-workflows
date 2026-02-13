@@ -52,6 +52,7 @@ const enSidebar = [
       { text: "Operations", link: "/reference/operations" },
       { text: "Release", link: "/reference/release" },
       { text: "Composer", link: "/reference/composer" },
+      { text: "Community", link: "/reference/community" },
       { text: "Examples", link: "/reference/examples" },
       { text: "Source Docs", link: "/reference/source" }
     ]
@@ -79,6 +80,7 @@ const ptSidebar = [
       { text: "Operacoes", link: "/pt/reference/operations" },
       { text: "Release", link: "/pt/reference/release" },
       { text: "Composer", link: "/pt/reference/composer" },
+      { text: "Comunidade", link: "/pt/reference/community" },
       { text: "Exemplos", link: "/pt/reference/examples" },
       { text: "Documentos Fonte", link: "/pt/reference/source" }
     ]
@@ -106,6 +108,7 @@ const esSidebar = [
       { text: "Operaciones", link: "/es/reference/operations" },
       { text: "Release", link: "/es/reference/release" },
       { text: "Composer", link: "/es/reference/composer" },
+      { text: "Comunidad", link: "/es/reference/community" },
       { text: "Ejemplos", link: "/es/reference/examples" },
       { text: "Documentos Fuente", link: "/es/reference/source" }
     ]
@@ -133,6 +136,7 @@ const frSidebar = [
       { text: "Operations", link: "/fr/reference/operations" },
       { text: "Release", link: "/fr/reference/release" },
       { text: "Composer", link: "/fr/reference/composer" },
+      { text: "Communaute", link: "/fr/reference/community" },
       { text: "Exemples", link: "/fr/reference/examples" },
       { text: "Docs Source", link: "/fr/reference/source" }
     ]
@@ -160,6 +164,7 @@ const zhSidebar = [
       { text: "运维", link: "/zh/reference/operations" },
       { text: "发布", link: "/zh/reference/release" },
       { text: "Composer", link: "/zh/reference/composer" },
+      { text: "社区", link: "/zh/reference/community" },
       { text: "示例", link: "/zh/reference/examples" },
       { text: "源文档", link: "/zh/reference/source" }
     ]

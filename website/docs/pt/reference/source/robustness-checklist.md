@@ -51,6 +51,8 @@ Evidence: `docs/WORKFLOW_CONTRACT.md`
 Evidence: `website/`, `.github/workflows/docs.yml`
 - [x] Web docs are multilingual (EN + PT-BR + ES + FR + ZH)
 Evidence: `website/docs/index.md`, `website/docs/pt/index.md`, `website/docs/es/index.md`, `website/docs/fr/index.md`, `website/docs/zh/index.md`
+- [x] Public governance templates exist
+Evidence: `.github/ISSUE_TEMPLATE/bug_report.yml`, `.github/ISSUE_TEMPLATE/feature_request.yml`, `.github/PULL_REQUEST_TEMPLATE.md`, `.github/CODEOWNERS`
 
 ## Quality and CI
 

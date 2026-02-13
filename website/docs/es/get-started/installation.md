@@ -22,8 +22,20 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
     skills/codex-rust-validation-pack
 ```
 
+Alternativa con CLI unificada:
+
+```bash
+python scripts/codexwf.py install
+```
+
 ## Canal Composer opcional
 
 ```bash
 composer codex:install-all
+```
+
+Bootstrap local opcional:
+
+```bash
+python scripts/codexwf.py init --project .
 ```

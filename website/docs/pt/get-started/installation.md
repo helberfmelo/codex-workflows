@@ -30,6 +30,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python scripts/install_all_in_one.py
 ```
 
+Alternativa via CLI unificada:
+
+```bash
+python scripts/codexwf.py install
+```
+
 Dry run:
 
 ```bash
@@ -49,6 +55,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 1. Reinicie VS Code/Codex.
 2. Ative com prompt explicito:
 `Use codex-workflows em /orchestrate e <objetivo>`.
+
+Bootstrap local opcional via CLI unificada:
+
+```bash
+python scripts/codexwf.py init --project .
+```
 
 ## Canal opcional via Composer
 

@@ -9,6 +9,8 @@
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
 ```
 
+该默认路径独立于兼容包。
+
 兼容模式：
 
 ```bash

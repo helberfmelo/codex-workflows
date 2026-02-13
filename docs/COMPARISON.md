@@ -62,9 +62,11 @@ Bootstrap now defaults to:
 
 `bootstrap_project_agent.py --profile codex-native`
 
-This profile uses compatibility baseline files and overlays all 11 workflow definitions from:
+This profile boots from an independent codex-native template root:
 
-- `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
+- `skills/codex-workflows/templates/codex-native/.agent`
+- with all 11 rewritten workflow definitions in `workflows/*.md`
+- `antigravity-compat` remains opt-in interoperability mode.
 
 Quality is enforced by:
 

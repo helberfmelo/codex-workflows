@@ -22,8 +22,20 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
     skills/codex-rust-validation-pack
 ```
 
+统一 CLI 方式：
+
+```bash
+python scripts/codexwf.py install
+```
+
 ## 可选 Composer 通道
 
 ```bash
 composer codex:install-all
+```
+
+可选本地 bootstrap：
+
+```bash
+python scripts/codexwf.py init --project .
 ```

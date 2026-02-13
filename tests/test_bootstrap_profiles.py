@@ -34,6 +34,11 @@ class BootstrapProfileTests(unittest.TestCase):
             wf_text = wf.read_text(encoding="utf-8")
             self.assertIn("Codex-Native Delivery Conductor", wf_text)
             self.assertNotEqual(wf_text, PACK_ORCHESTRATE.read_text(encoding="utf-8"))
+            self.assertTrue((project / ".agent" / "ARCHITECTURE.md").exists())
+            self.assertTrue((project / ".agent" / "rules" / "CODEX.md").exists())
+            self.assertTrue((project / ".agent" / "scripts" / "auto_preview.py").exists())
+            self.assertFalse((project / ".agent" / "agents").exists())
+            self.assertFalse((project / ".agent" / "skills").exists())
 
     def test_minimal_profile_bootstrap(self):
         with tempfile.TemporaryDirectory() as tmp:

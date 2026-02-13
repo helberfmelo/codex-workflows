@@ -9,8 +9,9 @@ The first is the compatibility pack and the second is the compatibility baseline
 
 Default project bootstrap now uses:
 
-- `skills/codex-workflows/templates/codex-native/.agent/workflows` as overlay
-- on top of compatibility baseline files
+- `skills/codex-workflows/templates/codex-native/.agent` as independent source
+
+Compatibility content is only used when `--profile antigravity-compat` is explicitly selected.
 
 ## Source of truth
 

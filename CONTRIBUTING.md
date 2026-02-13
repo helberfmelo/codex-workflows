@@ -17,6 +17,7 @@ Thanks for contributing to `codex-workflows`.
 - `skills/codex-workflows/references/workflow-playbook.md` is kept in sync.
 - `README.md` examples remain valid.
 - `CHANGELOG.md` has an entry under `Unreleased`.
+- Pull request uses `.github/PULL_REQUEST_TEMPLATE.md`.
 
 ## Style Guidelines
 
@@ -48,3 +49,16 @@ Open an issue with:
 - Expected behavior
 - Actual behavior
 - Minimal reproduction
+
+Issue templates:
+
+- `.github/ISSUE_TEMPLATE/bug_report.yml`
+- `.github/ISSUE_TEMPLATE/feature_request.yml`
+
+## Recommended Validation
+
+Run unified CLI validation before PR:
+
+```bash
+python scripts/codexwf.py validate --tests --docs
+```

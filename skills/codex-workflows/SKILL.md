@@ -75,7 +75,7 @@ If local `.agent` exists, prioritize local instructions in this order:
 
 If local `.agent` is missing, use repository templates:
 
-- `templates/codex-native/.agent/` (codex-native overlay, default profile with rewritten workflows)
+- `templates/codex-native/.agent/` (default codex-native profile with rewritten workflows)
 - `templates/.agent/` (full Antigravity-compatible template baseline)
 - `templates/minimal/.agent/` (lightweight starter profile)
 
@@ -85,7 +85,7 @@ Bootstrap these templates with `scripts/bootstrap_project_agent.py`.
 
 Use `scripts/bootstrap_project_agent.py` with one of:
 
-- `--profile codex-native` (default): compatibility base plus codex-native workflow overrides.
+- `--profile codex-native` (default): independent codex-native template.
 - `--profile antigravity-compat`: full compatibility pack with agents, skills, workflows, scripts, rules, and shared assets.
 - `--profile minimal`: lightweight starter `.agent` template.
 

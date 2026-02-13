@@ -13,6 +13,7 @@ Available files:
 - [Architecture](/reference/source/architecture)
 - [Comparison](/reference/source/comparison)
 - [Workflow Contract](/reference/source/workflow-contract)
+- [Community](/reference/source/community)
 - [Operations](/reference/source/operations)
 - [Release](/reference/source/release)
 - [Robustness Checklist](/reference/source/robustness-checklist)
