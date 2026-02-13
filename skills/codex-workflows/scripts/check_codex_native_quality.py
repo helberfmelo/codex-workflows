@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from difflib import SequenceMatcher
 from pathlib import Path
 
 
@@ -89,7 +90,7 @@ def normalize_text(content: str) -> str:
     return content.replace("\r\n", "\n").replace("\r", "\n").strip()
 
 
-def validate(native_dir: Path, compat_dir: Path, min_lines: int) -> list[str]:
+def validate(native_dir: Path, compat_dir: Path, min_lines: int, max_similarity: float) -> list[str]:
     errors: list[str] = []
 
     for filename, required_sections in EXPECTED_WORKFLOWS.items():
@@ -121,6 +122,13 @@ def validate(native_dir: Path, compat_dir: Path, min_lines: int) -> list[str]:
 
         if native_norm == compat_norm:
             errors.append(f"native workflow is identical to compat baseline: {filename}")
+            continue
+
+        similarity = SequenceMatcher(None, native_norm, compat_norm).ratio()
+        if similarity > max_similarity:
+            errors.append(
+                f"native workflow too similar to compat baseline ({similarity:.4f} > {max_similarity:.4f}): {filename}"
+            )
 
     extra_native = {p.name for p in native_dir.glob("*.md")} - set(EXPECTED_WORKFLOWS)
     if extra_native:
@@ -140,13 +148,19 @@ def main() -> None:
         help="packs/antigravity-compat/.agent/workflows directory",
     )
     parser.add_argument("--min-lines", type=int, default=45)
+    parser.add_argument("--max-similarity", type=float, default=0.35)
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parents[1]
     native_dir = Path(args.native).resolve() if args.native else root / "templates" / "codex-native" / ".agent" / "workflows"
     compat_dir = Path(args.compat).resolve() if args.compat else root / "packs" / "antigravity-compat" / ".agent" / "workflows"
 
-    errors = validate(native_dir=native_dir, compat_dir=compat_dir, min_lines=args.min_lines)
+    errors = validate(
+        native_dir=native_dir,
+        compat_dir=compat_dir,
+        min_lines=args.min_lines,
+        max_similarity=args.max_similarity,
+    )
     if errors:
         print("FAIL: codex-native quality check failed")
         for error in errors:
@@ -158,4 +172,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

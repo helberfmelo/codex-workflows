@@ -1,59 +1,109 @@
 ---
-description: Create new application command. Triggers App Builder skill and starts interactive dialogue with user.
+description: Codex-native build workflow for creating new features or projects with phased delivery and verifiable outcomes.
 ---
 
-# /create - Create Application
+# /create - Codex-Native Build Pipeline
 
 $ARGUMENTS
 
 ---
 
-## Task
+## Objective
 
-This command starts a new application creation process.
+Build new functionality from approved requirements with controlled execution.
 
-### Steps:
+Use `/create` for:
 
-1. **Request Analysis**
-   - Understand what the user wants
-   - If information is missing, use `conversation-manager` skill to ask
-
-2. **Project Planning**
-   - Use `project-planner` agent for task breakdown
-   - Determine tech stack
-   - Plan file structure
-   - Create plan file and proceed to building
-
-3. **Application Building (After Approval)**
-   - Orchestrate with `app-builder` skill
-   - Coordinate expert agents:
-     - `database-architect` → Schema
-     - `backend-specialist` → API
-     - `frontend-specialist` → UI
-
-4. **Preview**
-   - Start with `auto_preview.py` when complete
-   - Present URL to user
+- new feature modules;
+- new service components;
+- first implementation pass after planning.
 
 ---
 
-## Usage Examples
+## Entry Criteria
 
-```
-/create blog site
-/create e-commerce app with product listing and cart
-/create todo app
-/create Instagram clone
-/create crm system with customer management
+Before implementation:
+
+1. confirm target behavior;
+2. confirm boundaries and non-goals;
+3. identify validation commands;
+4. check if a plan exists (`docs/PLAN-*.md`).
+
+If scope is unclear, route to `/plan` first.
+
+---
+
+## Delivery Phases
+
+### Phase 1: Scaffold and Contracts
+
+- create base structure;
+- define interfaces/contracts;
+- add minimal documentation stubs where needed.
+
+### Phase 2: Core Implementation
+
+- implement primary path first;
+- keep changes in small slices;
+- avoid unrelated refactors.
+
+### Phase 3: Hardening
+
+- error handling;
+- edge-case coverage;
+- security and data validation checks.
+
+### Phase 4: Verification
+
+- run deterministic checks;
+- map results to acceptance criteria.
+
+---
+
+## Implementation Rules
+
+- preserve backward compatibility unless explicitly changed;
+- keep commit-ready cohesion by domain;
+- annotate assumptions in the report;
+- stop on critical failing checks and report blocker.
+
+---
+
+## Output Contract
+
+```markdown
+## Create Report
+
+### Scope Implemented
+[what was built]
+
+### Files Added/Changed
+- `path/to/file`: [purpose]
+
+### Phase Results
+1. Scaffold and Contracts: [done|partial]
+2. Core Implementation: [done|partial]
+3. Hardening: [done|partial]
+4. Verification: [done|partial]
+
+### Verification Evidence
+- `[command]` -> [pass|fail]
+
+### Acceptance Mapping
+- [criterion]: [met|not met]
+
+### Open Items
+- [remaining item]
 ```
 
 ---
 
-## Before Starting
+## Quality Bar
 
-If request is unclear, ask these questions:
-- What type of application?
-- What are the basic features?
-- Who will use it?
+Before closing:
 
-Use defaults, add details later.
+- all changed files listed;
+- acceptance criteria explicitly mapped;
+- verification commands executed;
+- no hidden TODOs without disclosure.
+

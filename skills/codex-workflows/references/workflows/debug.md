@@ -1,103 +1,155 @@
 ---
-description: Debugging command. Activates DEBUG mode for systematic problem investigation.
+description: Codex-native debugging workflow with hypothesis tracking, deterministic checks, and root-cause closure.
 ---
 
-# /debug - Systematic Problem Investigation
+# /debug - Codex-Native Incident Investigation
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## Objective
 
-This command activates DEBUG mode for systematic investigation of issues, errors, or unexpected behavior.
+Resolve failures through evidence, not guesswork.
 
----
+Use this workflow for:
 
-## Behavior
-
-When `/debug` is triggered:
-
-1. **Gather information**
-   - Error message
-   - Reproduction steps
-   - Expected vs actual behavior
-   - Recent changes
-
-2. **Form hypotheses**
-   - List possible causes
-   - Order by likelihood
-
-3. **Investigate systematically**
-   - Test each hypothesis
-   - Check logs, data flow
-   - Use elimination method
-
-4. **Fix and prevent**
-   - Apply fix
-   - Explain root cause
-   - Add prevention measures
+- runtime errors;
+- failing tests with unclear cause;
+- regressions after recent changes;
+- production incidents requiring safe remediation.
 
 ---
 
-## Output Format
+## Investigation Protocol
+
+### Step 1: Symptom Capture
+
+Record:
+
+1. observed behavior;
+2. expected behavior;
+3. where it occurs (environment, endpoint, command, screen);
+4. first known bad point in time (if known).
+
+If reproduction is unclear, stop and collect reproducible steps first.
+
+---
+
+### Step 2: Evidence Collection
+
+Collect concrete evidence before proposing fixes:
+
+- stack traces and logs;
+- failing command output;
+- touched files and recent diffs;
+- environment variables and configuration deltas.
+
+Do not hide missing evidence. Mark unknowns explicitly.
+
+---
+
+### Step 3: Hypothesis Backlog
+
+Create at least 3 ranked hypotheses:
+
+1. most likely;
+2. plausible alternative;
+3. edge-condition possibility.
+
+For each hypothesis define:
+
+- validation step;
+- expected observation if true;
+- next move if false.
+
+---
+
+### Step 4: Deterministic Validation
+
+Test hypotheses one by one.
+
+Rules:
+
+- change one variable at a time;
+- log pass/fail per test step;
+- eliminate disproven hypotheses explicitly.
+
+If all hypotheses fail, generate a new set based on new evidence and continue.
+
+---
+
+### Step 5: Fix, Guardrail, Verification
+
+After root cause is confirmed:
+
+1. apply the minimal safe fix;
+2. add guardrail:
+- test
+- assertion
+- lint/type rule
+- monitoring alert
+3. re-run relevant checks and show results.
+
+---
+
+## Root Cause Closure Criteria
+
+Only mark as resolved when all are true:
+
+- root cause is clearly stated;
+- fix is linked to root cause;
+- regression guardrail added or justified;
+- verification commands pass.
+
+---
+
+## Output Contract
+
+Return:
 
 ```markdown
-## 🔍 Debug: [Issue]
+## Debug Report
 
-### 1. Symptom
-[What's happening]
+### Symptom
+[what is broken]
 
-### 2. Information Gathered
-- Error: `[error message]`
-- File: `[filepath]`
-- Line: [line number]
+### Reproduction
+1. [step]
+2. [step]
+3. [step]
 
-### 3. Hypotheses
-1. ❓ [Most likely cause]
-2. ❓ [Second possibility]
-3. ❓ [Less likely cause]
+### Evidence
+- [log/trace/command result]
 
-### 4. Investigation
+### Hypotheses
+1. [hypothesis] - [status: confirmed|rejected]
+2. [hypothesis] - [status: confirmed|rejected]
+3. [hypothesis] - [status: confirmed|rejected]
 
-**Testing hypothesis 1:**
-[What I checked] → [Result]
+### Root Cause
+[single precise cause statement]
 
-**Testing hypothesis 2:**
-[What I checked] → [Result]
+### Fix Applied
+- `path/to/file`: [change summary]
 
-### 5. Root Cause
-🎯 **[Explanation of why this happened]**
+### Guardrail
+- [test/assertion/check added]
 
-### 6. Fix
-```[language]
-// Before
-[broken code]
+### Verification
+- `[command]` -> [pass|fail]
 
-// After
-[fixed code]
-```
-
-### 7. Prevention
-🛡️ [How to prevent this in the future]
+### Residual Risk
+- [risk or "none identified"]
 ```
 
 ---
 
-## Examples
+## Usage Examples
 
+```text
+/debug login endpoint returns 500 on valid credentials
+/debug flaky ci failure in python type checks
+/debug rust binary panics when config file is missing
 ```
-/debug login not working
-/debug API returns 500
-/debug form doesn't submit
-/debug data not saving
-```
 
----
-
-## Key Principles
-
-- **Ask before assuming** - get full error context
-- **Test hypotheses** - don't guess randomly
-- **Explain why** - not just what to fix
-- **Prevent recurrence** - add tests, validation

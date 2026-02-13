@@ -21,10 +21,14 @@ Evidence: `skills/codex-workflows/templates/codex-native/.agent/workflows/`
 Evidence: `skills/codex-workflows/templates/.agent/workflows/orchestrate.md`
 - [x] Workflow parity checker exists
 Evidence: `skills/codex-workflows/scripts/check_workflow_parity.py`
+- [x] References mirror codex-native contracts (not compat workflows)
+Evidence: `skills/codex-workflows/references/workflows/*.md`, `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
 - [x] Codex-native workflow set is fully rewritten
 Evidence: `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
 - [x] Codex-native quality checker exists
 Evidence: `skills/codex-workflows/scripts/check_codex_native_quality.py`
+- [x] Codex-native similarity threshold enforced
+Evidence: `skills/codex-workflows/scripts/check_codex_native_quality.py --max-similarity`
 
 ## Sync and routing automation
 

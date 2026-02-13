@@ -61,5 +61,8 @@ python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
   --native ~/.codex/skills/codex-workflows/templates/codex-native/.agent/workflows \
-  --compat ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+  --compat ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows \
+  --max-similarity 0.35
 ```
+
+

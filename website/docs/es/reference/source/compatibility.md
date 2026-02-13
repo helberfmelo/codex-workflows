@@ -34,9 +34,11 @@ Use a local Antigravity `.agent` snapshot as input source.
 `python skills/codex-workflows/scripts/check_compat_drift.py --manifest skills/codex-workflows/compat/manifest.json --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent`
 
 5. Validate workflow parity:
-`python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+`python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --native skills/codex-workflows/templates/codex-native/.agent/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
 
 ## Notes
 
 - `.pyc` and `__pycache__` files are intentionally excluded from manifests.
 - Compatibility checks should pass locally before opening a release PR.
+- `references/workflows` is part of the codex-native track, not the compatibility source of truth.
+

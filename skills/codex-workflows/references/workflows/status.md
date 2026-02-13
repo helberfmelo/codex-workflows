@@ -1,86 +1,86 @@
 ---
-description: Display agent and project status. Progress tracking and status board.
+description: Codex-native status workflow for producing a clear delivery snapshot with progress, risks, and next steps.
 ---
 
-# /status - Show Status
+# /status - Codex-Native Delivery Snapshot
 
 $ARGUMENTS
 
 ---
 
-## Task
+## Objective
 
-Show current project and agent status.
+Provide a decision-ready view of current project state.
 
-### What It Shows
+Use `/status` for:
 
-1. **Project Info**
-   - Project name and path
-   - Tech stack
-   - Current features
-
-2. **Agent Status Board**
-   - Which agents are running
-   - Which tasks are completed
-   - Pending work
-
-3. **File Statistics**
-   - Files created count
-   - Files modified count
-
-4. **Preview Status**
-   - Is server running
-   - URL
-   - Health check
+- sprint or milestone checkpoints;
+- release readiness checks;
+- stakeholder updates.
 
 ---
 
-## Example Output
+## Required Inputs
 
-```
-=== Project Status ===
+Collect:
 
-📁 Project: my-ecommerce
-📂 Path: C:/projects/my-ecommerce
-🏷️ Type: nextjs-ecommerce
-📊 Status: active
+1. current objective(s);
+2. completed work evidence;
+3. pending work;
+4. blockers and risks;
+5. verification state.
 
-🔧 Tech Stack:
-   Framework: next.js
-   Database: postgresql
-   Auth: clerk
-   Payment: stripe
+If evidence is missing, mark the item as unverified.
 
-✅ Features (5):
-   • product-listing
-   • cart
-   • checkout
-   • user-auth
-   • order-history
+---
 
-⏳ Pending (2):
-   • admin-panel
-   • email-notifications
+## Reporting Dimensions
 
-📄 Files: 73 created, 12 modified
+Report status by:
 
-=== Agent Status ===
+- scope progress (`done|in-progress|blocked`);
+- quality signal (tests/checks);
+- risk level (`low|medium|high`);
+- timeline confidence (`high|medium|low`).
 
-✅ database-architect → Completed
-✅ backend-specialist → Completed
-🔄 frontend-specialist → Dashboard components (60%)
-⏳ test-engineer → Waiting
+---
 
-=== Preview ===
+## Output Contract
 
-🌐 URL: http://localhost:3000
-💚 Health: OK
+```markdown
+## Status Report
+
+### Objective
+[current delivery objective]
+
+### Progress
+- Done: [...]
+- In progress: [...]
+- Blocked: [...]
+
+### Verification State
+- `[command]` -> [pass|fail|not run]
+
+### Risks
+- [risk]: [impact] / [mitigation]
+
+### Timeline Confidence
+- Confidence: [high|medium|low]
+- Reason: ...
+
+### Next 3 Actions
+1. ...
+2. ...
+3. ...
 ```
 
 ---
 
-## Technical
+## Quality Bar
 
-Status uses these scripts:
-- `python .agent/scripts/session_manager.py status`
-- `python .agent/scripts/auto_preview.py status`
+Before closing:
+
+- progress statements backed by evidence;
+- blockers are explicit;
+- next actions are concrete and ordered.
+

@@ -2,46 +2,58 @@
 
 # Workflow Contract
 
-The repository now has two workflow tracks:
+The repository has two explicit workflow tracks:
 
-1. `compatibility track` (strict parity)
-2. `codex-native track` (default profile)
+1. `codex-native` track (default runtime and references)
+2. `compatibility` track (opt-in pack)
 
-## Compatibility track contract
+## Codex-native contract
 
-The following locations must stay byte-parity aligned:
+The following locations must stay byte-aligned:
 
 1. `skills/codex-workflows/references/workflows/*.md`
-2. `skills/codex-workflows/templates/.agent/workflows/*.md`
-3. `skills/codex-workflows/packs/antigravity-compat/.agent/workflows/*.md`
+2. `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
 
 Rules:
 
-- same filename set in all three locations;
-- same content checksum in all three locations;
-- no placeholder stubs.
+- same filename set in both locations;
+- same content checksum in both locations;
+- all 11 workflow contracts present.
 
-Validation:
+## Compatibility contract
 
-`python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+The following locations must stay byte-aligned:
 
-## Codex-native track contract
-
-The default bootstrap profile uses:
-
-- `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
+1. `skills/codex-workflows/templates/.agent/workflows/*.md`
+2. `skills/codex-workflows/packs/antigravity-compat/.agent/workflows/*.md`
 
 Rules:
 
-- all 11 workflow files must exist;
-- each workflow must include required quality sections;
-- each workflow must be non-identical to compatibility baseline counterpart;
-- no workflow should be a short stub.
+- same filename set in both locations;
+- same content checksum in both locations;
+- compatibility mode only via `--profile antigravity-compat`.
 
-Validation:
+## Differentiation contract
 
-`python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+Codex-native workflows must remain clearly distinct from compatibility workflows.
+
+Rules:
+
+- non-identical content per workflow;
+- required codex-native structure sections present;
+- max similarity ratio versus compatibility baseline must stay below threshold.
+
+## Validation commands
+
+Split parity check:
+
+`python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --native skills/codex-workflows/templates/codex-native/.agent/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+
+Codex-native quality and anti-copy gate:
+
+`python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35`
 
 ## Why this exists
 
-This contract keeps compatibility behavior stable while allowing the default `codex-native` profile to evolve independently with stronger Codex-specific execution quality.
+This contract keeps compatibility stable for opt-in users while protecting the default codex-native experience from copy-like drift.
+

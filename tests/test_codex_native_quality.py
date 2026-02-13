@@ -39,7 +39,7 @@ class CodexNativeQualityTests(unittest.TestCase):
     def test_real_repository_passes_quality_validation(self):
         native = ROOT / "skills" / "codex-workflows" / "templates" / "codex-native" / ".agent" / "workflows"
         compat = ROOT / "skills" / "codex-workflows" / "packs" / "antigravity-compat" / ".agent" / "workflows"
-        errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=45)
+        errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=45, max_similarity=0.35)
         self.assertEqual(errors, [])
 
     def test_missing_native_workflow_is_reported(self):
@@ -54,7 +54,7 @@ class CodexNativeQualityTests(unittest.TestCase):
             (native / first_name).write_text("---\ndescription: x\n---\n# x\n", encoding="utf-8")
             (compat / first_name).write_text("---\ndescription: x\n---\n# x\n", encoding="utf-8")
 
-            errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=1)
+            errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=1, max_similarity=1.0)
             self.assertTrue(any("missing native workflow" in err for err in errors))
 
     def test_identical_to_compat_is_reported(self):
@@ -70,10 +70,27 @@ class CodexNativeQualityTests(unittest.TestCase):
                 (native / filename).write_text(content, encoding="utf-8")
                 (compat / filename).write_text(content, encoding="utf-8")
 
-            errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=1)
+            errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=1, max_similarity=1.0)
             self.assertTrue(any("identical to compat baseline" in err for err in errors))
+
+    def test_too_similar_to_compat_is_reported(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = pathlib.Path(tmp)
+            native = tmp_path / "native"
+            compat = tmp_path / "compat"
+            native.mkdir()
+            compat.mkdir()
+
+            for filename, sections in quality.EXPECTED_WORKFLOWS.items():
+                compat_content = build_workflow_content(sections)
+                # Keep high overlap but not byte-identical.
+                native_content = compat_content.replace("sample line 2", "sample line two")
+                (native / filename).write_text(native_content, encoding="utf-8")
+                (compat / filename).write_text(compat_content, encoding="utf-8")
+
+            errors = quality.validate(native_dir=native, compat_dir=compat, min_lines=1, max_similarity=0.95)
+            self.assertTrue(any("too similar to compat baseline" in err for err in errors))
 
 
 if __name__ == "__main__":
     unittest.main()
-

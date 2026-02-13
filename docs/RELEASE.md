@@ -8,14 +8,14 @@
 2. Unit tests:
 `python -m unittest discover -s tests -p "test_*.py"`
 
-3. Workflow parity:
-`python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+3. Workflow split parity (native + compatibility tracks):
+`python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --native skills/codex-workflows/templates/codex-native/.agent/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
 
 4. Compatibility drift:
 `python skills/codex-workflows/scripts/check_compat_drift.py --manifest skills/codex-workflows/compat/manifest.json --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent`
 
-5. Codex-native workflow quality:
-`python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+5. Codex-native workflow quality and anti-copy threshold:
+`python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35`
 
 6. Router benchmark:
 `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000`
@@ -78,3 +78,4 @@ Workflow: `.github/workflows/docs.yml`
 - Builds `website` with VitePress.
 - Pushes static output to `gh-pages` branch.
 - First-time setup: in GitHub Settings > Pages, select `gh-pages` as source branch.
+

@@ -1,237 +1,210 @@
 ---
-description: Coordinate multiple agents for complex tasks. Use for multi-perspective analysis, comprehensive reviews, or tasks requiring different domain expertise.
+description: Codex-native orchestration for complex multi-domain delivery with strict phase gates and evidence-driven verification.
 ---
 
-# Multi-Agent Orchestration
+# /orchestrate - Codex-Native Delivery Conductor
 
-You are now in **ORCHESTRATION MODE**. Your task: coordinate specialized agents to solve this complex problem.
-
-## Task to Orchestrate
 $ARGUMENTS
 
 ---
 
-## 🔴 CRITICAL: Minimum Agent Requirement
+## Objective
 
-> ⚠️ **ORCHESTRATION = MINIMUM 3 DIFFERENT AGENTS**
-> 
-> If you use fewer than 3 agents, you are NOT orchestrating - you're just delegating.
-> 
-> **Validation before completion:**
-> - Count invoked agents
-> - If `agent_count < 3` → STOP and invoke more agents
-> - Single agent = FAILURE of orchestration
+Coordinate complex work across domains with controlled execution gates.
 
-### Agent Selection Matrix
+This workflow is designed for VS Code + GPT Codex projects and should be used when:
 
-| Task Type | REQUIRED Agents (minimum) |
-|-----------|---------------------------|
-| **Web App** | frontend-specialist, backend-specialist, test-engineer |
-| **API** | backend-specialist, security-auditor, test-engineer |
-| **UI/Design** | frontend-specialist, seo-specialist, performance-optimizer |
-| **Database** | database-architect, backend-specialist, security-auditor |
-| **Full Stack** | project-planner, frontend-specialist, backend-specialist, devops-engineer |
-| **Debug** | debugger, explorer-agent, test-engineer |
-| **Security** | security-auditor, penetration-tester, devops-engineer |
+- the task spans 2 or more domains;
+- the blast radius is unclear;
+- implementation requires staged approval;
+- quality and traceability are mandatory.
 
 ---
 
-## Pre-Flight: Mode Check
+## Trigger Criteria
 
-| Current Mode | Task Type | Action |
-|--------------|-----------|--------|
-| **plan** | Any | ✅ Proceed with planning-first approach |
-| **edit** | Simple execution | ✅ Proceed directly |
-| **edit** | Complex/multi-file | ⚠️ Ask: "This task requires planning. Switch to plan mode?" |
-| **ask** | Any | ⚠️ Ask: "Ready to orchestrate. Switch to edit or plan mode?" |
+Select `/orchestrate` when at least one of these is true:
 
----
+1. Multi-domain scope:
+- backend + frontend
+- security + api
+- infrastructure + release
+2. High-impact changes:
+- auth model changes
+- schema migrations
+- CI or deployment pipeline changes
+3. Investigation-heavy work:
+- failures without clear owner
+- behavior regressions across services
 
-## 🔴 STRICT 2-PHASE ORCHESTRATION
-
-### PHASE 1: PLANNING (Sequential - NO parallel agents)
-
-| Step | Agent | Action |
-|------|-------|--------|
-| 1 | `project-planner` | Create docs/PLAN.md |
-| 2 | (optional) `explorer-agent` | Codebase discovery if needed |
-
-> 🔴 **NO OTHER AGENTS during planning!** Only project-planner and explorer-agent.
-
-### ⏸️ CHECKPOINT: User Approval
-
-```
-After PLAN.md is complete, ASK:
-
-"✅ Plan created: docs/PLAN.md
-
-Do you approve? (Y/N)
-- Y: Start implementation
-- N: I'll revise the plan"
-```
-
-> 🔴 **DO NOT proceed to Phase 2 without explicit user approval!**
-
-### PHASE 2: IMPLEMENTATION (Parallel agents after approval)
-
-| Parallel Group | Agents |
-|----------------|--------|
-| Foundation | `database-architect`, `security-auditor` |
-| Core | `backend-specialist`, `frontend-specialist` |
-| Polish | `test-engineer`, `devops-engineer` |
-
-> ✅ After user approval, invoke multiple agents in PARALLEL.
-
-## Available Agents (17 total)
-
-| Agent | Domain | Use When |
-|-------|--------|----------|
-| `project-planner` | Planning | Task breakdown, PLAN.md |
-| `explorer-agent` | Discovery | Codebase mapping |
-| `frontend-specialist` | UI/UX | React, Vue, CSS, HTML |
-| `backend-specialist` | Server | API, Node.js, Python |
-| `database-architect` | Data | SQL, NoSQL, Schema |
-| `security-auditor` | Security | Vulnerabilities, Auth |
-| `penetration-tester` | Security | Active testing |
-| `test-engineer` | Testing | Unit, E2E, Coverage |
-| `devops-engineer` | Ops | CI/CD, Docker, Deploy |
-| `mobile-developer` | Mobile | React Native, Flutter |
-| `performance-optimizer` | Speed | Lighthouse, Profiling |
-| `seo-specialist` | SEO | Meta, Schema, Rankings |
-| `documentation-writer` | Docs | README, API docs |
-| `debugger` | Debug | Error analysis |
-| `game-developer` | Games | Unity, Godot |
-| `orchestrator` | Meta | Coordination |
+If none apply, route to a narrower workflow (`/plan`, `/debug`, `/enhance`, or `/test`).
 
 ---
 
-## Orchestration Protocol
+## Required Specialist Lenses
 
-### Step 1: Analyze Task Domains
-Identify ALL domains this task touches:
-```
-□ Security     → security-auditor, penetration-tester
-□ Backend/API  → backend-specialist
-□ Frontend/UI  → frontend-specialist
-□ Database     → database-architect
-□ Testing      → test-engineer
-□ DevOps       → devops-engineer
-□ Mobile       → mobile-developer
-□ Performance  → performance-optimizer
-□ SEO          → seo-specialist
-□ Planning     → project-planner
-```
+Use minimum 3 specialist lenses in every orchestration run.
 
-### Step 2: Phase Detection
+Lens matrix:
 
-| If Plan Exists | Action |
-|----------------|--------|
-| NO `docs/PLAN.md` | → Go to PHASE 1 (planning only) |
-| YES `docs/PLAN.md` + user approved | → Go to PHASE 2 (implementation) |
+| Domain Signal | Primary Lens | Secondary Lens |
+| --- | --- | --- |
+| API, services, integrations | `backend-specialist` | `database-architect` |
+| UI, design system, interactions | `frontend-specialist` | `performance-optimizer` |
+| vulnerabilities, auth, secrets | `security-auditor` | `penetration-tester` |
+| CI/CD, infra, deployment | `devops-engineer` | `test-engineer` |
+| unclear architecture or sequencing | `project-planner` | `explorer-agent` |
 
-### Step 3: Execute Based on Phase
-
-**PHASE 1 (Planning):**
-```
-Use the project-planner agent to create PLAN.md
-→ STOP after plan is created
-→ ASK user for approval
-```
-
-**PHASE 2 (Implementation - after approval):**
-```
-Invoke agents in PARALLEL:
-Use the frontend-specialist agent to [task]
-Use the backend-specialist agent to [task]
-Use the test-engineer agent to [task]
-```
-
-**🔴 CRITICAL: Context Passing (MANDATORY)**
-
-When invoking ANY subagent, you MUST include:
-
-1. **Original User Request:** Full text of what user asked
-2. **Decisions Made:** All user answers to Socratic questions
-3. **Previous Agent Work:** Summary of what previous agents did
-4. **Current Plan State:** If plan files exist in workspace, include them
-
-**Example with FULL context:**
-```
-Use the project-planner agent to create PLAN.md:
-
-**CONTEXT:**
-- User Request: "A social platform for students, using mock data"
-- Decisions: Tech=Vue 3, Layout=Grid Widgets, Auth=Mock, Design=Youthful & dynamic
-- Previous Work: Orchestrator asked 6 questions, user chose all options
-- Current Plan: playful-roaming-dream.md exists in workspace with initial structure
-
-**TASK:** Create detailed PLAN.md based on ABOVE decisions. Do NOT infer from folder name.
-```
-
-> ⚠️ **VIOLATION:** Invoking subagent without full context = subagent will make wrong assumptions!
-
-
-### Step 4: Verification (MANDATORY)
-The LAST agent must run appropriate verification scripts:
-```bash
-python .agent/skills/vulnerability-scanner/scripts/security_scan.py .
-python .agent/skills/lint-and-validate/scripts/lint_runner.py .
-```
-
-### Step 5: Synthesize Results
-Combine all agent outputs into unified report.
+Rule:
+- minimum 3 lenses;
+- maximum 6 lenses;
+- explain why each lens is selected.
 
 ---
 
-## Output Format
+## Four-Phase Protocol
+
+### Phase 1: Discovery and Risk Scan
+
+Actions:
+
+1. Reframe the request in one paragraph.
+2. Map impacted boundaries:
+- code areas
+- data contracts
+- runtime dependencies
+3. Produce initial risk list:
+- functional risk
+- security risk
+- operational risk
+
+Exit gate:
+- scope mapped;
+- top risks listed;
+- ambiguity score declared (`low|medium|high`).
+
+---
+
+### Phase 2: Execution Plan and Approval Gate
+
+Actions:
+
+1. Build a concrete plan with:
+- ordered tasks
+- owners/lenses
+- expected artifacts
+- verification commands
+2. Mark irreversible steps and rollback path.
+3. Ask explicit approval before implementation.
+
+Approval prompt:
+
+```text
+Plan is ready with tasks, risks, and verification gates.
+Approve implementation? (Y/N)
+```
+
+Exit gate:
+- no implementation before explicit user approval.
+
+---
+
+### Phase 3: Controlled Implementation
+
+Actions:
+
+1. Execute tasks in small increments.
+2. After each increment, run targeted checks.
+3. Record evidence:
+- file changes
+- command outputs
+- unresolved risks
+
+Hard rules:
+
+- do not batch unrelated changes;
+- do not skip failing checks;
+- if a critical check fails, stop and return to plan adjustment.
+
+Exit gate:
+- all planned increments executed or explicitly deferred.
+
+---
+
+### Phase 4: Unified Validation and Report
+
+Actions:
+
+1. Run final validations:
+- tests
+- lint/type checks
+- stack pack checks when applicable
+2. Build one consolidated report with:
+- what changed
+- what was validated
+- what remains open
+
+Exit gate:
+- report includes evidence and next action.
+
+---
+
+## Output Contract
+
+Return this exact section structure:
 
 ```markdown
-## 🎼 Orchestration Report
+## Orchestration Summary
 
-### Task
-[Original task summary]
+### Request
+[Restated objective]
 
-### Mode
-[Current Antigravity Agent mode: plan/edit/ask]
+### Lenses Used
+- [Lens name]: [why selected]
+- [Lens name]: [why selected]
+- [Lens name]: [why selected]
 
-### Agents Invoked (MINIMUM 3)
-| # | Agent | Focus Area | Status |
-|---|-------|------------|--------|
-| 1 | project-planner | Task breakdown | ✅ |
-| 2 | frontend-specialist | UI implementation | ✅ |
-| 3 | test-engineer | Verification scripts | ✅ |
+### Phase Status
+1. Discovery: [done|partial]
+2. Plan + Approval: [done|waiting]
+3. Implementation: [done|partial]
+4. Validation: [done|partial]
 
-### Verification Scripts Executed
-- [x] security_scan.py → Pass/Fail
-- [x] lint_runner.py → Pass/Fail
+### Changes
+- `path/to/file`: [what changed]
 
-### Key Findings
-1. **[Agent 1]**: Finding
-2. **[Agent 2]**: Finding
-3. **[Agent 3]**: Finding
+### Validation Evidence
+- `[command]` -> [pass|fail]
 
-### Deliverables
-- [ ] PLAN.md created
-- [ ] Code implemented
-- [ ] Tests passing
-- [ ] Scripts verified
+### Risks and Follow-ups
+- [risk]
+- [mitigation]
 
-### Summary
-[One paragraph synthesis of all agent work]
+### Next Action
+[single immediate next step]
 ```
 
 ---
 
-## 🔴 EXIT GATE
+## Orchestration Quality Bar
 
-Before completing orchestration, verify:
+Before closing, verify:
 
-1. ✅ **Agent Count:** `invoked_agents >= 3`
-2. ✅ **Scripts Executed:** At least `security_scan.py` ran
-3. ✅ **Report Generated:** Orchestration Report with all agents listed
+- at least 3 lenses used;
+- plan approval acknowledged for complex work;
+- verifications executed, not only suggested;
+- all changed files listed;
+- remaining risks explicit.
 
-> **If any check fails → DO NOT mark orchestration complete. Invoke more agents or run scripts.**
+If any check fails, orchestration is incomplete.
 
 ---
 
-**Begin orchestration now. Select 3+ agents, execute sequentially, run verification scripts, synthesize results.**
+## Example Invocations
+
+```text
+/orchestrate migrate auth from session to JWT across API and web
+/orchestrate investigate production latency spike and propose safe rollout
+/orchestrate harden CI pipeline and add release guardrails
+```
+

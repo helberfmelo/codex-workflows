@@ -74,6 +74,13 @@ Quality is enforced by:
 
 - `skills/codex-workflows/scripts/check_codex_native_quality.py`
 - CI execution in `.github/workflows/ci.yml`
+- similarity threshold guard (`--max-similarity 0.35`) versus compatibility workflows.
+
+References are now codex-native aligned:
+
+- `skills/codex-workflows/references/workflows/*.md`
+- byte-parity with `templates/codex-native/.agent/workflows/*.md`
+- explicitly separated from compatibility parity checks.
 
 ## Compatibility Mode
 
@@ -83,7 +90,10 @@ For near-equivalent structure to Antigravity projects, bootstrap with:
 
 This installs a complete `.agent` tree including agents, skills, workflows, rules, scripts, and shared assets.
 
-Default templates were also upgraded so `templates/.agent/workflows/*.md` now contains full detailed workflow files instead of short stubs.
+Compatibility parity is maintained between:
+
+- `skills/codex-workflows/templates/.agent/workflows/*.md`
+- `skills/codex-workflows/packs/antigravity-compat/.agent/workflows/*.md`
 
 ## Remaining expansion path
 

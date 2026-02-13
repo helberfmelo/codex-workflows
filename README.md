@@ -21,11 +21,10 @@ It routes natural-language requests into repeatable execution workflows:
 
 ## Positioning
 
-This project is inspired by Antigravity Kit patterns and adapted to Codex skill format for VS Code.
+This project applies workflow-operating-system patterns to the Codex skill format for VS Code.
 
 - Designed for GPT Codex skill loading and routing
-- Not a fork of Antigravity Kit
-- Not affiliated with the Antigravity IDE
+- Independent repository and implementation
 
 ## What Is Included
 
@@ -218,7 +217,7 @@ python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --proj
 python ~/.codex/skills/codex-workflows/scripts/route_workflow.py "add secure login with tests" --json
 ```
 
-5. Optional: refresh compatibility pack from a local Antigravity `.agent` source:
+5. Optional: refresh compatibility pack from a local `.agent` compatibility source:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/sync_compat_pack.py --source /path/to/.agent
@@ -229,6 +228,7 @@ python ~/.codex/skills/codex-workflows/scripts/sync_compat_pack.py --source /pat
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/check_workflow_parity.py \
   --references ~/.codex/skills/codex-workflows/references/workflows \
+  --native ~/.codex/skills/codex-workflows/templates/codex-native/.agent/workflows \
   --template ~/.codex/skills/codex-workflows/templates/.agent/workflows \
   --pack ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows
 ```
@@ -245,7 +245,8 @@ python ~/.codex/skills/codex-workflows/scripts/check_compat_drift.py \
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
   --native ~/.codex/skills/codex-workflows/templates/codex-native/.agent/workflows \
-  --compat ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+  --compat ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows \
+  --max-similarity 0.35
 ```
 
 8. Benchmark routing runtime:
@@ -348,6 +349,11 @@ This repository includes a full compatibility pack under `skills/codex-workflows
 
 The default bootstrap path `codex-native` is independent from the compatibility pack and is sourced from `skills/codex-workflows/templates/codex-native/.agent`.
 
+Workflow contracts are split:
+
+- Native parity: `references/workflows/*.md` <-> `templates/codex-native/.agent/workflows/*.md`
+- Compatibility parity: `templates/.agent/workflows/*.md` <-> `packs/antigravity-compat/.agent/workflows/*.md`
+
 ## Domain Packs
 
 Independent packs are available for targeted installation:
@@ -425,3 +431,5 @@ See `CHANGELOG.md`.
 ## License
 
 MIT
+
+

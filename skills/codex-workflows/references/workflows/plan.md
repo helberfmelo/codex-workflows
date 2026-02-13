@@ -1,89 +1,135 @@
 ---
-description: Create project plan using project-planner agent. No code writing - only plan file generation.
+description: Codex-native planning workflow for converting ambiguous requests into executable, verifiable plans.
 ---
 
-# /plan - Project Planning Mode
+# /plan - Codex-Native Planning Blueprint
 
 $ARGUMENTS
 
 ---
 
-## 🔴 CRITICAL RULES
+## Objective
 
-1. **NO CODE WRITING** - This command creates plan file only
-2. **Use project-planner agent** - NOT Antigravity Agent's native Plan mode
-3. **Socratic Gate** - Ask clarifying questions before planning
-4. **Dynamic Naming** - Plan file named based on task
+Produce an implementation-ready plan before coding.
 
----
-
-## Task
-
-Use the `project-planner` agent with this context:
-
-```
-CONTEXT:
-- User Request: $ARGUMENTS
-- Mode: PLANNING ONLY (no code)
-- Output: docs/PLAN-{task-slug}.md (dynamic naming)
-
-NAMING RULES:
-1. Extract 2-3 key words from request
-2. Lowercase, hyphen-separated
-3. Max 30 characters
-4. Example: "e-commerce cart" → PLAN-ecommerce-cart.md
-
-RULES:
-1. Follow project-planner.md Phase -1 (Context Check)
-2. Follow project-planner.md Phase 0 (Socratic Gate)
-3. Create PLAN-{slug}.md with task breakdown
-4. DO NOT write any code files
-5. REPORT the exact file name created
-```
+This workflow is planning-only. Do not write production code while running `/plan`.
 
 ---
 
-## Expected Output
+## Planning Intake
 
-| Deliverable | Location |
-|-------------|----------|
-| Project Plan | `docs/PLAN-{task-slug}.md` |
-| Task Breakdown | Inside plan file |
-| Agent Assignments | Inside plan file |
-| Verification Checklist | Phase X in plan file |
+Capture:
 
----
+1. Target outcome:
+- what success looks like
+- who uses it
+2. Constraints:
+- stack limitations
+- deadlines
+- compliance/security constraints
+3. Non-goals:
+- what should not be changed now
 
-## After Planning
-
-Tell user:
-```
-[OK] Plan created: docs/PLAN-{slug}.md
-
-Next steps:
-- Review the plan
-- Run `/create` to start implementation
-- Or modify plan manually
-```
+If critical inputs are missing, ask up to 3 focused questions and continue.
 
 ---
 
-## Naming Examples
+## Plan File Rules
 
-| Request | Plan File |
-|---------|-----------|
-| `/plan e-commerce site with cart` | `docs/PLAN-ecommerce-cart.md` |
-| `/plan mobile app for fitness` | `docs/PLAN-fitness-app.md` |
-| `/plan add dark mode feature` | `docs/PLAN-dark-mode.md` |
-| `/plan fix authentication bug` | `docs/PLAN-auth-fix.md` |
-| `/plan SaaS dashboard` | `docs/PLAN-saas-dashboard.md` |
+Create one file:
+
+- `docs/PLAN-{slug}.md`
+
+Slug rules:
+
+1. Use 2 to 4 core terms from the request.
+2. Lowercase and hyphen-separated.
+3. Keep under 36 characters.
+4. Avoid generic slugs (`plan`, `task`, `project`).
+
+Examples:
+
+- `docs/PLAN-auth-hardening.md`
+- `docs/PLAN-payment-retry-strategy.md`
+- `docs/PLAN-rust-cli-release-flow.md`
 
 ---
 
-## Usage
+## Required Plan Sections
 
+The generated plan must include:
+
+1. Problem statement
+- current pain
+- expected outcome
+2. Scope
+- in scope
+- out of scope
+3. Architecture impact
+- components touched
+- contract/data changes
+4. Work breakdown
+- ordered tasks
+- dependencies
+5. Validation matrix
+- command-level checks per task
+6. Rollback strategy
+- how to revert safely
+7. Risks and assumptions
+- risk score `low|medium|high`
+8. Acceptance criteria
+- explicit pass conditions
+
+---
+
+## Definition of Done for /plan
+
+Planning is complete only if:
+
+- file exists at `docs/PLAN-{slug}.md`;
+- all required sections are filled with concrete details;
+- each task has an owner lens (`backend`, `frontend`, `security`, `qa`, `ops`, etc.);
+- validation matrix contains runnable commands;
+- acceptance criteria are testable.
+
+---
+
+## Output Contract
+
+Return this structure:
+
+```markdown
+## Planning Summary
+
+### Plan File
+`docs/PLAN-{slug}.md`
+
+### Scope Snapshot
+- In: [...]
+- Out: [...]
+
+### Workstreams
+1. [workstream]
+2. [workstream]
+3. [workstream]
+
+### Verification Matrix
+- `[command]` -> [target]
+
+### Risks
+- [risk]: [mitigation]
+
+### Next Action
+[what to run next, usually /orchestrate or /create]
 ```
-/plan e-commerce site with cart
-/plan mobile app for fitness tracking
-/plan SaaS dashboard with analytics
+
+---
+
+## Usage Examples
+
+```text
+/plan harden authentication for API and admin panel
+/plan migrate release flow to tag-driven automation
+/plan add stack validation packs for python services
 ```
+

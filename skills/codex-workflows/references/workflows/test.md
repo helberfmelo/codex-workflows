@@ -1,144 +1,108 @@
 ---
-description: Test generation and test running command. Creates and executes tests for code.
+description: Codex-native testing workflow for building and executing a risk-driven validation strategy.
 ---
 
-# /test - Test Generation and Execution
+# /test - Codex-Native Verification Engine
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## Objective
 
-This command generates tests, runs existing tests, or checks test coverage.
+Design and execute tests that reduce delivery risk with clear evidence.
 
----
+Use `/test` for:
 
-## Sub-commands
-
-```
-/test                - Run all tests
-/test [file/feature] - Generate tests for specific target
-/test coverage       - Show test coverage report
-/test watch          - Run tests in watch mode
-```
+- missing test coverage;
+- validating new changes;
+- strengthening flaky or fragile suites.
 
 ---
 
-## Behavior
+## Risk-Based Test Planning
 
-### Generate Tests
+Identify critical paths first:
 
-When asked to test a file or feature:
+1. business-critical behavior;
+2. security-sensitive flows;
+3. integration boundaries;
+4. failure-prone paths.
 
-1. **Analyze the code**
-   - Identify functions and methods
-   - Find edge cases
-   - Detect dependencies to mock
-
-2. **Generate test cases**
-   - Happy path tests
-   - Error cases
-   - Edge cases
-   - Integration tests (if needed)
-
-3. **Write tests**
-   - Use project's test framework (Jest, Vitest, etc.)
-   - Follow existing test patterns
-   - Mock external dependencies
+Assign each path a priority: `P0`, `P1`, or `P2`.
 
 ---
 
-## Output Format
+## Test Design Rules
 
-### For Test Generation
+- include positive and negative cases;
+- include edge cases for input and state;
+- keep fixtures deterministic;
+- avoid unnecessary snapshot bloat.
+
+When stack packs apply, run their validators:
+
+- Node: `validate_node_stack.py`
+- Python: `validate_python_stack.py`
+- Rust: `validate_rust_stack.py`
+
+---
+
+## Execution Protocol
+
+### Phase 1: Coverage Gap Map
+
+- list what is currently tested;
+- list missing high-priority scenarios.
+
+### Phase 2: Test Implementation
+
+- add or update tests by priority;
+- keep tests readable and isolated.
+
+### Phase 3: Run and Diagnose
+
+- run full relevant suite;
+- isolate failures by root cause.
+
+### Phase 4: Stability Guard
+
+- record flaky behavior and mitigation;
+- propose CI gate updates when needed.
+
+---
+
+## Output Contract
 
 ```markdown
-## 🧪 Tests: [Target]
+## Test Report
 
-### Test Plan
-| Test Case | Type | Coverage |
-|-----------|------|----------|
-| Should create user | Unit | Happy path |
-| Should reject invalid email | Unit | Validation |
-| Should handle db error | Unit | Error case |
+### Coverage Plan
+- P0: [...]
+- P1: [...]
+- P2: [...]
 
-### Generated Tests
+### Tests Added/Updated
+- `path/to/test`: [scenario]
 
-`tests/[file].test.ts`
+### Execution Results
+- `[command]` -> [pass|fail]
 
-[Code block with tests]
+### Failures and Diagnosis
+- [failure]: [cause]
 
----
-
-Run with: `npm test`
-```
-
-### For Test Execution
-
-```
-🧪 Running tests...
-
-✅ auth.test.ts (5 passed)
-✅ user.test.ts (8 passed)
-❌ order.test.ts (2 passed, 1 failed)
-
-Failed:
-  ✗ should calculate total with discount
-    Expected: 90
-    Received: 100
-
-Total: 15 tests (14 passed, 1 failed)
+### Stability Actions
+- [guardrail or CI recommendation]
 ```
 
 ---
 
-## Examples
+## Quality Bar
 
-```
-/test src/services/auth.service.ts
-/test user registration flow
-/test coverage
-/test fix failed tests
-```
+Before closing:
 
----
+- P0 scenarios covered or explicitly deferred;
+- commands and outcomes reported;
+- flaky risks documented;
+- stack validator usage reported when applicable.
 
-## Test Patterns
-
-### Unit Test Structure
-
-```typescript
-describe('AuthService', () => {
-  describe('login', () => {
-    it('should return token for valid credentials', async () => {
-      // Arrange
-      const credentials = { email: 'test@test.com', password: 'pass123' };
-      
-      // Act
-      const result = await authService.login(credentials);
-      
-      // Assert
-      expect(result.token).toBeDefined();
-    });
-
-    it('should throw for invalid password', async () => {
-      // Arrange
-      const credentials = { email: 'test@test.com', password: 'wrong' };
-      
-      // Act & Assert
-      await expect(authService.login(credentials)).rejects.toThrow('Invalid credentials');
-    });
-  });
-});
-```
-
----
-
-## Key Principles
-
-- **Test behavior not implementation**
-- **One assertion per test** (when practical)
-- **Descriptive test names**
-- **Arrange-Act-Assert pattern**
-- **Mock external dependencies**

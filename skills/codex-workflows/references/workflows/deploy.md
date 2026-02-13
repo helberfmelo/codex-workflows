@@ -1,176 +1,102 @@
 ---
-description: Deployment command for production releases. Pre-flight checks and deployment execution.
+description: Codex-native deployment workflow for release readiness, controlled rollout, and rollback safety.
 ---
 
-# /deploy - Production Deployment
+# /deploy - Codex-Native Release Control
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## Objective
 
-This command handles production deployment with pre-flight checks, deployment execution, and verification.
+Ship changes with operational safety and traceable verification.
 
----
+Use `/deploy` for:
 
-## Sub-commands
-
-```
-/deploy            - Interactive deployment wizard
-/deploy check      - Run pre-deployment checks only
-/deploy preview    - Deploy to preview/staging
-/deploy production - Deploy to production
-/deploy rollback   - Rollback to previous version
-```
+- release candidate validation;
+- production or staging rollout preparation;
+- deployment incident prevention.
 
 ---
 
-## Pre-Deployment Checklist
+## Pre-Deploy Checklist
 
-Before any deployment:
+Required before rollout:
+
+1. latest tests pass;
+2. critical lint/type/security checks pass;
+3. release notes/changelog updated;
+4. rollback path documented;
+5. environment config reviewed.
+
+If any critical check fails, deployment is blocked.
+
+---
+
+## Rollout Strategy
+
+Select one strategy and justify:
+
+- full rollout;
+- canary;
+- phased rollout by environment or traffic slice.
+
+For risky changes, default to canary or phased rollout.
+
+---
+
+## Verification Windows
+
+Define:
+
+1. immediate checks (0-15 min);
+2. short window checks (15-60 min);
+3. post-release checks (same day).
+
+Each window must have measurable success and alert thresholds.
+
+---
+
+## Output Contract
 
 ```markdown
-## 🚀 Pre-Deploy Checklist
+## Deploy Report
 
-### Code Quality
-- [ ] No TypeScript errors (`npx tsc --noEmit`)
-- [ ] ESLint passing (`npx eslint .`)
-- [ ] All tests passing (`npm test`)
+### Release Scope
+[what is being released]
 
-### Security
-- [ ] No hardcoded secrets
-- [ ] Environment variables documented
-- [ ] Dependencies audited (`npm audit`)
+### Pre-Deploy Status
+- Tests: [pass|fail]
+- Lint/Type/Security: [pass|fail]
+- Changelog/Notes: [ready|missing]
+- Rollback Plan: [ready|missing]
 
-### Performance
-- [ ] Bundle size acceptable
-- [ ] No console.log statements
-- [ ] Images optimized
+### Rollout Strategy
+- Strategy: [full|canary|phased]
+- Reason: ...
 
-### Documentation
-- [ ] README updated
-- [ ] CHANGELOG updated
-- [ ] API docs current
+### Validation Windows
+- 0-15 min: ...
+- 15-60 min: ...
+- same day: ...
 
-### Ready to deploy? (y/n)
+### Commands and Evidence
+- `[command]` -> [pass|fail]
+
+### Go/No-Go
+- Decision: [go|no-go]
+- Blocking factors: [...]
 ```
 
 ---
 
-## Deployment Flow
+## Quality Bar
 
-```
-┌─────────────────┐
-│  /deploy        │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Pre-flight     │
-│  checks         │
-└────────┬────────┘
-         │
-    Pass? ──No──► Fix issues
-         │
-        Yes
-         │
-         ▼
-┌─────────────────┐
-│  Build          │
-│  application    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Deploy to      │
-│  platform       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Health check   │
-│  & verify       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  ✅ Complete    │
-└─────────────────┘
-```
+Before closing:
 
----
+- explicit go/no-go decision;
+- rollback path visible;
+- verification windows defined;
+- evidence commands included.
 
-## Output Format
-
-### Successful Deploy
-
-```markdown
-## 🚀 Deployment Complete
-
-### Summary
-- **Version:** v1.2.3
-- **Environment:** production
-- **Duration:** 47 seconds
-- **Platform:** Vercel
-
-### URLs
-- 🌐 Production: https://app.example.com
-- 📊 Dashboard: https://vercel.com/project
-
-### What Changed
-- Added user profile feature
-- Fixed login bug
-- Updated dependencies
-
-### Health Check
-✅ API responding (200 OK)
-✅ Database connected
-✅ All services healthy
-```
-
-### Failed Deploy
-
-```markdown
-## ❌ Deployment Failed
-
-### Error
-Build failed at step: TypeScript compilation
-
-### Details
-```
-error TS2345: Argument of type 'string' is not assignable...
-```
-
-### Resolution
-1. Fix TypeScript error in `src/services/user.ts:45`
-2. Run `npm run build` locally to verify
-3. Try `/deploy` again
-
-### Rollback Available
-Previous version (v1.2.2) is still active.
-Run `/deploy rollback` if needed.
-```
-
----
-
-## Platform Support
-
-| Platform | Command | Notes |
-|----------|---------|-------|
-| Vercel | `vercel --prod` | Auto-detected for Next.js |
-| Railway | `railway up` | Needs Railway CLI |
-| Fly.io | `fly deploy` | Needs flyctl |
-| Docker | `docker compose up -d` | For self-hosted |
-
----
-
-## Examples
-
-```
-/deploy
-/deploy check
-/deploy preview
-/deploy production --skip-tests
-/deploy rollback
-```

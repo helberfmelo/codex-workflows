@@ -24,6 +24,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 3. Workflow Knowledge Base
 - `references/workflows/*.md`
 - `references/templates/output-templates.md`
+- References are codex-native contracts (mirrored from `templates/codex-native/.agent/workflows`).
 
 4. Automation Scripts
 - `scripts/route_workflow.py`
@@ -51,6 +52,9 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 7. Governance and Quality
 - `compat/manifest.json` for drift control
 - `.github/workflows/ci.yml` for automated checks
+- Split parity gate via `check_workflow_parity.py`:
+  - references <-> codex-native template
+  - compat template <-> compat pack
 - Codex-native workflow quality gate via `check_codex_native_quality.py`
 - Stack CI matrix (Node/Python/Rust) running real fixture checks
 - `tests/` for script correctness

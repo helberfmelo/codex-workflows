@@ -1,113 +1,118 @@
 ---
-description: Structured brainstorming for projects and features. Explores multiple options before implementation.
+description: Codex-native ideation workflow for evaluating multiple approaches before implementation.
 ---
 
-# /brainstorm - Structured Idea Exploration
+# /brainstorm - Codex-Native Option Design
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## Objective
 
-This command activates BRAINSTORM mode for structured idea exploration. Use when you need to explore options before committing to an implementation.
+Explore solution options before writing code.
 
----
+Use this workflow when:
 
-## Behavior
+- requirements are open-ended;
+- architecture direction is still undecided;
+- tradeoffs need explicit comparison.
 
-When `/brainstorm` is triggered:
-
-1. **Understand the goal**
-   - What problem are we solving?
-   - Who is the user?
-   - What constraints exist?
-
-2. **Generate options**
-   - Provide at least 3 different approaches
-   - Each with pros and cons
-   - Consider unconventional solutions
-
-3. **Compare and recommend**
-   - Summarize tradeoffs
-   - Give a recommendation with reasoning
+Do not implement code during `/brainstorm`.
 
 ---
 
-## Output Format
+## Discovery Inputs
+
+Capture:
+
+1. user outcome;
+2. primary constraints (stack, time, compliance);
+3. success criteria;
+4. known unknowns.
+
+If key inputs are missing, ask up to 3 focused questions.
+
+---
+
+## Option Generation Rules
+
+Generate at least 3 materially different options.
+
+Each option must include:
+
+- approach summary;
+- technical path;
+- impact on delivery speed;
+- risk profile (`low|medium|high`).
+
+Avoid cosmetic variants of the same design.
+
+---
+
+## Comparison Protocol
+
+Score each option across:
+
+1. implementation complexity;
+2. operational risk;
+3. maintainability;
+4. time-to-value.
+
+Use a simple 1-5 score scale and explain one key tradeoff per option.
+
+---
+
+## Recommendation Gate
+
+Return one recommended option and one fallback option.
+
+Recommendation must state:
+
+- why it wins under current constraints;
+- what would make fallback preferable.
+
+End by asking the user to confirm direction before moving to `/plan` or `/create`.
+
+---
+
+## Output Contract
 
 ```markdown
-## 🧠 Brainstorm: [Topic]
+## Brainstorm Report
 
-### Context
-[Brief problem statement]
+### Problem Frame
+[short context and desired outcome]
 
----
+### Options
+| Option | Summary | Complexity (1-5) | Risk | Time-to-Value |
+| --- | --- | --- | --- | --- |
+| A | ... | ... | ... | ... |
+| B | ... | ... | ... | ... |
+| C | ... | ... | ... | ... |
 
-### Option A: [Name]
-[Description]
+### Tradeoff Notes
+- Option A: ...
+- Option B: ...
+- Option C: ...
 
-✅ **Pros:**
-- [benefit 1]
-- [benefit 2]
+### Recommendation
+- Primary: [option]
+- Fallback: [option]
+- Reason: ...
 
-❌ **Cons:**
-- [drawback 1]
-
-📊 **Effort:** Low | Medium | High
-
----
-
-### Option B: [Name]
-[Description]
-
-✅ **Pros:**
-- [benefit 1]
-
-❌ **Cons:**
-- [drawback 1]
-- [drawback 2]
-
-📊 **Effort:** Low | Medium | High
-
----
-
-### Option C: [Name]
-[Description]
-
-✅ **Pros:**
-- [benefit 1]
-
-❌ **Cons:**
-- [drawback 1]
-
-📊 **Effort:** Low | Medium | High
-
----
-
-## 💡 Recommendation
-
-**Option [X]** because [reasoning].
-
-What direction would you like to explore?
+### Decision Prompt
+[ask user to choose]
 ```
 
 ---
 
-## Examples
+## Quality Bar
 
-```
-/brainstorm authentication system
-/brainstorm state management for complex form
-/brainstorm database schema for social app
-/brainstorm caching strategy
-```
+Before closing, confirm:
 
----
+- minimum 3 distinct options;
+- explicit scoring table;
+- recommendation tied to constraints;
+- no implementation output.
 
-## Key Principles
-
-- **No code** - this is about ideas, not implementation
-- **Visual when helpful** - use diagrams for architecture
-- **Honest tradeoffs** - don't hide complexity
-- **Defer to user** - present options, let them decide

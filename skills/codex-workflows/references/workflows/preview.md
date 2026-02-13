@@ -1,81 +1,93 @@
 ---
-description: Preview server start, stop, and status check. Local development server management.
+description: Codex-native preview workflow for local validation, smoke checks, and reproducible run instructions.
 ---
 
-# /preview - Preview Management
+# /preview - Codex-Native Local Verification
 
 $ARGUMENTS
 
 ---
 
-## Task
+## Objective
 
-Manage preview server: start, stop, status check.
+Produce a reliable local preview with reproducible checks before merge or deploy.
 
-### Commands
+Use `/preview` for:
 
-```
-/preview           - Show current status
-/preview start     - Start server
-/preview stop      - Stop server
-/preview restart   - Restart
-/preview check     - Health check
+- feature branch verification;
+- integration smoke tests;
+- local environment confidence checks.
+
+---
+
+## Preview Setup
+
+Collect:
+
+1. run command(s);
+2. required env vars;
+3. dependencies/services needed;
+4. expected preview URL or CLI output.
+
+Document any setup friction explicitly.
+
+---
+
+## Validation Flow
+
+### Step 1: Build and Start
+
+- build artifacts if needed;
+- start app/service with documented command.
+
+### Step 2: Smoke Path Checks
+
+Run minimum smoke checks:
+
+- startup success;
+- primary feature path;
+- one negative/error path.
+
+### Step 3: Surface Review
+
+- summarize observed behavior;
+- highlight mismatch vs expected behavior.
+
+---
+
+## Output Contract
+
+```markdown
+## Preview Report
+
+### Environment
+- Runtime: ...
+- Required env: ...
+
+### Run Commands
+- `[command]`
+
+### Smoke Checks
+- Startup: [pass|fail]
+- Primary path: [pass|fail]
+- Negative path: [pass|fail]
+
+### Observed Issues
+- [issue]
+
+### Reproduction
+1. [step]
+2. [step]
+3. [step]
 ```
 
 ---
 
-## Usage Examples
+## Quality Bar
 
-### Start Server
-```
-/preview start
+Before closing:
 
-Response:
-🚀 Starting preview...
-   Port: 3000
-   Type: Next.js
-
-✅ Preview ready!
-   URL: http://localhost:3000
-```
-
-### Status Check
-```
-/preview
-
-Response:
-=== Preview Status ===
-
-🌐 URL: http://localhost:3000
-📁 Project: C:/projects/my-app
-🏷️ Type: nextjs
-💚 Health: OK
-```
-
-### Port Conflict
-```
-/preview start
-
-Response:
-⚠️ Port 3000 is in use.
-
-Options:
-1. Start on port 3001
-2. Close app on 3000
-3. Specify different port
-
-Which one? (default: 1)
-```
-
----
-
-## Technical
-
-Auto preview uses `auto_preview.py` script:
-
-```bash
-python .agent/scripts/auto_preview.py start [port]
-python .agent/scripts/auto_preview.py stop
-python .agent/scripts/auto_preview.py status
-```
+- run commands are reproducible;
+- smoke checks include positive and negative path;
+- issues include reproduction steps.
 

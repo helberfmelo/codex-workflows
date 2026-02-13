@@ -121,6 +121,8 @@ def main() -> None:
                 str(scripts / "check_workflow_parity.py"),
                 "--references",
                 str(root / "references" / "workflows"),
+                "--native",
+                str(root / "templates" / "codex-native" / ".agent" / "workflows"),
                 "--template",
                 str(root / "templates" / ".agent" / "workflows"),
                 "--pack",
@@ -136,6 +138,8 @@ def main() -> None:
                 str(root / "templates" / "codex-native" / ".agent" / "workflows"),
                 "--compat",
                 str(root / "packs" / "antigravity-compat" / ".agent" / "workflows"),
+                "--max-similarity",
+                "0.35",
             ]
         )
         raise SystemExit(code)
