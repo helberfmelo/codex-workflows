@@ -69,4 +69,5 @@ Workflow: `.github/workflows/docs.yml`
 
 - Triggered by changes under `website/**`, `docs/**`, or `README.md`.
 - Builds `website` with VitePress.
-- Deploys static site to GitHub Pages.
+- Pushes static output to `gh-pages` branch.
+- First-time setup: in GitHub Settings > Pages, select `gh-pages` as source branch.

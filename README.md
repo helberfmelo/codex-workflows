@@ -228,7 +228,8 @@ npm run docs:build
 Deploy:
 
 - workflow dedicado: `.github/workflows/docs.yml`
-- publica no GitHub Pages
+- publica build no branch `gh-pages`
+- configure o GitHub Pages para usar `gh-pages` na primeira vez
 - release e CI continuam separados em `.github/workflows/release.yml` e `.github/workflows/ci.yml`
 
 ## Prompting Best Practices
