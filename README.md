@@ -16,7 +16,13 @@ It maps natural-language requests to workflow-style execution patterns:
 - `/orchestrate`
 - `/ui-ux-pro-max`
 
-The skill is inspired by Antigravity Kit workflow concepts and adapted to Codex skill format.
+## Positioning
+
+This project is inspired by Antigravity Kit workflow ideas, but is implemented as a Codex skill package for VS Code.
+
+- It is designed for GPT Codex skill loading and routing.
+- It is not a fork of Antigravity Kit.
+- It is not affiliated with the Antigravity IDE.
 
 ## Repository Structure
 
@@ -83,6 +89,14 @@ After restart, use prompts such as:
 - GPT Codex with skill support
 - VS Code Codex workflow
 - Windows, macOS, Linux
+
+## Contributing
+
+See `CONTRIBUTING.md`.
+
+## Changelog
+
+See `CHANGELOG.md`.
 
 ## License
 
