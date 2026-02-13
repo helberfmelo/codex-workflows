@@ -63,29 +63,78 @@ skills/
   codex-rust-validation-pack/
 scripts/
   release_automation.py
+  install_all_in_one.py
 examples/
   node-auth-api/
   python-fastapi-orders/
   rust-events-cli/
+  projects/
+    node-service/
+    python-service/
+    rust-service/
 ```
 
 ## Installation
 
-### Option 1: Install from GitHub URL (recommended)
+### Option 1: All-in-one install (recommended)
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --url https://github.com/helberfmelo/codex-workflows/tree/main/skills/codex-workflows
+  --repo helberfmelo/codex-workflows \
+  --path \
+    skills/codex-workflows \
+    skills/codex-backend-pack \
+    skills/codex-frontend-pack \
+    skills/codex-security-pack \
+    skills/codex-qa-pack \
+    skills/codex-node-validation-pack \
+    skills/codex-python-validation-pack \
+    skills/codex-rust-validation-pack
 ```
 
 Windows (PowerShell):
 
 ```powershell
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
-  --url "https://github.com/helberfmelo/codex-workflows/tree/main/skills/codex-workflows"
+  --repo "helberfmelo/codex-workflows" `
+  --path `
+    "skills/codex-workflows" `
+    "skills/codex-backend-pack" `
+    "skills/codex-frontend-pack" `
+    "skills/codex-security-pack" `
+    "skills/codex-qa-pack" `
+    "skills/codex-node-validation-pack" `
+    "skills/codex-python-validation-pack" `
+    "skills/codex-rust-validation-pack"
 ```
 
-### Option 2: Install by repo and path
+This installs the orchestration core plus all domain and stack packs in one command.
+
+### Option 2: All-in-one helper script from this repository
+
+```bash
+python scripts/install_all_in_one.py
+```
+
+The helper script:
+
+- auto-detects `CODEX_HOME` (or `~/.codex`)
+- skips already-installed skills safely
+- installs only missing packs
+
+Dry run:
+
+```bash
+python scripts/install_all_in_one.py --dry-run
+```
+
+Install from a specific tag/ref:
+
+```bash
+python scripts/install_all_in_one.py --ref v1.1.0
+```
+
+### Option 3: Install only the core skill (minimal)
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -234,10 +283,13 @@ GitHub Actions release workflow:
 - `examples/node-auth-api/README.md`
 - `examples/python-fastapi-orders/README.md`
 - `examples/rust-events-cli/README.md`
+- `examples/projects/README.md` (real runnable fixtures used by CI matrix)
 
 ## CI and Quality Gates
 
 - CI pipeline: `.github/workflows/ci.yml`
+- Release pipeline: `.github/workflows/release.yml`
+- Real stack matrix on fixtures: Node/Python/Rust in `.github/workflows/ci.yml`
 - Skill validation: `scripts/ci_validate_skill.py`
 - Unit tests: `tests/test_*.py`
 

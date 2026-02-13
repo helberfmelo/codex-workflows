@@ -1,0 +1,12 @@
+{
+  "name": "codex-workflows-node-service-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node -e \"import('node:fs').then(() => console.log('lint ok'))\"",
+    "typecheck": "node --check src/math.js",
+    "test": "node --test",
+    "build": "node -e \"import('./src/math.js').then(() => console.log('build ok'))\""
+  }
+}

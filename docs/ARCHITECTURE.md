@@ -47,6 +47,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 7. Governance and Quality
 - `compat/manifest.json` for drift control
 - `.github/workflows/ci.yml` for automated checks
+- Stack CI matrix (Node/Python/Rust) running real fixture checks
 - `tests/` for script correctness
 
 8. Domain Packs
@@ -70,6 +71,11 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `examples/node-auth-api/README.md`
 - `examples/python-fastapi-orders/README.md`
 - `examples/rust-events-cli/README.md`
+- `examples/projects/` runnable fixtures used by CI stack matrix
+
+12. All-in-One Installation
+- `scripts/install_all_in_one.py`
+- One-command installer orchestration for core + domain + stack packs
 
 ## Execution Model
 

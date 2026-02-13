@@ -21,3 +21,6 @@ FastAPI service with async persistence, auth, contract tests, and deployment che
 
 3. `examples/rust-events-cli/README.md`
 Rust CLI/event processor with parsing, resilience, benchmarking, and release hardening.
+
+4. `examples/projects/README.md`
+Runnable fixture projects used by CI matrix to execute Node/Python/Rust stack checks.

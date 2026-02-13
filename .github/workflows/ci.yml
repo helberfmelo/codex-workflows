@@ -35,3 +35,57 @@ jobs:
             --manifest skills/codex-workflows/compat/manifest.json \
             --pack skills/codex-workflows/packs/antigravity-compat/.agent \
             --template-full skills/codex-workflows/templates/.agent
+
+  stack-validation-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        stack: [node, python, rust]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node
+        if: matrix.stack == 'node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Rust
+        if: matrix.stack == 'rust'
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Run Node stack validation pack on real example
+        if: matrix.stack == 'node'
+        run: |
+          python skills/codex-node-validation-pack/scripts/validate_node_stack.py \
+            --project examples/projects/node-service \
+            --run
+
+      - name: Install Python validation tooling
+        if: matrix.stack == 'python'
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest ruff black mypy
+
+      - name: Run Python stack validation pack on real example
+        if: matrix.stack == 'python'
+        run: |
+          python skills/codex-python-validation-pack/scripts/validate_python_stack.py \
+            --project examples/projects/python-service \
+            --run
+
+      - name: Run Rust stack validation pack on real example
+        if: matrix.stack == 'rust'
+        run: |
+          python skills/codex-rust-validation-pack/scripts/validate_rust_stack.py \
+            --project examples/projects/rust-service \
+            --run

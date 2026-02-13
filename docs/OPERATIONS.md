@@ -2,6 +2,16 @@
 
 Use this runbook to maintain `codex-workflows`.
 
+## Distribution quickstart
+
+Install all packs in one command:
+
+`python scripts/install_all_in_one.py`
+
+Preview without changes:
+
+`python scripts/install_all_in_one.py --dry-run`
+
 ## Quick commands
 
 Unified CLI:
@@ -33,6 +43,7 @@ Available commands:
 4. Run tests and validation:
 - `python -m unittest discover -s tests -p "test_*.py"`
 - `python scripts/ci_validate_skill.py --skills-root skills`
+- `python scripts/install_all_in_one.py --dry-run`
 
 5. Run stack packs when applicable:
 - Node: `python skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .`

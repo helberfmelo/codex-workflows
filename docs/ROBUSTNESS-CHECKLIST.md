@@ -44,6 +44,8 @@ Evidence: `docs/WORKFLOW_CONTRACT.md`
 
 - [x] CI workflow exists
 Evidence: `.github/workflows/ci.yml`
+- [x] CI stack matrix exists with real example projects
+Evidence: `.github/workflows/ci.yml`, `examples/projects/node-service`, `examples/projects/python-service`, `examples/projects/rust-service`
 - [x] Release workflow exists
 Evidence: `.github/workflows/release.yml`
 - [x] Unit tests for routing/bootstrap/sync exist
@@ -59,6 +61,8 @@ Evidence: `scripts/ci_validate_skill.py`
 Evidence: `skills/codex-node-validation-pack`, `skills/codex-python-validation-pack`, `skills/codex-rust-validation-pack`
 - [x] End-to-end examples catalog exists
 Evidence: `examples/README.md`, `examples/node-auth-api/README.md`, `examples/python-fastapi-orders/README.md`, `examples/rust-events-cli/README.md`
+- [x] All-in-one installer exists
+Evidence: `scripts/install_all_in_one.py`
 
 ## Outcome
 

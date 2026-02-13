@@ -63,6 +63,15 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
   - `examples/node-auth-api/README.md`
   - `examples/python-fastapi-orders/README.md`
   - `examples/rust-events-cli/README.md`
+- Runnable stack fixtures for CI matrix:
+  - `examples/projects/node-service`
+  - `examples/projects/python-service`
+  - `examples/projects/rust-service`
+- CI stack matrix (Node/Python/Rust) executing real pack checks:
+  - `.github/workflows/ci.yml`
+- All-in-one installation automation:
+  - `scripts/install_all_in_one.py`
+  - README and operations docs updated with one-command install flow
 
 ## [1.0.0] - 2026-02-13
 
