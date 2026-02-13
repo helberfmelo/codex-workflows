@@ -36,21 +36,21 @@ Use Codex `skill-installer`:
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --url https://github.com/<your-user>/<your-repo>/tree/main/skills/codex-workflows
+  --url https://github.com/helberfmelo/codex-workflows/tree/main/skills/codex-workflows
 ```
 
 Windows (PowerShell):
 
 ```powershell
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
-  --url "https://github.com/<your-user>/<your-repo>/tree/main/skills/codex-workflows"
+  --url "https://github.com/helberfmelo/codex-workflows/tree/main/skills/codex-workflows"
 ```
 
 ### Option 2: Install by repo and path
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo <your-user>/<your-repo> \
+  --repo helberfmelo/codex-workflows \
   --path skills/codex-workflows
 ```
 
@@ -77,13 +77,6 @@ After restart, use prompts such as:
 - Slash-like terms (for example `/orchestrate`) are interpreted as workflow intent in prompts.
 - They are not native CLI slash commands in Codex.
 - The skill prioritizes local `.agent/workflows` files when present.
-
-## Publishing This Repo
-
-1. Create a public GitHub repository.
-2. Push this folder contents to `main`.
-3. Replace `<your-user>/<your-repo>` in examples above.
-4. Share the install URL pointing to `skills/codex-workflows`.
 
 ## Compatibility
 
