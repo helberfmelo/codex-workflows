@@ -60,6 +60,8 @@ For near-equivalent structure to Antigravity projects, bootstrap with:
 
 This installs a complete `.agent` tree including agents, skills, workflows, rules, scripts, and shared assets.
 
+Default templates were also upgraded so `templates/.agent/workflows/*.md` now contains full detailed workflow files instead of short stubs.
+
 ## Next expansion path
 
 1. Add domain packs (`backend`, `frontend`, `security`, `qa`) as additional skills.

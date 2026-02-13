@@ -70,9 +70,8 @@ If local `.agent` exists, prioritize local instructions in this order:
 
 If local `.agent` is missing, use repository templates:
 
-- `templates/.agent/workflows/`
-- `templates/.agent/rules/`
-- `templates/.agent/ARCHITECTURE.md`
+- `templates/.agent/` (full, Antigravity-compatible template baseline)
+- `templates/minimal/.agent/` (lightweight starter profile)
 
 Bootstrap these templates with `scripts/bootstrap_project_agent.py`.
 

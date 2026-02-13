@@ -34,6 +34,7 @@ skills/
     scripts/
       route_workflow.py
       bootstrap_project_agent.py
+      sync_compat_pack.py
     packs/
       antigravity-compat/.agent/** (full compatibility pack)
     references/
@@ -42,11 +43,8 @@ skills/
       routing/intent-matrix.md
       orchestration/phase-gates.md
       templates/output-templates.md
-    templates/.agent/
-      ARCHITECTURE.md
-      rules/CODEX.md
-      workflows/*.md
-      scripts/auto_preview.py
+    templates/.agent/** (full template baseline)
+    templates/minimal/.agent/** (lightweight starter)
 ```
 
 ## Installation
@@ -95,6 +93,12 @@ python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --proj
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/route_workflow.py "add secure login with tests" --json
+```
+
+5. Optional: refresh compatibility pack from a local Antigravity `.agent` source:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/sync_compat_pack.py --source /path/to/.agent
 ```
 
 ## Behavior Notes

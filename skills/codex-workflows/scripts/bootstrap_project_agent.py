@@ -20,7 +20,7 @@ def main() -> None:
 
     skill_root = pathlib.Path(__file__).resolve().parents[1]
     if args.profile == "minimal":
-        src = skill_root / "templates" / ".agent"
+        src = skill_root / "templates" / "minimal" / ".agent"
     else:
         src = skill_root / "packs" / "antigravity-compat" / ".agent"
     dst = pathlib.Path(args.project).resolve() / ".agent"

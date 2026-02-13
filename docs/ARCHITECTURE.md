@@ -29,7 +29,8 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `scripts/sync_compat_pack.py`
 
 5. Project Template
-- `templates/.agent/...`
+- `templates/.agent/...` (full template baseline)
+- `templates/minimal/.agent/...` (lightweight starter)
 - Bootstraps local workflow files for projects without `.agent`
 
 6. Compatibility Pack

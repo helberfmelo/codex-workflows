@@ -18,6 +18,8 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - Built-in `.agent` templates with workflows, rules, and architecture.
 - Full compatibility pack at `skills/codex-workflows/packs/antigravity-compat/.agent`.
 - `sync_compat_pack.py` to refresh compatibility pack from a local `.agent` source.
+- Upgraded `templates/.agent` to full detailed workflows and full `.agent` structure.
+- Added separate lightweight profile at `templates/minimal/.agent`.
 - `docs/ARCHITECTURE.md` and `docs/COMPARISON.md`.
 
 ## [1.0.0] - 2026-02-13
