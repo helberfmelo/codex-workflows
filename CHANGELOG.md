@@ -13,6 +13,11 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - GitHub Pages deployment workflow for portal: `.github/workflows/docs.yml`.
 - CI build gate for portal in `.github/workflows/ci.yml`.
 - Technical docs mirror sync script: `website/scripts/sync_reference_docs.py`.
+- Portal UI/UX upgrade with premium visual theme and professional navigation.
+- Multilingual docs support (English + Portuguese/Brazil).
+- Composer wrapper channel:
+  - `composer.json`
+  - `scripts/composer_install.php`
 
 ## [1.1.0] - 2026-02-13
 

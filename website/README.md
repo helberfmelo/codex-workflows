@@ -2,6 +2,11 @@
 
 Portal web/docs do `codex-workflows`, construido com VitePress.
 
+Idiomas:
+
+- English (default)
+- Portugues (Brasil) em `/pt/`
+
 ## Rodar localmente
 
 ```bash
@@ -25,3 +30,4 @@ npm run docs:preview
 ## Deploy
 
 Deploy automatico por GitHub Actions em `.github/workflows/docs.yml`.
+Publicacao no branch `gh-pages`.

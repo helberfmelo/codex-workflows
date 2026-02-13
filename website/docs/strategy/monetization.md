@@ -1,33 +1,33 @@
-# Monetizacao
+# Monetization
 
-Modelos comuns para este tipo de projeto:
+Common monetization models for this type of project:
 
-1. Suporte e consultoria B2B
-- implantacao de workflows em empresas
-- hardening de processos de entrega com Codex
+1. B2B support and consulting
+- workflow implementation inside engineering teams
+- delivery process hardening with Codex
 
-2. Packs premium privados
-- packs especializados (compliance, setores regulados, playbooks internos)
-- distribuicao via repositorio privado
+2. Private premium packs
+- specialized packs (compliance, regulated sectors, internal playbooks)
+- distributed through private repositories
 
-3. Treinamento e certificacao
-- workshops para times de engenharia
-- trilhas de uso de workflows e governanca
+3. Training and certification
+- workshops for engineering teams
+- workflow/governance enablement tracks
 
-4. Assinaturas de manutencao
-- SLA para atualizacao de packs/workflows
-- acompanhamento de performance e qualidade
+4. Maintenance subscriptions
+- SLA for pack/workflow updates
+- performance and quality follow-up
 
-5. Patrocinio/open source funding
+5. Sponsorship/open source funding
 - GitHub Sponsors
-- parceria com empresas que usam o framework
+- partnerships with companies adopting the framework
 
-## Recomendacao pragmatica
+## Pragmatic recommendation
 
-Comecar por:
+Start with:
 
-1. consultoria + setup inicial;
-2. pacote premium privado;
-3. material de treinamento.
+1. consulting + initial rollout;
+2. private premium pack;
+3. training materials.
 
-Esse caminho monetiza rapido sem exigir produto SaaS completo.
+This route monetizes quickly without requiring a full SaaS product first.

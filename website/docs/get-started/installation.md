@@ -1,14 +1,14 @@
-# Instalacao
+# Installation
 
-## Requisito
+## Requirements
 
-- Codex com suporte a skills
-- Python disponivel no ambiente
-- acesso ao GitHub
+- Codex with skill support
+- Python available in your environment
+- GitHub access
 
-## All-in-one (recomendado)
+## All-in-one (recommended)
 
-Instala o core `codex-workflows` + todos os packs oficiais em um unico comando:
+Install the `codex-workflows` core plus all official packs in one command:
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -40,9 +40,9 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
     "skills/codex-rust-validation-pack"
 ```
 
-## Helper local (all-in-one)
+## Local helper script (all-in-one)
 
-Dentro do repositorio:
+Inside this repository:
 
 ```bash
 python scripts/install_all_in_one.py
@@ -54,15 +54,15 @@ Dry run:
 python scripts/install_all_in_one.py --dry-run
 ```
 
-Ref/tag especifica:
+Specific tag/ref:
 
 ```bash
 python scripts/install_all_in_one.py --ref v1.1.0
 ```
 
-## Instalacao minima
+## Minimal installation
 
-Somente workflow core:
+Install only the core workflow skill:
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -70,8 +70,18 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
   --path skills/codex-workflows
 ```
 
-## Pos-instalacao
+## Post-install
 
-1. Reinicie VS Code/Codex.
-2. Ative com prompt explicito:
-`Use codex-workflows em /orchestrate e <objetivo>`.
+1. Restart VS Code/Codex.
+2. Activate with an explicit prompt:
+`Use codex-workflows in /orchestrate and <objective>`.
+
+## Optional Composer channel (PHP users)
+
+If your team prefers Composer scripts, use:
+
+```bash
+composer codex:install-all
+```
+
+This wrapper calls the same official Python installer under the hood.

@@ -1,0 +1,13 @@
+{
+  "name": "helberfmelo/codex-workflows-installer",
+  "description": "Composer wrappers for installing codex-workflows skill packs for GPT Codex.",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1"
+  },
+  "scripts": {
+    "codex:install-all": "@php scripts/composer_install.php --mode=all",
+    "codex:install-core": "@php scripts/composer_install.php --mode=core"
+  }
+}

@@ -79,8 +79,14 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 
 13. Web Documentation Portal
 - `website/` (VitePress portal)
+- EN + PT-BR locales
 - `.github/workflows/docs.yml` for GitHub Pages deployment
 - `website/scripts/sync_reference_docs.py` for mirrored technical references
+
+14. Composer Wrapper Channel
+- `composer.json`
+- `scripts/composer_install.php`
+- Optional PHP-native command surface for invoking official Codex installer
 
 ## Execution Model
 

@@ -41,6 +41,8 @@ Evidence: `docs/RELEASE.md`
 Evidence: `docs/WORKFLOW_CONTRACT.md`
 - [x] Web docs portal exists and is deployable
 Evidence: `website/`, `.github/workflows/docs.yml`
+- [x] Web docs are multilingual (EN + PT-BR)
+Evidence: `website/docs/index.md`, `website/docs/pt/index.md`
 
 ## Quality and CI
 
@@ -65,6 +67,8 @@ Evidence: `skills/codex-node-validation-pack`, `skills/codex-python-validation-p
 Evidence: `examples/README.md`, `examples/node-auth-api/README.md`, `examples/python-fastapi-orders/README.md`, `examples/rust-events-cli/README.md`
 - [x] All-in-one installer exists
 Evidence: `scripts/install_all_in_one.py`
+- [x] Composer wrapper installation channel exists
+Evidence: `composer.json`, `scripts/composer_install.php`
 
 ## Outcome
 

@@ -146,6 +146,28 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
   --path skills/codex-workflows
 ```
 
+### Option 4: Composer wrapper (PHP teams, optional)
+
+Composer wrappers call the same official Codex Python installer.
+
+Install all packs:
+
+```bash
+composer codex:install-all
+```
+
+Install only core:
+
+```bash
+composer codex:install-core
+```
+
+Install from a specific tag/ref:
+
+```bash
+composer codex:install-all -- --ref=v1.1.0
+```
+
 ## Quick Start
 
 1. Restart Codex after installation.
@@ -209,6 +231,11 @@ python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py
 ## Web Portal (/website)
 
 Portal de documentacao implementado dentro do proprio repositorio, em `website/`.
+
+Idiomas:
+
+- English (default)
+- Portugues (Brasil) em `/pt/`
 
 Rodar localmente:
 

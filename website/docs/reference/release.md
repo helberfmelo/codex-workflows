@@ -1,6 +1,6 @@
 # Release
 
-## Fluxo local automatizado
+## Local automated flow
 
 Dry run:
 
@@ -8,7 +8,7 @@ Dry run:
 python scripts/release_automation.py --version 1.1.0
 ```
 
-Aplicar changelog + commit + tag + push:
+Apply changelog + commit + tag + push:
 
 ```bash
 python scripts/release_automation.py --version 1.1.0 --apply --commit --tag --push
@@ -20,10 +20,10 @@ Arquivo:
 
 - `.github/workflows/release.yml`
 
-Suporta:
+Supports:
 
 - `workflow_dispatch`
-- publicacao automatica por `push` de tag `v*`
+- auto publish on `v*` tag push
 
-Se existir `docs/releases/<tag>.md`, esse arquivo vira corpo do release.
-Caso contrario, usa `CHANGELOG.md`.
+If `docs/releases/<tag>.md` exists, it is used as the release body.
+Otherwise it falls back to `CHANGELOG.md`.

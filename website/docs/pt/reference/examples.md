@@ -1,15 +1,13 @@
-# Examples
+# Exemplos
 
-## End-to-end workflow examples
+## Fluxos E2E
 
 - `examples/node-auth-api/README.md`
 - `examples/python-fastapi-orders/README.md`
 - `examples/rust-events-cli/README.md`
 
-## Real fixtures used in CI matrix
+## Fixtures reais no CI
 
 - `examples/projects/node-service`
 - `examples/projects/python-service`
 - `examples/projects/rust-service`
-
-These projects prove stack validation packs execute real checks in CI.

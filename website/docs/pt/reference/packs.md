@@ -4,26 +4,20 @@
 
 - `skills/codex-workflows`
 
-## Domain packs
+## Packs por dominio
 
 - `skills/codex-backend-pack`
 - `skills/codex-frontend-pack`
 - `skills/codex-security-pack`
 - `skills/codex-qa-pack`
 
-## Stack packs
+## Packs por stack
 
 - `skills/codex-node-validation-pack`
 - `skills/codex-python-validation-pack`
 - `skills/codex-rust-validation-pack`
 
-## When to use
+## Quando usar
 
-- functional domain: backend/frontend/security/qa;
-- technical stack: Node/Python/Rust for deterministic checks.
-
-## Unified installation
-
-Use the all-in-one flow in:
-
-- `/get-started/installation`
+- dominio funcional: backend/frontend/security/qa;
+- stack tecnica: Node/Python/Rust para checks deterministicos.

@@ -1,14 +1,14 @@
-# Fonte Tecnica
+# Source Docs
 
-Estas paginas sao espelhadas de `docs/` do repositorio principal.
+These pages are mirrored from `docs/` in the root repository.
 
-Regenerar:
+Regenerate:
 
 ```bash
 python website/scripts/sync_reference_docs.py
 ```
 
-Arquivos disponiveis:
+Available files:
 
 - [Architecture](/reference/source/architecture)
 - [Operations](/reference/source/operations)

@@ -1,12 +1,12 @@
-# Operacoes
+# Operations
 
-Comando unificado:
+Unified operations command:
 
 ```bash
 python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
 ```
 
-Comandos principais:
+Main commands:
 
 - `build-manifest`
 - `check-drift`
@@ -16,7 +16,7 @@ Comandos principais:
 - `sync-pack`
 - `release`
 
-## Rotina recomendada de manutencao
+## Recommended maintenance routine
 
 1. `sync_compat_pack.py`
 2. `build_compat_manifest.py`
@@ -25,6 +25,6 @@ Comandos principais:
 5. `python -m unittest discover -s tests -p "test_*.py"`
 6. `python scripts/ci_validate_skill.py --skills-root skills`
 
-Fonte detalhada:
+Detailed source:
 
 - `docs/OPERATIONS.md`

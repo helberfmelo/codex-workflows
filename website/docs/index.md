@@ -3,41 +3,41 @@ layout: home
 
 hero:
   name: "Codex Workflows"
-  text: "Portal oficial de docs para VS Code + GPT Codex"
-  tagline: "Instalacao, operacao, releases e packs em um unico lugar."
+  text: "Professional workflow platform for VS Code + GPT Codex"
+  tagline: "Enterprise-grade orchestration, validation packs, and release automation."
   actions:
     - theme: brand
-      text: Instalar All-in-One
+      text: Install All-in-One
       link: /get-started/installation
     - theme: alt
-      text: Ver Quickstart
+      text: Run Quickstart
       link: /get-started/quickstart
     - theme: alt
       text: GitHub
       link: https://github.com/helberfmelo/codex-workflows
 
 features:
-  - title: Orquestracao por Workflow
-    details: Direciona pedidos para /brainstorm, /plan, /create, /debug, /orchestrate e outros fluxos com criterios claros.
-  - title: Packs por Dominio e Stack
-    details: Packs para backend/frontend/security/qa e validacao especifica para Node, Python e Rust.
-  - title: Governanca e Release
-    details: CI com matriz real por stack, drift checks, parity checks, automacao de tag/changelog/release.
+  - title: Workflow Orchestration
+    details: Routes requests to /brainstorm, /plan, /create, /debug, /orchestrate and more with deterministic gates.
+  - title: Domain + Stack Packs
+    details: Install backend/frontend/security/qa packs plus stack validation for Node, Python, and Rust.
+  - title: Governance + Release
+    details: CI matrix, drift and parity checks, plus automated changelog/tag/release pipelines.
 ---
 
-## O que e este portal
+## What this portal is
 
-Este `/website` organiza toda a documentacao operacional do projeto:
+This `/website` is the official product docs surface for codex-workflows:
 
-- instalacao para usuarios finais;
-- uso diario dos workflows;
-- manutencao para maintainers;
-- publicacao de releases.
+- installation for end users;
+- daily workflow usage;
+- maintainer operations;
+- release and governance procedures.
 
-## Documentacao fonte no repositorio
+## Source documentation in this repository
 
-- README principal: `README.md`
-- arquitetura: `docs/ARCHITECTURE.md`
-- operacoes: `docs/OPERATIONS.md`
-- release: `docs/RELEASE.md`
-- checklist de robustez: `docs/ROBUSTNESS-CHECKLIST.md`
+- root readme: `README.md`
+- architecture: `docs/ARCHITECTURE.md`
+- operations: `docs/OPERATIONS.md`
+- release runbook: `docs/RELEASE.md`
+- robustness checklist: `docs/ROBUSTNESS-CHECKLIST.md`

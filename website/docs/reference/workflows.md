@@ -1,6 +1,6 @@
 # Workflows
 
-Catalogo suportado:
+Supported catalog:
 
 - `/brainstorm`
 - `/plan`
@@ -14,20 +14,20 @@ Catalogo suportado:
 - `/orchestrate`
 - `/ui-ux-pro-max`
 
-## Recomendacao de uso
+## Recommended prompt pattern
 
-Para maior previsibilidade, sempre explicite skill + workflow:
+For deterministic behavior, always use explicit skill + workflow:
 
 - `Use codex-workflows in /<workflow> and <goal>`
-- `Use codex-workflows em /<workflow> e <objetivo>`
+- `Use codex-workflows in /<workflow> and <objective>`
 
-## Regras de roteamento
+## Routing rules
 
-- modo explicito tem prioridade;
-- tarefas multi-dominio tendem a `/orchestrate`;
-- quando ambiguo, tende a `/plan`.
+- explicit activation has priority;
+- multi-domain requests tend to `/orchestrate`;
+- ambiguous requests default to `/plan`.
 
-Arquivos de referencia:
+Reference files:
 
 - `skills/codex-workflows/scripts/route_workflow.py`
 - `skills/codex-workflows/scripts/route_workflow_fast.py`

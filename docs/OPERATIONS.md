@@ -8,6 +8,10 @@ Install all packs in one command:
 
 `python scripts/install_all_in_one.py`
 
+Composer wrapper (optional for PHP teams):
+
+`composer codex:install-all`
+
 Preview without changes:
 
 `python scripts/install_all_in_one.py --dry-run`

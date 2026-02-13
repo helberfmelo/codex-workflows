@@ -1,28 +1,26 @@
 # Quickstart
 
-## 1) Trigger workflows explicitly
+## 1) Acione workflow explicitamente
 
-Examples:
+- `Use codex-workflows em /orchestrate e execute este objetivo: hardening de autenticacao com testes`
+- `Use codex-workflows em /debug e investigue falha de login`
+- `Use codex-workflows em /plan para este roadmap`
 
-- `Use codex-workflows in /orchestrate and execute this goal: harden auth flow with tests`
-- `Use codex-workflows in /debug and investigate an intermittent login failure`
-- `Use codex-workflows in /plan for this feature roadmap`
+## 2) Bootstrap local `.agent` (opcional)
 
-## 2) Optional: bootstrap local `.agent`
-
-Full profile:
+Perfil completo:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project . --profile antigravity-compat
 ```
 
-Minimal profile:
+Perfil minimo:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project . --profile minimal
 ```
 
-## 3) Route request intent
+## 3) Classificar intent
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/route_workflow.py \
@@ -30,7 +28,7 @@ python ~/.codex/skills/codex-workflows/scripts/route_workflow.py \
   --json
 ```
 
-## 4) Validate by stack
+## 4) Validar por stack
 
 Node:
 

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --vp-c-brand-1: #0f5f87;
+  --vp-c-brand-2: #0b4765;
+  --vp-c-brand-3: #093a53;
+  --vp-c-brand-soft: rgba(15, 95, 135, 0.18);
+  --vp-c-tip-1: #13795b;
+  --vp-c-warning-1: #a15a00;
+  --vp-font-family-base: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --vp-font-family-mono: "IBM Plex Mono", "Consolas", monospace;
+}
+
+.VPNavBarTitle .title,
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.VPHero .name,
+.VPHero .text {
+  font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.Layout {
+  background:
+    radial-gradient(circle at 10% -10%, rgba(15, 95, 135, 0.14), transparent 35%),
+    radial-gradient(circle at 90% -8%, rgba(243, 160, 38, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(8, 32, 46, 0.03), rgba(8, 32, 46, 0));
+}
+
+.VPHero {
+  position: relative;
+  border-radius: 28px;
+  padding: 1.2rem 1rem 0.8rem;
+}
+
+.VPHero::before {
+  content: "";
+  position: absolute;
+  inset: -0.6rem;
+  border-radius: 32px;
+  background:
+    linear-gradient(125deg, rgba(15, 95, 135, 0.18), rgba(15, 95, 135, 0.03)),
+    radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 42%);
+  z-index: -1;
+}
+
+.VPFeature {
+  border: 1px solid rgba(15, 95, 135, 0.2);
+  border-radius: 18px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(250, 252, 255, 0.92));
+  box-shadow: 0 10px 30px rgba(11, 33, 45, 0.08);
+}
+
+.vp-doc a {
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.vp-doc div[class*="language-"] {
+  border: 1px solid rgba(15, 95, 135, 0.24);
+  border-radius: 14px;
+}
