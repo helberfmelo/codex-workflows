@@ -19,6 +19,15 @@ RULES = {
     "/ui-ux-pro-max": ["ui", "ux", "design system", "layout", "visual"],
 }
 
+DOMAIN_HINTS = {
+    "frontend": ["frontend", "ui", "ux", "css", "tailwind", "react", "vue", "layout"],
+    "backend": ["backend", "api", "endpoint", "server", "fastapi", "express", "nestjs"],
+    "security": ["auth", "login", "jwt", "token", "security", "vulnerability", "owasp"],
+    "database": ["database", "schema", "sql", "migration", "prisma", "postgres"],
+    "testing": ["test", "coverage", "unit", "integration", "playwright", "cypress"],
+    "devops": ["deploy", "ci", "cd", "docker", "kubernetes", "production"],
+}
+
 
 def route(text: str) -> dict:
     low = text.lower()
@@ -29,6 +38,19 @@ def route(text: str) -> dict:
             if p in low:
                 scores[wf] += 1
                 hits[wf].append(p)
+
+    matched_domains = set()
+    for domain, patterns in DOMAIN_HINTS.items():
+        if any(p in low for p in patterns):
+            matched_domains.add(domain)
+
+    if len(matched_domains) >= 2 and "/orchestrate" not in scores:
+        return {
+            "workflow": "/orchestrate",
+            "confidence": "high",
+            "reason": f"Detected multi-domain task: {', '.join(sorted(matched_domains))}",
+            "secondary": [],
+        }
 
     if not scores:
         return {

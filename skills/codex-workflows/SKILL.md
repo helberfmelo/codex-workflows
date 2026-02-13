@@ -76,6 +76,17 @@ If local `.agent` is missing, use repository templates:
 
 Bootstrap these templates with `scripts/bootstrap_project_agent.py`.
 
+## Compatibility Profiles
+
+Use `scripts/bootstrap_project_agent.py` with one of:
+
+- `--profile antigravity-compat`: full compatibility pack with agents, skills, workflows, scripts, rules, and shared assets.
+- `--profile minimal`: lightweight starter `.agent` template.
+
+Full compatibility pack location:
+
+- `packs/antigravity-compat/.agent/`
+
 ## Output Contract
 
 Always include:

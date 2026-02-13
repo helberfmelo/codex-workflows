@@ -14,7 +14,10 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - Output report templates for standard and orchestration flows.
 - `route_workflow.py` deterministic workflow classifier.
 - `bootstrap_project_agent.py` to scaffold `.agent` into any project.
+- `bootstrap_project_agent.py --profile` support (`minimal`, `antigravity-compat`).
 - Built-in `.agent` templates with workflows, rules, and architecture.
+- Full compatibility pack at `skills/codex-workflows/packs/antigravity-compat/.agent`.
+- `sync_compat_pack.py` to refresh compatibility pack from a local `.agent` source.
 - `docs/ARCHITECTURE.md` and `docs/COMPARISON.md`.
 
 ## [1.0.0] - 2026-02-13

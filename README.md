@@ -34,6 +34,8 @@ skills/
     scripts/
       route_workflow.py
       bootstrap_project_agent.py
+    packs/
+      antigravity-compat/.agent/** (full compatibility pack)
     references/
       workflow-playbook.md
       workflows/*.md
@@ -80,7 +82,13 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 3. Optional: bootstrap local `.agent` in any project:
 
 ```bash
-python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
+python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project . --profile antigravity-compat
+```
+
+Minimal profile:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project . --profile minimal
 ```
 
 4. Optional: classify request intent deterministically:
@@ -98,6 +106,10 @@ python ~/.codex/skills/codex-workflows/scripts/route_workflow.py "add secure log
 ## Comparison to Antigravity
 
 See `docs/COMPARISON.md` for a detailed comparison and adaptation strategy.
+
+## Compatibility Scope
+
+This repository includes a full compatibility pack under `skills/codex-workflows/packs/antigravity-compat/.agent` copied from a local Antigravity installation baseline to enable near-equivalent structure and workflows in Codex projects.
 
 ## Contributing
 

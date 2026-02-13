@@ -47,8 +47,18 @@ Antigravity-like robustness is approximated by combining:
 - codified workflow knowledge base
 - automation scripts
 - project-level template scaffolding
+- full compatibility pack mirroring `.agent` structure (`packs/antigravity-compat/.agent`)
+- scriptable sync path for future updates (`scripts/sync_compat_pack.py`)
 
 This keeps compatibility with Codex while preserving the workflow mindset.
+
+## Compatibility Mode
+
+For near-equivalent structure to Antigravity projects, bootstrap with:
+
+`bootstrap_project_agent.py --profile antigravity-compat`
+
+This installs a complete `.agent` tree including agents, skills, workflows, rules, scripts, and shared assets.
 
 ## Next expansion path
 
