@@ -1,4 +1,4 @@
 interface:
   display_name: "Codex Workflows"
-  short_description: "Routes requests to workflow-based execution in Codex."
-  default_prompt: "Analyze the request, choose the best workflow, and execute it with clear phase checkpoints."
+  short_description: "Workflow operating system for Codex in VS Code."
+  default_prompt: "Analyze the request, route it to the best workflow, execute phase gates, and report verification evidence."

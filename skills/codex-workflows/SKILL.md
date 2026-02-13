@@ -1,82 +1,90 @@
 ---
 name: codex-workflows
-description: Route user requests to workflow-driven execution in Codex for VS Code. Use when the user asks to brainstorm, plan, create, enhance, debug, test, deploy, preview, check status, orchestrate multi-domain tasks, or run advanced UI/UX design flow. Apply in any project, and prefer local .agent/workflows when available.
+description: Full workflow operating system for GPT Codex in VS Code. Route natural-language requests into structured workflows for brainstorm, plan, create, enhance, debug, test, deploy, preview, status, orchestrate, and UI/UX design. Use when a team wants repeatable execution phases, specialist handoffs, approval checkpoints, and stronger delivery consistency across projects.
 ---
 
 # Codex Workflows
 
-Run workflow-based delivery in Codex with explicit phases, checkpoints, and verification.
+Run delivery as a workflow system, not ad-hoc prompting.
 
-## Quick Start
+## Core Loop
 
-1. Detect if `.agent/workflows` exists in the repository.
-2. Classify user intent to one primary workflow.
-3. Announce selected workflow in one line.
-4. Execute phases in order.
-5. Return deliverables and validation summary.
+1. Detect project context (`.agent`, stack files, test tooling, deployment clues).
+2. Route request to one primary workflow.
+3. Run workflow phases in order with explicit checkpoints.
+4. Validate outputs (tests, lint, typecheck, security checks when available).
+5. Return concise report with next action.
 
-Use this format:
+Use this report header:
 
 ```md
 Applying workflow: `/workflow-name`
 Reason: <short rationale>
+Confidence: <high|medium|low>
 ```
 
-## Workflow Selection
+## Routing Rules
 
-Select one primary workflow first. Add secondary workflows only when required.
+- Use one primary workflow first.
+- Add secondary workflows only if they increase correctness.
+- If request is ambiguous, ask up to 3 high-value questions.
+- Prefer deterministic routing through `scripts/route_workflow.py` when available.
 
-- Brainstorm intent: use `/brainstorm`.
-- Planning intent: use `/plan`.
-- New build intent: use `/create`.
-- Existing feature update intent: use `/enhance`.
-- Failure investigation intent: use `/debug`.
-- Test generation or execution intent: use `/test`.
-- Release intent: use `/deploy`.
-- Local run and health intent: use `/preview`.
-- Progress dashboard intent: use `/status`.
-- Multi-domain complex execution intent: use `/orchestrate`.
-- Advanced visual design intent: use `/ui-ux-pro-max`.
+Read `references/routing/intent-matrix.md` for full mapping.
 
-When intent is ambiguous, ask up to 3 focused clarifying questions, then continue.
+## Workflow Catalog
 
-## Execution Rules
+- `/brainstorm`
+- `/plan`
+- `/create`
+- `/enhance`
+- `/debug`
+- `/test`
+- `/deploy`
+- `/preview`
+- `/status`
+- `/orchestrate`
+- `/ui-ux-pro-max`
 
-- Follow phase-based execution. Do not skip discovery for unclear requests.
-- For complex tasks, require plan approval before broad implementation.
-- Keep outputs concise, actionable, and file-referenced.
-- Prefer deterministic checks: tests, lint, typecheck, and security checks where available.
-- If `.agent` scripts exist, prefer them over re-implementing equivalent logic.
+Read detailed procedures in `references/workflows/`.
 
-## Orchestration Rules
+## Orchestration Policy
 
-Use `/orchestrate` when two or more strong domains are present, for example security + backend + frontend.
+Use `/orchestrate` for multi-domain tasks or when uncertainty is high.
 
-- Use at least 3 specialist perspectives.
-- Create plan first for high-complexity work.
-- Require user approval between planning and implementation.
-- End with verification and a unified report.
+- Minimum 3 specialist perspectives.
+- Planning phase first for complex changes.
+- User checkpoint between plan and implementation.
+- Final synthesis with verification evidence.
 
-## Local Repository Integration
+Read `references/orchestration/phase-gates.md`.
 
-If `.agent` exists, load local files in this order:
+## Project Integration
+
+If local `.agent` exists, prioritize local instructions in this order:
 
 1. `.agent/workflows/<workflow>.md`
-2. `.agent/skills/*/SKILL.md` relevant to the workflow
-3. `.agent/ARCHITECTURE.md` for global constraints
+2. `.agent/skills/*/SKILL.md` related to task
+3. `.agent/rules/*.md`
+4. `.agent/ARCHITECTURE.md`
 
-If `.agent` does not exist, run this skill with `references/workflow-playbook.md`.
+If local `.agent` is missing, use repository templates:
+
+- `templates/.agent/workflows/`
+- `templates/.agent/rules/`
+- `templates/.agent/ARCHITECTURE.md`
+
+Bootstrap these templates with `scripts/bootstrap_project_agent.py`.
 
 ## Output Contract
 
 Always include:
 
-- Selected workflow and reason
-- Phases completed
-- Files changed (if any)
-- Verification run and result
-- Next immediate step
+- Workflow selected + reason + confidence
+- Completed phases
+- Files changed
+- Verifications run and result
+- Risks or assumptions
+- Next immediate action
 
-## Reference
-
-Read `references/workflow-playbook.md` for detailed phase templates and workflow-specific checklists.
+Use report templates from `references/templates/output-templates.md`.

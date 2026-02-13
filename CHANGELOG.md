@@ -8,7 +8,14 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
-- Placeholder for upcoming changes.
+- Skill upgrade to workflow operating system model.
+- Routing matrix and orchestration phase gate references.
+- Per-workflow knowledge files under `references/workflows/`.
+- Output report templates for standard and orchestration flows.
+- `route_workflow.py` deterministic workflow classifier.
+- `bootstrap_project_agent.py` to scaffold `.agent` into any project.
+- Built-in `.agent` templates with workflows, rules, and architecture.
+- `docs/ARCHITECTURE.md` and `docs/COMPARISON.md`.
 
 ## [1.0.0] - 2026-02-13
 

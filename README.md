@@ -1,8 +1,8 @@
 # Codex Workflows Skill
 
-Workflow router skill for GPT Codex in VS Code.
+Workflow operating system for GPT Codex in VS Code.
 
-It maps natural-language requests to workflow-style execution patterns:
+It routes natural-language requests into repeatable execution workflows:
 
 - `/brainstorm`
 - `/plan`
@@ -18,27 +18,38 @@ It maps natural-language requests to workflow-style execution patterns:
 
 ## Positioning
 
-This project is inspired by Antigravity Kit workflow ideas, but is implemented as a Codex skill package for VS Code.
+This project is inspired by Antigravity Kit patterns and adapted to Codex skill format for VS Code.
 
-- It is designed for GPT Codex skill loading and routing.
-- It is not a fork of Antigravity Kit.
-- It is not affiliated with the Antigravity IDE.
+- Designed for GPT Codex skill loading and routing
+- Not a fork of Antigravity Kit
+- Not affiliated with the Antigravity IDE
 
-## Repository Structure
+## What Is Included
 
 ```text
 skills/
   codex-workflows/
     SKILL.md
     agents/openai.yaml
-    references/workflow-playbook.md
+    scripts/
+      route_workflow.py
+      bootstrap_project_agent.py
+    references/
+      workflow-playbook.md
+      workflows/*.md
+      routing/intent-matrix.md
+      orchestration/phase-gates.md
+      templates/output-templates.md
+    templates/.agent/
+      ARCHITECTURE.md
+      rules/CODEX.md
+      workflows/*.md
+      scripts/auto_preview.py
 ```
 
 ## Installation
 
 ### Option 1: Install from GitHub URL (recommended)
-
-Use Codex `skill-installer`:
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -60,35 +71,33 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
   --path skills/codex-workflows
 ```
 
-### Option 3: Manual install
+## Quick Start
 
-Copy `skills/codex-workflows` to:
+1. Restart Codex after installation.
+2. Prompt with workflow intent, for example:
+- `Use codex-workflows and run /orchestrate for this feature`
+- `Apply /debug workflow for this failing test`
+3. Optional: bootstrap local `.agent` in any project:
 
-- macOS/Linux: `~/.codex/skills/codex-workflows`
-- Windows: `%USERPROFILE%\.codex\skills\codex-workflows`
+```bash
+python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
+```
 
-Then restart Codex.
+4. Optional: classify request intent deterministically:
 
-## Usage
-
-After restart, use prompts such as:
-
-- `Use codex-workflows to run /plan for this feature`
-- `/orchestrate implement secure login with tests`
-- `Apply /debug workflow to this error`
-- `Apply /deploy workflow with pre-flight checks`
+```bash
+python ~/.codex/skills/codex-workflows/scripts/route_workflow.py "add secure login with tests" --json
+```
 
 ## Behavior Notes
 
 - Slash-like terms (for example `/orchestrate`) are interpreted as workflow intent in prompts.
-- They are not native CLI slash commands in Codex.
-- The skill prioritizes local `.agent/workflows` files when present.
+- They are not native Codex CLI slash commands.
+- If a project has local `.agent` files, local instructions have priority.
 
-## Compatibility
+## Comparison to Antigravity
 
-- GPT Codex with skill support
-- VS Code Codex workflow
-- Windows, macOS, Linux
+See `docs/COMPARISON.md` for a detailed comparison and adaptation strategy.
 
 ## Contributing
 
@@ -97,6 +106,12 @@ See `CONTRIBUTING.md`.
 ## Changelog
 
 See `CHANGELOG.md`.
+
+## Compatibility
+
+- GPT Codex with skills support
+- VS Code Codex workflow
+- Windows, macOS, Linux
 
 ## License
 
