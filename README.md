@@ -1,5 +1,8 @@
 # Codex Workflows Skill
 
+[![Docs](https://img.shields.io/badge/docs-live-0f5f87?logo=githubpages&logoColor=white)](https://helberfmelo.github.io/codex-workflows/)
+[![Release](https://img.shields.io/github/v/release/helberfmelo/codex-workflows)](https://github.com/helberfmelo/codex-workflows/releases)
+
 Workflow operating system for GPT Codex in VS Code.
 
 It routes natural-language requests into repeatable execution workflows:
@@ -236,6 +239,9 @@ Idiomas:
 
 - English (default)
 - Portugues (Brasil) em `/pt/`
+- Espanol em `/es/`
+- Francais em `/fr/`
+- 中文 em `/zh/`
 
 Rodar localmente:
 

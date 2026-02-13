@@ -10,6 +10,9 @@ hero:
       text: Install All-in-One
       link: /get-started/installation
     - theme: alt
+      text: Switch to PT-BR
+      link: /pt/?lang-switch=1
+    - theme: alt
       text: Run Quickstart
       link: /get-started/quickstart
     - theme: alt

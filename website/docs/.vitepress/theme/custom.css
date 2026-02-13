@@ -62,3 +62,18 @@
   border: 1px solid rgba(15, 95, 135, 0.24);
   border-radius: 14px;
 }
+
+.VPNavBarMenu .VPNavBarMenuLink[href*="lang-switch=1"] {
+  border: 1px solid rgba(15, 95, 135, 0.4);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  margin-left: 0.45rem;
+  background: linear-gradient(130deg, rgba(15, 95, 135, 0.2), rgba(243, 160, 38, 0.22));
+  font-weight: 700;
+}
+
+.VPNavBarMenu .VPNavBarMenuLink[href*="lang-switch=1"]:hover {
+  border-color: rgba(15, 95, 135, 0.6);
+  box-shadow: 0 8px 20px rgba(9, 40, 57, 0.14);
+  transform: translateY(-1px);
+}

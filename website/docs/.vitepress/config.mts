@@ -1,12 +1,20 @@
 import { defineConfig } from "vitepress";
 
+const languageItems = [
+  { text: "English", link: "/" },
+  { text: "Portugues (Brasil)", link: "/pt/" },
+  { text: "Espanol", link: "/es/" },
+  { text: "Francais", link: "/fr/" },
+  { text: "中文", link: "/zh/" }
+];
+
 const enNav = [
   { text: "Home", link: "/" },
   { text: "Install", link: "/get-started/installation" },
   { text: "Workflows", link: "/reference/workflows" },
-  { text: "Release", link: "/reference/release" },
   { text: "Examples", link: "/reference/examples" },
-  { text: "PT-BR", link: "/pt/" },
+  { text: "Switch to PT-BR", link: "/pt/?lang-switch=1" },
+  { text: "Languages", items: languageItems },
   { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
 ];
 
@@ -14,9 +22,39 @@ const ptNav = [
   { text: "Inicio", link: "/pt/" },
   { text: "Instalacao", link: "/pt/get-started/installation" },
   { text: "Workflows", link: "/pt/reference/workflows" },
-  { text: "Release", link: "/pt/reference/release" },
   { text: "Exemplos", link: "/pt/reference/examples" },
-  { text: "EN", link: "/" },
+  { text: "Trocar para EN", link: "/?lang-switch=1" },
+  { text: "Idiomas", items: languageItems },
+  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+];
+
+const esNav = [
+  { text: "Inicio", link: "/es/" },
+  { text: "Instalacion", link: "/es/get-started/installation" },
+  { text: "Workflows", link: "/es/reference/workflows" },
+  { text: "Ejemplos", link: "/es/reference/examples" },
+  { text: "Cambiar a EN", link: "/?lang-switch=1" },
+  { text: "Idiomas", items: languageItems },
+  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+];
+
+const frNav = [
+  { text: "Accueil", link: "/fr/" },
+  { text: "Installation", link: "/fr/get-started/installation" },
+  { text: "Workflows", link: "/fr/reference/workflows" },
+  { text: "Exemples", link: "/fr/reference/examples" },
+  { text: "Passer en EN", link: "/?lang-switch=1" },
+  { text: "Langues", items: languageItems },
+  { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
+];
+
+const zhNav = [
+  { text: "首页", link: "/zh/" },
+  { text: "安装", link: "/zh/get-started/installation" },
+  { text: "工作流", link: "/zh/reference/workflows" },
+  { text: "示例", link: "/zh/reference/examples" },
+  { text: "切换到 EN", link: "/?lang-switch=1" },
+  { text: "语言", items: languageItems },
   { text: "GitHub", link: "https://github.com/helberfmelo/codex-workflows" }
 ];
 
@@ -74,6 +112,87 @@ const ptSidebar = [
   }
 ];
 
+const esSidebar = [
+  {
+    text: "Primeros Pasos",
+    items: [
+      { text: "Vision General", link: "/es/" },
+      { text: "Instalacion", link: "/es/get-started/installation" },
+      { text: "Quickstart", link: "/es/get-started/quickstart" }
+    ]
+  },
+  {
+    text: "Referencia",
+    items: [
+      { text: "Workflows", link: "/es/reference/workflows" },
+      { text: "Packs", link: "/es/reference/packs" },
+      { text: "Operaciones", link: "/es/reference/operations" },
+      { text: "Release", link: "/es/reference/release" },
+      { text: "Composer", link: "/es/reference/composer" },
+      { text: "Ejemplos", link: "/es/reference/examples" },
+      { text: "Documentos Fuente", link: "/es/reference/source" }
+    ]
+  },
+  {
+    text: "Estrategia",
+    items: [{ text: "Monetizacion", link: "/es/strategy/monetization" }]
+  }
+];
+
+const frSidebar = [
+  {
+    text: "Demarrage",
+    items: [
+      { text: "Vue d'ensemble", link: "/fr/" },
+      { text: "Installation", link: "/fr/get-started/installation" },
+      { text: "Quickstart", link: "/fr/get-started/quickstart" }
+    ]
+  },
+  {
+    text: "Reference",
+    items: [
+      { text: "Workflows", link: "/fr/reference/workflows" },
+      { text: "Packs", link: "/fr/reference/packs" },
+      { text: "Operations", link: "/fr/reference/operations" },
+      { text: "Release", link: "/fr/reference/release" },
+      { text: "Composer", link: "/fr/reference/composer" },
+      { text: "Exemples", link: "/fr/reference/examples" },
+      { text: "Docs Source", link: "/fr/reference/source" }
+    ]
+  },
+  {
+    text: "Strategie",
+    items: [{ text: "Monetisation", link: "/fr/strategy/monetization" }]
+  }
+];
+
+const zhSidebar = [
+  {
+    text: "快速开始",
+    items: [
+      { text: "总览", link: "/zh/" },
+      { text: "安装", link: "/zh/get-started/installation" },
+      { text: "快速上手", link: "/zh/get-started/quickstart" }
+    ]
+  },
+  {
+    text: "参考",
+    items: [
+      { text: "工作流", link: "/zh/reference/workflows" },
+      { text: "Packs", link: "/zh/reference/packs" },
+      { text: "运维", link: "/zh/reference/operations" },
+      { text: "发布", link: "/zh/reference/release" },
+      { text: "Composer", link: "/zh/reference/composer" },
+      { text: "示例", link: "/zh/reference/examples" },
+      { text: "源文档", link: "/zh/reference/source" }
+    ]
+  },
+  {
+    text: "策略",
+    items: [{ text: "商业化", link: "/zh/strategy/monetization" }]
+  }
+];
+
 export default defineConfig({
   title: "Codex Workflows",
   description: "Workflow operating system for GPT Codex in VS Code.",
@@ -114,6 +233,54 @@ export default defineConfig({
         footer: {
           message: "Licenca MIT",
           copyright: "Copyright 2026 contribuidores do codex-workflows"
+        }
+      }
+    },
+    es: {
+      label: "Espanol",
+      lang: "es-ES",
+      link: "/es/",
+      themeConfig: {
+        logo: "/logo-mark.svg",
+        nav: esNav,
+        sidebar: esSidebar,
+        socialLinks: [{ icon: "github", link: "https://github.com/helberfmelo/codex-workflows" }],
+        search: { provider: "local" },
+        footer: {
+          message: "Licencia MIT",
+          copyright: "Copyright 2026 contribuidores de codex-workflows"
+        }
+      }
+    },
+    fr: {
+      label: "Francais",
+      lang: "fr-FR",
+      link: "/fr/",
+      themeConfig: {
+        logo: "/logo-mark.svg",
+        nav: frNav,
+        sidebar: frSidebar,
+        socialLinks: [{ icon: "github", link: "https://github.com/helberfmelo/codex-workflows" }],
+        search: { provider: "local" },
+        footer: {
+          message: "Licence MIT",
+          copyright: "Copyright 2026 contributeurs codex-workflows"
+        }
+      }
+    },
+    zh: {
+      label: "中文",
+      lang: "zh-CN",
+      link: "/zh/",
+      themeConfig: {
+        logo: "/logo-mark.svg",
+        nav: zhNav,
+        sidebar: zhSidebar,
+        socialLinks: [{ icon: "github", link: "https://github.com/helberfmelo/codex-workflows" }],
+        search: { provider: "local" },
+        footer: {
+          message: "MIT 许可证",
+          copyright: "Copyright 2026 codex-workflows contributors"
         }
       }
     }

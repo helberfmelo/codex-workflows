@@ -6,6 +6,9 @@ Idiomas:
 
 - English (default)
 - Portugues (Brasil) em `/pt/`
+- Espanol em `/es/`
+- Francais em `/fr/`
+- 中文 em `/zh/`
 
 ## Rodar localmente
 

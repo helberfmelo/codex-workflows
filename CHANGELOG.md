@@ -18,6 +18,8 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - Composer wrapper channel:
   - `composer.json`
   - `scripts/composer_install.php`
+- Added Docs badge to `README.md` and stronger EN/PT-BR language switch CTA in top navigation.
+- Expanded multilingual docs to Spanish, French, and Chinese.
 
 ## [1.1.0] - 2026-02-13
 

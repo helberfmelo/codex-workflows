@@ -79,7 +79,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 
 13. Web Documentation Portal
 - `website/` (VitePress portal)
-- EN + PT-BR locales
+- EN + PT-BR + ES + FR + ZH locales
 - `.github/workflows/docs.yml` for GitHub Pages deployment
 - `website/scripts/sync_reference_docs.py` for mirrored technical references
 
