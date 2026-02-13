@@ -11,6 +11,8 @@ python website/scripts/sync_reference_docs.py
 Arquivos:
 
 - [Architecture](/pt/reference/source/architecture)
+- [Comparison](/pt/reference/source/comparison)
+- [Workflow Contract](/pt/reference/source/workflow-contract)
 - [Operations](/pt/reference/source/operations)
 - [Release](/pt/reference/source/release)
 - [Robustness Checklist](/pt/reference/source/robustness-checklist)

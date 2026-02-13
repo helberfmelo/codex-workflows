@@ -8,7 +8,13 @@
 
 ## 2) Bootstrap local `.agent` (opcional)
 
-Perfil completo:
+Perfil padrao (`codex-native`):
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
+```
+
+Perfil de compatibilidade:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project . --profile antigravity-compat
@@ -46,4 +52,12 @@ Rust:
 
 ```bash
 python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project . --run
+```
+
+## 5) Validar qualidade do trilho codex-native
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
+  --native ~/.codex/skills/codex-workflows/templates/codex-native/.agent/workflows \
+  --compat ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows
 ```

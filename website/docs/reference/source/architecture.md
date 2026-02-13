@@ -34,10 +34,12 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `scripts/build_compat_manifest.py`
 - `scripts/check_compat_drift.py`
 - `scripts/check_workflow_parity.py`
+- `scripts/check_codex_native_quality.py`
 - `scripts/benchmark_router.py`
 - `scripts/codex_workflows_ops.py`
 
 5. Project Template
+- `templates/codex-native/.agent/...` (default profile overlay for rewritten workflows)
 - `templates/.agent/...` (full template baseline)
 - `templates/minimal/.agent/...` (lightweight starter)
 - Bootstraps local workflow files for projects without `.agent`
@@ -49,6 +51,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 7. Governance and Quality
 - `compat/manifest.json` for drift control
 - `.github/workflows/ci.yml` for automated checks
+- Codex-native workflow quality gate via `check_codex_native_quality.py`
 - Stack CI matrix (Node/Python/Rust) running real fixture checks
 - `tests/` for script correctness
 
@@ -78,6 +81,17 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 12. All-in-One Installation
 - `scripts/install_all_in_one.py`
 - One-command installer orchestration for core + domain + stack packs
+
+13. Web Documentation Portal
+- `website/` (VitePress portal)
+- EN + PT-BR + ES + FR + ZH locales
+- `.github/workflows/docs.yml` for GitHub Pages deployment
+- `website/scripts/sync_reference_docs.py` for mirrored technical references
+
+14. Composer Wrapper Channel
+- `composer.json`
+- `scripts/composer_install.php`
+- Optional PHP-native command surface for invoking official Codex installer
 
 ## Execution Model
 

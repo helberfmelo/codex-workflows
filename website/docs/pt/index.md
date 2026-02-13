@@ -18,11 +18,11 @@ hero:
 
 features:
   - title: Orquestracao Estruturada
-    details: Direciona tarefas para workflows com gates claros e validacao final.
+    details: Direciona tarefas para workflows com contratos codex-native, gates claros e validacao final.
   - title: Packs por Dominio e Stack
     details: Backend/frontend/security/qa com validacao especifica para Node, Python e Rust.
   - title: Governanca e Escala
-    details: CI matrix real, checks de drift/parity e release automatizado por tag.
+    details: CI matrix real, checks de drift/parity, gate de qualidade codex-native e release automatizado por tag.
 ---
 
 ## Visao geral

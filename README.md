@@ -43,6 +43,7 @@ skills/
       build_compat_manifest.py
       check_compat_drift.py
       check_workflow_parity.py
+      check_codex_native_quality.py
       benchmark_router.py
       codex_workflows_ops.py
     compat/
@@ -55,6 +56,7 @@ skills/
       routing/intent-matrix.md
       orchestration/phase-gates.md
       templates/output-templates.md
+    templates/codex-native/.agent/workflows/** (codex-native overrides)
     templates/.agent/** (full template baseline)
     templates/minimal/.agent/** (lightweight starter)
   codex-backend-pack/
@@ -180,6 +182,14 @@ composer codex:install-all -- --ref=v1.1.0
 3. Optional: bootstrap local `.agent` in any project:
 
 ```bash
+python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
+```
+
+This default profile is `codex-native` and overlays all 11 workflow files (`/brainstorm` to `/ui-ux-pro-max`) with Codex-specific execution contracts.
+
+Compatibility profile:
+
+```bash
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project . --profile antigravity-compat
 ```
 
@@ -217,13 +227,21 @@ python ~/.codex/skills/codex-workflows/scripts/check_compat_drift.py \
   --template-full ~/.codex/skills/codex-workflows/templates/.agent
 ```
 
-7. Benchmark routing runtime:
+7. Validate codex-native workflow quality:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
+  --native ~/.codex/skills/codex-workflows/templates/codex-native/.agent/workflows \
+  --compat ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+```
+
+8. Benchmark routing runtime:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 10000
 ```
 
-8. Run stack validation packs:
+9. Run stack validation packs:
 
 ```bash
 python ~/.codex/skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .
@@ -306,6 +324,8 @@ See `docs/COMPARISON.md` for a detailed comparison and adaptation strategy.
 ## Compatibility Scope
 
 This repository includes a full compatibility pack under `skills/codex-workflows/packs/antigravity-compat/.agent` copied from a local Antigravity installation baseline to enable near-equivalent structure and workflows in Codex projects.
+
+The default bootstrap path is now `codex-native`, which keeps compatibility as a baseline but applies native workflow rewrites from `skills/codex-workflows/templates/codex-native/.agent/workflows`.
 
 ## Domain Packs
 

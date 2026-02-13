@@ -32,10 +32,12 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `scripts/build_compat_manifest.py`
 - `scripts/check_compat_drift.py`
 - `scripts/check_workflow_parity.py`
+- `scripts/check_codex_native_quality.py`
 - `scripts/benchmark_router.py`
 - `scripts/codex_workflows_ops.py`
 
 5. Project Template
+- `templates/codex-native/.agent/...` (default profile overlay for rewritten workflows)
 - `templates/.agent/...` (full template baseline)
 - `templates/minimal/.agent/...` (lightweight starter)
 - Bootstraps local workflow files for projects without `.agent`
@@ -47,6 +49,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 7. Governance and Quality
 - `compat/manifest.json` for drift control
 - `.github/workflows/ci.yml` for automated checks
+- Codex-native workflow quality gate via `check_codex_native_quality.py`
 - Stack CI matrix (Node/Python/Rust) running real fixture checks
 - `tests/` for script correctness
 

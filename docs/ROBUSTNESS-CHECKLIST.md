@@ -10,6 +10,8 @@ Evidence: `skills/codex-workflows/packs/antigravity-compat/.agent/`
 Evidence: `skills/codex-workflows/templates/.agent/`
 - [x] Minimal template exists
 Evidence: `skills/codex-workflows/templates/minimal/.agent/`
+- [x] Codex-native template overlay exists
+Evidence: `skills/codex-workflows/templates/codex-native/.agent/workflows/`
 
 ## Workflow quality
 
@@ -17,6 +19,10 @@ Evidence: `skills/codex-workflows/templates/minimal/.agent/`
 Evidence: `skills/codex-workflows/templates/.agent/workflows/orchestrate.md`
 - [x] Workflow parity checker exists
 Evidence: `skills/codex-workflows/scripts/check_workflow_parity.py`
+- [x] Codex-native workflow set is fully rewritten
+Evidence: `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
+- [x] Codex-native quality checker exists
+Evidence: `skills/codex-workflows/scripts/check_codex_native_quality.py`
 
 ## Sync and routing automation
 
@@ -48,6 +54,8 @@ Evidence: `website/docs/index.md`, `website/docs/pt/index.md`, `website/docs/es/
 
 - [x] CI workflow exists
 Evidence: `.github/workflows/ci.yml`
+- [x] CI enforces codex-native quality check
+Evidence: `.github/workflows/ci.yml`, `skills/codex-workflows/scripts/check_codex_native_quality.py`
 - [x] CI stack matrix exists with real example projects
 Evidence: `.github/workflows/ci.yml`, `examples/projects/node-service`, `examples/projects/python-service`, `examples/projects/rust-service`
 - [x] Release workflow exists

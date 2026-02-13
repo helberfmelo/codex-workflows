@@ -1,3 +1,5 @@
+# Source: docs/COMPARISON.md
+
 # Comparison: Antigravity Kit vs Codex Workflows
 
 Date: 2026-02-13

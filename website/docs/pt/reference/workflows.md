@@ -14,6 +14,12 @@ Catalogo suportado:
 - `/orchestrate`
 - `/ui-ux-pro-max`
 
+Perfil padrao de bootstrap: `codex-native`.
+
+Os workflows nativos reescritos ficam em:
+
+- `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
+
 ## Padrao recomendado de prompt
 
 - `Use codex-workflows in /<workflow> and <objective>`
@@ -24,3 +30,10 @@ Catalogo suportado:
 - ativacao explicita tem prioridade;
 - tarefas multi-dominio tendem a `/orchestrate`;
 - ambiguo tende a `/plan`.
+
+## Checks de qualidade
+
+- parity de compatibilidade:
+  - `python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+- qualidade codex-native:
+  - `python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows`

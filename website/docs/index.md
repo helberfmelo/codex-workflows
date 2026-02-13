@@ -18,11 +18,11 @@ hero:
 
 features:
   - title: Workflow Orchestration
-    details: Routes requests to /brainstorm, /plan, /create, /debug, /orchestrate and more with deterministic gates.
+    details: Routes requests to /brainstorm, /plan, /create, /debug, /orchestrate and more with codex-native execution contracts.
   - title: Domain + Stack Packs
     details: Install backend/frontend/security/qa packs plus stack validation for Node, Python, and Rust.
   - title: Governance + Release
-    details: CI matrix, drift and parity checks, plus automated changelog/tag/release pipelines.
+    details: CI matrix, compat drift/parity checks, codex-native quality gates, and automated changelog/tag/release pipelines.
 ---
 
 ## What this portal is

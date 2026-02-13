@@ -5,7 +5,12 @@ This project maintains a full Antigravity-compatible `.agent` tree in two places
 - `skills/codex-workflows/packs/antigravity-compat/.agent`
 - `skills/codex-workflows/templates/.agent`
 
-The first is the compatibility pack and the second is the default full bootstrap template.
+The first is the compatibility pack and the second is the compatibility baseline template.
+
+Default project bootstrap now uses:
+
+- `skills/codex-workflows/templates/codex-native/.agent/workflows` as overlay
+- on top of compatibility baseline files
 
 ## Source of truth
 

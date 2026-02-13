@@ -11,6 +11,7 @@ Main commands:
 - `build-manifest`
 - `check-drift`
 - `check-workflows`
+- `check-codex-native`
 - `benchmark`
 - `bootstrap`
 - `sync-pack`
@@ -22,8 +23,9 @@ Main commands:
 2. `build_compat_manifest.py`
 3. `check_compat_drift.py`
 4. `check_workflow_parity.py`
-5. `python -m unittest discover -s tests -p "test_*.py"`
-6. `python scripts/ci_validate_skill.py --skills-root skills`
+5. `check_codex_native_quality.py`
+6. `python -m unittest discover -s tests -p "test_*.py"`
+7. `python scripts/ci_validate_skill.py --skills-root skills`
 
 Detailed source:
 

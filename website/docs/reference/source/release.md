@@ -16,7 +16,10 @@
 4. Compatibility drift:
 `python skills/codex-workflows/scripts/check_compat_drift.py --manifest skills/codex-workflows/compat/manifest.json --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent`
 
-5. Router benchmark:
+5. Codex-native workflow quality:
+`python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
+
+6. Router benchmark:
 `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000`
 
 ## Automated release (recommended)
@@ -64,3 +67,12 @@ Tag-driven publish is also enabled:
 - Pushing `v*` tags triggers automatic release publication.
 - It uses `docs/releases/<tag>.md` when available.
 - Fallback body is `CHANGELOG.md` if release notes file is missing.
+
+## Docs portal publish
+
+Workflow: `.github/workflows/docs.yml`
+
+- Triggered by changes under `website/**`, `docs/**`, or `README.md`.
+- Builds `website` with VitePress.
+- Pushes static output to `gh-pages` branch.
+- First-time setup: in GitHub Settings > Pages, select `gh-pages` as source branch.

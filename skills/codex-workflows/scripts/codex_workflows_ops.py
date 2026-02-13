@@ -25,7 +25,11 @@ def main() -> None:
 
     p_bootstrap = sub.add_parser("bootstrap")
     p_bootstrap.add_argument("--project", default=".")
-    p_bootstrap.add_argument("--profile", default="antigravity-compat", choices=("minimal", "antigravity-compat"))
+    p_bootstrap.add_argument(
+        "--profile",
+        default="codex-native",
+        choices=("codex-native", "minimal", "antigravity-compat"),
+    )
     p_bootstrap.add_argument("--force", action="store_true")
 
     p_sync = sub.add_parser("sync-pack")
@@ -41,6 +45,7 @@ def main() -> None:
     sub.add_parser("build-manifest")
     sub.add_parser("check-drift")
     sub.add_parser("check-workflows")
+    sub.add_parser("check-codex-native")
 
     args = parser.parse_args()
 
@@ -119,6 +124,17 @@ def main() -> None:
                 "--template",
                 str(root / "templates" / ".agent" / "workflows"),
                 "--pack",
+                str(root / "packs" / "antigravity-compat" / ".agent" / "workflows"),
+            ]
+        )
+        raise SystemExit(code)
+    if args.cmd == "check-codex-native":
+        code = run(
+            [
+                str(scripts / "check_codex_native_quality.py"),
+                "--native",
+                str(root / "templates" / "codex-native" / ".agent" / "workflows"),
+                "--compat",
                 str(root / "packs" / "antigravity-compat" / ".agent" / "workflows"),
             ]
         )

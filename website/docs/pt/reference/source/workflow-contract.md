@@ -1,3 +1,5 @@
+# Source: docs/WORKFLOW_CONTRACT.md
+
 # Workflow Contract
 
 The repository now has two workflow tracks:

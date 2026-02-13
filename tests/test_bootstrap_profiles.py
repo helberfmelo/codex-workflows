@@ -9,9 +9,32 @@ import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "skills" / "codex-workflows" / "scripts" / "bootstrap_project_agent.py"
+PACK_ORCHESTRATE = (
+    ROOT
+    / "skills"
+    / "codex-workflows"
+    / "packs"
+    / "antigravity-compat"
+    / ".agent"
+    / "workflows"
+    / "orchestrate.md"
+)
 
 
 class BootstrapProfileTests(unittest.TestCase):
+    def test_default_profile_bootstrap_is_codex_native(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            project = pathlib.Path(tmp)
+            subprocess.run(
+                [sys.executable, str(SCRIPT), "--project", str(project)],
+                check=True,
+            )
+            wf = project / ".agent" / "workflows" / "orchestrate.md"
+            self.assertTrue(wf.exists())
+            wf_text = wf.read_text(encoding="utf-8")
+            self.assertIn("Codex-Native Delivery Conductor", wf_text)
+            self.assertNotEqual(wf_text, PACK_ORCHESTRATE.read_text(encoding="utf-8"))
+
     def test_minimal_profile_bootstrap(self):
         with tempfile.TemporaryDirectory() as tmp:
             project = pathlib.Path(tmp)
@@ -52,4 +75,3 @@ class BootstrapProfileTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

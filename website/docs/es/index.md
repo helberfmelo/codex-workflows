@@ -15,11 +15,11 @@ hero:
 
 features:
   - title: Orquestacion por Workflow
-    details: Ruteo determinista para tareas complejas con validaciones y reportes.
+    details: Ruteo determinista con contratos codex-native, validaciones y reportes.
   - title: Packs por Dominio y Stack
     details: Backend, frontend, security, qa y validaciones Node/Python/Rust.
   - title: Governanza y Release
-    details: CI matrix real, checks de drift/parity y release automatico por tag.
+    details: CI matrix real, checks drift/parity, gate de calidad codex-native y release automatico por tag.
 ---
 
 ## Resumen

@@ -189,3 +189,31 @@ Evidence:
 - `python skills/codex-workflows/scripts/check_workflow_parity.py ...` -> pass.
 - `python skills/codex-workflows/scripts/check_compat_drift.py ... --source .agent` -> pass.
 - `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000` -> speedup observed in current run (`~1.53x`).
+
+## Phase 5 Summary (Executed)
+
+- Added default bootstrap profile `codex-native`.
+- Preserved `antigravity-compat` and `minimal` profiles.
+- Implemented profile overlay logic so codex-native can evolve independently while keeping compatibility baseline.
+
+## Phase 6 Summary (Executed)
+
+- Rewrote codex-native workflow files for all commands:
+  - `/brainstorm`
+  - `/plan`
+  - `/create`
+  - `/enhance`
+  - `/debug`
+  - `/test`
+  - `/deploy`
+  - `/preview`
+  - `/status`
+  - `/orchestrate`
+  - `/ui-ux-pro-max`
+- Added codex-native quality gate script:
+  - `skills/codex-workflows/scripts/check_codex_native_quality.py`
+- Added CI enforcement of codex-native quality:
+  - `.github/workflows/ci.yml`
+- Added dedicated tests:
+  - `tests/test_codex_native_quality.py`
+- Updated root docs and website docs (EN/PT/ES/FR/ZH) to reflect codex-native default and new quality checks.

@@ -20,6 +20,17 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
   - `scripts/composer_install.php`
 - Added Docs badge to `README.md` and stronger EN/PT-BR language switch CTA in top navigation.
 - Expanded multilingual docs to Spanish, French, and Chinese.
+- New default bootstrap profile: `codex-native`.
+- Codex-native rewritten workflow set for all 11 commands under:
+  - `skills/codex-workflows/templates/codex-native/.agent/workflows/`
+- Codex-native quality checker:
+  - `skills/codex-workflows/scripts/check_codex_native_quality.py`
+- CI enforcement for codex-native workflow quality in `.github/workflows/ci.yml`.
+- New unit tests:
+  - `tests/test_codex_native_quality.py`
+- Operations CLI command:
+  - `python skills/codex-workflows/scripts/codex_workflows_ops.py check-codex-native`
+- Website docs updates (EN/PT/ES/FR/ZH) to reflect codex-native default and quality validation steps.
 
 ## [1.1.0] - 2026-02-13
 

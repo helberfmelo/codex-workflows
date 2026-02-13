@@ -15,11 +15,11 @@ hero:
 
 features:
   - title: Orchestration Workflow
-    details: Routage deterministe avec validation finale et reporting.
+    details: Routage deterministe avec contrats codex-native, validation finale et reporting.
   - title: Packs Domaine et Stack
     details: backend/frontend/security/qa + validation Node/Python/Rust.
   - title: Gouvernance et Release
-    details: CI matrix reel, checks drift/parity et release automatique.
+    details: CI matrix reel, checks drift/parity, gate qualite codex-native et release automatique.
 ---
 
 ## Resume

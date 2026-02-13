@@ -29,6 +29,12 @@ jobs:
             --template skills/codex-workflows/templates/.agent/workflows \
             --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows
 
+      - name: Check codex-native workflow quality
+        run: |
+          python skills/codex-workflows/scripts/check_codex_native_quality.py \
+            --native skills/codex-workflows/templates/codex-native/.agent/workflows \
+            --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+
       - name: Validate compatibility manifest drift
         run: |
           python skills/codex-workflows/scripts/check_compat_drift.py \
