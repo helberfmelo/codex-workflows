@@ -14,12 +14,16 @@ on:
         options:
           - "true"
           - "false"
+  push:
+    tags:
+      - "v*"
 
 permissions:
   contents: write
 
 jobs:
-  release:
+  release-from-dispatch:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -63,3 +67,28 @@ jobs:
         with:
           tag_name: v${{ inputs.version }}
           body_path: ${{ runner.temp }}/release-notes.md
+
+  publish-from-tag:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Resolve release notes path
+        id: notes
+        shell: bash
+        run: |
+          NOTES_PATH="docs/releases/${GITHUB_REF_NAME}.md"
+          if [[ ! -f "${NOTES_PATH}" ]]; then
+            NOTES_PATH="CHANGELOG.md"
+          fi
+          echo "path=${NOTES_PATH}" >> "${GITHUB_OUTPUT}"
+
+      - name: Publish GitHub Release from tag
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          body_path: ${{ steps.notes.outputs.path }}

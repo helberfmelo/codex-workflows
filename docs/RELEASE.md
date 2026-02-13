@@ -56,3 +56,9 @@ The workflow:
 2. runs `scripts/release_automation.py` with commit/tag;
 3. pushes commit/tag (if enabled);
 4. publishes the GitHub Release with generated notes.
+
+Tag-driven publish is also enabled:
+
+- Pushing `v*` tags triggers automatic release publication.
+- It uses `docs/releases/<tag>.md` when available.
+- Fallback body is `CHANGELOG.md` if release notes file is missing.

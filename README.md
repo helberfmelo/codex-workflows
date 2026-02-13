@@ -277,6 +277,7 @@ python scripts/release_automation.py --version 1.1.0 --apply --commit --tag --pu
 GitHub Actions release workflow:
 
 - `.github/workflows/release.yml` (`workflow_dispatch`)
+- Auto publish on tag push (`v*`) using `docs/releases/<tag>.md` when available
 
 ## End-to-End Examples
 

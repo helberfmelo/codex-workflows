@@ -8,7 +8,7 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
-- Nothing yet.
+- Release workflow now supports auto-publish on `v*` tag push.
 
 ## [1.1.0] - 2026-02-13
 
