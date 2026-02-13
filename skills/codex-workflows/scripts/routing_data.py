@@ -33,6 +33,12 @@ DOMAIN_HINTS = {
     "devops": ["deploy", "ci", "cd", "docker", "kubernetes", "production"],
 }
 
+STACK_HINTS = {
+    "node": ["node", "nodejs", "javascript", "typescript", "npm", "pnpm", "yarn", "package.json"],
+    "python": ["python", "django", "flask", "pyproject", "poetry", "pytest", "pydantic"],
+    "rust": ["rust", "cargo", "cargo.toml", "clippy", "tokio", "actix"],
+}
+
 DOMAIN_TO_PACK = {
     "frontend": "codex-frontend-pack",
     "backend": "codex-backend-pack",
@@ -40,6 +46,12 @@ DOMAIN_TO_PACK = {
     "database": "codex-backend-pack",
     "testing": "codex-qa-pack",
     "devops": "codex-qa-pack",
+}
+
+STACK_TO_PACK = {
+    "node": "codex-node-validation-pack",
+    "python": "codex-python-validation-pack",
+    "rust": "codex-rust-validation-pack",
 }
 
 
@@ -55,6 +67,21 @@ def detect_domains(text: str, domain_hints: dict[str, list[str]] | None = None) 
         if any(p in low for p in patterns):
             domains.add(domain)
     return domains
+
+
+def detect_stack_packs(
+    text: str,
+    stack_hints: dict[str, list[str]] | None = None,
+    stack_to_pack: dict[str, str] | None = None,
+) -> set[str]:
+    hints = stack_hints or STACK_HINTS
+    mapping = stack_to_pack or STACK_TO_PACK
+    low = text.lower()
+    packs = set()
+    for stack, patterns in hints.items():
+        if stack in mapping and any(p in low for p in patterns):
+            packs.add(mapping[stack])
+    return packs
 
 
 def detect_explicit_workflow(

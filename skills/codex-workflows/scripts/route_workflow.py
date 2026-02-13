@@ -10,12 +10,14 @@ from routing_data import (
     RULES,
     detect_domains,
     detect_explicit_workflow,
+    detect_stack_packs,
     tokenize,
 )
 
 
-def recommend_packs(domains: set[str]) -> list[str]:
+def recommend_packs(domains: set[str], text: str) -> list[str]:
     packs = {DOMAIN_TO_PACK[d] for d in domains if d in DOMAIN_TO_PACK}
+    packs.update(detect_stack_packs(text))
     return sorted(packs)
 
 
@@ -25,7 +27,7 @@ def route(text: str) -> dict:
     scores = defaultdict(int)
     hits = defaultdict(list)
     matched_domains = detect_domains(low, DOMAIN_HINTS)
-    packs = recommend_packs(matched_domains)
+    packs = recommend_packs(matched_domains, low)
 
     explicit_workflow = detect_explicit_workflow(text, set(RULES.keys()))
     if explicit_workflow:

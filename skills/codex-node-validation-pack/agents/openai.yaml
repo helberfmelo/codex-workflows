@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Node Validation Pack"
+  short_description: "Node/TypeScript stack validation checks for Codex workflows."
+  default_prompt: "Run Node stack validation checks and return a concise pass/fail report."

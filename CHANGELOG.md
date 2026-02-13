@@ -49,6 +49,20 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
   - `skills/codex-frontend-pack`
   - `skills/codex-security-pack`
   - `skills/codex-qa-pack`
+- Stack validation packs:
+  - `skills/codex-node-validation-pack`
+  - `skills/codex-python-validation-pack`
+  - `skills/codex-rust-validation-pack`
+- Stack validator tests:
+  - `tests/test_stack_validators.py`
+- Release automation:
+  - `scripts/release_automation.py`
+  - `.github/workflows/release.yml`
+  - `tests/test_release_automation.py`
+- End-to-end real project examples:
+  - `examples/node-auth-api/README.md`
+  - `examples/python-fastapi-orders/README.md`
+  - `examples/rust-events-cli/README.md`
 
 ## [1.0.0] - 2026-02-13
 

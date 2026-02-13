@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Python Validation Pack"
+  short_description: "Python stack validation checks for Codex workflows."
+  default_prompt: "Run Python stack validation checks and return a concise pass/fail report."

@@ -58,6 +58,15 @@ skills/
   codex-frontend-pack/
   codex-security-pack/
   codex-qa-pack/
+  codex-node-validation-pack/
+  codex-python-validation-pack/
+  codex-rust-validation-pack/
+scripts/
+  release_automation.py
+examples/
+  node-auth-api/
+  python-fastapi-orders/
+  rust-events-cli/
 ```
 
 ## Installation
@@ -136,6 +145,14 @@ python ~/.codex/skills/codex-workflows/scripts/check_compat_drift.py \
 python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 10000
 ```
 
+8. Run stack validation packs:
+
+```bash
+python ~/.codex/skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .
+python ~/.codex/skills/codex-python-validation-pack/scripts/validate_python_stack.py --project .
+python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project .
+```
+
 ## Prompting Best Practices
 
 Use explicit skill + workflow phrasing for the most reliable behavior.
@@ -186,8 +203,37 @@ Independent packs are available for targeted installation:
 - `skills/codex-frontend-pack`
 - `skills/codex-security-pack`
 - `skills/codex-qa-pack`
+- `skills/codex-node-validation-pack`
+- `skills/codex-python-validation-pack`
+- `skills/codex-rust-validation-pack`
 
 The routers also return `recommended_packs` based on detected domains.
+
+## Release Automation
+
+Use `scripts/release_automation.py` to automate changelog cut, commit, tag, and optional push.
+
+Dry run:
+
+```bash
+python scripts/release_automation.py --version 1.1.0
+```
+
+Apply and publish:
+
+```bash
+python scripts/release_automation.py --version 1.1.0 --apply --commit --tag --push
+```
+
+GitHub Actions release workflow:
+
+- `.github/workflows/release.yml` (`workflow_dispatch`)
+
+## End-to-End Examples
+
+- `examples/node-auth-api/README.md`
+- `examples/python-fastapi-orders/README.md`
+- `examples/rust-events-cli/README.md`
 
 ## CI and Quality Gates
 

@@ -31,6 +31,13 @@ def main() -> None:
     p_sync = sub.add_parser("sync-pack")
     p_sync.add_argument("--source", required=True)
 
+    p_release = sub.add_parser("release")
+    p_release.add_argument("--version", required=True)
+    p_release.add_argument("--apply", action="store_true")
+    p_release.add_argument("--commit", action="store_true")
+    p_release.add_argument("--tag", action="store_true")
+    p_release.add_argument("--push", action="store_true")
+
     sub.add_parser("build-manifest")
     sub.add_parser("check-drift")
     sub.add_parser("check-workflows")
@@ -57,6 +64,23 @@ def main() -> None:
         raise SystemExit(code)
     if args.cmd == "sync-pack":
         code = run([str(scripts / "sync_compat_pack.py"), "--source", args.source])
+        raise SystemExit(code)
+    if args.cmd == "release":
+        repo_root = Path(__file__).resolve().parents[3]
+        cmd = [
+            str(repo_root / "scripts" / "release_automation.py"),
+            "--version",
+            args.version,
+        ]
+        if args.apply:
+            cmd.append("--apply")
+        if args.commit:
+            cmd.append("--commit")
+        if args.tag:
+            cmd.append("--tag")
+        if args.push:
+            cmd.append("--push")
+        code = run(cmd)
         raise SystemExit(code)
     if args.cmd == "build-manifest":
         code = run(
@@ -103,4 +127,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

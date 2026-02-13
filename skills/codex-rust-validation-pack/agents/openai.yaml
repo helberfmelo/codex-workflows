@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Rust Validation Pack"
+  short_description: "Rust stack validation checks for Codex workflows."
+  default_prompt: "Run Rust stack validation checks and return a concise pass/fail report."

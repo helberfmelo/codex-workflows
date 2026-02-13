@@ -17,10 +17,42 @@
 5. Router benchmark:
 `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000`
 
-## Release steps
+## Automated release (recommended)
 
-1. Update `CHANGELOG.md`.
-2. Commit and push `main`.
-3. Create Git tag (example `v1.1.0`).
-4. Publish GitHub Release with highlights.
-5. Verify installation instructions from README.
+Dry-run changelog cut:
+
+`python scripts/release_automation.py --version 1.1.0`
+
+Apply changelog update + commit + tag:
+
+`python scripts/release_automation.py --version 1.1.0 --apply --commit --tag`
+
+Push branch + tag:
+
+`python scripts/release_automation.py --version 1.1.0 --apply --commit --tag --push`
+
+Optional release notes output:
+
+`python scripts/release_automation.py --version 1.1.0 --apply --notes-out docs/releases/v1.1.0.md`
+
+Behavior:
+
+- Moves `## [Unreleased]` entries into `## [<version>] - <date>`.
+- Resets `Unreleased` to a clean placeholder.
+- Optionally commits, tags, and pushes.
+
+## GitHub Actions release
+
+Workflow: `.github/workflows/release.yml`
+
+Trigger via `workflow_dispatch` with:
+
+- `version`: semantic version (example `1.1.0`)
+- `push_changes`: `true` to push and publish GitHub Release
+
+The workflow:
+
+1. validates skills and tests;
+2. runs `scripts/release_automation.py` with commit/tag;
+3. pushes commit/tag (if enabled);
+4. publishes the GitHub Release with generated notes.

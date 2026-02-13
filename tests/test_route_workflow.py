@@ -49,6 +49,13 @@ class RouteWorkflowTests(unittest.TestCase):
             fast = route_workflow_fast.route(q)
             self.assertEqual(base["workflow"], fast["workflow"])
 
+    def test_stack_pack_recommendations(self):
+        query = "Use codex-workflows in /test and run Rust validation for this Cargo.toml project."
+        base = route_workflow.route(query)
+        fast = route_workflow_fast.route(query)
+        self.assertIn("codex-rust-validation-pack", base["recommended_packs"])
+        self.assertIn("codex-rust-validation-pack", fast["recommended_packs"])
+
     def test_explicit_activation_in_english_for_all_workflows(self):
         workflows = sorted(route_workflow.RULES.keys())
         for wf in workflows:

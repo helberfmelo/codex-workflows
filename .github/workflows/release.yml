@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Semantic version (e.g. 1.2.0)"
+        required: true
+      push_changes:
+        description: "Push commit and tag to origin"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate and test
+        run: |
+          python scripts/ci_validate_skill.py --skills-root skills
+          python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Cut release
+        run: |
+          python scripts/release_automation.py \
+            --version "${{ inputs.version }}" \
+            --apply \
+            --commit \
+            --tag \
+            --notes-out "${{ runner.temp }}/release-notes.md"
+
+      - name: Push commit and tag
+        if: ${{ inputs.push_changes == 'true' }}
+        run: |
+          git push origin HEAD
+          git push origin "v${{ inputs.version }}"
+
+      - name: Publish GitHub Release
+        if: ${{ inputs.push_changes == 'true' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ inputs.version }}
+          body_path: ${{ runner.temp }}/release-notes.md

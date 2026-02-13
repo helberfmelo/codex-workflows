@@ -55,6 +55,22 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `skills/codex-security-pack`
 - `skills/codex-qa-pack`
 
+9. Stack Validation Packs
+- `skills/codex-node-validation-pack`
+- `skills/codex-python-validation-pack`
+- `skills/codex-rust-validation-pack`
+- Stack-aware validation scripts for deterministic quality checks
+
+10. Release Automation
+- `scripts/release_automation.py`
+- `.github/workflows/release.yml`
+- Automated changelog cut + tag + release publishing flow
+
+11. End-to-End Example Catalog
+- `examples/node-auth-api/README.md`
+- `examples/python-fastapi-orders/README.md`
+- `examples/rust-events-cli/README.md`
+
 ## Execution Model
 
 User request -> route workflow -> run phases -> validate -> report

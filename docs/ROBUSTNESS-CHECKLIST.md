@@ -44,10 +44,21 @@ Evidence: `docs/WORKFLOW_CONTRACT.md`
 
 - [x] CI workflow exists
 Evidence: `.github/workflows/ci.yml`
+- [x] Release workflow exists
+Evidence: `.github/workflows/release.yml`
 - [x] Unit tests for routing/bootstrap/sync exist
 Evidence: `tests/test_route_workflow.py`, `tests/test_bootstrap_profiles.py`, `tests/test_sync_compat_pack.py`
+- [x] Unit tests for stack validators and release automation exist
+Evidence: `tests/test_stack_validators.py`, `tests/test_release_automation.py`
 - [x] Skill validator for CI exists
 Evidence: `scripts/ci_validate_skill.py`
+
+## Stack validation and examples
+
+- [x] Stack validation packs for Node/Python/Rust exist
+Evidence: `skills/codex-node-validation-pack`, `skills/codex-python-validation-pack`, `skills/codex-rust-validation-pack`
+- [x] End-to-end examples catalog exists
+Evidence: `examples/README.md`, `examples/node-auth-api/README.md`, `examples/python-fastapi-orders/README.md`, `examples/rust-events-cli/README.md`
 
 ## Outcome
 

@@ -16,6 +16,7 @@ Available commands:
 - `benchmark`
 - `bootstrap`
 - `sync-pack`
+- `release`
 
 ## Typical maintenance cycle
 
@@ -33,4 +34,11 @@ Available commands:
 - `python -m unittest discover -s tests -p "test_*.py"`
 - `python scripts/ci_validate_skill.py --skills-root skills`
 
-5. Update docs/changelog and release.
+5. Run stack packs when applicable:
+- Node: `python skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .`
+- Python: `python skills/codex-python-validation-pack/scripts/validate_python_stack.py --project .`
+- Rust: `python skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project .`
+
+6. Release with automation:
+- Dry run: `python scripts/release_automation.py --version 1.1.0`
+- Apply + commit + tag + push: `python scripts/release_automation.py --version 1.1.0 --apply --commit --tag --push`
