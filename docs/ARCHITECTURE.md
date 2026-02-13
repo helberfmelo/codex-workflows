@@ -25,8 +25,15 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 
 4. Automation Scripts
 - `scripts/route_workflow.py`
+- `scripts/route_workflow_fast.py`
+- `scripts/routing_data.py`
 - `scripts/bootstrap_project_agent.py`
 - `scripts/sync_compat_pack.py`
+- `scripts/build_compat_manifest.py`
+- `scripts/check_compat_drift.py`
+- `scripts/check_workflow_parity.py`
+- `scripts/benchmark_router.py`
+- `scripts/codex_workflows_ops.py`
 
 5. Project Template
 - `templates/.agent/...` (full template baseline)
@@ -36,6 +43,17 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 6. Compatibility Pack
 - `packs/antigravity-compat/.agent/...`
 - Full compatibility profile for projects that want Antigravity-like depth in Codex
+
+7. Governance and Quality
+- `compat/manifest.json` for drift control
+- `.github/workflows/ci.yml` for automated checks
+- `tests/` for script correctness
+
+8. Domain Packs
+- `skills/codex-backend-pack`
+- `skills/codex-frontend-pack`
+- `skills/codex-security-pack`
+- `skills/codex-qa-pack`
 
 ## Execution Model
 

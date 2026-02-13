@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex QA Pack"
+  short_description: "Testing and quality gate pack for Codex workflows."
+  default_prompt: "Apply risk-based testing strategy and verification gates for this task."

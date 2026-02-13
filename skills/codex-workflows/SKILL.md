@@ -29,6 +29,8 @@ Confidence: <high|medium|low>
 - Add secondary workflows only if they increase correctness.
 - If request is ambiguous, ask up to 3 high-value questions.
 - Prefer deterministic routing through `scripts/route_workflow.py` when available.
+- Use `scripts/route_workflow_fast.py` for lower-latency in-process routing paths.
+- Surface `recommended_packs` (`codex-backend-pack`, `codex-frontend-pack`, `codex-security-pack`, `codex-qa-pack`) when domains are detected.
 
 Read `references/routing/intent-matrix.md` for full mapping.
 
@@ -85,6 +87,16 @@ Use `scripts/bootstrap_project_agent.py` with one of:
 Full compatibility pack location:
 
 - `packs/antigravity-compat/.agent/`
+
+## Governance and Health Checks
+
+Use these scripts to keep the system robust:
+
+- `scripts/build_compat_manifest.py`
+- `scripts/check_compat_drift.py`
+- `scripts/check_workflow_parity.py`
+- `scripts/benchmark_router.py`
+- `scripts/codex_workflows_ops.py`
 
 ## Output Contract
 

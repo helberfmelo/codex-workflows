@@ -1,10 +1,27 @@
 #!/usr/bin/env python3
-"""Route a user request to the most likely codex workflow."""
+"""Fast in-process workflow router with token scoring."""
 from __future__ import annotations
+
 import argparse
 import json
 from collections import defaultdict
+
 from routing_data import DOMAIN_HINTS, DOMAIN_TO_PACK, RULES, detect_domains, tokenize
+
+
+def _compile_indexes() -> tuple[dict[str, list[tuple[str, str]]], list[tuple[str, str]]]:
+    singles: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    phrases: list[tuple[str, str]] = []
+    for workflow, patterns in RULES.items():
+        for pattern in patterns:
+            if " " in pattern:
+                phrases.append((pattern, workflow))
+            else:
+                singles[pattern].append((workflow, pattern))
+    return singles, phrases
+
+
+SINGLE_KEYWORDS, PHRASE_KEYWORDS = _compile_indexes()
 
 
 def recommend_packs(domains: set[str]) -> list[str]:
@@ -13,19 +30,19 @@ def recommend_packs(domains: set[str]) -> list[str]:
 
 
 def route(text: str) -> dict:
+    tokens = tokenize(text)
     low = text.lower()
-    tokens = tokenize(low)
     scores = defaultdict(int)
     hits = defaultdict(list)
-    for wf, patterns in RULES.items():
-        for p in patterns:
-            if " " in p:
-                matched = p in low
-            else:
-                matched = p in tokens
-            if matched:
-                scores[wf] += 1
-                hits[wf].append(p)
+
+    for token in tokens:
+        for workflow, pattern in SINGLE_KEYWORDS.get(token, []):
+            scores[workflow] += 1
+            hits[workflow].append(pattern)
+    for phrase, workflow in PHRASE_KEYWORDS:
+        if phrase in low:
+                scores[workflow] += 1
+                hits[workflow].append(phrase)
 
     matched_domains = detect_domains(low, DOMAIN_HINTS)
     packs = recommend_packs(matched_domains)
@@ -54,7 +71,6 @@ def route(text: str) -> dict:
     primary, top = ordered[0]
     secondary = [wf for wf, score in ordered[1:3] if score >= max(1, top - 1)]
     confidence = "high" if top >= 3 else "medium"
-
     return {
         "workflow": primary,
         "confidence": confidence,

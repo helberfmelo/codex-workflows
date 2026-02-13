@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Frontend Pack"
+  short_description: "Frontend and UX implementation pack for Codex workflows."
+  default_prompt: "Apply frontend architecture, accessibility, and performance guidance for this task."

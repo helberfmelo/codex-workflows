@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Security Pack"
+  short_description: "Security hardening and threat analysis pack for Codex workflows."
+  default_prompt: "Apply security-first analysis, identify risks, and propose validated mitigations."

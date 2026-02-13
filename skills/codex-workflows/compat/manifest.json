@@ -1,0 +1,2400 @@
+{
+  "generated_at_utc": "2026-02-13T07:51:51Z",
+  "source": {
+    "path": ".agent",
+    "files": {
+      ".shared/ui-ux-pro-max/data/charts.csv": {
+        "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",
+        "size": 7655
+      },
+      ".shared/ui-ux-pro-max/data/colors.csv": {
+        "sha256": "810e2df8659ac77642665217db481982fa01b7d45f72ab90fa600eee9962dfa0",
+        "size": 12927
+      },
+      ".shared/ui-ux-pro-max/data/icons.csv": {
+        "sha256": "26be5e47c4c3fc7acae52ac8bbfaf1bf9e5ddc9c01808953a3636f8615b9de9f",
+        "size": 13385
+      },
+      ".shared/ui-ux-pro-max/data/landing.csv": {
+        "sha256": "a052aeae53c4bf700b92cc59c901f3b79a8a0e040e48d7af0dbd15ac1f840326",
+        "size": 14342
+      },
+      ".shared/ui-ux-pro-max/data/products.csv": {
+        "sha256": "6f9c9be6fdb53a415af273dac6221e87a418d1600da2ee39f974b997e880050e",
+        "size": 29694
+      },
+      ".shared/ui-ux-pro-max/data/prompts.csv": {
+        "sha256": "4fafc5d3bbf699705bf9b944ca3550fb5687ae1efa9cad31ef84ac51753132f5",
+        "size": 17401
+      },
+      ".shared/ui-ux-pro-max/data/react-performance.csv": {
+        "sha256": "904c8afcda229629545912dde0e8ac37503757131f0169f80b016f1f58c4fd3f",
+        "size": 14822
+      },
+      ".shared/ui-ux-pro-max/data/stacks/flutter.csv": {
+        "sha256": "fe36d404c799781e8ba6e9a8179b45799ed5126a545528550cd2eb0f2346e8c5",
+        "size": 10416
+      },
+      ".shared/ui-ux-pro-max/data/stacks/html-tailwind.csv": {
+        "sha256": "7aef38e75c53559470afcfa91580a9917ca8b7dbf8b92110389e23e93703ac52",
+        "size": 11305
+      },
+      ".shared/ui-ux-pro-max/data/stacks/jetpack-compose.csv": {
+        "sha256": "6c8fd4b0391c342c12b0af15610cd5becbeccaef0bbe8dcfc01d928c3195d93e",
+        "size": 8195
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nextjs.csv": {
+        "sha256": "e828ccc04843742f52f545a068e8a9ab0d2b97c0e771f7e93bf0cef74da05554",
+        "size": 12493
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nuxt-ui.csv": {
+        "sha256": "05d6e74501b2b6a636faed32450622759f49a5bcafad971f5f4e7eba0eb7be71",
+        "size": 14010
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nuxtjs.csv": {
+        "sha256": "f7a3f2d9542856d00199f85c6c023b7c284cc698e2e6e12d61afce2edacb24d6",
+        "size": 16539
+      },
+      ".shared/ui-ux-pro-max/data/stacks/react-native.csv": {
+        "sha256": "077aefc81d194895ecf7936b3ed298b978e36961f183e3a275f8acda19b5f621",
+        "size": 9983
+      },
+      ".shared/ui-ux-pro-max/data/stacks/react.csv": {
+        "sha256": "e5624ab41d33427d88e41d07581ce4eca59b37b36ab72a6ad43a9c8e2d0a1c72",
+        "size": 12962
+      },
+      ".shared/ui-ux-pro-max/data/stacks/shadcn.csv": {
+        "sha256": "395c2e415ef6f48a474acccdc8eb2c7258a6ed751a5037ba171a2d8823e02ded",
+        "size": 15921
+      },
+      ".shared/ui-ux-pro-max/data/stacks/svelte.csv": {
+        "sha256": "71af52d64f266c88070b91dbbaa900c2f8074b6baae9f35eaea6ba9cec6fd803",
+        "size": 11009
+      },
+      ".shared/ui-ux-pro-max/data/stacks/swiftui.csv": {
+        "sha256": "c9c2d2510f8e66281a2514e8dd0125a6b653b9ef53a71281b5e7dfe003d5b569",
+        "size": 10821
+      },
+      ".shared/ui-ux-pro-max/data/stacks/vue.csv": {
+        "sha256": "c2724915d3c11cd67263f25896cff721f787a0fdd8326002d31e9f5806dfd8f8",
+        "size": 11006
+      },
+      ".shared/ui-ux-pro-max/data/styles.csv": {
+        "sha256": "f7c33cd7a7a695ace1683ccff88a01b00fcd5d3e53d29d0a71cb119230662e8a",
+        "size": 40912
+      },
+      ".shared/ui-ux-pro-max/data/typography.csv": {
+        "sha256": "6c0cd9db74f75d384773b347e1ddac42692c8d00c56790e8a0e619bfa4b9537d",
+        "size": 31878
+      },
+      ".shared/ui-ux-pro-max/data/ui-reasoning.csv": {
+        "sha256": "58fc52fff69f62709f8c7dd460de6f6693699ea820f24287f3301a427c2b554e",
+        "size": 31071
+      },
+      ".shared/ui-ux-pro-max/data/ux-guidelines.csv": {
+        "sha256": "e01943c433b2cad3040f19389b3b0455673758a569b7a927b5bedf65c989cb96",
+        "size": 18667
+      },
+      ".shared/ui-ux-pro-max/data/web-interface.csv": {
+        "sha256": "10bfc24e09a6a15db8309e6ef9b6881e1d4af97dffb7c99418aefb8e30df7d54",
+        "size": 7472
+      },
+      ".shared/ui-ux-pro-max/scripts/core.py": {
+        "sha256": "19f49bcf81a6a3e1070b8d586d93b5b867b9c125d53a7140e92263a46f8a4f39",
+        "size": 10420
+      },
+      ".shared/ui-ux-pro-max/scripts/design_system.py": {
+        "sha256": "4da1d341f3c7749df51b51db4a543a48a427c3c746eb0e9882a1ab86acf3bb54",
+        "size": 43614
+      },
+      ".shared/ui-ux-pro-max/scripts/search.py": {
+        "sha256": "f3cb25db397c29e63c245ff6501003000d08180eb3b25bab449c55016c1a4ce4",
+        "size": 4989
+      },
+      "agents/backend-specialist.md": {
+        "sha256": "e8fd87a78272c55f40a0d14b6af499a97a24bf090035503c3d1bc52713b47426",
+        "size": 8607
+      },
+      "agents/code-archaeologist.md": {
+        "sha256": "57ec8def106b11a99fbac95b208253eee4d49eca16e339db1529bfae457cc380",
+        "size": 3339
+      },
+      "agents/database-architect.md": {
+        "sha256": "31cde71d708500c27a0166943bb6cf35f30c434d22e412fae627cb36fcbb95d3",
+        "size": 6857
+      },
+      "agents/debugger.md": {
+        "sha256": "a0a707bbf4c03b6644ceedc78141f466c1091085d131dae6c090b4b07f1e6154",
+        "size": 7833
+      },
+      "agents/devops-engineer.md": {
+        "sha256": "21c0c290287657c09ef409fe819bd8f61fbd8b1d2dfe6722c5ed5e9d18b5581c",
+        "size": 6299
+      },
+      "agents/documentation-writer.md": {
+        "sha256": "6f526c266ce5b28224c350766c6e898f067e604aa6ff6cb1a9a02201f16987fe",
+        "size": 2545
+      },
+      "agents/explorer-agent.md": {
+        "sha256": "12c0e8249a15b13c5d4e4a0d31aa049c3852539ccdd4076e176be515302829c8",
+        "size": 3951
+      },
+      "agents/frontend-specialist.md": {
+        "sha256": "3d253b17aaa842f52e3852d46218eabb7ff9056659ea99f4c3a95048c220278a",
+        "size": 25793
+      },
+      "agents/game-developer.md": {
+        "sha256": "a44ab1190baf7945e5c6461a16baf164129997fa99f506f5d9500f75ac2f6fab",
+        "size": 4696
+      },
+      "agents/mobile-developer.md": {
+        "sha256": "bcb01d9381d23cc01a13743958bd9b39ddde5b3d07b2a2bb58861f63f954bb6d",
+        "size": 12924
+      },
+      "agents/orchestrator.md": {
+        "sha256": "00689c0e790e1ff9eb0e4e9e971c8f0b7acec89312bd357b97554ea50960db25",
+        "size": 13829
+      },
+      "agents/penetration-tester.md": {
+        "sha256": "3832971154882bda01e66a3bd1e58d3020429d7fc3d93e75fabfdb32511eefd5",
+        "size": 4807
+      },
+      "agents/performance-optimizer.md": {
+        "sha256": "967089346570ad9caa30a3b068ca97c8efb40eab234652cf99b766c880421079",
+        "size": 4384
+      },
+      "agents/product-manager.md": {
+        "sha256": "b0969d8982110a86fec821ec5b44226b7cac40b939593cd587cd8ab134eeb1d1",
+        "size": 3154
+      },
+      "agents/product-owner.md": {
+        "sha256": "49fa0bbc8a4e51409b1306f8f6762cc787e0698fb321760f850916fb5d5d1e49",
+        "size": 3889
+      },
+      "agents/project-planner.md": {
+        "sha256": "4027c6abdd1c959bfff380ceaf53672a1e2f8cd49d32bda3ccb53b5633895ad6",
+        "size": 13705
+      },
+      "agents/qa-automation-engineer.md": {
+        "sha256": "4b7f498702c33d06dc9fa0125acc47024c93cb2a8d8cbd03ae1f1fa6a3d04da6",
+        "size": 3202
+      },
+      "agents/security-auditor.md": {
+        "sha256": "67bf6c0415708c32874b77ee93a206d28fff0281b0798a5ca5c5ff941978f74c",
+        "size": 4667
+      },
+      "agents/seo-specialist.md": {
+        "sha256": "1fb071c98be6e7046e2a57f3dd0a624d5127a23ac3cd1f1bccf20de7afd6c5d2",
+        "size": 2729
+      },
+      "agents/test-engineer.md": {
+        "sha256": "366ba5025b01e8886c209f1e8a13dc5c958d7ce4d1ffa64e2f117d9e0b1bc259",
+        "size": 3182
+      },
+      "ARCHITECTURE.md": {
+        "sha256": "5c5136c83ab530f9060ea974bdcc88fc6dd4e10854793bb9d8626eb5122e32fa",
+        "size": 11566
+      },
+      "mcp_config.json": {
+        "sha256": "8c83c36772eaeaf54ac70c35c8bb1af83a0f669b5985899a8b80814a1af2e6ac",
+        "size": 495
+      },
+      "rules/GEMINI.md": {
+        "sha256": "bcd524a8a064972ba170146cb00b7451c9d8104bd8a5664b52c7826417c76b23",
+        "size": 11897
+      },
+      "scripts/auto_preview.py": {
+        "sha256": "a4a6a104f550ba3c03ffb0b86e531e4c756f4eb0ba367f89d54721274da3b159",
+        "size": 3989
+      },
+      "scripts/checklist.py": {
+        "sha256": "704f3ed48dd0941ed0637c913812e9d981609f94e438727fc86b10ca51167f6f",
+        "size": 7569
+      },
+      "scripts/session_manager.py": {
+        "sha256": "ea2887d996975fa18780ab2f424a6f5a894d5935f75cda04a8b916822773038a",
+        "size": 4196
+      },
+      "scripts/verify_all.py": {
+        "sha256": "5e327fcae034b768c521b00e51c9a655e1f8ea6a567cc1e1d2a7000e3c781263",
+        "size": 10997
+      },
+      "skills/api-patterns/api-style.md": {
+        "sha256": "ac7b7677e862c7b6f1a622425ac398807890272a3dcb31f528993f6411abccc2",
+        "size": 1155
+      },
+      "skills/api-patterns/auth.md": {
+        "sha256": "d35ba351bf05454ad097522b80fb19368b47f66ff4ab0e76a0d69e303c2b72f0",
+        "size": 576
+      },
+      "skills/api-patterns/documentation.md": {
+        "sha256": "aa1d0262be74814e7d72d5dd2a4acf074235e8ca33c0dff0ec986adfd962a124",
+        "size": 549
+      },
+      "skills/api-patterns/graphql.md": {
+        "sha256": "f7f49e84697c8993d9cdc66b3ada56f71b01d2221107cfe70bbf291628136b8c",
+        "size": 977
+      },
+      "skills/api-patterns/rate-limiting.md": {
+        "sha256": "f1538d288ce362012241a6085beb3b5ff06d11f754b5867bf0adb7b62afd0657",
+        "size": 726
+      },
+      "skills/api-patterns/response.md": {
+        "sha256": "37bc83dfd2c4365ea9f50e531149c22e6ecdafd9d0b66c2170528b2d88a8cfa6",
+        "size": 921
+      },
+      "skills/api-patterns/rest.md": {
+        "sha256": "20bbf589c4f583b482f4610f41d25669af7224e989427353f18092e11d59970f",
+        "size": 1280
+      },
+      "skills/api-patterns/scripts/api_validator.py": {
+        "sha256": "0c633f13a560ba75556e434eb87adbd37d4c1b98ff6eb9b9ca36a2df5b192852",
+        "size": 7593
+      },
+      "skills/api-patterns/security-testing.md": {
+        "sha256": "e5cbe598d1b44356362325d5f55ee703efdbf8908a92cbd91a9c989d1ec1f9de",
+        "size": 2892
+      },
+      "skills/api-patterns/SKILL.md": {
+        "sha256": "d8c2cbe8a0966e95a52d4c9641368b64c402cef4e9e4924978b7cd633423fcbf",
+        "size": 2435
+      },
+      "skills/api-patterns/trpc.md": {
+        "sha256": "722dde150b45392b9517a2053e53958619cb8fc0c2047c8ef09be4bcb5e9095d",
+        "size": 801
+      },
+      "skills/api-patterns/versioning.md": {
+        "sha256": "58abb2fc534e687bb54a4a191188f2698ec9ed3e4e12ba269d93cc03ed8d1ee6",
+        "size": 651
+      },
+      "skills/app-builder/agent-coordination.md": {
+        "sha256": "195d6c460ce3475c21a96c55c196263f21345bd5372caed08fd37059a2a2e041",
+        "size": 5555
+      },
+      "skills/app-builder/feature-building.md": {
+        "sha256": "e717306dfca771266b42b582a69ed67b02883d3a3604b6d6118841ae1369207c",
+        "size": 1123
+      },
+      "skills/app-builder/project-detection.md": {
+        "sha256": "65f41fd5bc87b8022b609cfef5ac0a372f57df872a939bcb8705dbe9294edd2f",
+        "size": 1323
+      },
+      "skills/app-builder/scaffolding.md": {
+        "sha256": "79248126fec6d29a6e07358afe485d47ac7023d60349bab2e6218280e51144e3",
+        "size": 3609
+      },
+      "skills/app-builder/SKILL.md": {
+        "sha256": "b5bf6a6263e23c6246bd50388c5abb6564b42e079a53f9c9fa5351459aa6e0d3",
+        "size": 3172
+      },
+      "skills/app-builder/tech-stack.md": {
+        "sha256": "ca5baaa196da587469e28721f63951a6cfe4f3fe0e1c3893c514fe6af8dffa47",
+        "size": 886
+      },
+      "skills/app-builder/templates/astro-static/TEMPLATE.md": {
+        "sha256": "b603190c6f2d0a453d8fb9156532fd314722e0404635453858a278bc50bd6428",
+        "size": 1706
+      },
+      "skills/app-builder/templates/chrome-extension/TEMPLATE.md": {
+        "sha256": "dc8701558732953a5834255066a89bfc0036dd778d5a44d3a39f3066036fe8c2",
+        "size": 1966
+      },
+      "skills/app-builder/templates/cli-tool/TEMPLATE.md": {
+        "sha256": "89c0e5940c9fc79e664981d2826f9d5b2c4855a343d6b179ed0087032d3a323d",
+        "size": 1762
+      },
+      "skills/app-builder/templates/electron-desktop/TEMPLATE.md": {
+        "sha256": "b495860b7ab3a38d0541729933178cc49b7f05d08d02ac06541cb1b3eacbb7ce",
+        "size": 1823
+      },
+      "skills/app-builder/templates/express-api/TEMPLATE.md": {
+        "sha256": "e06f166902ccca2943775faac0198c77cc52eca50ec7dde41aa90d9e16ee0990",
+        "size": 1759
+      },
+      "skills/app-builder/templates/flutter-app/TEMPLATE.md": {
+        "sha256": "2b518b263daa7bc0090e5ccc387b1c55977367527e69e672332be4cd98049c1e",
+        "size": 1855
+      },
+      "skills/app-builder/templates/monorepo-turborepo/TEMPLATE.md": {
+        "sha256": "b0bd06e7e2eb80e6f52bd99a87ba45778943036bc33dcab2955e12994c4fe9bf",
+        "size": 1880
+      },
+      "skills/app-builder/templates/nextjs-fullstack/TEMPLATE.md": {
+        "sha256": "fc0d95631f36c90577b6629deae0e0ec09ed4ee25592f4369a7e4a464702fe62",
+        "size": 4096
+      },
+      "skills/app-builder/templates/nextjs-saas/TEMPLATE.md": {
+        "sha256": "067739ccd9214179c875a21b9d4ed9a4f3355bb733812de3372edf4661360352",
+        "size": 3367
+      },
+      "skills/app-builder/templates/nextjs-static/TEMPLATE.md": {
+        "sha256": "c6140fe353e51678414e9c85f52ec818b76de2a8fc05eb939f06b755d82e71cc",
+        "size": 5438
+      },
+      "skills/app-builder/templates/nuxt-app/TEMPLATE.md": {
+        "sha256": "9817bc53258cb4acf1bfd3b5050b281243dbda4f8b8ab9e2c3bb3cd95c44c72a",
+        "size": 4066
+      },
+      "skills/app-builder/templates/python-fastapi/TEMPLATE.md": {
+        "sha256": "5324b3fb4b0b1eee0363e5b452ff51de8fc03650ad58d568428a8f22283d8ba7",
+        "size": 1785
+      },
+      "skills/app-builder/templates/react-native-app/TEMPLATE.md": {
+        "sha256": "a96481a86900e30491073e5ac43c10fefe447cfb0ef6ed40d0278cb6c745c16c",
+        "size": 4271
+      },
+      "skills/app-builder/templates/SKILL.md": {
+        "sha256": "b4887369cad061e7e59e9198593ffe3e93dd455dfe0cb93cb4e63ad37ccfa054",
+        "size": 1585
+      },
+      "skills/architecture/context-discovery.md": {
+        "sha256": "0698e38a37669c36c819bac70c51213bb955e99125ca96b690c840c317595a17",
+        "size": 1591
+      },
+      "skills/architecture/examples.md": {
+        "sha256": "5bdd281a7409189049af4c55fbf8c8f562c250cd3e34cd60741be113110843a5",
+        "size": 2430
+      },
+      "skills/architecture/pattern-selection.md": {
+        "sha256": "6bdc74d7900a0574057d7c03b79afa3bf35b9efc4bc719cf6e198575373b879d",
+        "size": 2638
+      },
+      "skills/architecture/patterns-reference.md": {
+        "sha256": "264d0c372a6b5d2a7bba506a4dd4d74855f69298d4dabf1ae046d51f2f49bd9d",
+        "size": 2307
+      },
+      "skills/architecture/SKILL.md": {
+        "sha256": "43c45f6db39195213b5cb938db3aefd447f31374a7d7a42ffc5eaddab7e8452d",
+        "size": 1759
+      },
+      "skills/architecture/trade-off-analysis.md": {
+        "sha256": "14a0ceb22e88af2d39b24f06a9095312aa04bc72e8980f244bf2b42f8260abaa",
+        "size": 1579
+      },
+      "skills/bash-linux/SKILL.md": {
+        "sha256": "17c0a0d75bf28f0f639c983299a5e3c0f7fa829d50d6e147f553b3d26ffcb13c",
+        "size": 4156
+      },
+      "skills/behavioral-modes/SKILL.md": {
+        "sha256": "1bfdf106d23c51a425b687677638d88472ea5bcdd3bcd76ca13783df77f6eb13",
+        "size": 5379
+      },
+      "skills/brainstorming/dynamic-questioning.md": {
+        "sha256": "b8ee14ed26f4ebffd4d6e63959eab94646dea87c5c3cfb15e9f036bd9a6a7c61",
+        "size": 11619
+      },
+      "skills/brainstorming/SKILL.md": {
+        "sha256": "1a501a9fea86ec58121206b5c73d34bdaddd595be3da4d12761b6c1ac37f8fa4",
+        "size": 4660
+      },
+      "skills/clean-code/SKILL.md": {
+        "sha256": "ac3bae08f75a0076511f1084e6b94ca5b6e2bf014f50c613a2ce16fcd5cfbcd4",
+        "size": 6634
+      },
+      "skills/code-review-checklist/SKILL.md": {
+        "sha256": "905ec9820ad5ac6f04de94a26921c1c7e363b3d5449853c1ffa2150f0c9e8caf",
+        "size": 2574
+      },
+      "skills/database-design/database-selection.md": {
+        "sha256": "3655cdd3a38a9ca1ae8408be8057ea628b08bf9ab22460b1bc571228dd2ba6c6",
+        "size": 1137
+      },
+      "skills/database-design/indexing.md": {
+        "sha256": "eec8ce01e7c1c8ec2aed7a96d260a52b12d90c2996288e32814a8d9cf29cc22a",
+        "size": 892
+      },
+      "skills/database-design/migrations.md": {
+        "sha256": "b5b9e518f18264cdd946f4914d73c2355065ba712cb61db01ba59bacb95423a2",
+        "size": 1107
+      },
+      "skills/database-design/optimization.md": {
+        "sha256": "10a6f484fdae9973957030d8ef47bad4ffba9f7709e9c824883a97f92925a722",
+        "size": 902
+      },
+      "skills/database-design/orm-selection.md": {
+        "sha256": "11ece2e816949e26a7019b84004e240a9f9ab0b38c4f454bd522dd251c5dac97",
+        "size": 771
+      },
+      "skills/database-design/schema-design.md": {
+        "sha256": "0a83addd1e9963e3d958eb00474d7dc72881c4290a97bac03bf09553607e3f6f",
+        "size": 1470
+      },
+      "skills/database-design/scripts/schema_validator.py": {
+        "sha256": "30002411da4b6b82471d7e33ac3906daec72e69fab0fd29dd8c201b6a5777748",
+        "size": 5375
+      },
+      "skills/database-design/SKILL.md": {
+        "sha256": "efb8ec6b79641214f751a886ce75cfdb36f78b4b296473ab3f090081470fad28",
+        "size": 1527
+      },
+      "skills/deployment-procedures/SKILL.md": {
+        "sha256": "61e5f86dfbacfcc76604917d49cc5c9e80d53a0fddf48933ede81005549abb17",
+        "size": 5708
+      },
+      "skills/doc.md": {
+        "sha256": "7ad5cd7d5e4151c938019f5dc188e7eb464ce32af3c39249d14c259adf7735a7",
+        "size": 5045
+      },
+      "skills/documentation-templates/SKILL.md": {
+        "sha256": "463a55ff6ded0e84d0f0eb1454c9635b7b8695ea5ee4a308f0cd810f27060dba",
+        "size": 3312
+      },
+      "skills/frontend-design/animation-guide.md": {
+        "sha256": "50b6c57bd21dd545befc48038ed92dc5e1ada7d65489a6fc833f68857a461317",
+        "size": 8035
+      },
+      "skills/frontend-design/color-system.md": {
+        "sha256": "31a6b50a4263591f68725461e1af85bc4334e5807bf6dac8b6342657118d0857",
+        "size": 9631
+      },
+      "skills/frontend-design/decision-trees.md": {
+        "sha256": "d521ce17fb9f33d3c8a899270ba15b82f1c9ae414624a6720013ddf133f59807",
+        "size": 17265
+      },
+      "skills/frontend-design/motion-graphics.md": {
+        "sha256": "0351bd1a0a5ec2759c4cea6874e6a8bc2d2ada557e39b96c9345c6498f9ed96e",
+        "size": 7999
+      },
+      "skills/frontend-design/scripts/accessibility_checker.py": {
+        "sha256": "07de15cb02bfbddb87e405fd8e73b43a2da7b82c4ad8800aecc2d71a9813efc3",
+        "size": 5983
+      },
+      "skills/frontend-design/scripts/ux_audit.py": {
+        "sha256": "1fffb5617de9467ce45a6de2157970af5c0be50391f68909d39d401ed5215c19",
+        "size": 39456
+      },
+      "skills/frontend-design/SKILL.md": {
+        "sha256": "ec98e8f51a689761148673bbb54a83e1a758a0a01e8231b625974d542066bfd7",
+        "size": 12519
+      },
+      "skills/frontend-design/typography-system.md": {
+        "sha256": "79c82e26c31d28087c8528ba280ad7810e85d101ae2661abd2f94dd3277a648a",
+        "size": 8523
+      },
+      "skills/frontend-design/ux-psychology.md": {
+        "sha256": "5b83fe149ad3f89c82e83fcce3220b49e989a2dd849ef6ec7f6ad07ec7772b87",
+        "size": 39993
+      },
+      "skills/frontend-design/visual-effects.md": {
+        "sha256": "07568520407d298f50733028f92bf090d071a84a6ecd97950fba1384a0496a82",
+        "size": 8362
+      },
+      "skills/game-development/2d-games/SKILL.md": {
+        "sha256": "f31d95e041d06f018620fc697f25a32ea115b4ec577d9f448f714eeeb606363d",
+        "size": 2190
+      },
+      "skills/game-development/3d-games/SKILL.md": {
+        "sha256": "141bf1ca6af96066cffa91b2b37417b9d1cffec4fcc2a6ef1333ee976121f7dd",
+        "size": 2563
+      },
+      "skills/game-development/game-art/SKILL.md": {
+        "sha256": "ab7029cb91c498c6469137f7b8b1575fdc7a97db3cc338c5cd2f0edc2ac2888a",
+        "size": 5049
+      },
+      "skills/game-development/game-audio/SKILL.md": {
+        "sha256": "5cfa7e0a750c202ce81dde7aef8ebbd6e9954ece42ce47ed1619163d217a48c3",
+        "size": 5361
+      },
+      "skills/game-development/game-design/SKILL.md": {
+        "sha256": "93c4179046820a685506d81b066cbceeaa91b197cdb89ab7da1e04cac9062657",
+        "size": 2645
+      },
+      "skills/game-development/mobile-games/SKILL.md": {
+        "sha256": "43db8fb50830a99fb14ace08cb29cc60cd7f51a240c5ae73dbe5b31da704f24f",
+        "size": 2282
+      },
+      "skills/game-development/multiplayer/SKILL.md": {
+        "sha256": "79ee8d6f2e04a993b6cdf5eb251590051427cc4e09aa3a7f67f1ab8e61e205f5",
+        "size": 2813
+      },
+      "skills/game-development/pc-games/SKILL.md": {
+        "sha256": "739b244b02659ec53ca719bbdf8ac2684dbeeafc5d5ddac124ffa6407f10f5df",
+        "size": 2973
+      },
+      "skills/game-development/SKILL.md": {
+        "sha256": "994e2de3a8fd7dcd5caa8f08ddcb663d0d27cf161ddd5f74f88a441c0905189d",
+        "size": 4682
+      },
+      "skills/game-development/vr-ar/SKILL.md": {
+        "sha256": "59ddbdecc4fa17e74c4747f5f02bd69edb8bffcd1cdc2866dd6a053e19bc139e",
+        "size": 2379
+      },
+      "skills/game-development/web-games/SKILL.md": {
+        "sha256": "1213dbf108ac6a56c7c2cb67e81705b10cf0b9d136fa775ad161273bfe452a90",
+        "size": 3073
+      },
+      "skills/geo-fundamentals/scripts/geo_checker.py": {
+        "sha256": "512cf855e5ab3441e2db4578a3c3a51baf3c34461a1735d02dfb079a73fb2522",
+        "size": 9750
+      },
+      "skills/geo-fundamentals/SKILL.md": {
+        "sha256": "2ee830fe680802316c549dbeb31cc0c4e49569c25ab338e7812500d097a5924b",
+        "size": 3445
+      },
+      "skills/i18n-localization/scripts/i18n_checker.py": {
+        "sha256": "a90946f9ffee5fc83b1dbdbd001616eceb299101bf255efaec4601cecf210379",
+        "size": 7714
+      },
+      "skills/i18n-localization/SKILL.md": {
+        "sha256": "1509cf8dc323307ffec7288f185414226862a400c3ef2617c62fdd77ee4cb8f9",
+        "size": 3121
+      },
+      "skills/intelligent-routing/SKILL.md": {
+        "sha256": "b0da558d5cbd5c44de0e9af8db8d9301a3b6e5595594d2fc0b2341deaefaf908",
+        "size": 10617
+      },
+      "skills/lint-and-validate/scripts/lint_runner.py": {
+        "sha256": "822c8185ad1df47fdbea2cafaa7141c5477e4c8227ee059749db80816cd1c486",
+        "size": 5421
+      },
+      "skills/lint-and-validate/scripts/type_coverage.py": {
+        "sha256": "e654d5eeae187976700da0739b4e62f35e2829d3c61b88cd08da19b99eb164f9",
+        "size": 6480
+      },
+      "skills/lint-and-validate/SKILL.md": {
+        "sha256": "00497ead822be9f5dc871ab48dfba38a19f1a04cc77e5fdee77898a2a7e2e88f",
+        "size": 1727
+      },
+      "skills/mcp-builder/SKILL.md": {
+        "sha256": "d13eb1291ed76e0375b43d434e4676e4802264501a48ddeddcc961324133567a",
+        "size": 3308
+      },
+      "skills/mobile-design/decision-trees.md": {
+        "sha256": "ed7e218bdd40a6d6614974acf4d54772bc6384536d747ac7e4f378870388b0d3",
+        "size": 16320
+      },
+      "skills/mobile-design/mobile-backend.md": {
+        "sha256": "b46b4c0d122de115ed85a8ea814c898cebecb6338f58008b8ce23f28d136dcb2",
+        "size": 14686
+      },
+      "skills/mobile-design/mobile-color-system.md": {
+        "sha256": "9e6e302b1a03179811cbe15b8cba70eca5c6dbd42396d9efbc331d704c9b86b1",
+        "size": 10211
+      },
+      "skills/mobile-design/mobile-debugging.md": {
+        "sha256": "647fed510688212d3025c3f1ab06aae44dc5c19d245521de400d2575699e8008",
+        "size": 4250
+      },
+      "skills/mobile-design/mobile-design-thinking.md": {
+        "sha256": "0f0f8aa1e4b081c61de164572c46ccee716904ca1a4483e3bd0d2ed7996b074a",
+        "size": 17227
+      },
+      "skills/mobile-design/mobile-navigation.md": {
+        "sha256": "1d9aefcd45146bc39aa4ac12b27e89343cc1f206ea2dafa41269e72433930711",
+        "size": 11855
+      },
+      "skills/mobile-design/mobile-performance.md": {
+        "sha256": "1acdf49acba81035b6e11870b5e2b80e2b585178f6b524065c6937fb42da7059",
+        "size": 19305
+      },
+      "skills/mobile-design/mobile-testing.md": {
+        "sha256": "a940bd0c2d5204f83b1b8e2214e938e2a4b0e68e72e7b63b175c33d7bb8bdd12",
+        "size": 11027
+      },
+      "skills/mobile-design/mobile-typography.md": {
+        "sha256": "40253bb17ed0bdacef06c0f0f27233ba03274aa1587f0c96215025aaefc0316a",
+        "size": 10717
+      },
+      "skills/mobile-design/platform-android.md": {
+        "sha256": "672a828fa4cd2d85dfe6aba379c1f65bffd4d9abf484da58e2d39b6abf0b16ef",
+        "size": 19541
+      },
+      "skills/mobile-design/platform-ios.md": {
+        "sha256": "3843ee18984f68ab5fa022976f2015429788baff5f8af0dd56d6298792e09396",
+        "size": 17127
+      },
+      "skills/mobile-design/scripts/mobile_audit.py": {
+        "sha256": "7d9f7b6813c8decb159462259ce09a6bc91ecfc602971c20ca3919981ac9efe6",
+        "size": 35976
+      },
+      "skills/mobile-design/SKILL.md": {
+        "sha256": "ec74cda5e1954572e4282c3aaa9c1c32ec743cef83c53f8aef622c00dc8f0682",
+        "size": 15455
+      },
+      "skills/mobile-design/touch-psychology.md": {
+        "sha256": "ec131aea1ce39b8d46d1c491ee4839510979d2f60ee7698e2ad1aed2c48b6146",
+        "size": 16848
+      },
+      "skills/nextjs-react-expert/1-async-eliminating-waterfalls.md": {
+        "sha256": "c237abffe542420d938c98509105711c4c30bca73b8a4af5a46afc260e5dfaa8",
+        "size": 7776
+      },
+      "skills/nextjs-react-expert/2-bundle-bundle-size-optimization.md": {
+        "sha256": "72f2d32c5a59a8b658587b9741fd5491632041a1fe7b9d6c86a105fd99a5b1be",
+        "size": 6269
+      },
+      "skills/nextjs-react-expert/3-server-server-side-performance.md": {
+        "sha256": "f318046936e3d1c94987685c8ab48b936b28b7996e07c317f91a292a8cecfc04",
+        "size": 12860
+      },
+      "skills/nextjs-react-expert/4-client-client-side-data-fetching.md": {
+        "sha256": "8f5f4847bc98fd9ee2e6e6a4636031e59d4c6c48af38cd47d92c52f98fd9e879",
+        "size": 6818
+      },
+      "skills/nextjs-react-expert/5-rerender-re-render-optimization.md": {
+        "sha256": "820a2102d55ca4860d55d6bd0571f349f32c0542f041afcae434e156db069d76",
+        "size": 15871
+      },
+      "skills/nextjs-react-expert/6-rendering-rendering-performance.md": {
+        "sha256": "2155ff638feaf29bedcb84d7de30befc5c36cfb8599866a66cc52409458ab12d",
+        "size": 10353
+      },
+      "skills/nextjs-react-expert/7-js-javascript-performance.md": {
+        "sha256": "35975f84a0454934276038fafb5b772d23b7c954d122539c6dc482463db9825c",
+        "size": 17360
+      },
+      "skills/nextjs-react-expert/8-advanced-advanced-patterns.md": {
+        "sha256": "beb85e10d034d9eb3a7850d0a9ae5e13e15b26c5fb2dab1c9f7d41c90307f654",
+        "size": 3643
+      },
+      "skills/nextjs-react-expert/scripts/convert_rules.py": {
+        "sha256": "595442228c6824e2ca266b8ac8fc4bbfb10e9d3d36edd57f92c445ecb09afd42",
+        "size": 6631
+      },
+      "skills/nextjs-react-expert/scripts/react_performance_checker.py": {
+        "sha256": "f6b03ad06659489a362b1649f15711feb4d99f18c01d930775d3e5e376ff3ece",
+        "size": 10051
+      },
+      "skills/nextjs-react-expert/SKILL.md": {
+        "sha256": "dd6cb874d6a38ec1f9b0812bdc8156bc1f6951f1eab4800eade5bff01d3ea15b",
+        "size": 9875
+      },
+      "skills/nodejs-best-practices/SKILL.md": {
+        "sha256": "e6d0dea6b638c8674370bba370377b2812dfc84268700e55e08f7babb685c17d",
+        "size": 8266
+      },
+      "skills/parallel-agents/SKILL.md": {
+        "sha256": "a623844590ef73ae76a77a7b4ea77aa40b173cc098a4a3ccb0edb50f34401819",
+        "size": 5340
+      },
+      "skills/performance-profiling/scripts/lighthouse_audit.py": {
+        "sha256": "7e3928f1ac24e472fd9b0bc390f223379d8ce3e3d9ff6136e557ac4bdad7f52c",
+        "size": 2657
+      },
+      "skills/performance-profiling/SKILL.md": {
+        "sha256": "5e58efdd8fd951cf89910c65317b7b7bcc5bf8fde9317e32f4a751fa208d8ff2",
+        "size": 3101
+      },
+      "skills/plan-writing/SKILL.md": {
+        "sha256": "93cd02ab3c431913845d0dd2bed7649cb4636785314cec4cfdb3f4a403f97f68",
+        "size": 4000
+      },
+      "skills/powershell-windows/SKILL.md": {
+        "sha256": "e902ee8d16b3fe50d8c53d7612fbfce4c97526ec4d069e7738e14bc9ae3acacb",
+        "size": 3500
+      },
+      "skills/python-patterns/SKILL.md": {
+        "sha256": "b295d6221117d189efe741abf680924aedb836c80bc6990f85137f6975fd734e",
+        "size": 9476
+      },
+      "skills/red-team-tactics/SKILL.md": {
+        "sha256": "7cc6a5c25dc015f9a5d7035f1612f40716bd33a0b11659726397322d7d836587",
+        "size": 4405
+      },
+      "skills/rust-pro/SKILL.md": {
+        "sha256": "eadda46909ad6fc53f6bb610a17b7d8efb55630b37cc64d105cc063b43f25d29",
+        "size": 7555
+      },
+      "skills/seo-fundamentals/scripts/seo_checker.py": {
+        "sha256": "58354b1653f8151d8a4dd7c7d93112756160597d830ce4ba4cfd6ab45f42880e",
+        "size": 6584
+      },
+      "skills/seo-fundamentals/SKILL.md": {
+        "sha256": "eb5f2f9fe15f290323c464f362ea258dc40ebd9f72991e611beb2e7f5f8db2d3",
+        "size": 2787
+      },
+      "skills/server-management/SKILL.md": {
+        "sha256": "60277deafa8e97df1d8ec571eab94e752dba768e70aee6d994c87a25a4a09521",
+        "size": 3734
+      },
+      "skills/systematic-debugging/SKILL.md": {
+        "sha256": "53b60eed01a42d11ad7acdb7d1f732fefcb6b226d133fa9fbeb96f5c7d0238e3",
+        "size": 2405
+      },
+      "skills/tailwind-patterns/SKILL.md": {
+        "sha256": "bc64b47c56a44183441f3c908457dd4dcaaf1dfe4dc2c508b83f56ecdb017667",
+        "size": 6757
+      },
+      "skills/tdd-workflow/SKILL.md": {
+        "sha256": "b8fceb81c0967e5beadb7a89e80bc6b199c5c203fb34de50514ba9742d530157",
+        "size": 2813
+      },
+      "skills/testing-patterns/scripts/test_runner.py": {
+        "sha256": "e09b21e2334913fbb6b2e840faa229874283fd76c79b3dd0f81c504f41585c8d",
+        "size": 7078
+      },
+      "skills/testing-patterns/SKILL.md": {
+        "sha256": "f229085ad979d04c004b01865ad8fc4dcd732f4a917b56af59f600e0a3a26e8d",
+        "size": 3488
+      },
+      "skills/vulnerability-scanner/checklists.md": {
+        "sha256": "fcad8d2be67a2ef31a223f2fba9e1ed13188fcc15857a584a8fb5b55d9813e42",
+        "size": 2746
+      },
+      "skills/vulnerability-scanner/scripts/security_scan.py": {
+        "sha256": "5a066b5ffeb57b29187aaa83f570279cb3b05f39521169a4ae407d19d37dc482",
+        "size": 18170
+      },
+      "skills/vulnerability-scanner/SKILL.md": {
+        "sha256": "8dfe6febffb085d2b7bf7ba68aba5734a7c696b1235a5d60c97394a818705eba",
+        "size": 7584
+      },
+      "skills/web-design-guidelines/SKILL.md": {
+        "sha256": "2a14abb3983982fb9a05d639bd69f9ed50a3fc7419d0b0eacd93bbbb071c50b0",
+        "size": 1771
+      },
+      "skills/webapp-testing/scripts/playwright_runner.py": {
+        "sha256": "122aedbf4fead451d04423857a7048fecf83e76ad4bfdc608787bca3fb3fbd5d",
+        "size": 6531
+      },
+      "skills/webapp-testing/SKILL.md": {
+        "sha256": "aa05117912ef52addc31bdf601e8610c45badec923fc68bbc0d849b42695959a",
+        "size": 3815
+      },
+      "workflows/brainstorm.md": {
+        "sha256": "737f1abb5c3b36afe88f24a85418be5dc3895f9855b766e425cc9c839a2eaf96",
+        "size": 1825
+      },
+      "workflows/create.md": {
+        "sha256": "b8582bc0a85709705fa1ce07fb779e7d59f41797ba988ca857b7230f12f87fa1",
+        "size": 1247
+      },
+      "workflows/debug.md": {
+        "sha256": "96af930583709686f4f8a29d07012e89eb69825259e8bddd42043485a1fe8c83",
+        "size": 1706
+      },
+      "workflows/deploy.md": {
+        "sha256": "d295b9167932694788b0c1f0cea3f6795aa145b9d6e48f604f29080a8f47bc39",
+        "size": 3635
+      },
+      "workflows/enhance.md": {
+        "sha256": "0e91e5e0b5d145624e0713f6c57b050f4b8206f4b08f82c0ba85cb97bbcbff4f",
+        "size": 1175
+      },
+      "workflows/orchestrate.md": {
+        "sha256": "c0ad1e96838dbfeb9da05f00770d0e09de9c8367bd6e895ee7a1267ba8810cf6",
+        "size": 7295
+      },
+      "workflows/plan.md": {
+        "sha256": "9961d158fbc5ae3b67145e58e4306d65d6385437c764aacaaf67a2b74c985aaf",
+        "size": 1985
+      },
+      "workflows/preview.md": {
+        "sha256": "c9ff5ce453ec84b8438d302fdd81e9e4b96ea0b6fd12ba0b1ffa6b8d9c733979",
+        "size": 1164
+      },
+      "workflows/status.md": {
+        "sha256": "3c5411efcf969cc1094683464874d5fbd6657853adb226fe4aefd59f3162cd3f",
+        "size": 1416
+      },
+      "workflows/test.md": {
+        "sha256": "420414646890deadc487ee12e89fb831084aa825de7aefab0b4414fc8ee9ddd8",
+        "size": 2663
+      },
+      "workflows/ui-ux-pro-max.md": {
+        "sha256": "5a56e002ee6f73789fdc76982b051a6af77d6639dea5418409bd2bad4a7c8683",
+        "size": 10810
+      }
+    },
+    "count": 198,
+    "digest_sha256": "4c94e6445750ceca7d21fdeaee977fafe2fc25491daec5ffb126b2efac0ddd75"
+  },
+  "pack": {
+    "path": "skills/codex-workflows/packs/antigravity-compat/.agent",
+    "files": {
+      ".shared/ui-ux-pro-max/data/charts.csv": {
+        "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",
+        "size": 7655
+      },
+      ".shared/ui-ux-pro-max/data/colors.csv": {
+        "sha256": "810e2df8659ac77642665217db481982fa01b7d45f72ab90fa600eee9962dfa0",
+        "size": 12927
+      },
+      ".shared/ui-ux-pro-max/data/icons.csv": {
+        "sha256": "26be5e47c4c3fc7acae52ac8bbfaf1bf9e5ddc9c01808953a3636f8615b9de9f",
+        "size": 13385
+      },
+      ".shared/ui-ux-pro-max/data/landing.csv": {
+        "sha256": "a052aeae53c4bf700b92cc59c901f3b79a8a0e040e48d7af0dbd15ac1f840326",
+        "size": 14342
+      },
+      ".shared/ui-ux-pro-max/data/products.csv": {
+        "sha256": "6f9c9be6fdb53a415af273dac6221e87a418d1600da2ee39f974b997e880050e",
+        "size": 29694
+      },
+      ".shared/ui-ux-pro-max/data/prompts.csv": {
+        "sha256": "4fafc5d3bbf699705bf9b944ca3550fb5687ae1efa9cad31ef84ac51753132f5",
+        "size": 17401
+      },
+      ".shared/ui-ux-pro-max/data/react-performance.csv": {
+        "sha256": "904c8afcda229629545912dde0e8ac37503757131f0169f80b016f1f58c4fd3f",
+        "size": 14822
+      },
+      ".shared/ui-ux-pro-max/data/stacks/flutter.csv": {
+        "sha256": "fe36d404c799781e8ba6e9a8179b45799ed5126a545528550cd2eb0f2346e8c5",
+        "size": 10416
+      },
+      ".shared/ui-ux-pro-max/data/stacks/html-tailwind.csv": {
+        "sha256": "7aef38e75c53559470afcfa91580a9917ca8b7dbf8b92110389e23e93703ac52",
+        "size": 11305
+      },
+      ".shared/ui-ux-pro-max/data/stacks/jetpack-compose.csv": {
+        "sha256": "6c8fd4b0391c342c12b0af15610cd5becbeccaef0bbe8dcfc01d928c3195d93e",
+        "size": 8195
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nextjs.csv": {
+        "sha256": "e828ccc04843742f52f545a068e8a9ab0d2b97c0e771f7e93bf0cef74da05554",
+        "size": 12493
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nuxt-ui.csv": {
+        "sha256": "05d6e74501b2b6a636faed32450622759f49a5bcafad971f5f4e7eba0eb7be71",
+        "size": 14010
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nuxtjs.csv": {
+        "sha256": "f7a3f2d9542856d00199f85c6c023b7c284cc698e2e6e12d61afce2edacb24d6",
+        "size": 16539
+      },
+      ".shared/ui-ux-pro-max/data/stacks/react-native.csv": {
+        "sha256": "077aefc81d194895ecf7936b3ed298b978e36961f183e3a275f8acda19b5f621",
+        "size": 9983
+      },
+      ".shared/ui-ux-pro-max/data/stacks/react.csv": {
+        "sha256": "e5624ab41d33427d88e41d07581ce4eca59b37b36ab72a6ad43a9c8e2d0a1c72",
+        "size": 12962
+      },
+      ".shared/ui-ux-pro-max/data/stacks/shadcn.csv": {
+        "sha256": "395c2e415ef6f48a474acccdc8eb2c7258a6ed751a5037ba171a2d8823e02ded",
+        "size": 15921
+      },
+      ".shared/ui-ux-pro-max/data/stacks/svelte.csv": {
+        "sha256": "71af52d64f266c88070b91dbbaa900c2f8074b6baae9f35eaea6ba9cec6fd803",
+        "size": 11009
+      },
+      ".shared/ui-ux-pro-max/data/stacks/swiftui.csv": {
+        "sha256": "c9c2d2510f8e66281a2514e8dd0125a6b653b9ef53a71281b5e7dfe003d5b569",
+        "size": 10821
+      },
+      ".shared/ui-ux-pro-max/data/stacks/vue.csv": {
+        "sha256": "c2724915d3c11cd67263f25896cff721f787a0fdd8326002d31e9f5806dfd8f8",
+        "size": 11006
+      },
+      ".shared/ui-ux-pro-max/data/styles.csv": {
+        "sha256": "f7c33cd7a7a695ace1683ccff88a01b00fcd5d3e53d29d0a71cb119230662e8a",
+        "size": 40912
+      },
+      ".shared/ui-ux-pro-max/data/typography.csv": {
+        "sha256": "6c0cd9db74f75d384773b347e1ddac42692c8d00c56790e8a0e619bfa4b9537d",
+        "size": 31878
+      },
+      ".shared/ui-ux-pro-max/data/ui-reasoning.csv": {
+        "sha256": "58fc52fff69f62709f8c7dd460de6f6693699ea820f24287f3301a427c2b554e",
+        "size": 31071
+      },
+      ".shared/ui-ux-pro-max/data/ux-guidelines.csv": {
+        "sha256": "e01943c433b2cad3040f19389b3b0455673758a569b7a927b5bedf65c989cb96",
+        "size": 18667
+      },
+      ".shared/ui-ux-pro-max/data/web-interface.csv": {
+        "sha256": "10bfc24e09a6a15db8309e6ef9b6881e1d4af97dffb7c99418aefb8e30df7d54",
+        "size": 7472
+      },
+      ".shared/ui-ux-pro-max/scripts/core.py": {
+        "sha256": "19f49bcf81a6a3e1070b8d586d93b5b867b9c125d53a7140e92263a46f8a4f39",
+        "size": 10420
+      },
+      ".shared/ui-ux-pro-max/scripts/design_system.py": {
+        "sha256": "4da1d341f3c7749df51b51db4a543a48a427c3c746eb0e9882a1ab86acf3bb54",
+        "size": 43614
+      },
+      ".shared/ui-ux-pro-max/scripts/search.py": {
+        "sha256": "f3cb25db397c29e63c245ff6501003000d08180eb3b25bab449c55016c1a4ce4",
+        "size": 4989
+      },
+      "agents/backend-specialist.md": {
+        "sha256": "e8fd87a78272c55f40a0d14b6af499a97a24bf090035503c3d1bc52713b47426",
+        "size": 8607
+      },
+      "agents/code-archaeologist.md": {
+        "sha256": "57ec8def106b11a99fbac95b208253eee4d49eca16e339db1529bfae457cc380",
+        "size": 3339
+      },
+      "agents/database-architect.md": {
+        "sha256": "31cde71d708500c27a0166943bb6cf35f30c434d22e412fae627cb36fcbb95d3",
+        "size": 6857
+      },
+      "agents/debugger.md": {
+        "sha256": "a0a707bbf4c03b6644ceedc78141f466c1091085d131dae6c090b4b07f1e6154",
+        "size": 7833
+      },
+      "agents/devops-engineer.md": {
+        "sha256": "21c0c290287657c09ef409fe819bd8f61fbd8b1d2dfe6722c5ed5e9d18b5581c",
+        "size": 6299
+      },
+      "agents/documentation-writer.md": {
+        "sha256": "6f526c266ce5b28224c350766c6e898f067e604aa6ff6cb1a9a02201f16987fe",
+        "size": 2545
+      },
+      "agents/explorer-agent.md": {
+        "sha256": "12c0e8249a15b13c5d4e4a0d31aa049c3852539ccdd4076e176be515302829c8",
+        "size": 3951
+      },
+      "agents/frontend-specialist.md": {
+        "sha256": "3d253b17aaa842f52e3852d46218eabb7ff9056659ea99f4c3a95048c220278a",
+        "size": 25793
+      },
+      "agents/game-developer.md": {
+        "sha256": "a44ab1190baf7945e5c6461a16baf164129997fa99f506f5d9500f75ac2f6fab",
+        "size": 4696
+      },
+      "agents/mobile-developer.md": {
+        "sha256": "bcb01d9381d23cc01a13743958bd9b39ddde5b3d07b2a2bb58861f63f954bb6d",
+        "size": 12924
+      },
+      "agents/orchestrator.md": {
+        "sha256": "00689c0e790e1ff9eb0e4e9e971c8f0b7acec89312bd357b97554ea50960db25",
+        "size": 13829
+      },
+      "agents/penetration-tester.md": {
+        "sha256": "3832971154882bda01e66a3bd1e58d3020429d7fc3d93e75fabfdb32511eefd5",
+        "size": 4807
+      },
+      "agents/performance-optimizer.md": {
+        "sha256": "967089346570ad9caa30a3b068ca97c8efb40eab234652cf99b766c880421079",
+        "size": 4384
+      },
+      "agents/product-manager.md": {
+        "sha256": "b0969d8982110a86fec821ec5b44226b7cac40b939593cd587cd8ab134eeb1d1",
+        "size": 3154
+      },
+      "agents/product-owner.md": {
+        "sha256": "49fa0bbc8a4e51409b1306f8f6762cc787e0698fb321760f850916fb5d5d1e49",
+        "size": 3889
+      },
+      "agents/project-planner.md": {
+        "sha256": "4027c6abdd1c959bfff380ceaf53672a1e2f8cd49d32bda3ccb53b5633895ad6",
+        "size": 13705
+      },
+      "agents/qa-automation-engineer.md": {
+        "sha256": "4b7f498702c33d06dc9fa0125acc47024c93cb2a8d8cbd03ae1f1fa6a3d04da6",
+        "size": 3202
+      },
+      "agents/security-auditor.md": {
+        "sha256": "67bf6c0415708c32874b77ee93a206d28fff0281b0798a5ca5c5ff941978f74c",
+        "size": 4667
+      },
+      "agents/seo-specialist.md": {
+        "sha256": "1fb071c98be6e7046e2a57f3dd0a624d5127a23ac3cd1f1bccf20de7afd6c5d2",
+        "size": 2729
+      },
+      "agents/test-engineer.md": {
+        "sha256": "366ba5025b01e8886c209f1e8a13dc5c958d7ce4d1ffa64e2f117d9e0b1bc259",
+        "size": 3182
+      },
+      "ARCHITECTURE.md": {
+        "sha256": "5c5136c83ab530f9060ea974bdcc88fc6dd4e10854793bb9d8626eb5122e32fa",
+        "size": 11566
+      },
+      "mcp_config.json": {
+        "sha256": "8c83c36772eaeaf54ac70c35c8bb1af83a0f669b5985899a8b80814a1af2e6ac",
+        "size": 495
+      },
+      "rules/GEMINI.md": {
+        "sha256": "bcd524a8a064972ba170146cb00b7451c9d8104bd8a5664b52c7826417c76b23",
+        "size": 11897
+      },
+      "scripts/auto_preview.py": {
+        "sha256": "a4a6a104f550ba3c03ffb0b86e531e4c756f4eb0ba367f89d54721274da3b159",
+        "size": 3989
+      },
+      "scripts/checklist.py": {
+        "sha256": "704f3ed48dd0941ed0637c913812e9d981609f94e438727fc86b10ca51167f6f",
+        "size": 7569
+      },
+      "scripts/session_manager.py": {
+        "sha256": "ea2887d996975fa18780ab2f424a6f5a894d5935f75cda04a8b916822773038a",
+        "size": 4196
+      },
+      "scripts/verify_all.py": {
+        "sha256": "5e327fcae034b768c521b00e51c9a655e1f8ea6a567cc1e1d2a7000e3c781263",
+        "size": 10997
+      },
+      "skills/api-patterns/api-style.md": {
+        "sha256": "ac7b7677e862c7b6f1a622425ac398807890272a3dcb31f528993f6411abccc2",
+        "size": 1155
+      },
+      "skills/api-patterns/auth.md": {
+        "sha256": "d35ba351bf05454ad097522b80fb19368b47f66ff4ab0e76a0d69e303c2b72f0",
+        "size": 576
+      },
+      "skills/api-patterns/documentation.md": {
+        "sha256": "aa1d0262be74814e7d72d5dd2a4acf074235e8ca33c0dff0ec986adfd962a124",
+        "size": 549
+      },
+      "skills/api-patterns/graphql.md": {
+        "sha256": "f7f49e84697c8993d9cdc66b3ada56f71b01d2221107cfe70bbf291628136b8c",
+        "size": 977
+      },
+      "skills/api-patterns/rate-limiting.md": {
+        "sha256": "f1538d288ce362012241a6085beb3b5ff06d11f754b5867bf0adb7b62afd0657",
+        "size": 726
+      },
+      "skills/api-patterns/response.md": {
+        "sha256": "37bc83dfd2c4365ea9f50e531149c22e6ecdafd9d0b66c2170528b2d88a8cfa6",
+        "size": 921
+      },
+      "skills/api-patterns/rest.md": {
+        "sha256": "20bbf589c4f583b482f4610f41d25669af7224e989427353f18092e11d59970f",
+        "size": 1280
+      },
+      "skills/api-patterns/scripts/api_validator.py": {
+        "sha256": "0c633f13a560ba75556e434eb87adbd37d4c1b98ff6eb9b9ca36a2df5b192852",
+        "size": 7593
+      },
+      "skills/api-patterns/security-testing.md": {
+        "sha256": "e5cbe598d1b44356362325d5f55ee703efdbf8908a92cbd91a9c989d1ec1f9de",
+        "size": 2892
+      },
+      "skills/api-patterns/SKILL.md": {
+        "sha256": "d8c2cbe8a0966e95a52d4c9641368b64c402cef4e9e4924978b7cd633423fcbf",
+        "size": 2435
+      },
+      "skills/api-patterns/trpc.md": {
+        "sha256": "722dde150b45392b9517a2053e53958619cb8fc0c2047c8ef09be4bcb5e9095d",
+        "size": 801
+      },
+      "skills/api-patterns/versioning.md": {
+        "sha256": "58abb2fc534e687bb54a4a191188f2698ec9ed3e4e12ba269d93cc03ed8d1ee6",
+        "size": 651
+      },
+      "skills/app-builder/agent-coordination.md": {
+        "sha256": "195d6c460ce3475c21a96c55c196263f21345bd5372caed08fd37059a2a2e041",
+        "size": 5555
+      },
+      "skills/app-builder/feature-building.md": {
+        "sha256": "e717306dfca771266b42b582a69ed67b02883d3a3604b6d6118841ae1369207c",
+        "size": 1123
+      },
+      "skills/app-builder/project-detection.md": {
+        "sha256": "65f41fd5bc87b8022b609cfef5ac0a372f57df872a939bcb8705dbe9294edd2f",
+        "size": 1323
+      },
+      "skills/app-builder/scaffolding.md": {
+        "sha256": "79248126fec6d29a6e07358afe485d47ac7023d60349bab2e6218280e51144e3",
+        "size": 3609
+      },
+      "skills/app-builder/SKILL.md": {
+        "sha256": "b5bf6a6263e23c6246bd50388c5abb6564b42e079a53f9c9fa5351459aa6e0d3",
+        "size": 3172
+      },
+      "skills/app-builder/tech-stack.md": {
+        "sha256": "ca5baaa196da587469e28721f63951a6cfe4f3fe0e1c3893c514fe6af8dffa47",
+        "size": 886
+      },
+      "skills/app-builder/templates/astro-static/TEMPLATE.md": {
+        "sha256": "b603190c6f2d0a453d8fb9156532fd314722e0404635453858a278bc50bd6428",
+        "size": 1706
+      },
+      "skills/app-builder/templates/chrome-extension/TEMPLATE.md": {
+        "sha256": "dc8701558732953a5834255066a89bfc0036dd778d5a44d3a39f3066036fe8c2",
+        "size": 1966
+      },
+      "skills/app-builder/templates/cli-tool/TEMPLATE.md": {
+        "sha256": "89c0e5940c9fc79e664981d2826f9d5b2c4855a343d6b179ed0087032d3a323d",
+        "size": 1762
+      },
+      "skills/app-builder/templates/electron-desktop/TEMPLATE.md": {
+        "sha256": "b495860b7ab3a38d0541729933178cc49b7f05d08d02ac06541cb1b3eacbb7ce",
+        "size": 1823
+      },
+      "skills/app-builder/templates/express-api/TEMPLATE.md": {
+        "sha256": "e06f166902ccca2943775faac0198c77cc52eca50ec7dde41aa90d9e16ee0990",
+        "size": 1759
+      },
+      "skills/app-builder/templates/flutter-app/TEMPLATE.md": {
+        "sha256": "2b518b263daa7bc0090e5ccc387b1c55977367527e69e672332be4cd98049c1e",
+        "size": 1855
+      },
+      "skills/app-builder/templates/monorepo-turborepo/TEMPLATE.md": {
+        "sha256": "b0bd06e7e2eb80e6f52bd99a87ba45778943036bc33dcab2955e12994c4fe9bf",
+        "size": 1880
+      },
+      "skills/app-builder/templates/nextjs-fullstack/TEMPLATE.md": {
+        "sha256": "fc0d95631f36c90577b6629deae0e0ec09ed4ee25592f4369a7e4a464702fe62",
+        "size": 4096
+      },
+      "skills/app-builder/templates/nextjs-saas/TEMPLATE.md": {
+        "sha256": "067739ccd9214179c875a21b9d4ed9a4f3355bb733812de3372edf4661360352",
+        "size": 3367
+      },
+      "skills/app-builder/templates/nextjs-static/TEMPLATE.md": {
+        "sha256": "c6140fe353e51678414e9c85f52ec818b76de2a8fc05eb939f06b755d82e71cc",
+        "size": 5438
+      },
+      "skills/app-builder/templates/nuxt-app/TEMPLATE.md": {
+        "sha256": "9817bc53258cb4acf1bfd3b5050b281243dbda4f8b8ab9e2c3bb3cd95c44c72a",
+        "size": 4066
+      },
+      "skills/app-builder/templates/python-fastapi/TEMPLATE.md": {
+        "sha256": "5324b3fb4b0b1eee0363e5b452ff51de8fc03650ad58d568428a8f22283d8ba7",
+        "size": 1785
+      },
+      "skills/app-builder/templates/react-native-app/TEMPLATE.md": {
+        "sha256": "a96481a86900e30491073e5ac43c10fefe447cfb0ef6ed40d0278cb6c745c16c",
+        "size": 4271
+      },
+      "skills/app-builder/templates/SKILL.md": {
+        "sha256": "b4887369cad061e7e59e9198593ffe3e93dd455dfe0cb93cb4e63ad37ccfa054",
+        "size": 1585
+      },
+      "skills/architecture/context-discovery.md": {
+        "sha256": "0698e38a37669c36c819bac70c51213bb955e99125ca96b690c840c317595a17",
+        "size": 1591
+      },
+      "skills/architecture/examples.md": {
+        "sha256": "5bdd281a7409189049af4c55fbf8c8f562c250cd3e34cd60741be113110843a5",
+        "size": 2430
+      },
+      "skills/architecture/pattern-selection.md": {
+        "sha256": "6bdc74d7900a0574057d7c03b79afa3bf35b9efc4bc719cf6e198575373b879d",
+        "size": 2638
+      },
+      "skills/architecture/patterns-reference.md": {
+        "sha256": "264d0c372a6b5d2a7bba506a4dd4d74855f69298d4dabf1ae046d51f2f49bd9d",
+        "size": 2307
+      },
+      "skills/architecture/SKILL.md": {
+        "sha256": "43c45f6db39195213b5cb938db3aefd447f31374a7d7a42ffc5eaddab7e8452d",
+        "size": 1759
+      },
+      "skills/architecture/trade-off-analysis.md": {
+        "sha256": "14a0ceb22e88af2d39b24f06a9095312aa04bc72e8980f244bf2b42f8260abaa",
+        "size": 1579
+      },
+      "skills/bash-linux/SKILL.md": {
+        "sha256": "17c0a0d75bf28f0f639c983299a5e3c0f7fa829d50d6e147f553b3d26ffcb13c",
+        "size": 4156
+      },
+      "skills/behavioral-modes/SKILL.md": {
+        "sha256": "1bfdf106d23c51a425b687677638d88472ea5bcdd3bcd76ca13783df77f6eb13",
+        "size": 5379
+      },
+      "skills/brainstorming/dynamic-questioning.md": {
+        "sha256": "b8ee14ed26f4ebffd4d6e63959eab94646dea87c5c3cfb15e9f036bd9a6a7c61",
+        "size": 11619
+      },
+      "skills/brainstorming/SKILL.md": {
+        "sha256": "1a501a9fea86ec58121206b5c73d34bdaddd595be3da4d12761b6c1ac37f8fa4",
+        "size": 4660
+      },
+      "skills/clean-code/SKILL.md": {
+        "sha256": "ac3bae08f75a0076511f1084e6b94ca5b6e2bf014f50c613a2ce16fcd5cfbcd4",
+        "size": 6634
+      },
+      "skills/code-review-checklist/SKILL.md": {
+        "sha256": "905ec9820ad5ac6f04de94a26921c1c7e363b3d5449853c1ffa2150f0c9e8caf",
+        "size": 2574
+      },
+      "skills/database-design/database-selection.md": {
+        "sha256": "3655cdd3a38a9ca1ae8408be8057ea628b08bf9ab22460b1bc571228dd2ba6c6",
+        "size": 1137
+      },
+      "skills/database-design/indexing.md": {
+        "sha256": "eec8ce01e7c1c8ec2aed7a96d260a52b12d90c2996288e32814a8d9cf29cc22a",
+        "size": 892
+      },
+      "skills/database-design/migrations.md": {
+        "sha256": "b5b9e518f18264cdd946f4914d73c2355065ba712cb61db01ba59bacb95423a2",
+        "size": 1107
+      },
+      "skills/database-design/optimization.md": {
+        "sha256": "10a6f484fdae9973957030d8ef47bad4ffba9f7709e9c824883a97f92925a722",
+        "size": 902
+      },
+      "skills/database-design/orm-selection.md": {
+        "sha256": "11ece2e816949e26a7019b84004e240a9f9ab0b38c4f454bd522dd251c5dac97",
+        "size": 771
+      },
+      "skills/database-design/schema-design.md": {
+        "sha256": "0a83addd1e9963e3d958eb00474d7dc72881c4290a97bac03bf09553607e3f6f",
+        "size": 1470
+      },
+      "skills/database-design/scripts/schema_validator.py": {
+        "sha256": "30002411da4b6b82471d7e33ac3906daec72e69fab0fd29dd8c201b6a5777748",
+        "size": 5375
+      },
+      "skills/database-design/SKILL.md": {
+        "sha256": "efb8ec6b79641214f751a886ce75cfdb36f78b4b296473ab3f090081470fad28",
+        "size": 1527
+      },
+      "skills/deployment-procedures/SKILL.md": {
+        "sha256": "61e5f86dfbacfcc76604917d49cc5c9e80d53a0fddf48933ede81005549abb17",
+        "size": 5708
+      },
+      "skills/doc.md": {
+        "sha256": "7ad5cd7d5e4151c938019f5dc188e7eb464ce32af3c39249d14c259adf7735a7",
+        "size": 5045
+      },
+      "skills/documentation-templates/SKILL.md": {
+        "sha256": "463a55ff6ded0e84d0f0eb1454c9635b7b8695ea5ee4a308f0cd810f27060dba",
+        "size": 3312
+      },
+      "skills/frontend-design/animation-guide.md": {
+        "sha256": "50b6c57bd21dd545befc48038ed92dc5e1ada7d65489a6fc833f68857a461317",
+        "size": 8035
+      },
+      "skills/frontend-design/color-system.md": {
+        "sha256": "31a6b50a4263591f68725461e1af85bc4334e5807bf6dac8b6342657118d0857",
+        "size": 9631
+      },
+      "skills/frontend-design/decision-trees.md": {
+        "sha256": "d521ce17fb9f33d3c8a899270ba15b82f1c9ae414624a6720013ddf133f59807",
+        "size": 17265
+      },
+      "skills/frontend-design/motion-graphics.md": {
+        "sha256": "0351bd1a0a5ec2759c4cea6874e6a8bc2d2ada557e39b96c9345c6498f9ed96e",
+        "size": 7999
+      },
+      "skills/frontend-design/scripts/accessibility_checker.py": {
+        "sha256": "07de15cb02bfbddb87e405fd8e73b43a2da7b82c4ad8800aecc2d71a9813efc3",
+        "size": 5983
+      },
+      "skills/frontend-design/scripts/ux_audit.py": {
+        "sha256": "1fffb5617de9467ce45a6de2157970af5c0be50391f68909d39d401ed5215c19",
+        "size": 39456
+      },
+      "skills/frontend-design/SKILL.md": {
+        "sha256": "ec98e8f51a689761148673bbb54a83e1a758a0a01e8231b625974d542066bfd7",
+        "size": 12519
+      },
+      "skills/frontend-design/typography-system.md": {
+        "sha256": "79c82e26c31d28087c8528ba280ad7810e85d101ae2661abd2f94dd3277a648a",
+        "size": 8523
+      },
+      "skills/frontend-design/ux-psychology.md": {
+        "sha256": "5b83fe149ad3f89c82e83fcce3220b49e989a2dd849ef6ec7f6ad07ec7772b87",
+        "size": 39993
+      },
+      "skills/frontend-design/visual-effects.md": {
+        "sha256": "07568520407d298f50733028f92bf090d071a84a6ecd97950fba1384a0496a82",
+        "size": 8362
+      },
+      "skills/game-development/2d-games/SKILL.md": {
+        "sha256": "f31d95e041d06f018620fc697f25a32ea115b4ec577d9f448f714eeeb606363d",
+        "size": 2190
+      },
+      "skills/game-development/3d-games/SKILL.md": {
+        "sha256": "141bf1ca6af96066cffa91b2b37417b9d1cffec4fcc2a6ef1333ee976121f7dd",
+        "size": 2563
+      },
+      "skills/game-development/game-art/SKILL.md": {
+        "sha256": "ab7029cb91c498c6469137f7b8b1575fdc7a97db3cc338c5cd2f0edc2ac2888a",
+        "size": 5049
+      },
+      "skills/game-development/game-audio/SKILL.md": {
+        "sha256": "5cfa7e0a750c202ce81dde7aef8ebbd6e9954ece42ce47ed1619163d217a48c3",
+        "size": 5361
+      },
+      "skills/game-development/game-design/SKILL.md": {
+        "sha256": "93c4179046820a685506d81b066cbceeaa91b197cdb89ab7da1e04cac9062657",
+        "size": 2645
+      },
+      "skills/game-development/mobile-games/SKILL.md": {
+        "sha256": "43db8fb50830a99fb14ace08cb29cc60cd7f51a240c5ae73dbe5b31da704f24f",
+        "size": 2282
+      },
+      "skills/game-development/multiplayer/SKILL.md": {
+        "sha256": "79ee8d6f2e04a993b6cdf5eb251590051427cc4e09aa3a7f67f1ab8e61e205f5",
+        "size": 2813
+      },
+      "skills/game-development/pc-games/SKILL.md": {
+        "sha256": "739b244b02659ec53ca719bbdf8ac2684dbeeafc5d5ddac124ffa6407f10f5df",
+        "size": 2973
+      },
+      "skills/game-development/SKILL.md": {
+        "sha256": "994e2de3a8fd7dcd5caa8f08ddcb663d0d27cf161ddd5f74f88a441c0905189d",
+        "size": 4682
+      },
+      "skills/game-development/vr-ar/SKILL.md": {
+        "sha256": "59ddbdecc4fa17e74c4747f5f02bd69edb8bffcd1cdc2866dd6a053e19bc139e",
+        "size": 2379
+      },
+      "skills/game-development/web-games/SKILL.md": {
+        "sha256": "1213dbf108ac6a56c7c2cb67e81705b10cf0b9d136fa775ad161273bfe452a90",
+        "size": 3073
+      },
+      "skills/geo-fundamentals/scripts/geo_checker.py": {
+        "sha256": "512cf855e5ab3441e2db4578a3c3a51baf3c34461a1735d02dfb079a73fb2522",
+        "size": 9750
+      },
+      "skills/geo-fundamentals/SKILL.md": {
+        "sha256": "2ee830fe680802316c549dbeb31cc0c4e49569c25ab338e7812500d097a5924b",
+        "size": 3445
+      },
+      "skills/i18n-localization/scripts/i18n_checker.py": {
+        "sha256": "a90946f9ffee5fc83b1dbdbd001616eceb299101bf255efaec4601cecf210379",
+        "size": 7714
+      },
+      "skills/i18n-localization/SKILL.md": {
+        "sha256": "1509cf8dc323307ffec7288f185414226862a400c3ef2617c62fdd77ee4cb8f9",
+        "size": 3121
+      },
+      "skills/intelligent-routing/SKILL.md": {
+        "sha256": "b0da558d5cbd5c44de0e9af8db8d9301a3b6e5595594d2fc0b2341deaefaf908",
+        "size": 10617
+      },
+      "skills/lint-and-validate/scripts/lint_runner.py": {
+        "sha256": "822c8185ad1df47fdbea2cafaa7141c5477e4c8227ee059749db80816cd1c486",
+        "size": 5421
+      },
+      "skills/lint-and-validate/scripts/type_coverage.py": {
+        "sha256": "e654d5eeae187976700da0739b4e62f35e2829d3c61b88cd08da19b99eb164f9",
+        "size": 6480
+      },
+      "skills/lint-and-validate/SKILL.md": {
+        "sha256": "00497ead822be9f5dc871ab48dfba38a19f1a04cc77e5fdee77898a2a7e2e88f",
+        "size": 1727
+      },
+      "skills/mcp-builder/SKILL.md": {
+        "sha256": "d13eb1291ed76e0375b43d434e4676e4802264501a48ddeddcc961324133567a",
+        "size": 3308
+      },
+      "skills/mobile-design/decision-trees.md": {
+        "sha256": "ed7e218bdd40a6d6614974acf4d54772bc6384536d747ac7e4f378870388b0d3",
+        "size": 16320
+      },
+      "skills/mobile-design/mobile-backend.md": {
+        "sha256": "b46b4c0d122de115ed85a8ea814c898cebecb6338f58008b8ce23f28d136dcb2",
+        "size": 14686
+      },
+      "skills/mobile-design/mobile-color-system.md": {
+        "sha256": "9e6e302b1a03179811cbe15b8cba70eca5c6dbd42396d9efbc331d704c9b86b1",
+        "size": 10211
+      },
+      "skills/mobile-design/mobile-debugging.md": {
+        "sha256": "647fed510688212d3025c3f1ab06aae44dc5c19d245521de400d2575699e8008",
+        "size": 4250
+      },
+      "skills/mobile-design/mobile-design-thinking.md": {
+        "sha256": "0f0f8aa1e4b081c61de164572c46ccee716904ca1a4483e3bd0d2ed7996b074a",
+        "size": 17227
+      },
+      "skills/mobile-design/mobile-navigation.md": {
+        "sha256": "1d9aefcd45146bc39aa4ac12b27e89343cc1f206ea2dafa41269e72433930711",
+        "size": 11855
+      },
+      "skills/mobile-design/mobile-performance.md": {
+        "sha256": "1acdf49acba81035b6e11870b5e2b80e2b585178f6b524065c6937fb42da7059",
+        "size": 19305
+      },
+      "skills/mobile-design/mobile-testing.md": {
+        "sha256": "a940bd0c2d5204f83b1b8e2214e938e2a4b0e68e72e7b63b175c33d7bb8bdd12",
+        "size": 11027
+      },
+      "skills/mobile-design/mobile-typography.md": {
+        "sha256": "40253bb17ed0bdacef06c0f0f27233ba03274aa1587f0c96215025aaefc0316a",
+        "size": 10717
+      },
+      "skills/mobile-design/platform-android.md": {
+        "sha256": "672a828fa4cd2d85dfe6aba379c1f65bffd4d9abf484da58e2d39b6abf0b16ef",
+        "size": 19541
+      },
+      "skills/mobile-design/platform-ios.md": {
+        "sha256": "3843ee18984f68ab5fa022976f2015429788baff5f8af0dd56d6298792e09396",
+        "size": 17127
+      },
+      "skills/mobile-design/scripts/mobile_audit.py": {
+        "sha256": "7d9f7b6813c8decb159462259ce09a6bc91ecfc602971c20ca3919981ac9efe6",
+        "size": 35976
+      },
+      "skills/mobile-design/SKILL.md": {
+        "sha256": "ec74cda5e1954572e4282c3aaa9c1c32ec743cef83c53f8aef622c00dc8f0682",
+        "size": 15455
+      },
+      "skills/mobile-design/touch-psychology.md": {
+        "sha256": "ec131aea1ce39b8d46d1c491ee4839510979d2f60ee7698e2ad1aed2c48b6146",
+        "size": 16848
+      },
+      "skills/nextjs-react-expert/1-async-eliminating-waterfalls.md": {
+        "sha256": "c237abffe542420d938c98509105711c4c30bca73b8a4af5a46afc260e5dfaa8",
+        "size": 7776
+      },
+      "skills/nextjs-react-expert/2-bundle-bundle-size-optimization.md": {
+        "sha256": "72f2d32c5a59a8b658587b9741fd5491632041a1fe7b9d6c86a105fd99a5b1be",
+        "size": 6269
+      },
+      "skills/nextjs-react-expert/3-server-server-side-performance.md": {
+        "sha256": "f318046936e3d1c94987685c8ab48b936b28b7996e07c317f91a292a8cecfc04",
+        "size": 12860
+      },
+      "skills/nextjs-react-expert/4-client-client-side-data-fetching.md": {
+        "sha256": "8f5f4847bc98fd9ee2e6e6a4636031e59d4c6c48af38cd47d92c52f98fd9e879",
+        "size": 6818
+      },
+      "skills/nextjs-react-expert/5-rerender-re-render-optimization.md": {
+        "sha256": "820a2102d55ca4860d55d6bd0571f349f32c0542f041afcae434e156db069d76",
+        "size": 15871
+      },
+      "skills/nextjs-react-expert/6-rendering-rendering-performance.md": {
+        "sha256": "2155ff638feaf29bedcb84d7de30befc5c36cfb8599866a66cc52409458ab12d",
+        "size": 10353
+      },
+      "skills/nextjs-react-expert/7-js-javascript-performance.md": {
+        "sha256": "35975f84a0454934276038fafb5b772d23b7c954d122539c6dc482463db9825c",
+        "size": 17360
+      },
+      "skills/nextjs-react-expert/8-advanced-advanced-patterns.md": {
+        "sha256": "beb85e10d034d9eb3a7850d0a9ae5e13e15b26c5fb2dab1c9f7d41c90307f654",
+        "size": 3643
+      },
+      "skills/nextjs-react-expert/scripts/convert_rules.py": {
+        "sha256": "595442228c6824e2ca266b8ac8fc4bbfb10e9d3d36edd57f92c445ecb09afd42",
+        "size": 6631
+      },
+      "skills/nextjs-react-expert/scripts/react_performance_checker.py": {
+        "sha256": "f6b03ad06659489a362b1649f15711feb4d99f18c01d930775d3e5e376ff3ece",
+        "size": 10051
+      },
+      "skills/nextjs-react-expert/SKILL.md": {
+        "sha256": "dd6cb874d6a38ec1f9b0812bdc8156bc1f6951f1eab4800eade5bff01d3ea15b",
+        "size": 9875
+      },
+      "skills/nodejs-best-practices/SKILL.md": {
+        "sha256": "e6d0dea6b638c8674370bba370377b2812dfc84268700e55e08f7babb685c17d",
+        "size": 8266
+      },
+      "skills/parallel-agents/SKILL.md": {
+        "sha256": "a623844590ef73ae76a77a7b4ea77aa40b173cc098a4a3ccb0edb50f34401819",
+        "size": 5340
+      },
+      "skills/performance-profiling/scripts/lighthouse_audit.py": {
+        "sha256": "7e3928f1ac24e472fd9b0bc390f223379d8ce3e3d9ff6136e557ac4bdad7f52c",
+        "size": 2657
+      },
+      "skills/performance-profiling/SKILL.md": {
+        "sha256": "5e58efdd8fd951cf89910c65317b7b7bcc5bf8fde9317e32f4a751fa208d8ff2",
+        "size": 3101
+      },
+      "skills/plan-writing/SKILL.md": {
+        "sha256": "93cd02ab3c431913845d0dd2bed7649cb4636785314cec4cfdb3f4a403f97f68",
+        "size": 4000
+      },
+      "skills/powershell-windows/SKILL.md": {
+        "sha256": "e902ee8d16b3fe50d8c53d7612fbfce4c97526ec4d069e7738e14bc9ae3acacb",
+        "size": 3500
+      },
+      "skills/python-patterns/SKILL.md": {
+        "sha256": "b295d6221117d189efe741abf680924aedb836c80bc6990f85137f6975fd734e",
+        "size": 9476
+      },
+      "skills/red-team-tactics/SKILL.md": {
+        "sha256": "7cc6a5c25dc015f9a5d7035f1612f40716bd33a0b11659726397322d7d836587",
+        "size": 4405
+      },
+      "skills/rust-pro/SKILL.md": {
+        "sha256": "eadda46909ad6fc53f6bb610a17b7d8efb55630b37cc64d105cc063b43f25d29",
+        "size": 7555
+      },
+      "skills/seo-fundamentals/scripts/seo_checker.py": {
+        "sha256": "58354b1653f8151d8a4dd7c7d93112756160597d830ce4ba4cfd6ab45f42880e",
+        "size": 6584
+      },
+      "skills/seo-fundamentals/SKILL.md": {
+        "sha256": "eb5f2f9fe15f290323c464f362ea258dc40ebd9f72991e611beb2e7f5f8db2d3",
+        "size": 2787
+      },
+      "skills/server-management/SKILL.md": {
+        "sha256": "60277deafa8e97df1d8ec571eab94e752dba768e70aee6d994c87a25a4a09521",
+        "size": 3734
+      },
+      "skills/systematic-debugging/SKILL.md": {
+        "sha256": "53b60eed01a42d11ad7acdb7d1f732fefcb6b226d133fa9fbeb96f5c7d0238e3",
+        "size": 2405
+      },
+      "skills/tailwind-patterns/SKILL.md": {
+        "sha256": "bc64b47c56a44183441f3c908457dd4dcaaf1dfe4dc2c508b83f56ecdb017667",
+        "size": 6757
+      },
+      "skills/tdd-workflow/SKILL.md": {
+        "sha256": "b8fceb81c0967e5beadb7a89e80bc6b199c5c203fb34de50514ba9742d530157",
+        "size": 2813
+      },
+      "skills/testing-patterns/scripts/test_runner.py": {
+        "sha256": "e09b21e2334913fbb6b2e840faa229874283fd76c79b3dd0f81c504f41585c8d",
+        "size": 7078
+      },
+      "skills/testing-patterns/SKILL.md": {
+        "sha256": "f229085ad979d04c004b01865ad8fc4dcd732f4a917b56af59f600e0a3a26e8d",
+        "size": 3488
+      },
+      "skills/vulnerability-scanner/checklists.md": {
+        "sha256": "fcad8d2be67a2ef31a223f2fba9e1ed13188fcc15857a584a8fb5b55d9813e42",
+        "size": 2746
+      },
+      "skills/vulnerability-scanner/scripts/security_scan.py": {
+        "sha256": "5a066b5ffeb57b29187aaa83f570279cb3b05f39521169a4ae407d19d37dc482",
+        "size": 18170
+      },
+      "skills/vulnerability-scanner/SKILL.md": {
+        "sha256": "8dfe6febffb085d2b7bf7ba68aba5734a7c696b1235a5d60c97394a818705eba",
+        "size": 7584
+      },
+      "skills/web-design-guidelines/SKILL.md": {
+        "sha256": "2a14abb3983982fb9a05d639bd69f9ed50a3fc7419d0b0eacd93bbbb071c50b0",
+        "size": 1771
+      },
+      "skills/webapp-testing/scripts/playwright_runner.py": {
+        "sha256": "122aedbf4fead451d04423857a7048fecf83e76ad4bfdc608787bca3fb3fbd5d",
+        "size": 6531
+      },
+      "skills/webapp-testing/SKILL.md": {
+        "sha256": "aa05117912ef52addc31bdf601e8610c45badec923fc68bbc0d849b42695959a",
+        "size": 3815
+      },
+      "workflows/brainstorm.md": {
+        "sha256": "737f1abb5c3b36afe88f24a85418be5dc3895f9855b766e425cc9c839a2eaf96",
+        "size": 1825
+      },
+      "workflows/create.md": {
+        "sha256": "b8582bc0a85709705fa1ce07fb779e7d59f41797ba988ca857b7230f12f87fa1",
+        "size": 1247
+      },
+      "workflows/debug.md": {
+        "sha256": "96af930583709686f4f8a29d07012e89eb69825259e8bddd42043485a1fe8c83",
+        "size": 1706
+      },
+      "workflows/deploy.md": {
+        "sha256": "d295b9167932694788b0c1f0cea3f6795aa145b9d6e48f604f29080a8f47bc39",
+        "size": 3635
+      },
+      "workflows/enhance.md": {
+        "sha256": "0e91e5e0b5d145624e0713f6c57b050f4b8206f4b08f82c0ba85cb97bbcbff4f",
+        "size": 1175
+      },
+      "workflows/orchestrate.md": {
+        "sha256": "c0ad1e96838dbfeb9da05f00770d0e09de9c8367bd6e895ee7a1267ba8810cf6",
+        "size": 7295
+      },
+      "workflows/plan.md": {
+        "sha256": "9961d158fbc5ae3b67145e58e4306d65d6385437c764aacaaf67a2b74c985aaf",
+        "size": 1985
+      },
+      "workflows/preview.md": {
+        "sha256": "c9ff5ce453ec84b8438d302fdd81e9e4b96ea0b6fd12ba0b1ffa6b8d9c733979",
+        "size": 1164
+      },
+      "workflows/status.md": {
+        "sha256": "3c5411efcf969cc1094683464874d5fbd6657853adb226fe4aefd59f3162cd3f",
+        "size": 1416
+      },
+      "workflows/test.md": {
+        "sha256": "420414646890deadc487ee12e89fb831084aa825de7aefab0b4414fc8ee9ddd8",
+        "size": 2663
+      },
+      "workflows/ui-ux-pro-max.md": {
+        "sha256": "5a56e002ee6f73789fdc76982b051a6af77d6639dea5418409bd2bad4a7c8683",
+        "size": 10810
+      }
+    },
+    "count": 198,
+    "digest_sha256": "4c94e6445750ceca7d21fdeaee977fafe2fc25491daec5ffb126b2efac0ddd75"
+  },
+  "template_full": {
+    "path": "skills/codex-workflows/templates/.agent",
+    "files": {
+      ".shared/ui-ux-pro-max/data/charts.csv": {
+        "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",
+        "size": 7655
+      },
+      ".shared/ui-ux-pro-max/data/colors.csv": {
+        "sha256": "810e2df8659ac77642665217db481982fa01b7d45f72ab90fa600eee9962dfa0",
+        "size": 12927
+      },
+      ".shared/ui-ux-pro-max/data/icons.csv": {
+        "sha256": "26be5e47c4c3fc7acae52ac8bbfaf1bf9e5ddc9c01808953a3636f8615b9de9f",
+        "size": 13385
+      },
+      ".shared/ui-ux-pro-max/data/landing.csv": {
+        "sha256": "a052aeae53c4bf700b92cc59c901f3b79a8a0e040e48d7af0dbd15ac1f840326",
+        "size": 14342
+      },
+      ".shared/ui-ux-pro-max/data/products.csv": {
+        "sha256": "6f9c9be6fdb53a415af273dac6221e87a418d1600da2ee39f974b997e880050e",
+        "size": 29694
+      },
+      ".shared/ui-ux-pro-max/data/prompts.csv": {
+        "sha256": "4fafc5d3bbf699705bf9b944ca3550fb5687ae1efa9cad31ef84ac51753132f5",
+        "size": 17401
+      },
+      ".shared/ui-ux-pro-max/data/react-performance.csv": {
+        "sha256": "904c8afcda229629545912dde0e8ac37503757131f0169f80b016f1f58c4fd3f",
+        "size": 14822
+      },
+      ".shared/ui-ux-pro-max/data/stacks/flutter.csv": {
+        "sha256": "fe36d404c799781e8ba6e9a8179b45799ed5126a545528550cd2eb0f2346e8c5",
+        "size": 10416
+      },
+      ".shared/ui-ux-pro-max/data/stacks/html-tailwind.csv": {
+        "sha256": "7aef38e75c53559470afcfa91580a9917ca8b7dbf8b92110389e23e93703ac52",
+        "size": 11305
+      },
+      ".shared/ui-ux-pro-max/data/stacks/jetpack-compose.csv": {
+        "sha256": "6c8fd4b0391c342c12b0af15610cd5becbeccaef0bbe8dcfc01d928c3195d93e",
+        "size": 8195
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nextjs.csv": {
+        "sha256": "e828ccc04843742f52f545a068e8a9ab0d2b97c0e771f7e93bf0cef74da05554",
+        "size": 12493
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nuxt-ui.csv": {
+        "sha256": "05d6e74501b2b6a636faed32450622759f49a5bcafad971f5f4e7eba0eb7be71",
+        "size": 14010
+      },
+      ".shared/ui-ux-pro-max/data/stacks/nuxtjs.csv": {
+        "sha256": "f7a3f2d9542856d00199f85c6c023b7c284cc698e2e6e12d61afce2edacb24d6",
+        "size": 16539
+      },
+      ".shared/ui-ux-pro-max/data/stacks/react-native.csv": {
+        "sha256": "077aefc81d194895ecf7936b3ed298b978e36961f183e3a275f8acda19b5f621",
+        "size": 9983
+      },
+      ".shared/ui-ux-pro-max/data/stacks/react.csv": {
+        "sha256": "e5624ab41d33427d88e41d07581ce4eca59b37b36ab72a6ad43a9c8e2d0a1c72",
+        "size": 12962
+      },
+      ".shared/ui-ux-pro-max/data/stacks/shadcn.csv": {
+        "sha256": "395c2e415ef6f48a474acccdc8eb2c7258a6ed751a5037ba171a2d8823e02ded",
+        "size": 15921
+      },
+      ".shared/ui-ux-pro-max/data/stacks/svelte.csv": {
+        "sha256": "71af52d64f266c88070b91dbbaa900c2f8074b6baae9f35eaea6ba9cec6fd803",
+        "size": 11009
+      },
+      ".shared/ui-ux-pro-max/data/stacks/swiftui.csv": {
+        "sha256": "c9c2d2510f8e66281a2514e8dd0125a6b653b9ef53a71281b5e7dfe003d5b569",
+        "size": 10821
+      },
+      ".shared/ui-ux-pro-max/data/stacks/vue.csv": {
+        "sha256": "c2724915d3c11cd67263f25896cff721f787a0fdd8326002d31e9f5806dfd8f8",
+        "size": 11006
+      },
+      ".shared/ui-ux-pro-max/data/styles.csv": {
+        "sha256": "f7c33cd7a7a695ace1683ccff88a01b00fcd5d3e53d29d0a71cb119230662e8a",
+        "size": 40912
+      },
+      ".shared/ui-ux-pro-max/data/typography.csv": {
+        "sha256": "6c0cd9db74f75d384773b347e1ddac42692c8d00c56790e8a0e619bfa4b9537d",
+        "size": 31878
+      },
+      ".shared/ui-ux-pro-max/data/ui-reasoning.csv": {
+        "sha256": "58fc52fff69f62709f8c7dd460de6f6693699ea820f24287f3301a427c2b554e",
+        "size": 31071
+      },
+      ".shared/ui-ux-pro-max/data/ux-guidelines.csv": {
+        "sha256": "e01943c433b2cad3040f19389b3b0455673758a569b7a927b5bedf65c989cb96",
+        "size": 18667
+      },
+      ".shared/ui-ux-pro-max/data/web-interface.csv": {
+        "sha256": "10bfc24e09a6a15db8309e6ef9b6881e1d4af97dffb7c99418aefb8e30df7d54",
+        "size": 7472
+      },
+      ".shared/ui-ux-pro-max/scripts/core.py": {
+        "sha256": "19f49bcf81a6a3e1070b8d586d93b5b867b9c125d53a7140e92263a46f8a4f39",
+        "size": 10420
+      },
+      ".shared/ui-ux-pro-max/scripts/design_system.py": {
+        "sha256": "4da1d341f3c7749df51b51db4a543a48a427c3c746eb0e9882a1ab86acf3bb54",
+        "size": 43614
+      },
+      ".shared/ui-ux-pro-max/scripts/search.py": {
+        "sha256": "f3cb25db397c29e63c245ff6501003000d08180eb3b25bab449c55016c1a4ce4",
+        "size": 4989
+      },
+      "agents/backend-specialist.md": {
+        "sha256": "e8fd87a78272c55f40a0d14b6af499a97a24bf090035503c3d1bc52713b47426",
+        "size": 8607
+      },
+      "agents/code-archaeologist.md": {
+        "sha256": "57ec8def106b11a99fbac95b208253eee4d49eca16e339db1529bfae457cc380",
+        "size": 3339
+      },
+      "agents/database-architect.md": {
+        "sha256": "31cde71d708500c27a0166943bb6cf35f30c434d22e412fae627cb36fcbb95d3",
+        "size": 6857
+      },
+      "agents/debugger.md": {
+        "sha256": "a0a707bbf4c03b6644ceedc78141f466c1091085d131dae6c090b4b07f1e6154",
+        "size": 7833
+      },
+      "agents/devops-engineer.md": {
+        "sha256": "21c0c290287657c09ef409fe819bd8f61fbd8b1d2dfe6722c5ed5e9d18b5581c",
+        "size": 6299
+      },
+      "agents/documentation-writer.md": {
+        "sha256": "6f526c266ce5b28224c350766c6e898f067e604aa6ff6cb1a9a02201f16987fe",
+        "size": 2545
+      },
+      "agents/explorer-agent.md": {
+        "sha256": "12c0e8249a15b13c5d4e4a0d31aa049c3852539ccdd4076e176be515302829c8",
+        "size": 3951
+      },
+      "agents/frontend-specialist.md": {
+        "sha256": "3d253b17aaa842f52e3852d46218eabb7ff9056659ea99f4c3a95048c220278a",
+        "size": 25793
+      },
+      "agents/game-developer.md": {
+        "sha256": "a44ab1190baf7945e5c6461a16baf164129997fa99f506f5d9500f75ac2f6fab",
+        "size": 4696
+      },
+      "agents/mobile-developer.md": {
+        "sha256": "bcb01d9381d23cc01a13743958bd9b39ddde5b3d07b2a2bb58861f63f954bb6d",
+        "size": 12924
+      },
+      "agents/orchestrator.md": {
+        "sha256": "00689c0e790e1ff9eb0e4e9e971c8f0b7acec89312bd357b97554ea50960db25",
+        "size": 13829
+      },
+      "agents/penetration-tester.md": {
+        "sha256": "3832971154882bda01e66a3bd1e58d3020429d7fc3d93e75fabfdb32511eefd5",
+        "size": 4807
+      },
+      "agents/performance-optimizer.md": {
+        "sha256": "967089346570ad9caa30a3b068ca97c8efb40eab234652cf99b766c880421079",
+        "size": 4384
+      },
+      "agents/product-manager.md": {
+        "sha256": "b0969d8982110a86fec821ec5b44226b7cac40b939593cd587cd8ab134eeb1d1",
+        "size": 3154
+      },
+      "agents/product-owner.md": {
+        "sha256": "49fa0bbc8a4e51409b1306f8f6762cc787e0698fb321760f850916fb5d5d1e49",
+        "size": 3889
+      },
+      "agents/project-planner.md": {
+        "sha256": "4027c6abdd1c959bfff380ceaf53672a1e2f8cd49d32bda3ccb53b5633895ad6",
+        "size": 13705
+      },
+      "agents/qa-automation-engineer.md": {
+        "sha256": "4b7f498702c33d06dc9fa0125acc47024c93cb2a8d8cbd03ae1f1fa6a3d04da6",
+        "size": 3202
+      },
+      "agents/security-auditor.md": {
+        "sha256": "67bf6c0415708c32874b77ee93a206d28fff0281b0798a5ca5c5ff941978f74c",
+        "size": 4667
+      },
+      "agents/seo-specialist.md": {
+        "sha256": "1fb071c98be6e7046e2a57f3dd0a624d5127a23ac3cd1f1bccf20de7afd6c5d2",
+        "size": 2729
+      },
+      "agents/test-engineer.md": {
+        "sha256": "366ba5025b01e8886c209f1e8a13dc5c958d7ce4d1ffa64e2f117d9e0b1bc259",
+        "size": 3182
+      },
+      "ARCHITECTURE.md": {
+        "sha256": "5c5136c83ab530f9060ea974bdcc88fc6dd4e10854793bb9d8626eb5122e32fa",
+        "size": 11566
+      },
+      "mcp_config.json": {
+        "sha256": "8c83c36772eaeaf54ac70c35c8bb1af83a0f669b5985899a8b80814a1af2e6ac",
+        "size": 495
+      },
+      "rules/GEMINI.md": {
+        "sha256": "bcd524a8a064972ba170146cb00b7451c9d8104bd8a5664b52c7826417c76b23",
+        "size": 11897
+      },
+      "scripts/auto_preview.py": {
+        "sha256": "a4a6a104f550ba3c03ffb0b86e531e4c756f4eb0ba367f89d54721274da3b159",
+        "size": 3989
+      },
+      "scripts/checklist.py": {
+        "sha256": "704f3ed48dd0941ed0637c913812e9d981609f94e438727fc86b10ca51167f6f",
+        "size": 7569
+      },
+      "scripts/session_manager.py": {
+        "sha256": "ea2887d996975fa18780ab2f424a6f5a894d5935f75cda04a8b916822773038a",
+        "size": 4196
+      },
+      "scripts/verify_all.py": {
+        "sha256": "5e327fcae034b768c521b00e51c9a655e1f8ea6a567cc1e1d2a7000e3c781263",
+        "size": 10997
+      },
+      "skills/api-patterns/api-style.md": {
+        "sha256": "ac7b7677e862c7b6f1a622425ac398807890272a3dcb31f528993f6411abccc2",
+        "size": 1155
+      },
+      "skills/api-patterns/auth.md": {
+        "sha256": "d35ba351bf05454ad097522b80fb19368b47f66ff4ab0e76a0d69e303c2b72f0",
+        "size": 576
+      },
+      "skills/api-patterns/documentation.md": {
+        "sha256": "aa1d0262be74814e7d72d5dd2a4acf074235e8ca33c0dff0ec986adfd962a124",
+        "size": 549
+      },
+      "skills/api-patterns/graphql.md": {
+        "sha256": "f7f49e84697c8993d9cdc66b3ada56f71b01d2221107cfe70bbf291628136b8c",
+        "size": 977
+      },
+      "skills/api-patterns/rate-limiting.md": {
+        "sha256": "f1538d288ce362012241a6085beb3b5ff06d11f754b5867bf0adb7b62afd0657",
+        "size": 726
+      },
+      "skills/api-patterns/response.md": {
+        "sha256": "37bc83dfd2c4365ea9f50e531149c22e6ecdafd9d0b66c2170528b2d88a8cfa6",
+        "size": 921
+      },
+      "skills/api-patterns/rest.md": {
+        "sha256": "20bbf589c4f583b482f4610f41d25669af7224e989427353f18092e11d59970f",
+        "size": 1280
+      },
+      "skills/api-patterns/scripts/api_validator.py": {
+        "sha256": "0c633f13a560ba75556e434eb87adbd37d4c1b98ff6eb9b9ca36a2df5b192852",
+        "size": 7593
+      },
+      "skills/api-patterns/security-testing.md": {
+        "sha256": "e5cbe598d1b44356362325d5f55ee703efdbf8908a92cbd91a9c989d1ec1f9de",
+        "size": 2892
+      },
+      "skills/api-patterns/SKILL.md": {
+        "sha256": "d8c2cbe8a0966e95a52d4c9641368b64c402cef4e9e4924978b7cd633423fcbf",
+        "size": 2435
+      },
+      "skills/api-patterns/trpc.md": {
+        "sha256": "722dde150b45392b9517a2053e53958619cb8fc0c2047c8ef09be4bcb5e9095d",
+        "size": 801
+      },
+      "skills/api-patterns/versioning.md": {
+        "sha256": "58abb2fc534e687bb54a4a191188f2698ec9ed3e4e12ba269d93cc03ed8d1ee6",
+        "size": 651
+      },
+      "skills/app-builder/agent-coordination.md": {
+        "sha256": "195d6c460ce3475c21a96c55c196263f21345bd5372caed08fd37059a2a2e041",
+        "size": 5555
+      },
+      "skills/app-builder/feature-building.md": {
+        "sha256": "e717306dfca771266b42b582a69ed67b02883d3a3604b6d6118841ae1369207c",
+        "size": 1123
+      },
+      "skills/app-builder/project-detection.md": {
+        "sha256": "65f41fd5bc87b8022b609cfef5ac0a372f57df872a939bcb8705dbe9294edd2f",
+        "size": 1323
+      },
+      "skills/app-builder/scaffolding.md": {
+        "sha256": "79248126fec6d29a6e07358afe485d47ac7023d60349bab2e6218280e51144e3",
+        "size": 3609
+      },
+      "skills/app-builder/SKILL.md": {
+        "sha256": "b5bf6a6263e23c6246bd50388c5abb6564b42e079a53f9c9fa5351459aa6e0d3",
+        "size": 3172
+      },
+      "skills/app-builder/tech-stack.md": {
+        "sha256": "ca5baaa196da587469e28721f63951a6cfe4f3fe0e1c3893c514fe6af8dffa47",
+        "size": 886
+      },
+      "skills/app-builder/templates/astro-static/TEMPLATE.md": {
+        "sha256": "b603190c6f2d0a453d8fb9156532fd314722e0404635453858a278bc50bd6428",
+        "size": 1706
+      },
+      "skills/app-builder/templates/chrome-extension/TEMPLATE.md": {
+        "sha256": "dc8701558732953a5834255066a89bfc0036dd778d5a44d3a39f3066036fe8c2",
+        "size": 1966
+      },
+      "skills/app-builder/templates/cli-tool/TEMPLATE.md": {
+        "sha256": "89c0e5940c9fc79e664981d2826f9d5b2c4855a343d6b179ed0087032d3a323d",
+        "size": 1762
+      },
+      "skills/app-builder/templates/electron-desktop/TEMPLATE.md": {
+        "sha256": "b495860b7ab3a38d0541729933178cc49b7f05d08d02ac06541cb1b3eacbb7ce",
+        "size": 1823
+      },
+      "skills/app-builder/templates/express-api/TEMPLATE.md": {
+        "sha256": "e06f166902ccca2943775faac0198c77cc52eca50ec7dde41aa90d9e16ee0990",
+        "size": 1759
+      },
+      "skills/app-builder/templates/flutter-app/TEMPLATE.md": {
+        "sha256": "2b518b263daa7bc0090e5ccc387b1c55977367527e69e672332be4cd98049c1e",
+        "size": 1855
+      },
+      "skills/app-builder/templates/monorepo-turborepo/TEMPLATE.md": {
+        "sha256": "b0bd06e7e2eb80e6f52bd99a87ba45778943036bc33dcab2955e12994c4fe9bf",
+        "size": 1880
+      },
+      "skills/app-builder/templates/nextjs-fullstack/TEMPLATE.md": {
+        "sha256": "fc0d95631f36c90577b6629deae0e0ec09ed4ee25592f4369a7e4a464702fe62",
+        "size": 4096
+      },
+      "skills/app-builder/templates/nextjs-saas/TEMPLATE.md": {
+        "sha256": "067739ccd9214179c875a21b9d4ed9a4f3355bb733812de3372edf4661360352",
+        "size": 3367
+      },
+      "skills/app-builder/templates/nextjs-static/TEMPLATE.md": {
+        "sha256": "c6140fe353e51678414e9c85f52ec818b76de2a8fc05eb939f06b755d82e71cc",
+        "size": 5438
+      },
+      "skills/app-builder/templates/nuxt-app/TEMPLATE.md": {
+        "sha256": "9817bc53258cb4acf1bfd3b5050b281243dbda4f8b8ab9e2c3bb3cd95c44c72a",
+        "size": 4066
+      },
+      "skills/app-builder/templates/python-fastapi/TEMPLATE.md": {
+        "sha256": "5324b3fb4b0b1eee0363e5b452ff51de8fc03650ad58d568428a8f22283d8ba7",
+        "size": 1785
+      },
+      "skills/app-builder/templates/react-native-app/TEMPLATE.md": {
+        "sha256": "a96481a86900e30491073e5ac43c10fefe447cfb0ef6ed40d0278cb6c745c16c",
+        "size": 4271
+      },
+      "skills/app-builder/templates/SKILL.md": {
+        "sha256": "b4887369cad061e7e59e9198593ffe3e93dd455dfe0cb93cb4e63ad37ccfa054",
+        "size": 1585
+      },
+      "skills/architecture/context-discovery.md": {
+        "sha256": "0698e38a37669c36c819bac70c51213bb955e99125ca96b690c840c317595a17",
+        "size": 1591
+      },
+      "skills/architecture/examples.md": {
+        "sha256": "5bdd281a7409189049af4c55fbf8c8f562c250cd3e34cd60741be113110843a5",
+        "size": 2430
+      },
+      "skills/architecture/pattern-selection.md": {
+        "sha256": "6bdc74d7900a0574057d7c03b79afa3bf35b9efc4bc719cf6e198575373b879d",
+        "size": 2638
+      },
+      "skills/architecture/patterns-reference.md": {
+        "sha256": "264d0c372a6b5d2a7bba506a4dd4d74855f69298d4dabf1ae046d51f2f49bd9d",
+        "size": 2307
+      },
+      "skills/architecture/SKILL.md": {
+        "sha256": "43c45f6db39195213b5cb938db3aefd447f31374a7d7a42ffc5eaddab7e8452d",
+        "size": 1759
+      },
+      "skills/architecture/trade-off-analysis.md": {
+        "sha256": "14a0ceb22e88af2d39b24f06a9095312aa04bc72e8980f244bf2b42f8260abaa",
+        "size": 1579
+      },
+      "skills/bash-linux/SKILL.md": {
+        "sha256": "17c0a0d75bf28f0f639c983299a5e3c0f7fa829d50d6e147f553b3d26ffcb13c",
+        "size": 4156
+      },
+      "skills/behavioral-modes/SKILL.md": {
+        "sha256": "1bfdf106d23c51a425b687677638d88472ea5bcdd3bcd76ca13783df77f6eb13",
+        "size": 5379
+      },
+      "skills/brainstorming/dynamic-questioning.md": {
+        "sha256": "b8ee14ed26f4ebffd4d6e63959eab94646dea87c5c3cfb15e9f036bd9a6a7c61",
+        "size": 11619
+      },
+      "skills/brainstorming/SKILL.md": {
+        "sha256": "1a501a9fea86ec58121206b5c73d34bdaddd595be3da4d12761b6c1ac37f8fa4",
+        "size": 4660
+      },
+      "skills/clean-code/SKILL.md": {
+        "sha256": "ac3bae08f75a0076511f1084e6b94ca5b6e2bf014f50c613a2ce16fcd5cfbcd4",
+        "size": 6634
+      },
+      "skills/code-review-checklist/SKILL.md": {
+        "sha256": "905ec9820ad5ac6f04de94a26921c1c7e363b3d5449853c1ffa2150f0c9e8caf",
+        "size": 2574
+      },
+      "skills/database-design/database-selection.md": {
+        "sha256": "3655cdd3a38a9ca1ae8408be8057ea628b08bf9ab22460b1bc571228dd2ba6c6",
+        "size": 1137
+      },
+      "skills/database-design/indexing.md": {
+        "sha256": "eec8ce01e7c1c8ec2aed7a96d260a52b12d90c2996288e32814a8d9cf29cc22a",
+        "size": 892
+      },
+      "skills/database-design/migrations.md": {
+        "sha256": "b5b9e518f18264cdd946f4914d73c2355065ba712cb61db01ba59bacb95423a2",
+        "size": 1107
+      },
+      "skills/database-design/optimization.md": {
+        "sha256": "10a6f484fdae9973957030d8ef47bad4ffba9f7709e9c824883a97f92925a722",
+        "size": 902
+      },
+      "skills/database-design/orm-selection.md": {
+        "sha256": "11ece2e816949e26a7019b84004e240a9f9ab0b38c4f454bd522dd251c5dac97",
+        "size": 771
+      },
+      "skills/database-design/schema-design.md": {
+        "sha256": "0a83addd1e9963e3d958eb00474d7dc72881c4290a97bac03bf09553607e3f6f",
+        "size": 1470
+      },
+      "skills/database-design/scripts/schema_validator.py": {
+        "sha256": "30002411da4b6b82471d7e33ac3906daec72e69fab0fd29dd8c201b6a5777748",
+        "size": 5375
+      },
+      "skills/database-design/SKILL.md": {
+        "sha256": "efb8ec6b79641214f751a886ce75cfdb36f78b4b296473ab3f090081470fad28",
+        "size": 1527
+      },
+      "skills/deployment-procedures/SKILL.md": {
+        "sha256": "61e5f86dfbacfcc76604917d49cc5c9e80d53a0fddf48933ede81005549abb17",
+        "size": 5708
+      },
+      "skills/doc.md": {
+        "sha256": "7ad5cd7d5e4151c938019f5dc188e7eb464ce32af3c39249d14c259adf7735a7",
+        "size": 5045
+      },
+      "skills/documentation-templates/SKILL.md": {
+        "sha256": "463a55ff6ded0e84d0f0eb1454c9635b7b8695ea5ee4a308f0cd810f27060dba",
+        "size": 3312
+      },
+      "skills/frontend-design/animation-guide.md": {
+        "sha256": "50b6c57bd21dd545befc48038ed92dc5e1ada7d65489a6fc833f68857a461317",
+        "size": 8035
+      },
+      "skills/frontend-design/color-system.md": {
+        "sha256": "31a6b50a4263591f68725461e1af85bc4334e5807bf6dac8b6342657118d0857",
+        "size": 9631
+      },
+      "skills/frontend-design/decision-trees.md": {
+        "sha256": "d521ce17fb9f33d3c8a899270ba15b82f1c9ae414624a6720013ddf133f59807",
+        "size": 17265
+      },
+      "skills/frontend-design/motion-graphics.md": {
+        "sha256": "0351bd1a0a5ec2759c4cea6874e6a8bc2d2ada557e39b96c9345c6498f9ed96e",
+        "size": 7999
+      },
+      "skills/frontend-design/scripts/accessibility_checker.py": {
+        "sha256": "07de15cb02bfbddb87e405fd8e73b43a2da7b82c4ad8800aecc2d71a9813efc3",
+        "size": 5983
+      },
+      "skills/frontend-design/scripts/ux_audit.py": {
+        "sha256": "1fffb5617de9467ce45a6de2157970af5c0be50391f68909d39d401ed5215c19",
+        "size": 39456
+      },
+      "skills/frontend-design/SKILL.md": {
+        "sha256": "ec98e8f51a689761148673bbb54a83e1a758a0a01e8231b625974d542066bfd7",
+        "size": 12519
+      },
+      "skills/frontend-design/typography-system.md": {
+        "sha256": "79c82e26c31d28087c8528ba280ad7810e85d101ae2661abd2f94dd3277a648a",
+        "size": 8523
+      },
+      "skills/frontend-design/ux-psychology.md": {
+        "sha256": "5b83fe149ad3f89c82e83fcce3220b49e989a2dd849ef6ec7f6ad07ec7772b87",
+        "size": 39993
+      },
+      "skills/frontend-design/visual-effects.md": {
+        "sha256": "07568520407d298f50733028f92bf090d071a84a6ecd97950fba1384a0496a82",
+        "size": 8362
+      },
+      "skills/game-development/2d-games/SKILL.md": {
+        "sha256": "f31d95e041d06f018620fc697f25a32ea115b4ec577d9f448f714eeeb606363d",
+        "size": 2190
+      },
+      "skills/game-development/3d-games/SKILL.md": {
+        "sha256": "141bf1ca6af96066cffa91b2b37417b9d1cffec4fcc2a6ef1333ee976121f7dd",
+        "size": 2563
+      },
+      "skills/game-development/game-art/SKILL.md": {
+        "sha256": "ab7029cb91c498c6469137f7b8b1575fdc7a97db3cc338c5cd2f0edc2ac2888a",
+        "size": 5049
+      },
+      "skills/game-development/game-audio/SKILL.md": {
+        "sha256": "5cfa7e0a750c202ce81dde7aef8ebbd6e9954ece42ce47ed1619163d217a48c3",
+        "size": 5361
+      },
+      "skills/game-development/game-design/SKILL.md": {
+        "sha256": "93c4179046820a685506d81b066cbceeaa91b197cdb89ab7da1e04cac9062657",
+        "size": 2645
+      },
+      "skills/game-development/mobile-games/SKILL.md": {
+        "sha256": "43db8fb50830a99fb14ace08cb29cc60cd7f51a240c5ae73dbe5b31da704f24f",
+        "size": 2282
+      },
+      "skills/game-development/multiplayer/SKILL.md": {
+        "sha256": "79ee8d6f2e04a993b6cdf5eb251590051427cc4e09aa3a7f67f1ab8e61e205f5",
+        "size": 2813
+      },
+      "skills/game-development/pc-games/SKILL.md": {
+        "sha256": "739b244b02659ec53ca719bbdf8ac2684dbeeafc5d5ddac124ffa6407f10f5df",
+        "size": 2973
+      },
+      "skills/game-development/SKILL.md": {
+        "sha256": "994e2de3a8fd7dcd5caa8f08ddcb663d0d27cf161ddd5f74f88a441c0905189d",
+        "size": 4682
+      },
+      "skills/game-development/vr-ar/SKILL.md": {
+        "sha256": "59ddbdecc4fa17e74c4747f5f02bd69edb8bffcd1cdc2866dd6a053e19bc139e",
+        "size": 2379
+      },
+      "skills/game-development/web-games/SKILL.md": {
+        "sha256": "1213dbf108ac6a56c7c2cb67e81705b10cf0b9d136fa775ad161273bfe452a90",
+        "size": 3073
+      },
+      "skills/geo-fundamentals/scripts/geo_checker.py": {
+        "sha256": "512cf855e5ab3441e2db4578a3c3a51baf3c34461a1735d02dfb079a73fb2522",
+        "size": 9750
+      },
+      "skills/geo-fundamentals/SKILL.md": {
+        "sha256": "2ee830fe680802316c549dbeb31cc0c4e49569c25ab338e7812500d097a5924b",
+        "size": 3445
+      },
+      "skills/i18n-localization/scripts/i18n_checker.py": {
+        "sha256": "a90946f9ffee5fc83b1dbdbd001616eceb299101bf255efaec4601cecf210379",
+        "size": 7714
+      },
+      "skills/i18n-localization/SKILL.md": {
+        "sha256": "1509cf8dc323307ffec7288f185414226862a400c3ef2617c62fdd77ee4cb8f9",
+        "size": 3121
+      },
+      "skills/intelligent-routing/SKILL.md": {
+        "sha256": "b0da558d5cbd5c44de0e9af8db8d9301a3b6e5595594d2fc0b2341deaefaf908",
+        "size": 10617
+      },
+      "skills/lint-and-validate/scripts/lint_runner.py": {
+        "sha256": "822c8185ad1df47fdbea2cafaa7141c5477e4c8227ee059749db80816cd1c486",
+        "size": 5421
+      },
+      "skills/lint-and-validate/scripts/type_coverage.py": {
+        "sha256": "e654d5eeae187976700da0739b4e62f35e2829d3c61b88cd08da19b99eb164f9",
+        "size": 6480
+      },
+      "skills/lint-and-validate/SKILL.md": {
+        "sha256": "00497ead822be9f5dc871ab48dfba38a19f1a04cc77e5fdee77898a2a7e2e88f",
+        "size": 1727
+      },
+      "skills/mcp-builder/SKILL.md": {
+        "sha256": "d13eb1291ed76e0375b43d434e4676e4802264501a48ddeddcc961324133567a",
+        "size": 3308
+      },
+      "skills/mobile-design/decision-trees.md": {
+        "sha256": "ed7e218bdd40a6d6614974acf4d54772bc6384536d747ac7e4f378870388b0d3",
+        "size": 16320
+      },
+      "skills/mobile-design/mobile-backend.md": {
+        "sha256": "b46b4c0d122de115ed85a8ea814c898cebecb6338f58008b8ce23f28d136dcb2",
+        "size": 14686
+      },
+      "skills/mobile-design/mobile-color-system.md": {
+        "sha256": "9e6e302b1a03179811cbe15b8cba70eca5c6dbd42396d9efbc331d704c9b86b1",
+        "size": 10211
+      },
+      "skills/mobile-design/mobile-debugging.md": {
+        "sha256": "647fed510688212d3025c3f1ab06aae44dc5c19d245521de400d2575699e8008",
+        "size": 4250
+      },
+      "skills/mobile-design/mobile-design-thinking.md": {
+        "sha256": "0f0f8aa1e4b081c61de164572c46ccee716904ca1a4483e3bd0d2ed7996b074a",
+        "size": 17227
+      },
+      "skills/mobile-design/mobile-navigation.md": {
+        "sha256": "1d9aefcd45146bc39aa4ac12b27e89343cc1f206ea2dafa41269e72433930711",
+        "size": 11855
+      },
+      "skills/mobile-design/mobile-performance.md": {
+        "sha256": "1acdf49acba81035b6e11870b5e2b80e2b585178f6b524065c6937fb42da7059",
+        "size": 19305
+      },
+      "skills/mobile-design/mobile-testing.md": {
+        "sha256": "a940bd0c2d5204f83b1b8e2214e938e2a4b0e68e72e7b63b175c33d7bb8bdd12",
+        "size": 11027
+      },
+      "skills/mobile-design/mobile-typography.md": {
+        "sha256": "40253bb17ed0bdacef06c0f0f27233ba03274aa1587f0c96215025aaefc0316a",
+        "size": 10717
+      },
+      "skills/mobile-design/platform-android.md": {
+        "sha256": "672a828fa4cd2d85dfe6aba379c1f65bffd4d9abf484da58e2d39b6abf0b16ef",
+        "size": 19541
+      },
+      "skills/mobile-design/platform-ios.md": {
+        "sha256": "3843ee18984f68ab5fa022976f2015429788baff5f8af0dd56d6298792e09396",
+        "size": 17127
+      },
+      "skills/mobile-design/scripts/mobile_audit.py": {
+        "sha256": "7d9f7b6813c8decb159462259ce09a6bc91ecfc602971c20ca3919981ac9efe6",
+        "size": 35976
+      },
+      "skills/mobile-design/SKILL.md": {
+        "sha256": "ec74cda5e1954572e4282c3aaa9c1c32ec743cef83c53f8aef622c00dc8f0682",
+        "size": 15455
+      },
+      "skills/mobile-design/touch-psychology.md": {
+        "sha256": "ec131aea1ce39b8d46d1c491ee4839510979d2f60ee7698e2ad1aed2c48b6146",
+        "size": 16848
+      },
+      "skills/nextjs-react-expert/1-async-eliminating-waterfalls.md": {
+        "sha256": "c237abffe542420d938c98509105711c4c30bca73b8a4af5a46afc260e5dfaa8",
+        "size": 7776
+      },
+      "skills/nextjs-react-expert/2-bundle-bundle-size-optimization.md": {
+        "sha256": "72f2d32c5a59a8b658587b9741fd5491632041a1fe7b9d6c86a105fd99a5b1be",
+        "size": 6269
+      },
+      "skills/nextjs-react-expert/3-server-server-side-performance.md": {
+        "sha256": "f318046936e3d1c94987685c8ab48b936b28b7996e07c317f91a292a8cecfc04",
+        "size": 12860
+      },
+      "skills/nextjs-react-expert/4-client-client-side-data-fetching.md": {
+        "sha256": "8f5f4847bc98fd9ee2e6e6a4636031e59d4c6c48af38cd47d92c52f98fd9e879",
+        "size": 6818
+      },
+      "skills/nextjs-react-expert/5-rerender-re-render-optimization.md": {
+        "sha256": "820a2102d55ca4860d55d6bd0571f349f32c0542f041afcae434e156db069d76",
+        "size": 15871
+      },
+      "skills/nextjs-react-expert/6-rendering-rendering-performance.md": {
+        "sha256": "2155ff638feaf29bedcb84d7de30befc5c36cfb8599866a66cc52409458ab12d",
+        "size": 10353
+      },
+      "skills/nextjs-react-expert/7-js-javascript-performance.md": {
+        "sha256": "35975f84a0454934276038fafb5b772d23b7c954d122539c6dc482463db9825c",
+        "size": 17360
+      },
+      "skills/nextjs-react-expert/8-advanced-advanced-patterns.md": {
+        "sha256": "beb85e10d034d9eb3a7850d0a9ae5e13e15b26c5fb2dab1c9f7d41c90307f654",
+        "size": 3643
+      },
+      "skills/nextjs-react-expert/scripts/convert_rules.py": {
+        "sha256": "595442228c6824e2ca266b8ac8fc4bbfb10e9d3d36edd57f92c445ecb09afd42",
+        "size": 6631
+      },
+      "skills/nextjs-react-expert/scripts/react_performance_checker.py": {
+        "sha256": "f6b03ad06659489a362b1649f15711feb4d99f18c01d930775d3e5e376ff3ece",
+        "size": 10051
+      },
+      "skills/nextjs-react-expert/SKILL.md": {
+        "sha256": "dd6cb874d6a38ec1f9b0812bdc8156bc1f6951f1eab4800eade5bff01d3ea15b",
+        "size": 9875
+      },
+      "skills/nodejs-best-practices/SKILL.md": {
+        "sha256": "e6d0dea6b638c8674370bba370377b2812dfc84268700e55e08f7babb685c17d",
+        "size": 8266
+      },
+      "skills/parallel-agents/SKILL.md": {
+        "sha256": "a623844590ef73ae76a77a7b4ea77aa40b173cc098a4a3ccb0edb50f34401819",
+        "size": 5340
+      },
+      "skills/performance-profiling/scripts/lighthouse_audit.py": {
+        "sha256": "7e3928f1ac24e472fd9b0bc390f223379d8ce3e3d9ff6136e557ac4bdad7f52c",
+        "size": 2657
+      },
+      "skills/performance-profiling/SKILL.md": {
+        "sha256": "5e58efdd8fd951cf89910c65317b7b7bcc5bf8fde9317e32f4a751fa208d8ff2",
+        "size": 3101
+      },
+      "skills/plan-writing/SKILL.md": {
+        "sha256": "93cd02ab3c431913845d0dd2bed7649cb4636785314cec4cfdb3f4a403f97f68",
+        "size": 4000
+      },
+      "skills/powershell-windows/SKILL.md": {
+        "sha256": "e902ee8d16b3fe50d8c53d7612fbfce4c97526ec4d069e7738e14bc9ae3acacb",
+        "size": 3500
+      },
+      "skills/python-patterns/SKILL.md": {
+        "sha256": "b295d6221117d189efe741abf680924aedb836c80bc6990f85137f6975fd734e",
+        "size": 9476
+      },
+      "skills/red-team-tactics/SKILL.md": {
+        "sha256": "7cc6a5c25dc015f9a5d7035f1612f40716bd33a0b11659726397322d7d836587",
+        "size": 4405
+      },
+      "skills/rust-pro/SKILL.md": {
+        "sha256": "eadda46909ad6fc53f6bb610a17b7d8efb55630b37cc64d105cc063b43f25d29",
+        "size": 7555
+      },
+      "skills/seo-fundamentals/scripts/seo_checker.py": {
+        "sha256": "58354b1653f8151d8a4dd7c7d93112756160597d830ce4ba4cfd6ab45f42880e",
+        "size": 6584
+      },
+      "skills/seo-fundamentals/SKILL.md": {
+        "sha256": "eb5f2f9fe15f290323c464f362ea258dc40ebd9f72991e611beb2e7f5f8db2d3",
+        "size": 2787
+      },
+      "skills/server-management/SKILL.md": {
+        "sha256": "60277deafa8e97df1d8ec571eab94e752dba768e70aee6d994c87a25a4a09521",
+        "size": 3734
+      },
+      "skills/systematic-debugging/SKILL.md": {
+        "sha256": "53b60eed01a42d11ad7acdb7d1f732fefcb6b226d133fa9fbeb96f5c7d0238e3",
+        "size": 2405
+      },
+      "skills/tailwind-patterns/SKILL.md": {
+        "sha256": "bc64b47c56a44183441f3c908457dd4dcaaf1dfe4dc2c508b83f56ecdb017667",
+        "size": 6757
+      },
+      "skills/tdd-workflow/SKILL.md": {
+        "sha256": "b8fceb81c0967e5beadb7a89e80bc6b199c5c203fb34de50514ba9742d530157",
+        "size": 2813
+      },
+      "skills/testing-patterns/scripts/test_runner.py": {
+        "sha256": "e09b21e2334913fbb6b2e840faa229874283fd76c79b3dd0f81c504f41585c8d",
+        "size": 7078
+      },
+      "skills/testing-patterns/SKILL.md": {
+        "sha256": "f229085ad979d04c004b01865ad8fc4dcd732f4a917b56af59f600e0a3a26e8d",
+        "size": 3488
+      },
+      "skills/vulnerability-scanner/checklists.md": {
+        "sha256": "fcad8d2be67a2ef31a223f2fba9e1ed13188fcc15857a584a8fb5b55d9813e42",
+        "size": 2746
+      },
+      "skills/vulnerability-scanner/scripts/security_scan.py": {
+        "sha256": "5a066b5ffeb57b29187aaa83f570279cb3b05f39521169a4ae407d19d37dc482",
+        "size": 18170
+      },
+      "skills/vulnerability-scanner/SKILL.md": {
+        "sha256": "8dfe6febffb085d2b7bf7ba68aba5734a7c696b1235a5d60c97394a818705eba",
+        "size": 7584
+      },
+      "skills/web-design-guidelines/SKILL.md": {
+        "sha256": "2a14abb3983982fb9a05d639bd69f9ed50a3fc7419d0b0eacd93bbbb071c50b0",
+        "size": 1771
+      },
+      "skills/webapp-testing/scripts/playwright_runner.py": {
+        "sha256": "122aedbf4fead451d04423857a7048fecf83e76ad4bfdc608787bca3fb3fbd5d",
+        "size": 6531
+      },
+      "skills/webapp-testing/SKILL.md": {
+        "sha256": "aa05117912ef52addc31bdf601e8610c45badec923fc68bbc0d849b42695959a",
+        "size": 3815
+      },
+      "workflows/brainstorm.md": {
+        "sha256": "737f1abb5c3b36afe88f24a85418be5dc3895f9855b766e425cc9c839a2eaf96",
+        "size": 1825
+      },
+      "workflows/create.md": {
+        "sha256": "b8582bc0a85709705fa1ce07fb779e7d59f41797ba988ca857b7230f12f87fa1",
+        "size": 1247
+      },
+      "workflows/debug.md": {
+        "sha256": "96af930583709686f4f8a29d07012e89eb69825259e8bddd42043485a1fe8c83",
+        "size": 1706
+      },
+      "workflows/deploy.md": {
+        "sha256": "d295b9167932694788b0c1f0cea3f6795aa145b9d6e48f604f29080a8f47bc39",
+        "size": 3635
+      },
+      "workflows/enhance.md": {
+        "sha256": "0e91e5e0b5d145624e0713f6c57b050f4b8206f4b08f82c0ba85cb97bbcbff4f",
+        "size": 1175
+      },
+      "workflows/orchestrate.md": {
+        "sha256": "c0ad1e96838dbfeb9da05f00770d0e09de9c8367bd6e895ee7a1267ba8810cf6",
+        "size": 7295
+      },
+      "workflows/plan.md": {
+        "sha256": "9961d158fbc5ae3b67145e58e4306d65d6385437c764aacaaf67a2b74c985aaf",
+        "size": 1985
+      },
+      "workflows/preview.md": {
+        "sha256": "c9ff5ce453ec84b8438d302fdd81e9e4b96ea0b6fd12ba0b1ffa6b8d9c733979",
+        "size": 1164
+      },
+      "workflows/status.md": {
+        "sha256": "3c5411efcf969cc1094683464874d5fbd6657853adb226fe4aefd59f3162cd3f",
+        "size": 1416
+      },
+      "workflows/test.md": {
+        "sha256": "420414646890deadc487ee12e89fb831084aa825de7aefab0b4414fc8ee9ddd8",
+        "size": 2663
+      },
+      "workflows/ui-ux-pro-max.md": {
+        "sha256": "5a56e002ee6f73789fdc76982b051a6af77d6639dea5418409bd2bad4a7c8683",
+        "size": 10810
+      }
+    },
+    "count": 198,
+    "digest_sha256": "4c94e6445750ceca7d21fdeaee977fafe2fc25491daec5ffb126b2efac0ddd75"
+  }
+}

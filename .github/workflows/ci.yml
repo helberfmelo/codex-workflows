@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skill folders
+        run: python scripts/ci_validate_skill.py --skills-root skills
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Check workflow parity
+        run: |
+          python skills/codex-workflows/scripts/check_workflow_parity.py \
+            --references skills/codex-workflows/references/workflows \
+            --template skills/codex-workflows/templates/.agent/workflows \
+            --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+
+      - name: Validate compatibility manifest drift
+        run: |
+          python skills/codex-workflows/scripts/check_compat_drift.py \
+            --manifest skills/codex-workflows/compat/manifest.json \
+            --pack skills/codex-workflows/packs/antigravity-compat/.agent \
+            --template-full skills/codex-workflows/templates/.agent

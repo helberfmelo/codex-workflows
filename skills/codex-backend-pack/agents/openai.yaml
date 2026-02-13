@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Backend Pack"
+  short_description: "Backend and data implementation pack for Codex workflows."
+  default_prompt: "Apply backend and database expertise for this task with explicit tradeoffs and validation."

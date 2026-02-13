@@ -21,6 +21,34 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - Upgraded `templates/.agent` to full detailed workflows and full `.agent` structure.
 - Added separate lightweight profile at `templates/minimal/.agent`.
 - `docs/ARCHITECTURE.md` and `docs/COMPARISON.md`.
+- Compatibility governance:
+  - `build_compat_manifest.py`
+  - `check_compat_drift.py`
+  - `compat/manifest.json`
+- Workflow integrity:
+  - `check_workflow_parity.py`
+  - `docs/WORKFLOW_CONTRACT.md`
+- Performance and runtime:
+  - `route_workflow_fast.py`
+  - `routing_data.py`
+  - `benchmark_router.py`
+  - `docs/PERFORMANCE.md`
+- Quality and CI:
+  - `.github/workflows/ci.yml`
+  - `tests/test_route_workflow.py`
+  - `tests/test_bootstrap_profiles.py`
+  - `tests/test_sync_compat_pack.py`
+  - `scripts/ci_validate_skill.py`
+- Operations and release docs:
+  - `docs/COMPATIBILITY.md`
+  - `docs/OPERATIONS.md`
+  - `docs/RELEASE.md`
+  - `docs/ROBUSTNESS-CHECKLIST.md`
+- Codex-native domain packs:
+  - `skills/codex-backend-pack`
+  - `skills/codex-frontend-pack`
+  - `skills/codex-security-pack`
+  - `skills/codex-qa-pack`
 
 ## [1.0.0] - 2026-02-13
 

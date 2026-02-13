@@ -34,9 +34,13 @@ Now includes:
 
 - structured per-workflow references
 - routing matrix and orchestration gates
-- deterministic router script
+- deterministic and fast router variants
 - local `.agent` bootstrap script
 - reusable `.agent` template bundle
+- compatibility manifest and drift checks
+- workflow parity checks
+- CI validation and unit tests
+- codex-native domain packs (backend/frontend/security/qa)
 - explicit architecture docs
 
 ## Practical difference now
@@ -62,9 +66,9 @@ This installs a complete `.agent` tree including agents, skills, workflows, rule
 
 Default templates were also upgraded so `templates/.agent/workflows/*.md` now contains full detailed workflow files instead of short stubs.
 
-## Next expansion path
+## Remaining expansion path
 
-1. Add domain packs (`backend`, `frontend`, `security`, `qa`) as additional skills.
-2. Add verification scripts per stack (Node, Python, Rust).
-3. Add richer status and session management scripts.
-4. Add examples folder with real project walkthroughs.
+1. Add stack-specific verification packs (Node, Python, Rust).
+2. Add performance profiling for bootstrap and sync scripts.
+3. Add real-world project examples with end-to-end walkthroughs.
+4. Add release automation for tags and changelog generation.

@@ -1,0 +1,54 @@
+# Robustness Checklist
+
+Date: 2026-02-13
+
+## Structure parity
+
+- [x] Full compatibility pack exists
+Evidence: `skills/codex-workflows/packs/antigravity-compat/.agent/`
+- [x] Full template exists
+Evidence: `skills/codex-workflows/templates/.agent/`
+- [x] Minimal template exists
+Evidence: `skills/codex-workflows/templates/minimal/.agent/`
+
+## Workflow quality
+
+- [x] Full workflow files are detailed (not stubs)
+Evidence: `skills/codex-workflows/templates/.agent/workflows/orchestrate.md`
+- [x] Workflow parity checker exists
+Evidence: `skills/codex-workflows/scripts/check_workflow_parity.py`
+
+## Sync and routing automation
+
+- [x] Compatibility sync script exists
+Evidence: `skills/codex-workflows/scripts/sync_compat_pack.py`
+- [x] Manifest build/check scripts exist
+Evidence: `skills/codex-workflows/scripts/build_compat_manifest.py`, `skills/codex-workflows/scripts/check_compat_drift.py`
+- [x] Baseline and fast routers exist
+Evidence: `skills/codex-workflows/scripts/route_workflow.py`, `skills/codex-workflows/scripts/route_workflow_fast.py`
+
+## Documentation and operations
+
+- [x] Architecture documented
+Evidence: `docs/ARCHITECTURE.md`
+- [x] Compatibility maintenance documented
+Evidence: `docs/COMPATIBILITY.md`
+- [x] Operations runbook documented
+Evidence: `docs/OPERATIONS.md`
+- [x] Release runbook documented
+Evidence: `docs/RELEASE.md`
+- [x] Workflow contract documented
+Evidence: `docs/WORKFLOW_CONTRACT.md`
+
+## Quality and CI
+
+- [x] CI workflow exists
+Evidence: `.github/workflows/ci.yml`
+- [x] Unit tests for routing/bootstrap/sync exist
+Evidence: `tests/test_route_workflow.py`, `tests/test_bootstrap_profiles.py`, `tests/test_sync_compat_pack.py`
+- [x] Skill validator for CI exists
+Evidence: `scripts/ci_validate_skill.py`
+
+## Outcome
+
+Checklist status: Pass (all required controls present with file-level evidence).

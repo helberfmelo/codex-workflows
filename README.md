@@ -33,8 +33,17 @@ skills/
     agents/openai.yaml
     scripts/
       route_workflow.py
+      route_workflow_fast.py
+      routing_data.py
       bootstrap_project_agent.py
       sync_compat_pack.py
+      build_compat_manifest.py
+      check_compat_drift.py
+      check_workflow_parity.py
+      benchmark_router.py
+      codex_workflows_ops.py
+    compat/
+      manifest.json
     packs/
       antigravity-compat/.agent/** (full compatibility pack)
     references/
@@ -45,6 +54,10 @@ skills/
       templates/output-templates.md
     templates/.agent/** (full template baseline)
     templates/minimal/.agent/** (lightweight starter)
+  codex-backend-pack/
+  codex-frontend-pack/
+  codex-security-pack/
+  codex-qa-pack/
 ```
 
 ## Installation
@@ -101,6 +114,28 @@ python ~/.codex/skills/codex-workflows/scripts/route_workflow.py "add secure log
 python ~/.codex/skills/codex-workflows/scripts/sync_compat_pack.py --source /path/to/.agent
 ```
 
+6. Validate compatibility and workflow parity:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_workflow_parity.py \
+  --references ~/.codex/skills/codex-workflows/references/workflows \
+  --template ~/.codex/skills/codex-workflows/templates/.agent/workflows \
+  --pack ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+```
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_compat_drift.py \
+  --manifest ~/.codex/skills/codex-workflows/compat/manifest.json \
+  --pack ~/.codex/skills/codex-workflows/packs/antigravity-compat/.agent \
+  --template-full ~/.codex/skills/codex-workflows/templates/.agent
+```
+
+7. Benchmark routing runtime:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 10000
+```
+
 ## Behavior Notes
 
 - Slash-like terms (for example `/orchestrate`) are interpreted as workflow intent in prompts.
@@ -114,6 +149,23 @@ See `docs/COMPARISON.md` for a detailed comparison and adaptation strategy.
 ## Compatibility Scope
 
 This repository includes a full compatibility pack under `skills/codex-workflows/packs/antigravity-compat/.agent` copied from a local Antigravity installation baseline to enable near-equivalent structure and workflows in Codex projects.
+
+## Domain Packs
+
+Independent packs are available for targeted installation:
+
+- `skills/codex-backend-pack`
+- `skills/codex-frontend-pack`
+- `skills/codex-security-pack`
+- `skills/codex-qa-pack`
+
+The routers also return `recommended_packs` based on detected domains.
+
+## CI and Quality Gates
+
+- CI pipeline: `.github/workflows/ci.yml`
+- Skill validation: `scripts/ci_validate_skill.py`
+- Unit tests: `tests/test_*.py`
 
 ## Contributing
 

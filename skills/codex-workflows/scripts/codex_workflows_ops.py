@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""Unified operations CLI for codex-workflows maintenance."""
+from __future__ import annotations
+
+import argparse
+import subprocess
+import sys
+from pathlib import Path
+
+
+def run(args: list[str]) -> int:
+    proc = subprocess.run([sys.executable] + args, check=False)
+    return proc.returncode
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    sub.add_parser("route")
+    sub.add_parser("route-fast")
+
+    p_bench = sub.add_parser("benchmark")
+    p_bench.add_argument("--iterations", type=int, default=10000)
+
+    p_bootstrap = sub.add_parser("bootstrap")
+    p_bootstrap.add_argument("--project", default=".")
+    p_bootstrap.add_argument("--profile", default="antigravity-compat", choices=("minimal", "antigravity-compat"))
+    p_bootstrap.add_argument("--force", action="store_true")
+
+    p_sync = sub.add_parser("sync-pack")
+    p_sync.add_argument("--source", required=True)
+
+    sub.add_parser("build-manifest")
+    sub.add_parser("check-drift")
+    sub.add_parser("check-workflows")
+
+    args = parser.parse_args()
+
+    root = Path(__file__).resolve().parents[1]
+    scripts = root / "scripts"
+
+    if args.cmd == "route":
+        code = run([str(scripts / "route_workflow.py"), "example query", "--show-domains"])
+        raise SystemExit(code)
+    if args.cmd == "route-fast":
+        code = run([str(scripts / "route_workflow_fast.py"), "example query", "--show-domains"])
+        raise SystemExit(code)
+    if args.cmd == "benchmark":
+        code = run([str(scripts / "benchmark_router.py"), "--iterations", str(args.iterations)])
+        raise SystemExit(code)
+    if args.cmd == "bootstrap":
+        cmd = [str(scripts / "bootstrap_project_agent.py"), "--project", args.project, "--profile", args.profile]
+        if args.force:
+            cmd.append("--force")
+        code = run(cmd)
+        raise SystemExit(code)
+    if args.cmd == "sync-pack":
+        code = run([str(scripts / "sync_compat_pack.py"), "--source", args.source])
+        raise SystemExit(code)
+    if args.cmd == "build-manifest":
+        code = run(
+            [
+                str(scripts / "build_compat_manifest.py"),
+                "--source",
+                str(Path.cwd() / ".agent"),
+                "--pack",
+                str(root / "packs" / "antigravity-compat" / ".agent"),
+                "--template-full",
+                str(root / "templates" / ".agent"),
+                "--output",
+                str(root / "compat" / "manifest.json"),
+            ]
+        )
+        raise SystemExit(code)
+    if args.cmd == "check-drift":
+        code = run(
+            [
+                str(scripts / "check_compat_drift.py"),
+                "--manifest",
+                str(root / "compat" / "manifest.json"),
+                "--pack",
+                str(root / "packs" / "antigravity-compat" / ".agent"),
+                "--template-full",
+                str(root / "templates" / ".agent"),
+            ]
+        )
+        raise SystemExit(code)
+    if args.cmd == "check-workflows":
+        code = run(
+            [
+                str(scripts / "check_workflow_parity.py"),
+                "--references",
+                str(root / "references" / "workflows"),
+                "--template",
+                str(root / "templates" / ".agent" / "workflows"),
+                "--pack",
+                str(root / "packs" / "antigravity-compat" / ".agent" / "workflows"),
+            ]
+        )
+        raise SystemExit(code)
+
+
+if __name__ == "__main__":
+    main()
+
