@@ -30,6 +30,14 @@ Composer wrapper (optional for PHP teams):
 
 `composer codex:install-all`
 
+Activation shortcuts:
+
+- `cw /<workflow> <objective>`
+- `codex-workflow /<workflow> <objective>`
+- `codex-workflows /<workflow> <objective>`
+- `cw /help`
+- `cw /examples`
+
 Preview without changes:
 
 `python scripts/install_all_in_one.py --dry-run`

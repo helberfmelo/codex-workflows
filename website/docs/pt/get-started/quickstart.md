@@ -2,6 +2,9 @@
 
 ## 1) Acione workflow explicitamente
 
+- `cw /orchestrate hardening de autenticacao com testes`
+- `cw /help`
+- `cw /examples`
 - `Use codex-workflows em /orchestrate e execute este objetivo: hardening de autenticacao com testes`
 - `Use codex-workflows em /debug e investigue falha de login`
 - `Use codex-workflows em /plan para este roadmap`

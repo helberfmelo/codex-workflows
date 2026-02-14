@@ -4,6 +4,9 @@
 
 Examples:
 
+- `cw /orchestrate harden auth flow with tests`
+- `cw /help`
+- `cw /examples`
 - `Use codex-workflows in /orchestrate and execute this goal: harden auth flow with tests`
 - `Use codex-workflows in /debug and investigate an intermittent login failure`
 - `Use codex-workflows in /plan for this feature roadmap`

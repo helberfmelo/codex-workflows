@@ -1,6 +1,9 @@
 # Quickstart
 
 1. Activation explicite:
+`cw /orchestrate harden auth flow with tests`
+`cw /help`
+`cw /examples`
 `Use codex-workflows in /orchestrate and <objective>`
 `Use codex-workflows in /game-dev and design a core gameplay loop`
 `Use codex-workflows in /roblox-game-dev and secure RemoteEvent boundaries`

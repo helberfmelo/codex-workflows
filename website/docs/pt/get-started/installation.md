@@ -54,6 +54,9 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 
 1. Reinicie VS Code/Codex.
 2. Ative com prompt explicito:
+`cw /orchestrate <objetivo>`
+`cw /help`
+`cw /examples`
 `Use codex-workflows em /orchestrate e <objetivo>`.
 
 Bootstrap local opcional via CLI unificada:

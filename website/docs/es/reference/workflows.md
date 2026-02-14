@@ -18,7 +18,15 @@ Catalogo:
 
 Patron recomendado:
 
+- `cw /<workflow> <objetivo>`
+- `codex-workflow /<workflow> <objetivo>`
+- `codex-workflows /<workflow> <objetivo>`
 - `Use codex-workflows in /<workflow> and <objective>`
+
+Comandos utilitarios:
+
+- `cw /help` -> muestra ayuda de activacion
+- `cw /examples` -> lista workflows y ejemplos
 
 Perfil por defecto: `codex-native`.
 

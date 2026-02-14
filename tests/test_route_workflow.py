@@ -24,6 +24,60 @@ route_workflow_fast = load_module(SCRIPTS / "route_workflow_fast.py", "route_wor
 
 
 class RouteWorkflowTests(unittest.TestCase):
+    def test_cw_alias_activation_for_all_workflows(self):
+        workflows = sorted(route_workflow.RULES.keys())
+        for wf in workflows:
+            query = f"cw {wf} execute this now"
+            base = route_workflow.route(query)
+            fast = route_workflow_fast.route(query)
+            self.assertEqual(base["workflow"], wf)
+            self.assertEqual(fast["workflow"], wf)
+            self.assertTrue(base["explicit_activation"])
+            self.assertTrue(fast["explicit_activation"])
+
+    def test_codex_workflow_alias_variants(self):
+        base_singular = route_workflow.route("codex-workflow /debug investigate this regression")
+        fast_singular = route_workflow_fast.route("codex-workflow /debug investigate this regression")
+        base_plural = route_workflow.route("codex-workflows /plan create milestones for this release")
+        fast_plural = route_workflow_fast.route("codex-workflows /plan create milestones for this release")
+
+        self.assertEqual(base_singular["workflow"], "/debug")
+        self.assertEqual(fast_singular["workflow"], "/debug")
+        self.assertEqual(base_plural["workflow"], "/plan")
+        self.assertEqual(fast_plural["workflow"], "/plan")
+
+    def test_help_command_returns_terminal_style_listing(self):
+        base = route_workflow.route("cw /help")
+        fast = route_workflow_fast.route("cw /help")
+
+        self.assertEqual(base["command"], "/help")
+        self.assertEqual(fast["command"], "/help")
+        self.assertIsNone(base["workflow"])
+        self.assertIsNone(fast["workflow"])
+        self.assertIn("Usage:", base["utility_output"])
+        self.assertIn("cw /examples", base["utility_output"])
+        self.assertIn("Available workflows", base["utility_output"])
+
+    def test_examples_command_lists_workflows_with_short_summaries(self):
+        base = route_workflow.route("cw /examples")
+        fast = route_workflow_fast.route("cw /examples")
+
+        self.assertEqual(base["command"], "/examples")
+        self.assertEqual(fast["command"], "/examples")
+        self.assertIn("Workflows:", base["utility_output"])
+        self.assertIn("/roblox-game-dev", base["utility_output"])
+        self.assertIn("Examples:", base["utility_output"])
+
+        for line in base["utility_output"].splitlines():
+            stripped = line.strip()
+            if not stripped.startswith("/"):
+                continue
+            parts = stripped.split()
+            if parts[0] not in route_workflow.RULES:
+                continue
+            summary_words = len(parts[1:])
+            self.assertLessEqual(summary_words, 7)
+
     def test_game_query_routes_to_game_dev(self):
         result = route_workflow.route("build a gameplay core loop prototype for a 2d game")
         self.assertEqual(result["workflow"], "/game-dev")

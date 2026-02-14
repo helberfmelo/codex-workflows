@@ -18,7 +18,15 @@ Catalogue:
 
 Pattern recommande:
 
+- `cw /<workflow> <objectif>`
+- `codex-workflow /<workflow> <objectif>`
+- `codex-workflows /<workflow> <objectif>`
 - `Use codex-workflows in /<workflow> and <objective>`
+
+Commandes utilitaires:
+
+- `cw /help` -> affiche l'aide d'activation
+- `cw /examples` -> liste workflows et exemples
 
 Profil par defaut: `codex-native`.
 

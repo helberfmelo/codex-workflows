@@ -21,6 +21,11 @@ It routes natural-language requests into repeatable execution workflows:
 - `/orchestrate`
 - `/ui-ux-pro-max`
 
+Short activation aliases:
+
+- `cw /<workflow> <objective>`
+- `codex-workflow /<workflow> <objective>`
+
 ## Positioning
 
 This project applies workflow-operating-system patterns to the Codex skill format for VS Code.
@@ -186,6 +191,9 @@ composer codex:install-all -- --ref=v1.1.0
 
 1. Restart Codex after installation.
 2. Prompt with workflow intent, for example:
+- `cw /orchestrate harden auth flow with tests`
+- `cw /help`
+- `cw /examples`
 - `Use codex-workflows and run /orchestrate for this feature`
 - `Apply /debug workflow for this failing test`
 - `Use codex-workflows in /game-dev and design the core gameplay loop`
@@ -328,23 +336,32 @@ Deploy:
 Use explicit skill + workflow phrasing for the most reliable behavior.
 
 1. For complex tasks, start with:
+- `cw /orchestrate <your objective>`
 - `Use codex-workflows in /orchestrate and <your objective>`
 2. For focused tasks, keep the workflow explicit:
+- `cw /debug investigate this error`
+- `cw /plan break this feature into milestones`
 - `Use codex-workflows and run /debug for this error`
 - `Use codex-workflows and run /plan for this feature`
 3. This works for any workflow name in the catalog, not only `/orchestrate`.
 4. Supported explicit trigger formats:
+- `cw /<workflow>`
+- `codex-workflow /<workflow>`
+- `codex-workflows /<workflow>`
 - `Use codex-workflows in /<workflow>`
 - `Use codex-workflows em /<workflow>`
-5. In a new chat/session, repeat the activation line in the first message.
-6. In the same chat, short continuation prompts are enough:
+5. Utility commands:
+- `cw /help` -> activation and usage help
+- `cw /examples` -> workflow list + short summaries + examples
+6. In a new chat/session, repeat the activation line in the first message.
+7. In the same chat, short continuation prompts are enough:
 - `Continue with codex-workflows /orchestrate from current plan`
-7. Treat `/orchestrate`, `/debug`, `/plan`, etc. as intent labels in prompts, not native CLI slash commands.
+8. Treat `/orchestrate`, `/debug`, `/plan`, etc. as intent labels in prompts, not native CLI slash commands.
 
 Recommended activation template:
 
 ```text
-Use codex-workflows in /orchestrate and execute this goal: <goal>.
+cw /orchestrate <goal>.
 Keep phase gates, verify outputs, and return a concise report.
 ```
 

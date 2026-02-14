@@ -30,10 +30,18 @@ Confidence: <high|medium|low>
 - If request is ambiguous, ask up to 3 high-value questions.
 - Prefer deterministic routing through `scripts/route_workflow.py` when available.
 - Honor explicit workflow activation when user writes:
+  - `cw /<workflow>`
+  - `codex-workflow /<workflow>`
+  - `codex-workflows /<workflow>`
   - `Use codex-workflows in /<workflow>`
   - `Use codex-workflows em /<workflow>`
 - Use `scripts/route_workflow_fast.py` for lower-latency in-process routing paths.
 - Surface `recommended_packs` (`codex-backend-pack`, `codex-frontend-pack`, `codex-security-pack`, `codex-qa-pack`) when domains are detected.
+
+Utility commands:
+
+- `cw /help` (show activation help)
+- `cw /examples` (show workflow summaries and examples)
 
 Read `references/routing/intent-matrix.md` for full mapping.
 

@@ -11,8 +11,12 @@ from routing_data import (
     DOMAIN_TO_PACK,
     RULES,
     detect_domains,
+    detect_explicit_command,
     detect_explicit_workflow,
     detect_stack_packs,
+    render_examples_text,
+    render_help_text,
+    UTILITY_COMMANDS,
     tokenize,
 )
 
@@ -46,16 +50,33 @@ def route(text: str) -> dict:
     matched_domains = detect_domains(low, DOMAIN_HINTS)
     packs = recommend_packs(matched_domains, low)
 
+    explicit_command = detect_explicit_command(text, UTILITY_COMMANDS)
+    if explicit_command:
+        utility_output = render_help_text() if explicit_command == "/help" else render_examples_text()
+        return {
+            "workflow": None,
+            "command": explicit_command,
+            "confidence": "high",
+            "reason": f"Explicit utility command detected: {explicit_command}",
+            "secondary": [],
+            "domains": sorted(matched_domains),
+            "recommended_packs": packs,
+            "explicit_activation": True,
+            "utility_output": utility_output,
+        }
+
     explicit_workflow = detect_explicit_workflow(text, set(RULES.keys()))
     if explicit_workflow:
         return {
             "workflow": explicit_workflow,
+            "command": None,
             "confidence": "high",
             "reason": f"Explicit workflow activation detected: {explicit_workflow}",
             "secondary": [],
             "domains": sorted(matched_domains),
             "recommended_packs": packs,
             "explicit_activation": True,
+            "utility_output": None,
         }
 
     for token in tokens:
@@ -70,23 +91,27 @@ def route(text: str) -> dict:
     if len(matched_domains) >= 2 and "/orchestrate" not in scores:
         return {
             "workflow": "/orchestrate",
+            "command": None,
             "confidence": "high",
             "reason": f"Detected multi-domain task: {', '.join(sorted(matched_domains))}",
             "secondary": [],
             "domains": sorted(matched_domains),
             "recommended_packs": packs,
             "explicit_activation": False,
+            "utility_output": None,
         }
 
     if not scores:
         return {
             "workflow": "/plan",
+            "command": None,
             "confidence": "low",
             "reason": "No strong keyword match; defaulting to planning.",
             "secondary": [],
             "domains": sorted(matched_domains),
             "recommended_packs": packs,
             "explicit_activation": False,
+            "utility_output": None,
         }
 
     ordered = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
@@ -95,12 +120,14 @@ def route(text: str) -> dict:
     confidence = "high" if top >= 3 else "medium"
     return {
         "workflow": primary,
+        "command": None,
         "confidence": confidence,
         "reason": f"Matched: {', '.join(hits[primary])}",
         "secondary": secondary,
         "domains": sorted(matched_domains),
         "recommended_packs": packs,
         "explicit_activation": False,
+        "utility_output": None,
     }
 
 
@@ -113,6 +140,9 @@ def main() -> None:
     result = route(args.query)
     if args.json:
         print(json.dumps(result, ensure_ascii=True))
+        return
+    if result.get("command") in UTILITY_COMMANDS:
+        print(result["utility_output"])
         return
     print(f"workflow={result['workflow']}")
     print(f"confidence={result['confidence']}")

@@ -23,3 +23,14 @@ Map request intent to a primary workflow.
 - High: clear keywords and single domain.
 - Medium: mixed signals or two close domains.
 - Low: vague objective, missing constraints.
+
+## Explicit Activation Aliases
+
+- `cw /<workflow> <objective>`
+- `codex-workflow /<workflow> <objective>`
+- `codex-workflows /<workflow> <objective>`
+
+Utility commands:
+
+- `cw /help`
+- `cw /examples`

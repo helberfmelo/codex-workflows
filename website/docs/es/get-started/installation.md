@@ -39,3 +39,12 @@ Bootstrap local opcional:
 ```bash
 python scripts/codexwf.py init --project .
 ```
+
+## Post-instalacion
+
+Activacion recomendada:
+
+- `cw /orchestrate <objetivo>`
+- `cw /help`
+- `cw /examples`
+- `Use codex-workflows in /orchestrate and <objective>`

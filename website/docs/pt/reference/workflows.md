@@ -28,8 +28,16 @@ Os workflows nativos reescritos ficam em:
 
 ## Padrao recomendado de prompt
 
+- `cw /<workflow> <objetivo>`
+- `codex-workflow /<workflow> <objetivo>`
+- `codex-workflows /<workflow> <objetivo>`
 - `Use codex-workflows in /<workflow> and <objective>`
 - `Use codex-workflows em /<workflow> e <objetivo>`
+
+Comandos utilitarios:
+
+- `cw /help` -> mostra ajuda de ativacao
+- `cw /examples` -> lista workflows e exemplos
 
 ## Regras de roteamento
 

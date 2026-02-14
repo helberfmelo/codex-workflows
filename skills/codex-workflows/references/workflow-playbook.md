@@ -16,3 +16,7 @@ Available workflows:
 - /status
 - /orchestrate
 - /ui-ux-pro-max
+
+Utility commands:
+- cw /help
+- cw /examples

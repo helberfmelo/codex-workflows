@@ -39,3 +39,12 @@ composer codex:install-all
 ```bash
 python scripts/codexwf.py init --project .
 ```
+
+## 安装后
+
+推荐激活方式：
+
+- `cw /orchestrate <目标>`
+- `cw /help`
+- `cw /examples`
+- `Use codex-workflows in /orchestrate and <objective>`

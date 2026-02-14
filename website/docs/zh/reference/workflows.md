@@ -18,7 +18,15 @@
 
 推荐提示词：
 
+- `cw /<workflow> <目标>`
+- `codex-workflow /<workflow> <目标>`
+- `codex-workflows /<workflow> <目标>`
 - `Use codex-workflows in /<workflow> and <objective>`
+
+实用命令：
+
+- `cw /help` -> 显示激活帮助
+- `cw /examples` -> 列出工作流和示例
 
 默认 profile：`codex-native`。
 

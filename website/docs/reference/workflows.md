@@ -30,8 +30,16 @@ Compatibility is opt-in via `--profile antigravity-compat`.
 
 For deterministic behavior, always use explicit skill + workflow:
 
+- `cw /<workflow> <objective>`
+- `codex-workflow /<workflow> <objective>`
+- `codex-workflows /<workflow> <objective>`
 - `Use codex-workflows in /<workflow> and <goal>`
 - `Use codex-workflows in /<workflow> and <objective>`
+
+Utility commands:
+
+- `cw /help` -> show activation help
+- `cw /examples` -> show workflows and examples
 
 ## Routing rules
 

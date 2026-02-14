@@ -20,6 +20,8 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 2. Routing and Governance
 - `references/routing/intent-matrix.md`
 - `references/orchestration/phase-gates.md`
+- explicit activations via `cw /<workflow>` and `codex-workflow(s) /<workflow>`
+- utility commands via `cw /help` and `cw /examples`
 
 3. Workflow Knowledge Base
 - `references/workflows/*.md`
