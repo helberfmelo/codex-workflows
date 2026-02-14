@@ -18,11 +18,11 @@ Compatibility content is only used when `--profile antigravity-compat` is explic
 
 Use a local Antigravity `.agent` snapshot as input source.
 
-Repository root `.agent` is optional for day-to-day use. If it is missing, you can still rebuild a valid compatibility manifest by using:
+For day-to-day repository maintenance, you can rebuild a valid compatibility manifest by using:
 
 `python skills/codex-workflows/scripts/codex_workflows_ops.py build-manifest`
 
-This command automatically falls back to `packs/antigravity-compat/.agent` as source when no local snapshot is found.
+This command uses `./.agent` if present in the current working directory and otherwise falls back to `packs/antigravity-compat/.agent`.
 
 ## Sync process
 

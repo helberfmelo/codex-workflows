@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-02-14T06:04:12Z",
+  "generated_at_utc": "2026-02-14T06:16:45Z",
   "source": {
-    "path": "D:\\Projetos\\codex-workflows-skill\\.agent",
+    "path": "D:\\Projetos\\codex-workflows-skill\\skills\\codex-workflows\\packs\\antigravity-compat\\.agent",
     "files": {
       ".shared/ui-ux-pro-max/data/charts.csv": {
         "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",
@@ -771,6 +771,10 @@
         "sha256": "0e91e5e0b5d145624e0713f6c57b050f4b8206f4b08f82c0ba85cb97bbcbff4f",
         "size": 1175
       },
+      "workflows/game-dev.md": {
+        "sha256": "8ac09cce7713701f1b9b913ec1ad57549b1ae09a837649ddfb0eb6f61b9937ce",
+        "size": 1311
+      },
       "workflows/orchestrate.md": {
         "sha256": "c0ad1e96838dbfeb9da05f00770d0e09de9c8367bd6e895ee7a1267ba8810cf6",
         "size": 7295
@@ -782,6 +786,10 @@
       "workflows/preview.md": {
         "sha256": "c9ff5ce453ec84b8438d302fdd81e9e4b96ea0b6fd12ba0b1ffa6b8d9c733979",
         "size": 1164
+      },
+      "workflows/roblox-game-dev.md": {
+        "sha256": "711b54a9854f63e6e8749a3c0cf67a3a3bbdbddeb40be9e0aa059f06c40fb4b0",
+        "size": 1343
       },
       "workflows/status.md": {
         "sha256": "3c5411efcf969cc1094683464874d5fbd6657853adb226fe4aefd59f3162cd3f",
@@ -796,8 +804,8 @@
         "size": 10810
       }
     },
-    "count": 198,
-    "digest_sha256": "4c94e6445750ceca7d21fdeaee977fafe2fc25491daec5ffb126b2efac0ddd75"
+    "count": 200,
+    "digest_sha256": "6913f12195c7daba5d83530fd9cfb79a40128b4a75d485952c7fac37abcf6425"
   },
   "pack": {
     "path": "D:\\Projetos\\codex-workflows-skill\\skills\\codex-workflows\\packs\\antigravity-compat\\.agent",

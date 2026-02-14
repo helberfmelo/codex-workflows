@@ -17,7 +17,6 @@ def resolve_manifest_source(
     explicit_source: str | None,
     *,
     cwd: Path,
-    repo_root: Path,
     pack_root: Path,
 ) -> tuple[Path, bool]:
     if explicit_source:
@@ -29,10 +28,6 @@ def resolve_manifest_source(
     local_source = (cwd / ".agent").resolve()
     if local_source.exists():
         return local_source, False
-
-    repo_source = (repo_root / ".agent").resolve()
-    if repo_source.exists():
-        return repo_source, False
 
     return pack_root.resolve(), True
 
@@ -114,12 +109,10 @@ def main() -> None:
         code = run(cmd)
         raise SystemExit(code)
     if args.cmd == "build-manifest":
-        repo_root = Path(__file__).resolve().parents[3]
         pack_root = root / "packs" / "antigravity-compat" / ".agent"
         source_path, used_pack_fallback = resolve_manifest_source(
             args.source,
             cwd=Path.cwd(),
-            repo_root=repo_root,
             pack_root=pack_root,
         )
         if used_pack_fallback:

@@ -30,7 +30,6 @@ class CodexWorkflowsOpsTests(unittest.TestCase):
             source, used_fallback = ops.resolve_manifest_source(
                 str(explicit),
                 cwd=root / "cwd",
-                repo_root=root / "repo",
                 pack_root=root / "pack",
             )
             self.assertEqual(source, explicit.resolve())
@@ -44,28 +43,9 @@ class CodexWorkflowsOpsTests(unittest.TestCase):
             source, used_fallback = ops.resolve_manifest_source(
                 None,
                 cwd=cwd,
-                repo_root=root / "repo",
                 pack_root=root / "pack",
             )
             self.assertEqual(source, (cwd / ".agent").resolve())
-            self.assertFalse(used_fallback)
-
-    def test_resolve_manifest_source_uses_repo_agent_before_pack_fallback(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = pathlib.Path(tmp)
-            cwd = root / "cwd"
-            cwd.mkdir(parents=True)
-            repo_root = root / "repo"
-            (repo_root / ".agent").mkdir(parents=True)
-            pack = root / "pack"
-            pack.mkdir(parents=True)
-            source, used_fallback = ops.resolve_manifest_source(
-                None,
-                cwd=cwd,
-                repo_root=repo_root,
-                pack_root=pack,
-            )
-            self.assertEqual(source, (repo_root / ".agent").resolve())
             self.assertFalse(used_fallback)
 
     def test_resolve_manifest_source_falls_back_to_pack_when_no_agent_exists(self):
@@ -73,14 +53,11 @@ class CodexWorkflowsOpsTests(unittest.TestCase):
             root = pathlib.Path(tmp)
             cwd = root / "cwd"
             cwd.mkdir(parents=True)
-            repo_root = root / "repo"
-            repo_root.mkdir(parents=True)
             pack = root / "pack"
             pack.mkdir(parents=True)
             source, used_fallback = ops.resolve_manifest_source(
                 None,
                 cwd=cwd,
-                repo_root=repo_root,
                 pack_root=pack,
             )
             self.assertEqual(source, pack.resolve())
@@ -93,7 +70,6 @@ class CodexWorkflowsOpsTests(unittest.TestCase):
                 ops.resolve_manifest_source(
                     str(root / "missing" / ".agent"),
                     cwd=root / "cwd",
-                    repo_root=root / "repo",
                     pack_root=root / "pack",
                 )
 

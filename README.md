@@ -403,8 +403,8 @@ Automation note:
 - If a project has local `.agent` files, local instructions have priority.
 
 Repository maintenance note:
-- Root `.agent` in this repository is optional for normal usage.
-- If removed, compatibility manifest generation still works via:
+- This repository does not require a root `.agent` folder for normal usage.
+- Compatibility manifest generation works via:
   - `python skills/codex-workflows/scripts/codex_workflows_ops.py build-manifest`
 
 ## Comparison to Antigravity
