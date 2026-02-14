@@ -17,7 +17,10 @@
 5. Codex-native workflow quality and anti-copy threshold:
 `python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35`
 
-6. Router benchmark:
+6. Codex-native structural assets:
+`python skills/codex-workflows/scripts/check_codex_native_assets.py --native-root skills/codex-workflows/templates/codex-native/.agent --min-agents 10 --min-skills 8`
+
+7. Router benchmark:
 `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000`
 
 Unified shortcut:

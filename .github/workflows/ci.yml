@@ -37,6 +37,13 @@ jobs:
             --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows \
             --max-similarity 0.35
 
+      - name: Check codex-native structural assets
+        run: |
+          python skills/codex-workflows/scripts/check_codex_native_assets.py \
+            --native-root skills/codex-workflows/templates/codex-native/.agent \
+            --min-agents 10 \
+            --min-skills 8
+
       - name: Validate compatibility manifest drift
         run: |
           python skills/codex-workflows/scripts/check_compat_drift.py \

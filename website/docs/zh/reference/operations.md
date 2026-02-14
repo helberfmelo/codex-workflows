@@ -26,6 +26,7 @@ python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
 2. rebuild manifest
 3. run drift/parity checks
 4. run codex-native quality check
-5. run tests and skill validation
+5. run codex-native assets check
+6. run tests and skill validation
 
 完整说明见：`docs/OPERATIONS.md`。

@@ -26,6 +26,7 @@ Main commands:
 - `check-drift`
 - `check-workflows`
 - `check-codex-native`
+- `check-codex-assets`
 - `benchmark`
 - `bootstrap`
 - `sync-pack`
@@ -38,8 +39,9 @@ Main commands:
 3. `check_compat_drift.py`
 4. `check_workflow_parity.py`
 5. `check_codex_native_quality.py`
-6. `python -m unittest discover -s tests -p "test_*.py"`
-7. `python scripts/ci_validate_skill.py --skills-root skills`
+6. `check_codex_native_assets.py`
+7. `python -m unittest discover -s tests -p "test_*.py"`
+8. `python scripts/ci_validate_skill.py --skills-root skills`
 
 Detailed source:
 

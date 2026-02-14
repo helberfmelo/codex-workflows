@@ -25,6 +25,8 @@ Compatibilite uniquement opt-in via `--profile antigravity-compat`.
 Workflows natifs reecrits:
 
 - `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
+- `skills/codex-workflows/templates/codex-native/.agent/agents/*.md`
+- `skills/codex-workflows/templates/codex-native/.agent/skills/*/SKILL.md`
 
 Checks qualite:
 
@@ -32,4 +34,6 @@ Checks qualite:
   - `python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --native skills/codex-workflows/templates/codex-native/.agent/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
 - qualite codex-native:
   - `python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35`
+- actifs codex-native:
+  - `python skills/codex-workflows/scripts/check_codex_native_assets.py --native-root skills/codex-workflows/templates/codex-native/.agent --min-agents 10 --min-skills 8`
 

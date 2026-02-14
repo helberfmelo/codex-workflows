@@ -34,4 +34,13 @@ python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
   --max-similarity 0.35
 ```
 
+5. 校验 codex-native 结构化资产：
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_codex_native_assets.py \
+  --native-root ~/.codex/skills/codex-workflows/templates/codex-native/.agent \
+  --min-agents 10 \
+  --min-skills 8
+```
+
 

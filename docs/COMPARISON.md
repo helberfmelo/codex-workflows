@@ -66,11 +66,14 @@ This profile boots from an independent codex-native template root:
 
 - `skills/codex-workflows/templates/codex-native/.agent`
 - with all 11 rewritten workflow definitions in `workflows/*.md`
+- with native specialist agents in `agents/*.md`
+- with native capability skills in `skills/*/SKILL.md`
 - `antigravity-compat` remains opt-in interoperability mode.
 
 Quality is enforced by:
 
 - `skills/codex-workflows/scripts/check_codex_native_quality.py`
+- `skills/codex-workflows/scripts/check_codex_native_assets.py`
 - CI execution in `.github/workflows/ci.yml`
 - similarity threshold guard (`--max-similarity 0.35`) versus compatibility workflows.
 
@@ -96,6 +99,5 @@ Compatibility parity is maintained between:
 ## Remaining expansion path
 
 1. Expand codex-native workflow depth with stack-specific execution branches.
-2. Add codex-native specific agents and skills not derived from compatibility pack.
-3. Add benchmark thresholds and trend tracking for routing/bootstrap latency.
-4. Add broader end-to-end sample implementations with automated golden checks.
+2. Add benchmark thresholds and trend tracking for routing/bootstrap latency.
+3. Add broader end-to-end sample implementations with automated golden checks.

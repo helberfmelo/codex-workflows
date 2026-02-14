@@ -14,6 +14,10 @@ Evidence: `skills/codex-workflows/templates/.agent/`
 Evidence: `skills/codex-workflows/templates/minimal/.agent/`
 - [x] Codex-native template overlay exists
 Evidence: `skills/codex-workflows/templates/codex-native/.agent/workflows/`
+- [x] Codex-native agents catalog exists
+Evidence: `skills/codex-workflows/templates/codex-native/.agent/agents/*.md`
+- [x] Codex-native skills catalog exists
+Evidence: `skills/codex-workflows/templates/codex-native/.agent/skills/*/SKILL.md`
 
 ## Workflow quality
 
@@ -29,6 +33,8 @@ Evidence: `skills/codex-workflows/templates/codex-native/.agent/workflows/*.md`
 Evidence: `skills/codex-workflows/scripts/check_codex_native_quality.py`
 - [x] Codex-native similarity threshold enforced
 Evidence: `skills/codex-workflows/scripts/check_codex_native_quality.py --max-similarity`
+- [x] Codex-native structural assets checker exists
+Evidence: `skills/codex-workflows/scripts/check_codex_native_assets.py`
 
 ## Sync and routing automation
 
@@ -64,6 +70,8 @@ Evidence: `.github/ISSUE_TEMPLATE/bug_report.yml`, `.github/ISSUE_TEMPLATE/featu
 Evidence: `.github/workflows/ci.yml`
 - [x] CI enforces codex-native quality check
 Evidence: `.github/workflows/ci.yml`, `skills/codex-workflows/scripts/check_codex_native_quality.py`
+- [x] CI enforces codex-native structural assets
+Evidence: `.github/workflows/ci.yml`, `skills/codex-workflows/scripts/check_codex_native_assets.py`
 - [x] CI stack matrix exists with real example projects
 Evidence: `.github/workflows/ci.yml`, `examples/projects/node-service`, `examples/projects/python-service`, `examples/projects/rust-service`
 - [x] Release workflow exists

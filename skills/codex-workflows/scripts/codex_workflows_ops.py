@@ -46,6 +46,7 @@ def main() -> None:
     sub.add_parser("check-drift")
     sub.add_parser("check-workflows")
     sub.add_parser("check-codex-native")
+    sub.add_parser("check-codex-assets")
 
     args = parser.parse_args()
 
@@ -140,6 +141,19 @@ def main() -> None:
                 str(root / "packs" / "antigravity-compat" / ".agent" / "workflows"),
                 "--max-similarity",
                 "0.35",
+            ]
+        )
+        raise SystemExit(code)
+    if args.cmd == "check-codex-assets":
+        code = run(
+            [
+                str(scripts / "check_codex_native_assets.py"),
+                "--native-root",
+                str(root / "templates" / "codex-native" / ".agent"),
+                "--min-agents",
+                "10",
+                "--min-skills",
+                "8",
             ]
         )
         raise SystemExit(code)

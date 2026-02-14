@@ -43,6 +43,7 @@ skills/
       check_compat_drift.py
       check_workflow_parity.py
       check_codex_native_quality.py
+      check_codex_native_assets.py
       benchmark_router.py
       codex_workflows_ops.py
     compat/
@@ -55,7 +56,7 @@ skills/
       routing/intent-matrix.md
       orchestration/phase-gates.md
       templates/output-templates.md
-    templates/codex-native/.agent/** (default codex-native profile)
+    templates/codex-native/.agent/** (default codex-native profile with native agents and skills)
     templates/.agent/** (full template baseline)
     templates/minimal/.agent/** (lightweight starter)
   codex-backend-pack/
@@ -191,7 +192,11 @@ composer codex:install-all -- --ref=v1.1.0
 python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --project .
 ```
 
-This default profile is `codex-native` and uses an independent codex-native `.agent` template with all 11 rewritten workflow contracts (`/brainstorm` to `/ui-ux-pro-max`).
+This default profile is `codex-native` and uses an independent codex-native `.agent` template with:
+
+- 11 rewritten workflow contracts (`/brainstorm` to `/ui-ux-pro-max`)
+- native `agents/` capability catalog
+- native `skills/` capability catalog
 
 Equivalent via unified CLI (inside this repository):
 
@@ -249,13 +254,22 @@ python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
   --max-similarity 0.35
 ```
 
-8. Benchmark routing runtime:
+8. Validate codex-native structural assets:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_codex_native_assets.py \
+  --native-root ~/.codex/skills/codex-workflows/templates/codex-native/.agent \
+  --min-agents 10 \
+  --min-skills 8
+```
+
+9. Benchmark routing runtime:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 10000
 ```
 
-9. Run stack validation packs:
+10. Run stack validation packs:
 
 ```bash
 python ~/.codex/skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .
@@ -263,7 +277,7 @@ python ~/.codex/skills/codex-python-validation-pack/scripts/validate_python_stac
 python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project .
 ```
 
-10. Unified maintenance commands:
+11. Unified maintenance commands:
 
 ```bash
 python scripts/codexwf.py status
@@ -353,6 +367,11 @@ Workflow contracts are split:
 
 - Native parity: `references/workflows/*.md` <-> `templates/codex-native/.agent/workflows/*.md`
 - Compatibility parity: `templates/.agent/workflows/*.md` <-> `packs/antigravity-compat/.agent/workflows/*.md`
+
+Native capability layer is also validated:
+
+- `templates/codex-native/.agent/agents/*.md`
+- `templates/codex-native/.agent/skills/*/SKILL.md`
 
 ## Domain Packs
 

@@ -75,7 +75,7 @@ If local `.agent` exists, prioritize local instructions in this order:
 
 If local `.agent` is missing, use repository templates:
 
-- `templates/codex-native/.agent/` (default codex-native profile with rewritten workflows)
+- `templates/codex-native/.agent/` (default codex-native profile with rewritten workflows and native agents/skills)
 - `templates/.agent/` (full Antigravity-compatible template baseline)
 - `templates/minimal/.agent/` (lightweight starter profile)
 
@@ -101,6 +101,7 @@ Use these scripts to keep the system robust:
 - `scripts/check_compat_drift.py`
 - `scripts/check_workflow_parity.py`
 - `scripts/check_codex_native_quality.py`
+- `scripts/check_codex_native_assets.py`
 - `scripts/benchmark_router.py`
 - `scripts/codex_workflows_ops.py`
 

@@ -62,6 +62,7 @@ Available commands:
 - `check-drift`
 - `check-workflows`
 - `check-codex-native`
+- `check-codex-assets`
 - `benchmark`
 - `bootstrap`
 - `sync-pack`
@@ -79,6 +80,7 @@ Available commands:
 - `python skills/codex-workflows/scripts/check_compat_drift.py --manifest skills/codex-workflows/compat/manifest.json --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent`
 - `python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --native skills/codex-workflows/templates/codex-native/.agent/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows`
 - `python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35`
+- `python skills/codex-workflows/scripts/check_codex_native_assets.py --native-root skills/codex-workflows/templates/codex-native/.agent --min-agents 10 --min-skills 8`
 
 4. Run tests and validation:
 - `python -m unittest discover -s tests -p "test_*.py"`

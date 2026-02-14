@@ -10,6 +10,7 @@ The first is the compatibility pack and the second is the compatibility baseline
 Default project bootstrap now uses:
 
 - `skills/codex-workflows/templates/codex-native/.agent` as independent source
+- includes native `agents/` and `skills/` catalogs separate from compatibility content
 
 Compatibility content is only used when `--profile antigravity-compat` is explicitly selected.
 
