@@ -1,59 +1,55 @@
-# Por Que Usar `cw` no GPT Codex + VS Code
+# Por que usar `cw` no GPT Codex + VS Code
 
-Sim, isso e comum em websites de repositorios GitHub mais profissionais.
+O `cw` padroniza como você planeja, executa e valida tarefas com o Codex no VS Code.
 
-Um portal de documentacao deve explicar:
+Sem esse padrão, equipes tendem a ter prompts inconsistentes, validação fraca e releases manuais mais suscetíveis a erro.
 
-- qual problema o projeto resolve;
-- qual vantagem real ele entrega;
-- quando ele nao e necessario.
+Com `cw`, você ganha workflows explícitos, gates de qualidade, automação de release e onboarding mais rápido.
 
-Esta pagina faz isso sem metricas artificiais.
+## Problema que o `cw` resolve
 
-## Problema que o `cw` Resolve
+Sem um modelo operacional, o uso do Codex em projetos maiores tende a apresentar:
 
-Sem um modelo operacional, o uso do Codex em projetos maiores tende a ter:
+- prompts inconsistentes entre colaboradores;
+- transição fraca entre planejamento, implementação e validação;
+- etapas de release e governança puladas sob pressão;
+- retrabalho de setup em repositórios diferentes.
 
-- prompts inconsistentes entre pessoas;
-- transicao fraca entre planejamento, implementacao e validacao;
-- etapas de release e governanca puladas sob pressao;
-- retrabalho de setup em repositorios diferentes.
+## O que o `cw` adiciona
 
-## O que o `cw` Adiciona
+O `cw` adiciona um modelo repetível de execução sobre o Codex:
 
-O `cw` adiciona um modelo repetivel de execucao sobre o Codex:
+- ativação explícita de workflow (`cw /orchestrate`, `cw /debug`, etc.);
+- contratos codex-native para o comportamento dos fluxos;
+- packs de validação por domínio e stack (Node, Python e Rust);
+- automação de CI e release alinhada com a operação real;
+- documentação multilíngue e playbooks operacionais.
 
-- ativacao explicita de workflow (`cw /orchestrate`, `cw /debug`, etc.);
-- contratos codex-native para comportamento dos fluxos;
-- packs de validacao por dominio e stack (Node, Python, Rust);
-- automacao de CI e release alinhada com operacao real;
-- docs multilanguage e playbooks operacionais.
+## Comparativo: com e sem `cw`
 
-## Comparativo: Com e Sem `cw`
-
-| Dimensao | Sem `cw` | Com `cw` |
+| Dimensão | Sem `cw` | Com `cw` |
 | --- | --- | --- |
-| Inicio de tarefa | Estilo de prompt varia por pessoa | Trigger explicito de workflow e objetivo |
-| Trabalho multi-dominio | Coordenacao ad hoc | `/orchestrate` com fases estruturadas |
-| Disciplina de validacao | Facil pular checks | Rotinas de validacao e gates de CI |
+| Início de tarefa | Estilo de prompt varia por pessoa | Trigger explícito de workflow e objetivo |
+| Trabalho multidomínio | Coordenação ad hoc | `/orchestrate` com fases estruturadas |
+| Disciplina de validação | Fácil pular checks | Rotinas de validação e gates de CI |
 | Higiene de release | Manual e sujeito a erro | Fluxo automatizado de tag/changelog/release |
 | Onboarding | Conhecimento disperso no chat | Docs, exemplos e comandos centralizados |
-| Repetibilidade | Depende da memoria individual | Convencoes e checks de repositorio |
+| Repetibilidade | Depende da memória individual | Convenções e checks de repositório |
 
-## Quando o `cw` Nao e Necessario
+## Quando o `cw` não é necessário
 
 Para tarefas muito pequenas e pontuais, prompts diretos no Codex podem bastar.
 
-O `cw` passa a valer quando voce precisa de:
+O `cw` passa a valer mais quando você precisa de:
 
-- consistencia entre colaboradores;
-- gates de qualidade auditaveis;
-- operacao e release em escala.
+- consistência entre colaboradores;
+- gates de qualidade auditáveis;
+- operação e release em escala.
 
-## Recomendacao Pratica
+## Recomendação prática
 
-Use modelo misto:
+Use um modelo misto:
 
 1. Tarefa simples: prompt direto.
-2. Trabalho de produto: workflows `cw` + validacoes.
-3. Ciclo de release: automacao de checks e pipeline.
+2. Trabalho de produto: workflows `cw` + validações.
+3. Ciclo de release: automação de checks e pipeline.
