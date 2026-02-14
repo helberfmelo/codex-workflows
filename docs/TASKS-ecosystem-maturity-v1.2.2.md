@@ -41,6 +41,9 @@ Owner: codex-workflows
 - [x] T4. Add larger examples and quick wins by profile
 - [x] T5. Update docs + website locales + reference sync
 - [x] T5.1 Full validation and push
+- [x] T6. Make repository root `.agent` optional for manifest maintenance
+- [x] T6.1 Add automated tests for manifest source fallback resolution
+- [x] T6.2 Update operations/compatibility docs + website mirrored source docs
 
 ## Validation Gate (done at each phase)
 

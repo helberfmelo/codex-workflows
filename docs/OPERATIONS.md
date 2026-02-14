@@ -87,6 +87,15 @@ Available commands:
 - `sync-pack`
 - `release`
 
+`build-manifest` source resolution order:
+
+1. `--source <path>` (if provided)
+2. `./.agent` from current working directory
+3. repository root `.agent`
+4. fallback to `skills/codex-workflows/packs/antigravity-compat/.agent`
+
+If fallback is used, the command prints a warning and still produces a valid manifest.
+
 ## Typical maintenance cycle
 
 1. Sync compatibility pack:
@@ -94,6 +103,9 @@ Available commands:
 
 2. Rebuild compatibility manifest:
 `python skills/codex-workflows/scripts/build_compat_manifest.py --source <path-to-.agent> --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent --output skills/codex-workflows/compat/manifest.json`
+
+Alternative using unified ops command with auto source resolution:
+`python skills/codex-workflows/scripts/codex_workflows_ops.py build-manifest`
 
 3. Run consistency checks:
 - `python skills/codex-workflows/scripts/check_compat_drift.py --manifest skills/codex-workflows/compat/manifest.json --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent`

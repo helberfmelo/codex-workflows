@@ -41,6 +41,8 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
   - `tests/test_codex_native_quality.py`
 - Cross-platform manifest hashing tests:
   - `tests/test_build_compat_manifest.py`
+- Manifest source fallback tests:
+  - `tests/test_codex_workflows_ops.py`
 - Operations CLI command:
   - `python skills/codex-workflows/scripts/codex_workflows_ops.py check-codex-native`
 - Website docs updates (EN/PT/ES/FR/ZH) to reflect codex-native default and quality validation steps.
@@ -71,6 +73,7 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 - Cross-platform E2E install workflow now resolves `python/python3` dynamically and runs `npx @codex-workflow/cw` from isolated temp workspace.
 - Added `.gitattributes` LF rules for GitHub workflow files to avoid CRLF-induced CI regressions.
 - Compatibility manifest hashing now normalizes text line endings before checksum/digest generation to prevent OS-dependent drift failures.
+- `codex_workflows_ops.py build-manifest` now resolves source `.agent` with deterministic fallback and keeps manifest generation working even without repository root `.agent`.
 
 ## [1.1.0] - 2026-02-13
 

@@ -402,6 +402,11 @@ Automation note:
 - They are not native Codex CLI slash commands.
 - If a project has local `.agent` files, local instructions have priority.
 
+Repository maintenance note:
+- Root `.agent` in this repository is optional for normal usage.
+- If removed, compatibility manifest generation still works via:
+  - `python skills/codex-workflows/scripts/codex_workflows_ops.py build-manifest`
+
 ## Comparison to Antigravity
 
 See `docs/COMPARISON.md` for a detailed comparison and adaptation strategy.

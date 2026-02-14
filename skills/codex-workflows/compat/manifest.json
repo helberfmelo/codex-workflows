@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-02-14T05:55:20Z",
+  "generated_at_utc": "2026-02-14T06:04:12Z",
   "source": {
-    "path": ".agent",
+    "path": "D:\\Projetos\\codex-workflows-skill\\.agent",
     "files": {
       ".shared/ui-ux-pro-max/data/charts.csv": {
         "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",
@@ -800,7 +800,7 @@
     "digest_sha256": "4c94e6445750ceca7d21fdeaee977fafe2fc25491daec5ffb126b2efac0ddd75"
   },
   "pack": {
-    "path": "skills/codex-workflows/packs/antigravity-compat/.agent",
+    "path": "D:\\Projetos\\codex-workflows-skill\\skills\\codex-workflows\\packs\\antigravity-compat\\.agent",
     "files": {
       ".shared/ui-ux-pro-max/data/charts.csv": {
         "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",
@@ -1607,7 +1607,7 @@
     "digest_sha256": "6913f12195c7daba5d83530fd9cfb79a40128b4a75d485952c7fac37abcf6425"
   },
   "template_full": {
-    "path": "skills/codex-workflows/templates/.agent",
+    "path": "D:\\Projetos\\codex-workflows-skill\\skills\\codex-workflows\\templates\\.agent",
     "files": {
       ".shared/ui-ux-pro-max/data/charts.csv": {
         "sha256": "5b4176f1a5057cb795c91ce5cca0d59e7a547e11b86e223976e3bdf0befd6ec5",

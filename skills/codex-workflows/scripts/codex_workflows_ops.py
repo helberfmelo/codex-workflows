@@ -13,6 +13,30 @@ def run(args: list[str]) -> int:
     return proc.returncode
 
 
+def resolve_manifest_source(
+    explicit_source: str | None,
+    *,
+    cwd: Path,
+    repo_root: Path,
+    pack_root: Path,
+) -> tuple[Path, bool]:
+    if explicit_source:
+        source = Path(explicit_source).expanduser().resolve()
+        if not source.exists():
+            raise FileNotFoundError(f"Explicit --source path does not exist: {source}")
+        return source, False
+
+    local_source = (cwd / ".agent").resolve()
+    if local_source.exists():
+        return local_source, False
+
+    repo_source = (repo_root / ".agent").resolve()
+    if repo_source.exists():
+        return repo_source, False
+
+    return pack_root.resolve(), True
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -42,7 +66,8 @@ def main() -> None:
     p_release.add_argument("--tag", action="store_true")
     p_release.add_argument("--push", action="store_true")
 
-    sub.add_parser("build-manifest")
+    p_manifest = sub.add_parser("build-manifest")
+    p_manifest.add_argument("--source", help="Optional source .agent directory override")
     sub.add_parser("check-drift")
     sub.add_parser("check-workflows")
     sub.add_parser("check-codex-native")
@@ -89,13 +114,26 @@ def main() -> None:
         code = run(cmd)
         raise SystemExit(code)
     if args.cmd == "build-manifest":
+        repo_root = Path(__file__).resolve().parents[3]
+        pack_root = root / "packs" / "antigravity-compat" / ".agent"
+        source_path, used_pack_fallback = resolve_manifest_source(
+            args.source,
+            cwd=Path.cwd(),
+            repo_root=repo_root,
+            pack_root=pack_root,
+        )
+        if used_pack_fallback:
+            print(
+                "WARNING: no local .agent source found; using compatibility pack as source for manifest build.",
+                file=sys.stderr,
+            )
         code = run(
             [
                 str(scripts / "build_compat_manifest.py"),
                 "--source",
-                str(Path.cwd() / ".agent"),
+                str(source_path),
                 "--pack",
-                str(root / "packs" / "antigravity-compat" / ".agent"),
+                str(pack_root),
                 "--template-full",
                 str(root / "templates" / ".agent"),
                 "--output",
