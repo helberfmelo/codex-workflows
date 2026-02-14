@@ -8,6 +8,17 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 ### Added
 
+- `cw` CLI Windows reliability improvements (Python candidate priority/fallback).
+- Node unit tests for CLI candidate/fallback behavior: `tests/test_cw_cli_node.js`.
+- Cross-platform installer E2E matrix in CI:
+  - `cw-install-e2e-matrix` (Linux/macOS/Windows)
+  - real install path via `npx @codex-workflow/cw`
+- Release automation now syncs `package.json` version with release version.
+- Release workflow npm publish automation on `v*` tag push using `NPM_TOKEN`.
+- New larger blueprint examples:
+  - `examples/real-world/*`
+- New quick wins by profile:
+  - `examples/quick-wins/*`
 - Release workflow now supports auto-publish on `v*` tag push.
 - Web docs portal at `website/` using VitePress.
 - GitHub Pages deployment workflow for portal: `.github/workflows/docs.yml`.

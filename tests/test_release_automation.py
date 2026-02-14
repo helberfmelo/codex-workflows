@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import pathlib
+import tempfile
 import unittest
 
 
@@ -67,6 +68,20 @@ class ReleaseAutomationTests(unittest.TestCase):
         )
         with self.assertRaises(ValueError):
             release_automation.cut_release(changelog, "1.1.0", "2026-02-14")
+
+    def test_update_package_version(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package = pathlib.Path(tmp) / "package.json"
+            package.write_text(
+                '{\n  "name": "@codex-workflow/cw",\n  "version": "1.2.1"\n}\n',
+                encoding="utf-8",
+            )
+            changed = release_automation.update_package_version(package, "1.2.2")
+            self.assertTrue(changed)
+            self.assertIn('"version": "1.2.2"', package.read_text(encoding="utf-8"))
+
+            unchanged = release_automation.update_package_version(package, "1.2.2")
+            self.assertFalse(unchanged)
 
 
 if __name__ == "__main__":

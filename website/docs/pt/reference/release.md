@@ -20,3 +20,9 @@ Arquivo: `.github/workflows/release.yml`
 
 - suporta `workflow_dispatch`;
 - publica automaticamente por push de tag `v*`.
+- publica no npm por push de tag `v*` quando `NPM_TOKEN` esta configurado.
+
+Guardrails:
+
+- automacao sincroniza a versao do `package.json`;
+- publicacao npm valida tag `vX.Y.Z` contra `package.json`.

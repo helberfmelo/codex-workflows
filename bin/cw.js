@@ -90,6 +90,58 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function commandLabel(candidate) {
+  const parts = [candidate.command, ...(candidate.prefixArgs || [])];
+  return parts.join(" ");
+}
+
+function buildPythonCandidates(options, platform = process.platform) {
+  const isWindows = platform === "win32";
+  const raw = [];
+
+  if (options.pythonExec) {
+    raw.push({ command: options.pythonExec, prefixArgs: [] });
+  }
+  if (process.env.PYTHON) {
+    raw.push({ command: process.env.PYTHON, prefixArgs: [] });
+  }
+
+  if (isWindows) {
+    raw.push({ command: "python", prefixArgs: [] });
+    raw.push({ command: "py", prefixArgs: ["-3"] });
+    raw.push({ command: "py", prefixArgs: [] });
+    raw.push({ command: "python3", prefixArgs: [] });
+  } else {
+    raw.push({ command: "python3", prefixArgs: [] });
+    raw.push({ command: "python", prefixArgs: [] });
+  }
+
+  const seen = new Set();
+  const candidates = [];
+  for (const item of raw) {
+    if (!item || !item.command) {
+      continue;
+    }
+    const key = `${item.command}::${(item.prefixArgs || []).join(" ")}`;
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    candidates.push(item);
+  }
+  return candidates;
+}
+
+function looksLikePythonLauncherIssue(text) {
+  const lower = String(text || "").toLowerCase();
+  return (
+    lower.includes("python was not found") ||
+    lower.includes("microsoft store") ||
+    lower.includes("python nao foi encontrado") ||
+    lower.includes("python n") && lower.includes("microsoft store")
+  );
+}
+
 function parseInstallArgs(args) {
   const options = {
     repo: "helberfmelo/codex-workflows",
@@ -175,16 +227,31 @@ function buildInstallCommand(options, installPaths, installer, destRoot) {
   return cmdArgs;
 }
 
-function runPythonCommand(pythonExec, args) {
-  const proc = childProcess.spawnSync(pythonExec, args, { stdio: "inherit" });
+function runPythonCommand(candidate, args) {
+  const spawnArgs = [...(candidate.prefixArgs || []), ...args];
+  const proc = childProcess.spawnSync(candidate.command, spawnArgs, { encoding: "utf8" });
+  const output = `${proc.stdout || ""}${proc.stderr || ""}`;
+  if (proc.stdout) {
+    process.stdout.write(proc.stdout);
+  }
+  if (proc.stderr) {
+    process.stderr.write(proc.stderr);
+  }
   if (proc.error && proc.error.code === "ENOENT") {
-    return null;
+    return { code: null, output };
   }
   if (proc.error) {
-    console.error(`Failed to execute ${pythonExec}: ${proc.error.message}`);
-    return 1;
+    console.error(`Failed to execute ${commandLabel(candidate)}: ${proc.error.message}`);
+    return { code: 1, output };
   }
-  return proc.status == null ? 1 : proc.status;
+  return { code: proc.status == null ? 1 : proc.status, output };
+}
+
+function selectAvailablePythonCandidates(options, platform = process.platform) {
+  const candidates = buildPythonCandidates(options, platform);
+  return candidates.filter((candidate) =>
+    hasWorkingCommand(candidate.command, [...(candidate.prefixArgs || []), "--version"])
+  );
 }
 
 function runInstall(options) {
@@ -210,35 +277,49 @@ function runInstall(options) {
   }
 
   const cmdArgs = buildInstallCommand(options, installPaths, installer, destRoot);
-  const pythonCandidates = unique([
-    options.pythonExec,
-    process.env.PYTHON,
-    "python3",
-    "python",
-    process.platform === "win32" ? "py" : null
-  ]);
+  const pythonCandidates = selectAvailablePythonCandidates(options);
 
   if (options.dryRun) {
-    const previewPython = pythonCandidates[0] || "python";
+    const previewCandidate = pythonCandidates[0] || { command: "python", prefixArgs: [] };
     console.log("Dry run command:");
-    console.log([previewPython, ...cmdArgs].join(" "));
+    console.log([commandLabel(previewCandidate), ...cmdArgs].join(" "));
     return 0;
   }
 
-  for (const pythonExec of pythonCandidates) {
-    const code = runPythonCommand(pythonExec, cmdArgs);
-    if (code === null) {
-      continue;
-    }
-    return code;
+  if (pythonCandidates.length === 0) {
+    console.error("No working Python executable found. Install Python and retry.");
+    return 1;
   }
 
+  let launcherFallbackTriggered = false;
+  for (const candidate of pythonCandidates) {
+    const result = runPythonCommand(candidate, cmdArgs);
+    if (result.code === null) {
+      continue;
+    }
+    if (result.code === 0) {
+      return 0;
+    }
+    if (looksLikePythonLauncherIssue(result.output)) {
+      launcherFallbackTriggered = true;
+      continue;
+    }
+    return result.code;
+  }
+
+  if (launcherFallbackTriggered) {
+    console.error("Python launcher alias failed across candidates. Use --python-exec python as fallback.");
+    return 1;
+  }
   console.error("No working Python executable found. Install Python and retry.");
   return 1;
 }
 
 function hasWorkingCommand(command, args) {
-  const proc = childProcess.spawnSync(command, args, { stdio: "ignore" });
+  const proc = childProcess.spawnSync(command, args, {
+    stdio: ["ignore", "pipe", "pipe"],
+    encoding: "utf8"
+  });
   if (proc.error && proc.error.code === "ENOENT") {
     return false;
   }
@@ -248,8 +329,8 @@ function hasWorkingCommand(command, args) {
 function runDoctor() {
   const home = codexHome();
   const installer = installerScriptPath(home);
-  const pythonCandidates = unique([process.env.PYTHON, "python3", "python", process.platform === "win32" ? "py" : null]);
-  const pythonOk = pythonCandidates.find((cmd) => hasWorkingCommand(cmd, ["--version"])) || null;
+  const pythonCandidates = selectAvailablePythonCandidates({});
+  const pythonOk = pythonCandidates[0] ? commandLabel(pythonCandidates[0]) : null;
 
   console.log("cw doctor");
   console.log(`- codex_home: ${home}`);
@@ -307,4 +388,12 @@ function run() {
   }
 }
 
-process.exit(run());
+if (require.main === module) {
+  process.exit(run());
+}
+
+module.exports = {
+  buildPythonCandidates,
+  looksLikePythonLauncherIssue,
+  selectAvailablePythonCandidates
+};

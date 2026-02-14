@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import re
 import subprocess
 from pathlib import Path
@@ -100,12 +101,25 @@ def current_branch(repo: Path) -> str:
     return out.strip()
 
 
+def update_package_version(package_json: Path, version: str) -> bool:
+    data = json.loads(package_json.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError(f"invalid package json structure: {package_json}")
+    current_version = str(data.get("version", "")).strip()
+    if current_version == version:
+        return False
+    data["version"] = version
+    package_json.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return True
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--version", required=True, help="Release version (semantic version, e.g. 1.2.0)")
     parser.add_argument("--date", default=dt.date.today().isoformat(), help="Release date (YYYY-MM-DD)")
     parser.add_argument("--repo", default=".", help="Repository root")
     parser.add_argument("--changelog", default="CHANGELOG.md", help="Changelog path (relative to repo)")
+    parser.add_argument("--package-json", default="package.json", help="Package json path (relative to repo)")
     parser.add_argument("--notes-out", help="Optional path for generated release notes")
     parser.add_argument("--allow-empty", action="store_true", help="Allow release when Unreleased has no bullets")
     parser.add_argument("--apply", action="store_true", help="Write changes to disk")
@@ -129,11 +143,13 @@ def main() -> None:
     old_text = changelog.read_text(encoding="utf-8")
     new_text, release_notes = cut_release(old_text, args.version, args.date, allow_empty=args.allow_empty)
     tag_name = f"{args.tag_prefix}{args.version}"
+    package_json = (repo / args.package_json).resolve()
 
     if not args.apply:
         print("mode=dry-run")
         print(f"repo={repo}")
         print(f"changelog={changelog}")
+        print(f"package_json={package_json}")
         print(f"version={args.version}")
         print(f"tag={tag_name}")
         print("result=ready")
@@ -149,8 +165,18 @@ def main() -> None:
         notes_path.write_text(release_notes, encoding="utf-8")
         print(f"release_notes={notes_path}")
 
+    package_updated = False
+    if package_json.exists():
+        package_updated = update_package_version(package_json, args.version)
+        if package_updated:
+            print(f"updated={package_json}")
+    else:
+        print(f"package_json_missing={package_json}")
+
     if args.commit:
         run_git(repo, ["add", str(changelog)])
+        if package_json.exists():
+            run_git(repo, ["add", str(package_json)])
         if notes_path is not None and notes_path.is_relative_to(repo):
             run_git(repo, ["add", str(notes_path)])
         run_git(repo, ["commit", "-m", args.commit_message.format(version=args.version)])

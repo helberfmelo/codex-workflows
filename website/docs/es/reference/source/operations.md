@@ -105,8 +105,9 @@ Available commands:
 
 4. Run tests and validation:
 - `python -m unittest discover -s tests -p "test_*.py"`
+- `node tests/test_cw_cli_node.js`
 - `python scripts/ci_validate_skill.py --skills-root skills`
-- `python scripts/install_all_in_one.py --dry-run`
+- `npx @codex-workflow/cw --dry-run`
 - `cd website && npm run docs:build`
 
 5. Run stack packs when applicable:
@@ -117,5 +118,8 @@ Available commands:
 6. Release with automation:
 - Dry run: `python scripts/release_automation.py --version 1.1.0`
 - Apply + commit + tag + push: `python scripts/release_automation.py --version 1.1.0 --apply --commit --tag --push`
+
+7. CI E2E verification for installer:
+- `.github/workflows/ci.yml` job `cw-install-e2e-matrix` validates `npx @codex-workflow/cw` on `ubuntu-latest`, `macos-latest`, and `windows-latest`.
 
 

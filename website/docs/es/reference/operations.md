@@ -1,18 +1,24 @@
 # Operaciones
 
-CLI unificada del repositorio:
+Comando principal de distribucion:
 
 ```bash
-python scripts/codexwf.py <command>
+npx @codex-workflow/cw
 ```
 
-Comandos principales:
+Comandos recomendados:
 
-- `install`
-- `init`
-- `status`
-- `validate`
-- `docs-sync`
+- `npx @codex-workflow/cw doctor`
+- `npx @codex-workflow/cw --dry-run`
+- `python scripts/codexwf.py status`
+- `python scripts/codexwf.py validate --tests`
+- `python scripts/codexwf.py docs-sync --build`
+
+Fallback Windows:
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
 
 Comando legado del skill:
 
@@ -28,5 +34,6 @@ Rutina recomendada:
 4. run codex-native quality check
 5. run codex-native assets check
 6. run tests and skill validation
+7. run `node tests/test_cw_cli_node.js`
 
 Fuente completa: `docs/OPERATIONS.md`.

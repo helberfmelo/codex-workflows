@@ -24,3 +24,9 @@ Rust CLI/event processor with parsing, resilience, benchmarking, and release har
 
 4. `examples/projects/README.md`
 Runnable fixture projects used by CI matrix to execute Node/Python/Rust stack checks.
+
+5. `examples/real-world/README.md`
+Larger blueprint scenarios for multi-week delivery programs.
+
+6. `examples/quick-wins/README.md`
+Profile-based quick wins for first-session execution.

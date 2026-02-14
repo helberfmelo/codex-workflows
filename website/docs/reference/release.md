@@ -24,6 +24,12 @@ Supports:
 
 - `workflow_dispatch`
 - auto publish on `v*` tag push
+- npm auto publish on `v*` tag push when `NPM_TOKEN` is configured
+
+Guards:
+
+- release automation syncs `package.json` version;
+- npm publish checks tag version (`vX.Y.Z`) against `package.json`.
 
 If `docs/releases/<tag>.md` exists, it is used as the release body.
 Otherwise it falls back to `CHANGELOG.md`.

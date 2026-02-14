@@ -56,6 +56,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 7. Governance and Quality
 - `compat/manifest.json` for drift control
 - `.github/workflows/ci.yml` for automated checks
+- cross-platform installer E2E matrix (`cw-install-e2e-matrix`)
 - Split parity gate via `check_workflow_parity.py`:
   - references <-> codex-native template
   - compat template <-> compat pack
@@ -80,6 +81,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `scripts/release_automation.py`
 - `.github/workflows/release.yml`
 - Automated changelog cut + tag + release publishing flow
+- `package.json` version sync gate + npm auto publish on `v*` tags
 
 11. End-to-End Example Catalog
 - `examples/node-auth-api/README.md`

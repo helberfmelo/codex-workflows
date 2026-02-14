@@ -24,6 +24,12 @@ npx @codex-workflow/cw --core-only
 npx @codex-workflow/cw doctor
 ```
 
+Windows 回退：
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
+
 ## 备选：Python 直接安装 All-in-One
 
 ```bash

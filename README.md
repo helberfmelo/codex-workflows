@@ -113,6 +113,14 @@ npx @codex-workflow/cw doctor
 
 This command uses Codex's official Python skill installer under the hood and installs all packs in one execution.
 
+Windows note:
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
+
+Use this override if your environment resolves `python3` to the Microsoft Store alias.
+
 ### Option 2: All-in-one install (direct Python)
 
 ```bash
@@ -448,6 +456,8 @@ GitHub Actions release workflow:
 
 - `.github/workflows/release.yml` (`workflow_dispatch`)
 - Auto publish on tag push (`v*`) using `docs/releases/<tag>.md` when available
+- npm auto publish on tag push (`v*`) when `NPM_TOKEN` secret is configured
+- tag-to-package version gate blocks publish when `vX.Y.Z` does not match `package.json`
 
 ## End-to-End Examples
 
@@ -455,14 +465,18 @@ GitHub Actions release workflow:
 - `examples/python-fastapi-orders/README.md`
 - `examples/rust-events-cli/README.md`
 - `examples/projects/README.md` (real runnable fixtures used by CI matrix)
+- `examples/real-world/README.md` (larger blueprint scenarios)
+- `examples/quick-wins/README.md` (quick wins by user profile)
 
 ## CI and Quality Gates
 
 - CI pipeline: `.github/workflows/ci.yml`
 - Release pipeline: `.github/workflows/release.yml`
 - Real stack matrix on fixtures: Node/Python/Rust in `.github/workflows/ci.yml`
+- Cross-platform installer E2E matrix (Linux/macOS/Windows) in `.github/workflows/ci.yml`
 - Skill validation: `scripts/ci_validate_skill.py`
 - Unit tests: `tests/test_*.py`
+- Node CLI unit tests: `tests/test_cw_cli_node.js`
 
 ## Contributing
 

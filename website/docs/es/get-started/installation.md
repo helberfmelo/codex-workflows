@@ -24,6 +24,12 @@ Diagnostico:
 npx @codex-workflow/cw doctor
 ```
 
+Fallback Windows:
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
+
 ## All-in-One por Python directo (alternativa)
 
 ```bash

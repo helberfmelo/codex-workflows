@@ -16,6 +16,14 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run cw CLI unit tests
+        run: node tests/test_cw_cli_node.js
+
       - name: Validate skill folders
         run: python scripts/ci_validate_skill.py --skills-root skills
 
@@ -125,4 +133,127 @@ jobs:
           python skills/codex-rust-validation-pack/scripts/validate_rust_stack.py \
             --project examples/projects/rust-service \
             --run
+
+  cw-install-e2e-matrix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    env:
+      CODEX_HOME: ${{ runner.temp }}/codex-home
+      CW_DEST: ${{ runner.temp }}/codex-home/skills-installed
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Create skill-installer shim for E2E
+        shell: bash
+        run: |
+          mkdir -p "$CODEX_HOME/skills/.system/skill-installer/scripts"
+          cat > "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py" <<'PY'
+          #!/usr/bin/env python3
+          from __future__ import annotations
+
+          import argparse
+          import shutil
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+
+          def main() -> int:
+              parser = argparse.ArgumentParser()
+              parser.add_argument("--repo", required=True)
+              parser.add_argument("--ref", default="main")
+              parser.add_argument("--method", default="auto")
+              parser.add_argument("--path", nargs="+", required=True)
+              parser.add_argument("--dest")
+              args = parser.parse_args()
+
+              with tempfile.TemporaryDirectory() as tmp:
+                  clone_dir = Path(tmp) / "repo"
+                  subprocess.run(
+                      [
+                          "git",
+                          "clone",
+                          "--depth",
+                          "1",
+                          "--branch",
+                          args.ref,
+                          f"https://github.com/{args.repo}.git",
+                          str(clone_dir),
+                      ],
+                      check=True,
+                  )
+                  dest_root = Path(args.dest).resolve() if args.dest else (Path.home() / ".codex" / "skills")
+                  dest_root.mkdir(parents=True, exist_ok=True)
+
+                  for rel in args.path:
+                      src = clone_dir / rel
+                      if not src.exists():
+                          raise SystemExit(f"Missing path in repository: {rel}")
+                      target = dest_root / Path(rel).name
+                      if target.exists():
+                          shutil.rmtree(target)
+                      shutil.copytree(src, target)
+                      print(f"installed: {target}")
+
+              return 0
+
+
+          if __name__ == "__main__":
+              raise SystemExit(main())
+          PY
+          chmod +x "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py"
+
+      - name: Smoke test published package entrypoint
+        shell: bash
+        run: npx --yes @codex-workflow/cw /help
+
+      - name: Install packs through published npm package
+        shell: bash
+        run: |
+          npx --yes @codex-workflow/cw \
+            --repo helberfmelo/codex-workflows \
+            --ref main \
+            --method git \
+            --dest "$CW_DEST" \
+            --python-exec python
+
+      - name: Verify installed skill packs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          import sys
+
+          root = Path(os.environ["CW_DEST"])
+          required = [
+              "codex-workflows",
+              "codex-backend-pack",
+              "codex-frontend-pack",
+              "codex-security-pack",
+              "codex-qa-pack",
+              "codex-node-validation-pack",
+              "codex-python-validation-pack",
+              "codex-rust-validation-pack",
+          ]
+          missing = [name for name in required if not (root / name).exists()]
+          if missing:
+              print("Missing installed packs:", ", ".join(missing))
+              sys.exit(1)
+          print("Installed packs:", ", ".join(required))
+          PY
 

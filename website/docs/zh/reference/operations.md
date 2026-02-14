@@ -1,18 +1,24 @@
 # 运维
 
-仓库统一 CLI：
+主分发命令：
 
 ```bash
-python scripts/codexwf.py <command>
+npx @codex-workflow/cw
 ```
 
-主要命令：
+推荐命令：
 
-- `install`
-- `init`
-- `status`
-- `validate`
-- `docs-sync`
+- `npx @codex-workflow/cw doctor`
+- `npx @codex-workflow/cw --dry-run`
+- `python scripts/codexwf.py status`
+- `python scripts/codexwf.py validate --tests`
+- `python scripts/codexwf.py docs-sync --build`
+
+Windows 回退：
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
 
 技能遗留命令：
 
@@ -28,5 +34,6 @@ python skills/codex-workflows/scripts/codex_workflows_ops.py <command>
 4. run codex-native quality check
 5. run codex-native assets check
 6. run tests and skill validation
+7. run `node tests/test_cw_cli_node.js`
 
 完整说明见：`docs/OPERATIONS.md`。

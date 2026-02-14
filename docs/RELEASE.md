@@ -49,6 +49,7 @@ Behavior:
 
 - Moves `## [Unreleased]` entries into `## [<version>] - <date>`.
 - Resets `Unreleased` to a clean placeholder.
+- Syncs root `package.json` version to the release version.
 - Optionally commits, tags, and pushes.
 
 ## GitHub Actions release
@@ -66,12 +67,15 @@ The workflow:
 2. runs `scripts/release_automation.py` with commit/tag;
 3. pushes commit/tag (if enabled);
 4. publishes the GitHub Release with generated notes.
+5. on tag push, publishes npm package when `NPM_TOKEN` is configured.
 
 Tag-driven publish is also enabled:
 
 - Pushing `v*` tags triggers automatic release publication.
 - It uses `docs/releases/<tag>.md` when available.
 - Fallback body is `CHANGELOG.md` if release notes file is missing.
+- npm publish enforces `package.json` version == tag version (`vX.Y.Z`).
+- Configure repository secret `NPM_TOKEN` (publish permission) for npm automation.
 
 ## Docs portal publish
 

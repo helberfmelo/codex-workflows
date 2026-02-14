@@ -13,6 +13,10 @@ Examples:
 - `Use codex-workflows in /game-dev and design a core gameplay loop`
 - `Use codex-workflows in /roblox-game-dev and secure RemoteEvent boundaries`
 
+Profile quick wins:
+
+- `examples/quick-wins/README.md`
+
 ## 2) Optional: bootstrap local `.agent`
 
 Default profile (`codex-native`):

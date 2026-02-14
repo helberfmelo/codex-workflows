@@ -8,6 +8,9 @@
 `Use codex-workflows in /game-dev and design a core gameplay loop`
 `Use codex-workflows in /roblox-game-dev and secure RemoteEvent boundaries`
 
+按角色快速收益：
+`examples/quick-wins/README.md`
+
 2. 本地 bootstrap（默认 `codex-native`）：
 
 ```bash

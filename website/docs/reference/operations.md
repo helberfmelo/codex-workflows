@@ -1,18 +1,24 @@
 # Operations
 
-Unified repository CLI:
+Primary distribution command:
 
 ```bash
-python scripts/codexwf.py <command>
+npx @codex-workflow/cw
 ```
 
-Main commands:
+Recommended operational commands:
 
-- `install`
-- `init`
-- `status`
-- `validate`
-- `docs-sync`
+- `npx @codex-workflow/cw doctor`
+- `npx @codex-workflow/cw --dry-run`
+- `python scripts/codexwf.py status`
+- `python scripts/codexwf.py validate --tests`
+- `python scripts/codexwf.py docs-sync --build`
+
+Windows fallback:
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
 
 Legacy skill-ops command:
 
@@ -42,6 +48,7 @@ Main commands:
 6. `check_codex_native_assets.py`
 7. `python -m unittest discover -s tests -p "test_*.py"`
 8. `python scripts/ci_validate_skill.py --skills-root skills`
+9. `node tests/test_cw_cli_node.js`
 
 Detailed source:
 

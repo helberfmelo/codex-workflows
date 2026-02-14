@@ -11,6 +11,10 @@
 - `Use codex-workflows em /game-dev e desenhe o core loop do jogo`
 - `Use codex-workflows em /roblox-game-dev e endureca seguranca de RemoteEvent`
 
+Quick wins por perfil:
+
+- `examples/quick-wins/README.md`
+
 ## 2) Bootstrap local `.agent` (opcional)
 
 Perfil padrao (`codex-native`):

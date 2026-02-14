@@ -24,6 +24,12 @@ Diagnostico:
 npx @codex-workflow/cw doctor
 ```
 
+Fallback Windows:
+
+```bash
+npx @codex-workflow/cw --python-exec python
+```
+
 ## All-in-one via Python direto (alternativa)
 
 Instala `codex-workflows` + todos os packs oficiais em um unico comando:
