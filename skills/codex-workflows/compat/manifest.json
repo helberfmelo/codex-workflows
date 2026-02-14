@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-02-14T01:20:59Z",
+  "generated_at_utc": "2026-02-14T05:55:20Z",
   "source": {
     "path": ".agent",
     "files": {
@@ -1571,8 +1571,8 @@
         "size": 1175
       },
       "workflows/game-dev.md": {
-        "sha256": "a448b8509c0702318f82919c124c3d7eebf9fcdaae551caaff04292d935a6e37",
-        "size": 1312
+        "sha256": "8ac09cce7713701f1b9b913ec1ad57549b1ae09a837649ddfb0eb6f61b9937ce",
+        "size": 1311
       },
       "workflows/orchestrate.md": {
         "sha256": "c0ad1e96838dbfeb9da05f00770d0e09de9c8367bd6e895ee7a1267ba8810cf6",
@@ -1587,8 +1587,8 @@
         "size": 1164
       },
       "workflows/roblox-game-dev.md": {
-        "sha256": "45c8ebc195ecc3781a1ca2bd197537a410a33067c174cfd526a1082272a619e3",
-        "size": 1344
+        "sha256": "711b54a9854f63e6e8749a3c0cf67a3a3bbdbddeb40be9e0aa059f06c40fb4b0",
+        "size": 1343
       },
       "workflows/status.md": {
         "sha256": "3c5411efcf969cc1094683464874d5fbd6657853adb226fe4aefd59f3162cd3f",
@@ -1604,7 +1604,7 @@
       }
     },
     "count": 200,
-    "digest_sha256": "06ebe8ad5500f2c1ee552b19aee4a8dd03e0d8001aaad15be5a43d19cbd58522"
+    "digest_sha256": "6913f12195c7daba5d83530fd9cfb79a40128b4a75d485952c7fac37abcf6425"
   },
   "template_full": {
     "path": "skills/codex-workflows/templates/.agent",
@@ -2378,8 +2378,8 @@
         "size": 1175
       },
       "workflows/game-dev.md": {
-        "sha256": "a448b8509c0702318f82919c124c3d7eebf9fcdaae551caaff04292d935a6e37",
-        "size": 1312
+        "sha256": "8ac09cce7713701f1b9b913ec1ad57549b1ae09a837649ddfb0eb6f61b9937ce",
+        "size": 1311
       },
       "workflows/orchestrate.md": {
         "sha256": "c0ad1e96838dbfeb9da05f00770d0e09de9c8367bd6e895ee7a1267ba8810cf6",
@@ -2394,8 +2394,8 @@
         "size": 1164
       },
       "workflows/roblox-game-dev.md": {
-        "sha256": "45c8ebc195ecc3781a1ca2bd197537a410a33067c174cfd526a1082272a619e3",
-        "size": 1344
+        "sha256": "711b54a9854f63e6e8749a3c0cf67a3a3bbdbddeb40be9e0aa059f06c40fb4b0",
+        "size": 1343
       },
       "workflows/status.md": {
         "sha256": "3c5411efcf969cc1094683464874d5fbd6657853adb226fe4aefd59f3162cd3f",
@@ -2411,6 +2411,6 @@
       }
     },
     "count": 200,
-    "digest_sha256": "06ebe8ad5500f2c1ee552b19aee4a8dd03e0d8001aaad15be5a43d19cbd58522"
+    "digest_sha256": "6913f12195c7daba5d83530fd9cfb79a40128b4a75d485952c7fac37abcf6425"
   }
 }

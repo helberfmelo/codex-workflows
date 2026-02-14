@@ -9,6 +9,31 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 SKIP_EXT = {".pyc"}
+TEXT_EXT = {
+    ".csv",
+    ".css",
+    ".html",
+    ".ini",
+    ".js",
+    ".json",
+    ".jsx",
+    ".lua",
+    ".md",
+    ".php",
+    ".ps1",
+    ".py",
+    ".rb",
+    ".rs",
+    ".sh",
+    ".sql",
+    ".toml",
+    ".ts",
+    ".tsx",
+    ".txt",
+    ".xml",
+    ".yaml",
+    ".yml",
+}
 
 
 def should_skip(path: Path) -> bool:
@@ -20,12 +45,18 @@ def should_skip(path: Path) -> bool:
     return False
 
 
-def hash_file(path: Path) -> str:
+def normalized_bytes(path: Path, payload: bytes) -> bytes:
+    if path.suffix.lower() in TEXT_EXT and b"\0" not in payload:
+        return payload.replace(b"\r\n", b"\n")
+    return payload
+
+
+def hash_file(path: Path) -> tuple[str, int]:
+    payload = path.read_bytes()
+    content = normalized_bytes(path, payload)
     h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
+    h.update(content)
+    return h.hexdigest(), len(content)
 
 
 def collect(root: Path) -> dict[str, dict[str, str | int]]:
@@ -34,9 +65,10 @@ def collect(root: Path) -> dict[str, dict[str, str | int]]:
         rel = file_path.relative_to(root).as_posix()
         if should_skip(Path(rel)):
             continue
+        sha256, canonical_size = hash_file(file_path)
         files[rel] = {
-            "sha256": hash_file(file_path),
-            "size": file_path.stat().st_size,
+            "sha256": sha256,
+            "size": canonical_size,
         }
     return files
 
