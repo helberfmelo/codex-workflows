@@ -10,6 +10,9 @@ hero:
       text: Instalar All-in-One
       link: /pt/get-started/installation
     - theme: alt
+      text: Por que usar CW
+      link: /pt/strategy/why-cw
+    - theme: alt
       text: Ver Quickstart
       link: /pt/get-started/quickstart
     - theme: alt

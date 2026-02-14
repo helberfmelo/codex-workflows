@@ -10,6 +10,9 @@ hero:
       text: 一键安装
       link: /zh/get-started/installation
     - theme: alt
+      text: 为什么用 CW
+      link: /zh/strategy/why-cw
+    - theme: alt
       text: 快速上手
       link: /zh/get-started/quickstart
 

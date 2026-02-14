@@ -3,6 +3,7 @@ import { defineConfig } from "vitepress";
 const enNav = [
   { text: "Home", link: "/" },
   { text: "Install", link: "/get-started/installation" },
+  { text: "Why CW", link: "/strategy/why-cw" },
   { text: "Workflows", link: "/reference/workflows" },
   { text: "Examples", link: "/reference/examples" }
 ];
@@ -10,6 +11,7 @@ const enNav = [
 const ptNav = [
   { text: "Inicio", link: "/pt/" },
   { text: "Instalacao", link: "/pt/get-started/installation" },
+  { text: "Por que CW", link: "/pt/strategy/why-cw" },
   { text: "Workflows", link: "/pt/reference/workflows" },
   { text: "Exemplos", link: "/pt/reference/examples" }
 ];
@@ -17,6 +19,7 @@ const ptNav = [
 const esNav = [
   { text: "Inicio", link: "/es/" },
   { text: "Instalacion", link: "/es/get-started/installation" },
+  { text: "Por que CW", link: "/es/strategy/why-cw" },
   { text: "Workflows", link: "/es/reference/workflows" },
   { text: "Ejemplos", link: "/es/reference/examples" }
 ];
@@ -24,6 +27,7 @@ const esNav = [
 const frNav = [
   { text: "Accueil", link: "/fr/" },
   { text: "Installation", link: "/fr/get-started/installation" },
+  { text: "Pourquoi CW", link: "/fr/strategy/why-cw" },
   { text: "Workflows", link: "/fr/reference/workflows" },
   { text: "Exemples", link: "/fr/reference/examples" }
 ];
@@ -31,6 +35,7 @@ const frNav = [
 const zhNav = [
   { text: "首页", link: "/zh/" },
   { text: "安装", link: "/zh/get-started/installation" },
+  { text: "为什么用 CW", link: "/zh/strategy/why-cw" },
   { text: "工作流", link: "/zh/reference/workflows" },
   { text: "示例", link: "/zh/reference/examples" }
 ];
@@ -59,7 +64,10 @@ const enSidebar = [
   },
   {
     text: "Strategy",
-    items: [{ text: "Monetization", link: "/strategy/monetization" }]
+    items: [
+      { text: "Why CW", link: "/strategy/why-cw" },
+      { text: "Monetization", link: "/strategy/monetization" }
+    ]
   }
 ];
 
@@ -87,7 +95,10 @@ const ptSidebar = [
   },
   {
     text: "Estrategia",
-    items: [{ text: "Monetizacao", link: "/pt/strategy/monetization" }]
+    items: [
+      { text: "Por que CW", link: "/pt/strategy/why-cw" },
+      { text: "Monetizacao", link: "/pt/strategy/monetization" }
+    ]
   }
 ];
 
@@ -115,7 +126,10 @@ const esSidebar = [
   },
   {
     text: "Estrategia",
-    items: [{ text: "Monetizacion", link: "/es/strategy/monetization" }]
+    items: [
+      { text: "Por que CW", link: "/es/strategy/why-cw" },
+      { text: "Monetizacion", link: "/es/strategy/monetization" }
+    ]
   }
 ];
 
@@ -143,7 +157,10 @@ const frSidebar = [
   },
   {
     text: "Strategie",
-    items: [{ text: "Monetisation", link: "/fr/strategy/monetization" }]
+    items: [
+      { text: "Pourquoi CW", link: "/fr/strategy/why-cw" },
+      { text: "Monetisation", link: "/fr/strategy/monetization" }
+    ]
   }
 ];
 
@@ -171,7 +188,10 @@ const zhSidebar = [
   },
   {
     text: "策略",
-    items: [{ text: "商业化", link: "/zh/strategy/monetization" }]
+    items: [
+      { text: "为什么用 CW", link: "/zh/strategy/why-cw" },
+      { text: "商业化", link: "/zh/strategy/monetization" }
+    ]
   }
 ];
 
