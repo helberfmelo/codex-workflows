@@ -22,7 +22,10 @@
 6. Codex-native structural assets:
 `python skills/codex-workflows/scripts/check_codex_native_assets.py --native-root skills/codex-workflows/templates/codex-native/.agent --min-agents 20 --min-skills 37`
 
-7. Router benchmark:
+7. Codex-native layered rules:
+`python skills/codex-workflows/scripts/check_codex_native_rules.py --native-root skills/codex-workflows/templates/codex-native/.agent`
+
+8. Router benchmark:
 `python skills/codex-workflows/scripts/benchmark_router.py --iterations 10000`
 
 Unified shortcut:

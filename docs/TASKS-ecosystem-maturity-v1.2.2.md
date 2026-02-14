@@ -44,6 +44,9 @@ Owner: codex-workflows
 - [x] T6. Make repository root `.agent` optional for manifest maintenance
 - [x] T6.1 Add automated tests for manifest source fallback resolution
 - [x] T6.2 Update operations/compatibility docs + website mirrored source docs
+- [x] T7. Introduce layered codex-native rules (global + domains + workflows)
+- [x] T7.1 Add codex-native rules quality checker + tests
+- [x] T7.2 Enforce layered rules in CI and maintenance commands
 
 ## Validation Gate (done at each phase)
 

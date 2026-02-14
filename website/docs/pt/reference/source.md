@@ -13,6 +13,7 @@ Arquivos:
 - [Architecture](/pt/reference/source/architecture)
 - [Comparison](/pt/reference/source/comparison)
 - [Workflow Contract](/pt/reference/source/workflow-contract)
+- [Rules](/pt/reference/source/rules)
 - [Community](/pt/reference/source/community)
 - [Operations](/pt/reference/source/operations)
 - [Release](/pt/reference/source/release)

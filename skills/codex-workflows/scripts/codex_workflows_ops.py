@@ -67,6 +67,7 @@ def main() -> None:
     sub.add_parser("check-workflows")
     sub.add_parser("check-codex-native")
     sub.add_parser("check-codex-assets")
+    sub.add_parser("check-codex-rules")
 
     args = parser.parse_args()
 
@@ -185,6 +186,15 @@ def main() -> None:
                 "20",
                 "--min-skills",
                 "37",
+            ]
+        )
+        raise SystemExit(code)
+    if args.cmd == "check-codex-rules":
+        code = run(
+            [
+                str(scripts / "check_codex_native_rules.py"),
+                "--native-root",
+                str(root / "templates" / "codex-native" / ".agent"),
             ]
         )
         raise SystemExit(code)

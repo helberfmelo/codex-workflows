@@ -1,7 +1,20 @@
 # Codex-Native Rules
 
-- Keep workflow execution evidence-based.
-- Prefer deterministic checks over assumptions.
-- Keep changes scoped and reversible.
-- Escalate risk before applying high-impact edits.
-- Use `antigravity-compat` only when interoperability is explicitly required.
+This ruleset is layered and cumulative:
+
+1. `global/*` applies to every task.
+2. `domains/*` applies when the domain is present.
+3. `workflows/*` applies when that workflow is selected.
+
+Execution order:
+
+- Start with global rules.
+- Merge relevant domain rules.
+- Apply selected workflow rule as the final gate.
+
+Core constraints:
+
+- Keep evidence-based decisions and reproducible checks.
+- Keep change scope small and reversible where possible.
+- Raise risk before applying high-impact operations.
+- Prefer codex-native defaults unless compatibility is explicitly required.

@@ -40,6 +40,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `scripts/check_workflow_parity.py`
 - `scripts/check_codex_native_quality.py`
 - `scripts/check_codex_native_assets.py`
+- `scripts/check_codex_native_rules.py`
 - `scripts/benchmark_router.py`
 - `scripts/codex_workflows_ops.py`
 
@@ -47,6 +48,10 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `templates/codex-native/.agent/...` (default independent codex-native profile)
 - native `agents/*.md` capability catalog
 - native `skills/*/SKILL.md` capability catalog
+- layered rules model:
+  - `rules/global/*.md`
+  - `rules/domains/*.md`
+  - `rules/workflows/*.md`
 - `templates/.agent/...` (full template baseline)
 - `templates/minimal/.agent/...` (lightweight starter)
 - Bootstraps local workflow files for projects without `.agent`
@@ -64,6 +69,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
   - compat template <-> compat pack
 - Codex-native workflow quality gate via `check_codex_native_quality.py`
 - Codex-native structural gate via `check_codex_native_assets.py`
+- Codex-native layered rules gate via `check_codex_native_rules.py`
 - Stack CI matrix (Node/Python/Rust) running real fixture checks
 - `tests/` for script correctness
 

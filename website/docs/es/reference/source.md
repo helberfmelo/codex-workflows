@@ -13,6 +13,7 @@ Archivos disponibles:
 - [Architecture](/es/reference/source/architecture)
 - [Comparison](/es/reference/source/comparison)
 - [Workflow Contract](/es/reference/source/workflow-contract)
+- [Rules](/es/reference/source/rules)
 - [Community](/es/reference/source/community)
 - [Operations](/es/reference/source/operations)
 - [Release](/es/reference/source/release)

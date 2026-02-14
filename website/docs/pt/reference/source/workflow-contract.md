@@ -43,6 +43,16 @@ Rules:
 - required codex-native structure sections present;
 - max similarity ratio versus compatibility baseline must stay below threshold.
 
+## Rules coverage contract
+
+Codex-native workflow contracts require explicit layered rules coverage.
+
+Rules:
+
+- `skills/codex-workflows/templates/codex-native/.agent/rules/CODEX.md` must exist;
+- `rules/global/*.md` and `rules/domains/*.md` must meet minimum quality thresholds;
+- each workflow in `workflows/*.md` must have a matching file in `rules/workflows/*.md`.
+
 ## Validation commands
 
 Split parity check:
@@ -52,6 +62,10 @@ Split parity check:
 Codex-native quality and anti-copy gate:
 
 `python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35`
+
+Codex-native layered rules gate:
+
+`python skills/codex-workflows/scripts/check_codex_native_rules.py --native-root skills/codex-workflows/templates/codex-native/.agent`
 
 ## Why this exists
 

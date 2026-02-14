@@ -9,6 +9,7 @@ DOC_MAP = {
     "ARCHITECTURE.md": "architecture.md",
     "COMPARISON.md": "comparison.md",
     "WORKFLOW_CONTRACT.md": "workflow-contract.md",
+    "RULES.md": "rules.md",
     "COMMUNITY.md": "community.md",
     "OPERATIONS.md": "operations.md",
     "RELEASE.md": "release.md",

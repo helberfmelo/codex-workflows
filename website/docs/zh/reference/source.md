@@ -13,6 +13,7 @@ python website/scripts/sync_reference_docs.py
 - [Architecture](/zh/reference/source/architecture)
 - [Comparison](/zh/reference/source/comparison)
 - [Workflow Contract](/zh/reference/source/workflow-contract)
+- [Rules](/zh/reference/source/rules)
 - [Community](/zh/reference/source/community)
 - [Operations](/zh/reference/source/operations)
 - [Release](/zh/reference/source/release)

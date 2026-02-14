@@ -51,6 +51,7 @@ skills/
       check_workflow_parity.py
       check_codex_native_quality.py
       check_codex_native_assets.py
+      check_codex_native_rules.py
       benchmark_router.py
       codex_workflows_ops.py
     compat/
@@ -303,13 +304,20 @@ python ~/.codex/skills/codex-workflows/scripts/check_codex_native_assets.py \
   --min-skills 37
 ```
 
-9. Benchmark routing runtime:
+9. Validate codex-native layered rules:
+
+```bash
+python ~/.codex/skills/codex-workflows/scripts/check_codex_native_rules.py \
+  --native-root ~/.codex/skills/codex-workflows/templates/codex-native/.agent
+```
+
+10. Benchmark routing runtime:
 
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/benchmark_router.py --iterations 10000
 ```
 
-10. Run stack validation packs:
+11. Run stack validation packs:
 
 ```bash
 python ~/.codex/skills/codex-node-validation-pack/scripts/validate_node_stack.py --project .
@@ -317,7 +325,7 @@ python ~/.codex/skills/codex-python-validation-pack/scripts/validate_python_stac
 python ~/.codex/skills/codex-rust-validation-pack/scripts/validate_rust_stack.py --project .
 ```
 
-11. Unified maintenance commands:
+12. Unified maintenance commands:
 
 ```bash
 python scripts/codexwf.py status
@@ -426,6 +434,21 @@ Native capability layer is also validated:
 
 - `templates/codex-native/.agent/agents/*.md`
 - `templates/codex-native/.agent/skills/*/SKILL.md`
+- `templates/codex-native/.agent/rules/global/*.md`
+- `templates/codex-native/.agent/rules/domains/*.md`
+- `templates/codex-native/.agent/rules/workflows/*.md`
+
+## Layered Rules Model
+
+The default `codex-native` profile now uses a three-layer rules system:
+
+1. global rules (`rules/global`)
+2. domain rules (`rules/domains`)
+3. workflow rules (`rules/workflows`)
+
+Validation gate:
+
+`python skills/codex-workflows/scripts/check_codex_native_rules.py --native-root skills/codex-workflows/templates/codex-native/.agent`
 
 ## Domain Packs
 

@@ -11,7 +11,10 @@ It is intentionally independent from compatibility packs and focuses on:
 ## Layout
 
 - `workflows/`: detailed codex-native execution playbooks.
-- `rules/`: high-level local operating rules.
+- `rules/`: layered operating rules:
+  - `rules/global/`
+  - `rules/domains/`
+  - `rules/workflows/`
 - `scripts/`: local helper scripts used during preview and checks.
 - `agents/`: codex-native specialist agents.
 - `skills/`: codex-native domain skill catalog.
@@ -29,3 +32,4 @@ It is intentionally independent from compatibility packs and focuses on:
 - `39` skills
 
 CI minimum gates remain `20` agents and `37` skills via `check_codex_native_assets.py`.
+Rules coverage and quality are enforced by `check_codex_native_rules.py`.

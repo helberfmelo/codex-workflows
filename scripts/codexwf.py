@@ -156,6 +156,15 @@ def cmd_validate(args: argparse.Namespace) -> int:
             ],
             REPO_ROOT,
         ),
+        (
+            [
+                sys.executable,
+                str(SKILL_ROOT / "scripts" / "check_codex_native_rules.py"),
+                "--native-root",
+                str(SKILL_ROOT / "templates" / "codex-native" / ".agent"),
+            ],
+            REPO_ROOT,
+        ),
     ]
     if args.tests:
         commands.append(([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"], REPO_ROOT))
@@ -178,6 +187,9 @@ def cmd_status(args: argparse.Namespace) -> int:
         "codex_native_workflows": len(list((SKILL_ROOT / "templates" / "codex-native" / ".agent" / "workflows").glob("*.md"))),
         "codex_native_agents": len(list((SKILL_ROOT / "templates" / "codex-native" / ".agent" / "agents").glob("*.md"))),
         "codex_native_skills": len([p for p in (SKILL_ROOT / "templates" / "codex-native" / ".agent" / "skills").iterdir() if p.is_dir()]),
+        "codex_native_global_rules": len(list((SKILL_ROOT / "templates" / "codex-native" / ".agent" / "rules" / "global").glob("*.md"))),
+        "codex_native_domain_rules": len(list((SKILL_ROOT / "templates" / "codex-native" / ".agent" / "rules" / "domains").glob("*.md"))),
+        "codex_native_workflow_rules": len(list((SKILL_ROOT / "templates" / "codex-native" / ".agent" / "rules" / "workflows").glob("*.md"))),
         "compat_workflows": len(list((SKILL_ROOT / "packs" / "antigravity-compat" / ".agent" / "workflows").glob("*.md"))),
         "docs_locale_parity": locale_parity_counts(WEBSITE_ROOT / "docs"),
     }
@@ -190,6 +202,12 @@ def cmd_status(args: argparse.Namespace) -> int:
         print(f"- codex-native workflows: {data['codex_native_workflows']}")
         print(f"- codex-native agents: {data['codex_native_agents']}")
         print(f"- codex-native skills: {data['codex_native_skills']}")
+        print(
+            "- codex-native rules: "
+            f"global={data['codex_native_global_rules']} "
+            f"domains={data['codex_native_domain_rules']} "
+            f"workflows={data['codex_native_workflow_rules']}"
+        )
         print(f"- compat workflows: {data['compat_workflows']}")
         parity = data["docs_locale_parity"]
         print(f"- docs EN pages: {parity['en_count']}")
