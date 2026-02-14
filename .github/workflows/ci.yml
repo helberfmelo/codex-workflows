@@ -31,33 +31,16 @@ jobs:
         run: python -m unittest discover -s tests -p "test_*.py"
 
       - name: Check workflow parity
-        run: |
-          python skills/codex-workflows/scripts/check_workflow_parity.py \
-            --references skills/codex-workflows/references/workflows \
-            --native skills/codex-workflows/templates/codex-native/.agent/workflows \
-            --template skills/codex-workflows/templates/.agent/workflows \
-            --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows
+        run: python skills/codex-workflows/scripts/check_workflow_parity.py --references skills/codex-workflows/references/workflows --native skills/codex-workflows/templates/codex-native/.agent/workflows --template skills/codex-workflows/templates/.agent/workflows --pack skills/codex-workflows/packs/antigravity-compat/.agent/workflows
 
       - name: Check codex-native workflow quality
-        run: |
-          python skills/codex-workflows/scripts/check_codex_native_quality.py \
-            --native skills/codex-workflows/templates/codex-native/.agent/workflows \
-            --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows \
-            --max-similarity 0.35
+        run: python skills/codex-workflows/scripts/check_codex_native_quality.py --native skills/codex-workflows/templates/codex-native/.agent/workflows --compat skills/codex-workflows/packs/antigravity-compat/.agent/workflows --max-similarity 0.35
 
       - name: Check codex-native structural assets
-        run: |
-          python skills/codex-workflows/scripts/check_codex_native_assets.py \
-            --native-root skills/codex-workflows/templates/codex-native/.agent \
-            --min-agents 20 \
-            --min-skills 37
+        run: python skills/codex-workflows/scripts/check_codex_native_assets.py --native-root skills/codex-workflows/templates/codex-native/.agent --min-agents 20 --min-skills 37
 
       - name: Validate compatibility manifest drift
-        run: |
-          python skills/codex-workflows/scripts/check_compat_drift.py \
-            --manifest skills/codex-workflows/compat/manifest.json \
-            --pack skills/codex-workflows/packs/antigravity-compat/.agent \
-            --template-full skills/codex-workflows/templates/.agent
+        run: python skills/codex-workflows/scripts/check_compat_drift.py --manifest skills/codex-workflows/compat/manifest.json --pack skills/codex-workflows/packs/antigravity-compat/.agent --template-full skills/codex-workflows/templates/.agent
 
   website-build:
     runs-on: ubuntu-latest
@@ -159,6 +142,20 @@ jobs:
         run: |
           echo "CODEX_HOME=${RUNNER_TEMP}/codex-home" >> "${GITHUB_ENV}"
           echo "CW_DEST=${RUNNER_TEMP}/codex-home/skills-installed" >> "${GITHUB_ENV}"
+          echo "CW_E2E_WORKDIR=${RUNNER_TEMP}/cw-e2e-workdir" >> "${GITHUB_ENV}"
+          mkdir -p "${RUNNER_TEMP}/cw-e2e-workdir"
+
+      - name: Resolve E2E python executable
+        shell: bash
+        run: |
+          if command -v python >/dev/null 2>&1; then
+            echo "CW_PYTHON=python" >> "${GITHUB_ENV}"
+          elif command -v python3 >/dev/null 2>&1; then
+            echo "CW_PYTHON=python3" >> "${GITHUB_ENV}"
+          else
+            echo "Python executable not found in PATH."
+            exit 1
+          fi
 
       - name: Create skill-installer shim for E2E
         shell: bash
@@ -222,17 +219,13 @@ jobs:
 
       - name: Smoke test published package entrypoint
         shell: bash
-        run: npx --yes @codex-workflow/cw /help
+        working-directory: ${{ env.CW_E2E_WORKDIR }}
+        run: npx --yes @codex-workflow/cw@latest /help
 
       - name: Install packs through published npm package
         shell: bash
-        run: |
-          npx --yes @codex-workflow/cw \
-            --repo helberfmelo/codex-workflows \
-            --ref main \
-            --method git \
-            --dest "$CW_DEST" \
-            --python-exec python
+        working-directory: ${{ env.CW_E2E_WORKDIR }}
+        run: npx --yes @codex-workflow/cw@latest --repo helberfmelo/codex-workflows --ref main --method git --dest "$CW_DEST" --python-exec "$CW_PYTHON"
 
       - name: Verify installed skill packs
         shell: bash

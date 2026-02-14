@@ -47,13 +47,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Cut release
-        run: |
-          python scripts/release_automation.py \
-            --version "${{ inputs.version }}" \
-            --apply \
-            --commit \
-            --tag \
-            --notes-out "${{ runner.temp }}/release-notes.md"
+        run: python scripts/release_automation.py --version "${{ inputs.version }}" --apply --commit --tag --notes-out "${{ runner.temp }}/release-notes.md"
 
       - name: Push commit and tag
         if: ${{ inputs.push_changes == 'true' }}
