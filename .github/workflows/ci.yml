@@ -217,15 +217,29 @@ jobs:
           PY
           chmod +x "$CODEX_HOME/skills/.system/skill-installer/scripts/install-skill-from-github.py"
 
-      - name: Smoke test published package entrypoint
+      - name: Smoke test published package entrypoint (Linux/macOS)
+        if: runner.os != 'Windows'
         shell: bash
         working-directory: ${{ env.CW_E2E_WORKDIR }}
         run: npx --yes @codex-workflow/cw@latest /help
 
-      - name: Install packs through published npm package
+      - name: Smoke test published package entrypoint (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        working-directory: ${{ env.CW_E2E_WORKDIR }}
+        run: npx --yes @codex-workflow/cw@latest /help
+
+      - name: Install packs through published npm package (Linux/macOS)
+        if: runner.os != 'Windows'
         shell: bash
         working-directory: ${{ env.CW_E2E_WORKDIR }}
         run: npx --yes @codex-workflow/cw@latest --repo helberfmelo/codex-workflows --ref main --method git --dest "$CW_DEST" --python-exec "$CW_PYTHON"
+
+      - name: Install packs through published npm package (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        working-directory: ${{ env.CW_E2E_WORKDIR }}
+        run: npx --yes @codex-workflow/cw@latest --repo helberfmelo/codex-workflows --ref main --method git --dest "$env:CW_DEST" --python-exec "$env:CW_PYTHON"
 
       - name: Verify installed skill packs
         shell: bash
@@ -252,4 +266,3 @@ jobs:
               sys.exit(1)
           print("Installed packs:", ", ".join(required))
           PY
-

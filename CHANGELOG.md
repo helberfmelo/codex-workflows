@@ -67,7 +67,7 @@ The format is based on Keep a Changelog and this project follows Semantic Versio
 
 - GitHub Actions shell reliability on Linux/macOS by removing backslash-based command continuations in workflow steps.
 - Cross-platform E2E install workflow now resolves `python/python3` dynamically and runs `npx @codex-workflow/cw` from isolated temp workspace.
-- Added `.gitattributes` LF rules for workflow/script file types to avoid CRLF-induced CI regressions.
+- Added `.gitattributes` LF rules for GitHub workflow files to avoid CRLF-induced CI regressions.
 
 ## [1.1.0] - 2026-02-13
 
