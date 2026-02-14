@@ -6,7 +6,7 @@ Mode: `/orchestrate`
 
 ## Goal
 
-Close the remaining gaps identified in the latest comparison against `vudovn/antigravity-kit` while keeping `codex-workflows`:
+Close the remaining gaps identified in the latest external benchmark comparison while keeping `codex-workflows`:
 
 - technically robust;
 - professionally packaged for public adoption;

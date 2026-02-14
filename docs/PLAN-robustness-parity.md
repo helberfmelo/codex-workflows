@@ -6,7 +6,7 @@ Mode: `/orchestrate` (Phase 1 + Phase 2 only)
 
 ## Objective
 
-Evolve `codex-workflows` to be as robust as (or more robust than) Antigravity Kit for the VS Code + GPT Codex reality.
+Evolve `codex-workflows` to be as robust as (or more robust than) the external benchmark baseline for the VS Code + GPT Codex reality.
 
 ## Phase 1: Diagnostic Summary
 

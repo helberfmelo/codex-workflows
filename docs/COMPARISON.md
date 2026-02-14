@@ -1,10 +1,10 @@
-# Comparison: Antigravity Kit vs Codex Workflows
+# Comparison: External Baseline vs Codex Workflows
 
 Date: 2026-02-13
 
 ## Source baseline
 
-Antigravity Kit README describes a broad toolkit with:
+The external baseline README describes a broad toolkit with:
 
 - 20 specialized agents
 - 36 skills
@@ -12,7 +12,7 @@ Antigravity Kit README describes a broad toolkit with:
 
 Codex Workflows is adapted to Codex skill mechanics and repository-local `.agent` integration.
 
-## What Antigravity does strongly
+## What the external baseline does strongly
 
 - Rich specialist catalog (agents, skills, workflows)
 - Strong orchestration concepts
@@ -45,7 +45,7 @@ Now includes:
 
 ## Practical difference now
 
-Antigravity-like robustness is approximated by combining:
+Benchmark-level robustness is approximated by combining:
 
 - a strong router skill
 - codified workflow knowledge base
@@ -85,7 +85,7 @@ References are now codex-native aligned:
 
 ## Compatibility Mode
 
-For near-equivalent structure to Antigravity projects, bootstrap with:
+For near-equivalent structure to external benchmark projects, bootstrap with:
 
 `bootstrap_project_agent.py --profile antigravity-compat`
 

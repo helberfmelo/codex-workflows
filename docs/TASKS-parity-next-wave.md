@@ -1,7 +1,7 @@
 # Tasks: Parity Next Wave (Post v1.2.0)
 
 Date: 2026-02-14
-Scope: close the remaining robustness/professionalism gaps from the latest comparison against `vudovn/antigravity-kit`.
+Scope: close the remaining robustness/professionalism gaps from the latest external benchmark comparison.
 
 ## Baseline Findings
 
