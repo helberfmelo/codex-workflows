@@ -2,6 +2,8 @@
 
 1. 显式触发：
 `Use codex-workflows in /orchestrate and <objective>`
+`Use codex-workflows in /game-dev and design a core gameplay loop`
+`Use codex-workflows in /roblox-game-dev and secure RemoteEvent boundaries`
 
 2. 本地 bootstrap（默认 `codex-native`）：
 

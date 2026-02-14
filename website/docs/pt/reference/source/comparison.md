@@ -67,7 +67,7 @@ Bootstrap now defaults to:
 This profile boots from an independent codex-native template root:
 
 - `skills/codex-workflows/templates/codex-native/.agent`
-- with all 11 rewritten workflow definitions in `workflows/*.md`
+- with all 13 rewritten workflow definitions in `workflows/*.md`
 - with native specialist agents in `agents/*.md`
 - with native capability skills in `skills/*/SKILL.md`
 - `antigravity-compat` remains opt-in interoperability mode.

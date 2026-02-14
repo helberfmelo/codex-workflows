@@ -24,8 +24,8 @@ It is intentionally independent from compatibility packs and focuses on:
 
 ## Structural Baseline
 
-- `11` workflows
-- `20` agents
-- `37` skills
+- `13` workflows
+- `22` agents
+- `39` skills
 
-These minimums are enforced by `check_codex_native_assets.py` in CI and local validation commands.
+CI minimum gates remain `20` agents and `37` skills via `check_codex_native_assets.py`.

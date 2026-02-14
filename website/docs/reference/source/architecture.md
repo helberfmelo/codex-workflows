@@ -25,6 +25,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `references/workflows/*.md`
 - `references/templates/output-templates.md`
 - References are codex-native contracts (mirrored from `templates/codex-native/.agent/workflows`).
+- Catalog includes general software workflows plus game-specific `/game-dev` and `/roblox-game-dev`.
 
 4. Automation Scripts
 - `scripts/route_workflow.py`

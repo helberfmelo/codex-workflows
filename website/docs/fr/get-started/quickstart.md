@@ -2,6 +2,8 @@
 
 1. Activation explicite:
 `Use codex-workflows in /orchestrate and <objective>`
+`Use codex-workflows in /game-dev and design a core gameplay loop`
+`Use codex-workflows in /roblox-game-dev and secure RemoteEvent boundaries`
 
 2. Bootstrap local (profil par defaut `codex-native`):
 

@@ -24,6 +24,16 @@ route_workflow_fast = load_module(SCRIPTS / "route_workflow_fast.py", "route_wor
 
 
 class RouteWorkflowTests(unittest.TestCase):
+    def test_game_query_routes_to_game_dev(self):
+        result = route_workflow.route("build a gameplay core loop prototype for a 2d game")
+        self.assertEqual(result["workflow"], "/game-dev")
+        self.assertIn("game", result["domains"])
+
+    def test_roblox_query_routes_to_roblox_workflow(self):
+        result = route_workflow.route("implement roblox studio luau datastore save pipeline")
+        self.assertEqual(result["workflow"], "/roblox-game-dev")
+        self.assertIn("game", result["domains"])
+
     def test_multidomain_routes_to_orchestrate(self):
         result = route_workflow.route("build secure login api with frontend and tests")
         self.assertEqual(result["workflow"], "/orchestrate")

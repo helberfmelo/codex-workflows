@@ -1,6 +1,6 @@
 ---
 name: codex-workflows
-description: Full workflow operating system for GPT Codex in VS Code. Route natural-language requests into structured workflows for brainstorm, plan, create, enhance, debug, test, deploy, preview, status, orchestrate, and UI/UX design. Use when a team wants repeatable execution phases, specialist handoffs, approval checkpoints, and stronger delivery consistency across projects.
+description: Full workflow operating system for GPT Codex in VS Code. Route natural-language requests into structured workflows for brainstorm, plan, create, enhance, game-dev, roblox-game-dev, debug, test, deploy, preview, status, orchestrate, and UI/UX design. Use when a team wants repeatable execution phases, specialist handoffs, approval checkpoints, and stronger delivery consistency across projects.
 ---
 
 # Codex Workflows
@@ -43,6 +43,8 @@ Read `references/routing/intent-matrix.md` for full mapping.
 - `/plan`
 - `/create`
 - `/enhance`
+- `/game-dev`
+- `/roblox-game-dev`
 - `/debug`
 - `/test`
 - `/deploy`

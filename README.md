@@ -11,6 +11,8 @@ It routes natural-language requests into repeatable execution workflows:
 - `/plan`
 - `/create`
 - `/enhance`
+- `/game-dev`
+- `/roblox-game-dev`
 - `/debug`
 - `/test`
 - `/deploy`
@@ -186,6 +188,8 @@ composer codex:install-all -- --ref=v1.1.0
 2. Prompt with workflow intent, for example:
 - `Use codex-workflows and run /orchestrate for this feature`
 - `Apply /debug workflow for this failing test`
+- `Use codex-workflows in /game-dev and design the core gameplay loop`
+- `Use codex-workflows in /roblox-game-dev and harden RemoteEvent security`
 3. Optional: bootstrap local `.agent` in any project:
 
 ```bash
@@ -194,7 +198,7 @@ python ~/.codex/skills/codex-workflows/scripts/bootstrap_project_agent.py --proj
 
 This default profile is `codex-native` and uses an independent codex-native `.agent` template with:
 
-- 11 rewritten workflow contracts (`/brainstorm` to `/ui-ux-pro-max`)
+- 13 rewritten workflow contracts (`/brainstorm` to `/ui-ux-pro-max`, including `/game-dev` and `/roblox-game-dev`)
 - native `agents/` capability catalog
 - native `skills/` capability catalog
 

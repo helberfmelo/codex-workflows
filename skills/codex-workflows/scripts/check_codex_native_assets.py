@@ -11,6 +11,8 @@ EXPECTED_WORKFLOWS = {
     "plan.md",
     "create.md",
     "enhance.md",
+    "game-dev.md",
+    "roblox-game-dev.md",
     "debug.md",
     "test.md",
     "deploy.md",
@@ -24,6 +26,8 @@ REQUIRED_AGENTS = {
     "orchestrator.md",
     "backend-specialist.md",
     "security-auditor.md",
+    "game-developer.md",
+    "roblox-specialist.md",
 }
 
 REQUIRED_SKILLS = {
@@ -31,6 +35,8 @@ REQUIRED_SKILLS = {
     "implementation",
     "debugging",
     "testing",
+    "game-development",
+    "roblox-development",
 }
 
 

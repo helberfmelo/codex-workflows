@@ -6,6 +6,8 @@ Catalogo suportado:
 - `/plan`
 - `/create`
 - `/enhance`
+- `/game-dev`
+- `/roblox-game-dev`
 - `/debug`
 - `/test`
 - `/deploy`

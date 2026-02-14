@@ -15,6 +15,8 @@ RULES = {
     "/plan": ["plan", "roadmap", "milestone", "breakdown", "scope"],
     "/create": ["create", "build", "new app", "from scratch"],
     "/enhance": ["enhance", "improve", "refactor", "add feature", "upgrade"],
+    "/game-dev": ["game", "gameplay", "core loop", "unity", "godot", "unreal", "level design"],
+    "/roblox-game-dev": ["roblox", "roblox studio", "luau", "remoteevent", "remotefunction", "datastore"],
     "/debug": ["debug", "bug", "error", "broken", "regression", "fix issue"],
     "/test": ["test", "coverage", "unit", "integration", "e2e"],
     "/deploy": ["deploy", "production", "release", "rollback"],
@@ -31,6 +33,7 @@ DOMAIN_HINTS = {
     "database": ["database", "schema", "sql", "migration", "prisma", "postgres"],
     "testing": ["test", "coverage", "unit", "integration", "playwright", "cypress"],
     "devops": ["deploy", "ci", "cd", "docker", "kubernetes", "production"],
+    "game": ["game", "gameplay", "unity", "godot", "unreal", "roblox", "luau"],
 }
 
 STACK_HINTS = {
@@ -63,8 +66,20 @@ def detect_domains(text: str, domain_hints: dict[str, list[str]] | None = None) 
     hints = domain_hints or DOMAIN_HINTS
     domains = set()
     low = text.lower()
+    tokens = tokenize(low)
     for domain, patterns in hints.items():
-        if any(p in low for p in patterns):
+        matched = False
+        for pattern in patterns:
+            p = pattern.lower()
+            if " " in p or len(p) > 2:
+                if p in low:
+                    matched = True
+                    break
+            else:
+                if p in tokens:
+                    matched = True
+                    break
+        if matched:
             domains.add(domain)
     return domains
 

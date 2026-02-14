@@ -18,7 +18,7 @@ Rules:
 
 - same filename set in both locations;
 - same content checksum in both locations;
-- all 11 workflow contracts present.
+- all 13 workflow contracts present.
 
 ## Compatibility contract
 

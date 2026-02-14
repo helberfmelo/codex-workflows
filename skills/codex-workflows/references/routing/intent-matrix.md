@@ -8,6 +8,8 @@ Map request intent to a primary workflow.
 | roadmap, scope, milestones | /plan | /orchestrate | Planning only if requested |
 | build from scratch, new app | /create | /orchestrate | For broad builds, ask constraints |
 | extend existing feature | /enhance | /test | Keep diffs targeted |
+| gameplay, game loop, level design | /game-dev | /plan | Confirm core loop and platform constraints |
+| roblox, luau, remoteevent, datastore | /roblox-game-dev | /game-dev | Enforce server authority and exploit hardening |
 | error, bug, regression, failing | /debug | /test | Root cause before fixes |
 | generate tests, coverage gaps | /test | /debug | Include edge cases |
 | release, production, rollback | /deploy | /test | Gate on pre-flight checks |

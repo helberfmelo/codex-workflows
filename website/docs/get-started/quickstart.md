@@ -7,6 +7,8 @@ Examples:
 - `Use codex-workflows in /orchestrate and execute this goal: harden auth flow with tests`
 - `Use codex-workflows in /debug and investigate an intermittent login failure`
 - `Use codex-workflows in /plan for this feature roadmap`
+- `Use codex-workflows in /game-dev and design a core gameplay loop`
+- `Use codex-workflows in /roblox-game-dev and secure RemoteEvent boundaries`
 
 ## 2) Optional: bootstrap local `.agent`
 

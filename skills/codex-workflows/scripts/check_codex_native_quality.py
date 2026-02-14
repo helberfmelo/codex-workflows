@@ -36,6 +36,20 @@ EXPECTED_WORKFLOWS = {
         "## Output Contract",
         "## Quality Bar",
     ],
+    "game-dev.md": [
+        "## Objective",
+        "## Game Delivery Inputs",
+        "## Development Loop",
+        "## Output Contract",
+        "## Quality Bar",
+    ],
+    "roblox-game-dev.md": [
+        "## Objective",
+        "## Roblox Scope Inputs",
+        "## Roblox Build Protocol",
+        "## Output Contract",
+        "## Quality Bar",
+    ],
     "debug.md": [
         "## Objective",
         "## Investigation Protocol",

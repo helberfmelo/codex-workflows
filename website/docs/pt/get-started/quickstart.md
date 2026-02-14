@@ -5,6 +5,8 @@
 - `Use codex-workflows em /orchestrate e execute este objetivo: hardening de autenticacao com testes`
 - `Use codex-workflows em /debug e investigue falha de login`
 - `Use codex-workflows em /plan para este roadmap`
+- `Use codex-workflows em /game-dev e desenhe o core loop do jogo`
+- `Use codex-workflows em /roblox-game-dev e endureca seguranca de RemoteEvent`
 
 ## 2) Bootstrap local `.agent` (opcional)
 
