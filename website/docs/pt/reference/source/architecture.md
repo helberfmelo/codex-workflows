@@ -90,6 +90,7 @@ Provide a workflow operating system for GPT Codex in VS Code with:
 - `examples/projects/` runnable fixtures used by CI stack matrix
 
 12. All-in-One Installation
+- `npx @codex-workflow/cw` (primary distribution channel)
 - `scripts/install_all_in_one.py`
 - `scripts/codexwf.py` (`install` command)
 - One-command installer orchestration for core + domain + stack packs

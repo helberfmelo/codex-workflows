@@ -6,7 +6,25 @@
 - Python disponible
 - acces GitHub
 
-## All-in-One recommande
+## NPM all-in-one recommande
+
+```bash
+npx @codex-workflow/cw
+```
+
+Core uniquement :
+
+```bash
+npx @codex-workflow/cw --core-only
+```
+
+Diagnostic :
+
+```bash
+npx @codex-workflow/cw doctor
+```
+
+## All-in-One via Python direct (alternative)
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \

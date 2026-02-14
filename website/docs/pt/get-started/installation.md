@@ -6,7 +6,25 @@
 - Python disponivel no ambiente
 - acesso ao GitHub
 
-## All-in-one (recomendado)
+## NPM all-in-one (recomendado)
+
+```bash
+npx @codex-workflow/cw
+```
+
+Somente core:
+
+```bash
+npx @codex-workflow/cw --core-only
+```
+
+Diagnostico:
+
+```bash
+npx @codex-workflow/cw doctor
+```
+
+## All-in-one via Python direto (alternativa)
 
 Instala `codex-workflows` + todos os packs oficiais em um unico comando:
 

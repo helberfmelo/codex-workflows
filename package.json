@@ -1,0 +1,28 @@
+{
+  "name": "@codex-workflow/cw",
+  "version": "1.2.1",
+  "description": "All-in-one installer and helper CLI for codex-workflows.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helberfmelo/codex-workflows.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helberfmelo/codex-workflows/issues"
+  },
+  "homepage": "https://helberfmelo.github.io/codex-workflows/",
+  "bin": {
+    "cw": "bin/cw.js"
+  },
+  "files": [
+    "bin",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

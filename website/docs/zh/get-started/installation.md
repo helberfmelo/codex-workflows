@@ -6,7 +6,25 @@
 - 已安装 Python
 - 可访问 GitHub
 
-## 推荐：All-in-One
+## 推荐：NPM all-in-one
+
+```bash
+npx @codex-workflow/cw
+```
+
+仅安装核心：
+
+```bash
+npx @codex-workflow/cw --core-only
+```
+
+环境诊断：
+
+```bash
+npx @codex-workflow/cw doctor
+```
+
+## 备选：Python 直接安装 All-in-One
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \

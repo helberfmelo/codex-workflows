@@ -93,7 +93,27 @@ website/
 
 ## Installation
 
-### Option 1: All-in-one install (recommended)
+### Option 1: NPM all-in-one CLI (recommended)
+
+```bash
+npx @codex-workflow/cw
+```
+
+Install only core:
+
+```bash
+npx @codex-workflow/cw --core-only
+```
+
+Check prerequisites:
+
+```bash
+npx @codex-workflow/cw doctor
+```
+
+This command uses Codex's official Python skill installer under the hood and installs all packs in one execution.
+
+### Option 2: All-in-one install (direct Python)
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -127,7 +147,7 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 
 This installs the orchestration core plus all domain and stack packs in one command.
 
-### Option 2: All-in-one helper script from this repository
+### Option 3: All-in-one helper script from this repository
 
 ```bash
 python scripts/install_all_in_one.py
@@ -157,7 +177,7 @@ Install from a specific tag/ref:
 python scripts/install_all_in_one.py --ref v1.1.0
 ```
 
-### Option 3: Install only the core skill (minimal)
+### Option 4: Install only the core skill (minimal)
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -165,7 +185,7 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
   --path skills/codex-workflows
 ```
 
-### Option 4: Composer wrapper (PHP teams, optional)
+### Option 5: Composer wrapper (PHP teams, optional)
 
 Composer wrappers call the same official Codex Python installer.
 

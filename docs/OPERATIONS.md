@@ -18,9 +18,22 @@ Main commands:
 
 ## Distribution quickstart
 
-Install all packs in one command:
+Primary installation channel (all-in-one):
 
-`python scripts/install_all_in_one.py`
+`npx @codex-workflow/cw`
+
+Core-only:
+
+`npx @codex-workflow/cw --core-only`
+
+Diagnostics:
+
+`npx @codex-workflow/cw doctor`
+
+Alternative repository-local install commands:
+
+- `python scripts/install_all_in_one.py`
+- `python scripts/codexwf.py install`
 
 Bootstrap local project instructions (default codex-native profile):
 
@@ -40,7 +53,7 @@ Activation shortcuts:
 
 Preview without changes:
 
-`python scripts/install_all_in_one.py --dry-run`
+`npx @codex-workflow/cw --dry-run`
 
 ## Website quickstart
 
