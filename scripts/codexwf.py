@@ -150,9 +150,9 @@ def cmd_validate(args: argparse.Namespace) -> int:
                 "--native-root",
                 str(SKILL_ROOT / "templates" / "codex-native" / ".agent"),
                 "--min-agents",
-                "10",
+                "20",
                 "--min-skills",
-                "8",
+                "37",
             ],
             REPO_ROOT,
         ),
@@ -242,3 +242,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

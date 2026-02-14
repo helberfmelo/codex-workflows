@@ -24,7 +24,7 @@ assets = load_module(SCRIPT, "check_codex_native_assets")
 class CodexNativeAssetsTests(unittest.TestCase):
     def test_real_repository_passes(self):
         native_root = ROOT / "skills" / "codex-workflows" / "templates" / "codex-native" / ".agent"
-        errors = assets.validate(native_root=native_root, min_agents=10, min_skills=8)
+        errors = assets.validate(native_root=native_root, min_agents=20, min_skills=37)
         self.assertEqual(errors, [])
 
     def test_missing_agents_folder_is_reported(self):
@@ -63,3 +63,4 @@ class CodexNativeAssetsTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

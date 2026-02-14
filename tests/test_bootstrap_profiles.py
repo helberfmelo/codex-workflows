@@ -39,8 +39,8 @@ class BootstrapProfileTests(unittest.TestCase):
             self.assertTrue((project / ".agent" / "scripts" / "auto_preview.py").exists())
             self.assertTrue((project / ".agent" / "agents").exists())
             self.assertTrue((project / ".agent" / "skills").exists())
-            self.assertGreaterEqual(len(list((project / ".agent" / "agents").glob("*.md"))), 10)
-            self.assertGreaterEqual(len([p for p in (project / ".agent" / "skills").iterdir() if p.is_dir()]), 8)
+            self.assertGreaterEqual(len(list((project / ".agent" / "agents").glob("*.md"))), 20)
+            self.assertGreaterEqual(len([p for p in (project / ".agent" / "skills").iterdir() if p.is_dir()]), 37)
 
     def test_minimal_profile_bootstrap(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -82,3 +82,4 @@ class BootstrapProfileTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

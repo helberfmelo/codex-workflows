@@ -151,9 +151,9 @@ def main() -> None:
                 "--native-root",
                 str(root / "templates" / "codex-native" / ".agent"),
                 "--min-agents",
-                "10",
+                "20",
                 "--min-skills",
-                "8",
+                "37",
             ]
         )
         raise SystemExit(code)
@@ -161,3 +161,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

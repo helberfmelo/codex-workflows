@@ -1,6 +1,6 @@
 # Tasks: Parity Next Wave (Post v1.2.0)
 
-Date: 2026-02-13
+Date: 2026-02-14
 Scope: close the remaining robustness/professionalism gaps from the latest comparison against `vudovn/antigravity-kit`.
 
 ## Baseline Findings
@@ -71,11 +71,28 @@ Acceptance:
 - `python scripts/codexwf.py validate --tests --docs` passes.
 - Comparison confirms robust parity posture with reduced copy-risk.
 
-## Evidence (2026-02-13)
+## Stage 5: Native Catalog Expansion to Parity Targets
+
+Status: `completed`
+
+Tasks:
+
+- [x] Expand codex-native agents catalog from 12 to 20.
+- [x] Expand codex-native skills catalog from 8 to 37.
+- [x] Raise all structural gate thresholds in CI, CLIs, and tests.
+- [x] Re-validate codex-native quality and structural checks.
+
+Acceptance:
+
+- `check_codex_native_assets.py` defaults require `--min-agents 20 --min-skills 37`.
+- CI and local CLIs use the same 20/37 thresholds.
+- Full unit test suite passes.
+
+## Evidence (2026-02-14)
 
 - Native capability assets added:
-  - `skills/codex-workflows/templates/codex-native/.agent/agents/*.md` (`12` files)
-  - `skills/codex-workflows/templates/codex-native/.agent/skills/*/SKILL.md` (`8` directories)
+  - `skills/codex-workflows/templates/codex-native/.agent/agents/*.md` (`20` files)
+  - `skills/codex-workflows/templates/codex-native/.agent/skills/*/SKILL.md` (`37` directories)
 - New governance gate:
   - `skills/codex-workflows/scripts/check_codex_native_assets.py`
   - `tests/test_codex_native_assets.py`
@@ -85,16 +102,15 @@ Acceptance:
   - `skills/codex-workflows/scripts/codex_workflows_ops.py`
 - Validation results:
   - `python -m unittest discover -s tests -p "test_*.py"` -> pass (`32 tests`)
-  - `python scripts/codexwf.py validate --tests --docs` -> pass
+  - `python scripts/codexwf.py validate --tests` -> pass
+  - `python skills/codex-workflows/scripts/check_codex_native_assets.py --native-root skills/codex-workflows/templates/codex-native/.agent --min-agents 20 --min-skills 37` -> pass
   - `python scripts/codexwf.py status --json` -> locale parity pass (`missing=0` for PT/ES/FR/ZH)
 - Comparison metrics:
-  - `codex_native_agents=12` vs `ant_agents=20`
-  - `codex_native_skills=8` vs `ant_skills=37`
+  - `codex_native_agents=20` vs `ant_agents=20`
+  - `codex_native_skills=37` vs `ant_skills=37`
   - `refs_vs_compat_identical=0`
   - `refs_vs_compat_max_similarity=0.118106`
 
 ## Residual Gaps (Next Cycle)
 
-- Expand codex-native specialist depth from 12 agents to a broader catalog.
-- Expand codex-native skill catalog from 8 to domain-complete coverage.
 - Add benchmark threshold history for routing/bootstrap performance trends.

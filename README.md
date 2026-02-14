@@ -259,8 +259,8 @@ python ~/.codex/skills/codex-workflows/scripts/check_codex_native_quality.py \
 ```bash
 python ~/.codex/skills/codex-workflows/scripts/check_codex_native_assets.py \
   --native-root ~/.codex/skills/codex-workflows/templates/codex-native/.agent \
-  --min-agents 10 \
-  --min-skills 8
+  --min-agents 20 \
+  --min-skills 37
 ```
 
 9. Benchmark routing runtime:
@@ -450,5 +450,6 @@ See `CHANGELOG.md`.
 ## License
 
 MIT
+
 
 

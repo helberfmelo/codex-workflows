@@ -20,6 +20,19 @@ EXPECTED_WORKFLOWS = {
     "ui-ux-pro-max.md",
 }
 
+REQUIRED_AGENTS = {
+    "orchestrator.md",
+    "backend-specialist.md",
+    "security-auditor.md",
+}
+
+REQUIRED_SKILLS = {
+    "planning",
+    "implementation",
+    "debugging",
+    "testing",
+}
+
 
 def validate(native_root: Path, min_agents: int, min_skills: int) -> list[str]:
     errors: list[str] = []
@@ -51,12 +64,20 @@ def validate(native_root: Path, min_agents: int, min_skills: int) -> list[str]:
         agent_files = [p for p in agents_dir.glob("*.md") if p.is_file()]
         if len(agent_files) < min_agents:
             errors.append(f"insufficient native agents ({len(agent_files)} < {min_agents})")
+        names = {p.name for p in agent_files}
+        missing_required = sorted(REQUIRED_AGENTS - names)
+        if missing_required:
+            errors.append(f"missing required native agents: {', '.join(missing_required)}")
 
     skills_dir = native_root / "skills"
     if skills_dir.exists():
         skill_dirs = [p for p in skills_dir.iterdir() if p.is_dir()]
         if len(skill_dirs) < min_skills:
             errors.append(f"insufficient native skills ({len(skill_dirs)} < {min_skills})")
+        skill_names = {p.name for p in skill_dirs}
+        missing_required_skills = sorted(REQUIRED_SKILLS - skill_names)
+        if missing_required_skills:
+            errors.append(f"missing required native skills: {', '.join(missing_required_skills)}")
         for skill_dir in sorted(skill_dirs):
             skill_file = skill_dir / "SKILL.md"
             if not skill_file.exists():
@@ -65,6 +86,9 @@ def validate(native_root: Path, min_agents: int, min_skills: int) -> list[str]:
             content = skill_file.read_text(encoding="utf-8")
             if "name:" not in content or "description:" not in content:
                 errors.append(f"invalid frontmatter in native skill: {skill_dir.name}")
+                continue
+            if f"name: {skill_dir.name}" not in content:
+                errors.append(f"name mismatch in native skill frontmatter: {skill_dir.name}")
 
     return errors
 
@@ -75,8 +99,8 @@ def main() -> None:
         "--native-root",
         help="templates/codex-native/.agent root directory",
     )
-    parser.add_argument("--min-agents", type=int, default=10)
-    parser.add_argument("--min-skills", type=int, default=8)
+    parser.add_argument("--min-agents", type=int, default=20)
+    parser.add_argument("--min-skills", type=int, default=37)
     args = parser.parse_args()
 
     script_root = Path(__file__).resolve().parents[1]
